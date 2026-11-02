@@ -1395,3 +1395,22 @@ body.settled .r2-stop { animation: none; }
   .r2-stops::before, .r2-stops::after { top: 16px; }
   .r2-stop.cur .r2-dot { width: 42px; height: 42px; }
 }
+
+/* ---------- Pop-up petunjuk (hint) ---------- */
+.hint { position: fixed; right: 20px; bottom: 20px; z-index: 85; width: min(360px, calc(100vw - 24px)); display: flex; gap: .8rem; align-items: flex-start; padding: .95rem 1rem 1rem; border-radius: 18px; background: var(--card); color: var(--ink); border: 1px solid rgba(92, 21, 34, .16); border-left: 5px solid var(--gold-l); box-shadow: 0 22px 50px -18px rgba(36, 10, 16, .55); opacity: 0; transform: translateY(18px) scale(.96); transition: opacity .3s, transform .35s cubic-bezier(.3, 1.4, .5, 1); }
+.hint.show { opacity: 1; transform: none; }
+.hint-ic { flex: none; width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--gold-l); color: var(--maroon-3); box-shadow: 0 0 0 0 rgba(226, 176, 74, .6); animation: hintGlow 1.8s ease-in-out infinite; }
+.hint-ic .ic { width: 1.3rem; height: 1.3rem; }
+.hint-ic .ic .f { display: none; }
+@keyframes hintGlow { 50% { box-shadow: 0 0 0 9px rgba(226, 176, 74, 0); transform: rotate(-8deg); } }
+.hint-b { flex: 1; min-width: 0; }
+.hint-b small { font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.hint-b p { margin: .15rem 0 .7rem; font-size: .9rem; line-height: 1.5; color: var(--ink); }
+.hint-b p b { color: var(--maroon); }
+.hint-btns { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.hint-x { border: 0; background: none; color: var(--muted); font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; padding: .3rem .2rem; }
+.hint-x:hover { color: var(--maroon); }
+.hint-spot { position: relative; animation: hintSpot 2.4s ease-out; border-radius: 16px; }
+@keyframes hintSpot { 0% { box-shadow: 0 0 0 0 rgba(226, 176, 74, .9); } 15% { box-shadow: 0 0 0 4px var(--gold-l), 0 0 0 14px rgba(226, 176, 74, .35); transform: scale(1.04); } 30% { transform: scale(1); } 45% { transform: scale(1.03); } 60% { box-shadow: 0 0 0 4px var(--gold-l), 0 0 0 14px rgba(226, 176, 74, .35); transform: none; } 100% { box-shadow: 0 0 0 0 rgba(226, 176, 74, 0); } }
+@media (max-width: 760px) { .hint { right: 12px; left: 12px; width: auto; bottom: 92px; } }
+@media (prefers-reduced-motion: reduce) { .hint-ic, .hint-spot { animation: none; } .hint-spot { outline: 3px solid var(--gold-l); outline-offset: 3px; } }

@@ -136,7 +136,7 @@ function sfx(type = 'click') {
   try {
     actx = actx || new (window.AudioContext || window.webkitAudioContext)();
     const t = actx.currentTime, o = actx.createOscillator(), g = actx.createGain();
-    const c = { click: [700, 700, .05, 'sine'], ok: [740, 1180, .2, 'sine'], no: [260, 150, .24, 'triangle'] }[type];
+    const c = { click: [700, 700, .05, 'sine'], ok: [740, 1180, .2, 'sine'], hint: [560, 900, .16, 'sine'], no: [260, 150, .24, 'triangle'] }[type];
     o.type = c[3]; o.frequency.setValueAtTime(c[0], t); o.frequency.linearRampToValueAtTime(c[1], t + c[2]);
     g.gain.setValueAtTime(.07, t); g.gain.exponentialRampToValueAtTime(.0001, t + c[2] + .05);
     o.connect(g).connect(actx.destination); o.start(t); o.stop(t + c[2] + .08);
@@ -570,6 +570,68 @@ function mountScene(id) {
     else if (first && !silent) { sfx('ok'); toast('Aktivitas beres. Scene berikutnya kebuka setelah semua kartu materi dibaca.'); }
   };
   ACT[id]($('#activity'), done, A(id));
+  if (MATERI_SCENES.includes(id)) hintCoach(id);
+}
+
+/* =========================================================================
+   HINT ALA GAME — muncul kalau peserta diam terlalu lama di scene materi,
+   isinya menyesuaikan langkah yang masih kurang untuk membuka scene berikutnya
+   ========================================================================= */
+const HINT_AKT = {
+  S02: 'Klik setiap kotak informasi sampai semuanya terbuka.',
+  S03: 'Seret setiap kartu ke bagian email yang cocok. Di HP: ketuk kartunya, lalu ketuk slotnya.',
+  S04: 'Baca studi kasusnya, lalu jawab pertanyaan kuisnya.',
+  S05: 'Klik setiap bagian email untuk melihat penjelasannya.',
+  S06: 'Ikuti simulasinya sampai emailnya siap dikirim.',
+  S07: 'Klik bagian email yang menurutmu salah sampai semua kesalahannya ketemu.',
+  S08: 'Isi form email lamarannya, lalu cocokkan dengan daftar periksa.',
+  S09: 'Atur jam kirim yang tepat dan jawab kuisnya.',
+  S10: 'Pilih langkah yang paling tepat di setiap situasi.',
+  S11: 'Pilih kalimat yang paling formal dan sopan.',
+};
+function hintFor(id) {
+  const s = SCENES[id], st = A(id), nx = ORDER[ORDER.indexOf(id) + 1];
+  const sisa = s.uraian ? s.uraian.length - s.uraian.filter((_, j) => (st.read || []).includes(j)).length : 0;
+  if (state.done[id]) return { t: `Scene ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'S12' ? 'langkah berikutnya' : nx}.`, to: '#nextBtn' };
+  if (!st.actOk && (readAll(id) || s.uraianAfter)) return { t: `${readAll(id) ? 'Materinya sudah kebaca semua. ' : ''}Sekarang giliran aktivitas di bawah: ${HINT_AKT[id] || 'selesaikan aktivitasnya.'}`, to: '#activity' };
+  if (!st.actOk) return { t: `Masih ada <b>${sisa} kartu materi</b> yang belum dibaca. Klik <b>Berikutnya</b> di kartu materi, setelah itu kerjakan aktivitasnya.`, to: '#uraian .st-tab:not(.read)' };
+  return { t: `Tinggal satu langkah lagi: buka <b>${sisa} kartu materi</b> yang belum dibaca supaya scene berikutnya terbuka.`, to: '#uraian .st-tab:not(.read)' };
+}
+function hintCoach(id) {
+  const FIRST = 30000, NEXT = 60000;
+  let timer = 0, wait = FIRST, box = null, last = 0;
+  const close = () => { if (!box) return; const b = box; box = null; b.classList.remove('show'); setTimeout(() => b.remove(), 300); };
+  const arm = () => { clearTimeout(timer); timer = setTimeout(pop, wait); };
+  const pop = () => {
+    if (document.hidden || !document.body.contains($('#activity'))) { arm(); return; }
+    const h = hintFor(id);
+    close();
+    box = document.createElement('div');
+    box.className = 'hint'; box.setAttribute('role', 'status');
+    box.innerHTML = `<span class="hint-ic">${icon('bulb')}</span>
+      <div class="hint-b"><small>Petunjuk</small><p>${h.t}</p>
+        <div class="hint-btns"><button type="button" class="btn btn-gold btn-sm" data-show>${icon('pointer')} Tunjukkan</button><button type="button" class="hint-x" data-x aria-label="Tutup petunjuk">Nanti saja</button></div></div>`;
+    document.body.appendChild(box); sfx('hint');
+    requestAnimationFrame(() => box && box.classList.add('show'));
+    box.onclick = e => {
+      if (e.target.closest('[data-show]')) {
+        const t = $(h.to);
+        if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'center' }); t.classList.remove('hint-spot'); void t.offsetWidth; t.classList.add('hint-spot'); setTimeout(() => t.classList.remove('hint-spot'), 2600); }
+        sfx(); close(); wait = NEXT; arm();
+      } else if (e.target.closest('[data-x]')) { close(); wait = NEXT; arm(); }
+    };
+  };
+  /* setiap gerakan peserta dianggap aktif: hitungan diam diulang dari nol */
+  const busy = e => {
+    if (box && box.contains(e.target)) return;
+    const now = Date.now(); if (e.type === 'scroll' && now - last < 400) return; last = now;
+    if (box) { close(); wait = NEXT; }
+    arm();
+  };
+  const evs = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+  evs.forEach(ev => addEventListener(ev, busy, { passive: true, capture: true }));
+  arm();
+  onLeave(() => { clearTimeout(timer); evs.forEach(ev => removeEventListener(ev, busy, { capture: true })); close(); });
 }
 
 /* =========================================================================
