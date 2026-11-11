@@ -1425,6 +1425,91 @@ body.settled .r2-stop { animation: none; }
 @media (max-width: 760px) { .hint { right: 12px; left: 12px; width: auto; bottom: 92px; } }
 @media (prefers-reduced-motion: reduce) { .hint-ic, .hint-spot { animation: none; } .hint-spot { outline: 3px solid var(--gold-l); outline-offset: 3px; } }
 
+/* ---------- Seret & letakkan (slots): evaluasi E1, aktivitas A dan B ---------- */
+.dz { display: grid; gap: 1rem; }
+.dz-pool { display: flex; flex-wrap: wrap; gap: .5rem; min-height: 3rem; padding: .75rem; border-radius: 14px; background: var(--paper); border: 1.5px dashed rgba(201, 149, 46, .6); }
+.dz-pool.over { background: var(--gold-s); }
+.dz-card { display: inline-flex; align-items: center; padding: .55rem .85rem; border-radius: 10px; background: #fff; color: var(--maroon-2); border: 1.5px solid var(--line); font: inherit; font-size: .9rem; font-weight: 600; line-height: 1.35; text-align: left; cursor: grab; box-shadow: 0 4px 10px -6px rgba(59, 17, 25, .4); transition: transform .2s var(--ease), box-shadow .2s, border-color .2s; }
+.dz-card:hover { transform: translateY(-2px); border-color: var(--gold); }
+.dz-card.on { border-color: var(--maroon); background: var(--gold-s); transform: translateY(-2px) scale(1.02); box-shadow: 0 0 0 3px rgba(226, 176, 74, .45); }
+.dz-card.drag { opacity: .45; }
+.dz-slots { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.dz-slot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: .8rem; padding: .55rem .7rem; border-radius: 12px; background: var(--card); border: 1.5px solid var(--line); transition: background .2s, border-color .2s; }
+.dz-slot.over { background: var(--gold-s); border-color: var(--gold); }
+.dz-lb { font-size: .88rem; color: var(--ink); line-height: 1.4; }
+.dz-in { min-height: 2.6rem; display: flex; align-items: center; padding: .25rem; border-radius: 10px; border: 1.5px dashed rgba(201, 149, 46, .55); background: #fff; cursor: pointer; }
+.dz-in i { color: var(--muted); font-size: .8rem; padding: 0 .4rem; }
+.dz-slot.full .dz-in { border-style: solid; border-color: transparent; background: transparent; }
+.dz-card.in { width: 100%; cursor: pointer; }
+.dz-slot.ok { background: var(--ok-bg); border-color: rgba(47, 111, 78, .45); }
+.dz-slot.no { background: var(--bad-bg); border-color: rgba(179, 65, 47, .4); }
+.dz.lock .dz-card { cursor: default; }
+@media (max-width: 640px) { .dz-slot { grid-template-columns: 1fr; gap: .4rem; } }
+
+/* ---------- S12 hasil latihan ---------- */
+.lat-done { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.1rem; padding: 1rem 1.2rem; margin-bottom: 1rem; border-radius: 16px; background: var(--ok-bg); border: 1px solid rgba(47, 111, 78, .3); animation: popIn .4s var(--ease); }
+.lat-done.no { background: var(--bad-bg); border-color: rgba(179, 65, 47, .3); }
+.ld-score { display: grid; place-items: center; width: 4.6rem; height: 4.6rem; border-radius: 50%; background: #fff; text-align: center; line-height: 1.1; }
+.ld-score b { font-size: 1.6rem; color: var(--maroon-2); }
+.ld-score small { font-size: .62rem; color: var(--muted); }
+.ld-txt p { margin: .35rem 0 0; font-size: .9rem; }
+.ld-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
+@media (max-width: 640px) { .lat-done { grid-template-columns: auto 1fr; } .ld-btns { grid-column: 1 / -1; } }
+
+/* ---------- S13 aktivitas interaktif ---------- */
+.akt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .9rem; margin: .8rem 0; }
+.akt-card { position: relative; display: grid; gap: .3rem; justify-items: start; text-align: left; padding: 1.1rem 1.1rem 1rem; border-radius: 18px; background: var(--card); border: 1.5px solid var(--line); color: var(--ink); font: inherit; cursor: pointer; box-shadow: var(--shadow); transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+.akt-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+.akt-card b { color: var(--maroon-2); font-size: 1.02rem; }
+.akt-card small { color: var(--muted); font-size: .84rem; line-height: 1.45; }
+.akt-l { position: absolute; top: .9rem; right: .9rem; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--sand); color: var(--maroon); font-weight: 800; }
+.akt-l .ic { width: 1rem; height: 1rem; }
+.akt-ic { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--gold-s); color: var(--maroon); margin-bottom: .3rem; }
+.akt-st { margin-top: .4rem; font-size: .74rem; font-weight: 700; color: var(--maroon); background: var(--paper); padding: .2em .65em; border-radius: 99px; }
+.akt-card.done { border-color: rgba(47, 111, 78, .45); }
+.akt-card.done .akt-l { background: var(--ok); color: #fff; }
+.akt-card.done .akt-st { background: var(--ok-bg); color: var(--ok); }
+.akt-sum { display: flex; align-items: center; gap: .4rem; font-weight: 700; color: var(--maroon); font-size: .9rem; }
+.akt-frame { animation: popIn .35s var(--ease); }
+.akt-top { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.akt-top b { color: var(--maroon-2); }
+.akt-end { display: grid; justify-items: center; text-align: center; gap: .4rem; padding: 1.2rem 0; }
+.akt-end > .ic { width: 2.6rem; height: 2.6rem; color: var(--ok); }
+.akt-end h3 { margin: 0; color: var(--maroon-2); }
+.fix-line { display: flex; flex-wrap: wrap; gap: .4rem; padding: 1rem; border-radius: 14px; background: #fff; border: 1px solid var(--line); margin-bottom: .9rem; }
+.fix-seg { padding: .45rem .7rem; border-radius: 9px; border: 1.5px dashed rgba(201, 149, 46, .7); background: var(--paper); color: var(--ink); font: inherit; font-size: .95rem; cursor: pointer; transition: background .2s, border-color .2s; }
+.fix-seg:hover:not(:disabled) { background: var(--gold-s); border-color: var(--gold); }
+.fix-seg:disabled { cursor: default; opacity: 1; }
+.fix-seg.bad { background: var(--bad-bg); border: 1.5px solid var(--bad); color: var(--bad); text-decoration: line-through; }
+.fix-seg.fixed { background: var(--ok-bg); border: 1.5px solid var(--ok); color: var(--ok); font-weight: 600; }
+.opt.no { border-color: var(--bad); background: var(--bad-bg); }
+
+/* ---------- S14 gerbang evaluasi ---------- */
+.gate { display: grid; gap: .7rem; }
+.gate-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .9rem; padding: .9rem 1rem; border-radius: 14px; background: var(--paper); border: 1.5px solid var(--line); animation: popIn .45s var(--ease) both; animation-delay: calc(var(--i) * 180ms); }
+.gate-row b { display: block; color: var(--maroon-2); font-size: .95rem; line-height: 1.35; }
+.gate-row small { color: var(--muted); font-size: .82rem; }
+.gate-ic { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--sand); color: var(--muted); }
+.gate-ic .ic { width: 1.1rem; height: 1.1rem; }
+.gate-ic .ic .f { display: none; }
+.gate-row.ok { background: var(--ok-bg); border-color: rgba(47, 111, 78, .35); }
+.gate-row.ok .gate-ic { background: var(--ok); color: #fff; }
+.gate-ok { font-size: .78rem; font-weight: 700; color: var(--ok); }
+.gate-go { display: grid; justify-items: center; gap: .4rem; margin-top: .8rem; }
+.gate-go button:disabled { opacity: .55; cursor: not-allowed; }
+@media (max-width: 640px) { .gate-row { grid-template-columns: auto 1fr; } .gate-row > :last-child { grid-column: 2; justify-self: start; } }
+body.settled .gate-row { animation: none; }
+
+.goal-list { margin: .3rem 0 .6rem; padding-left: 1.2rem; }
+.goal-list li { margin: .15rem 0; }
+.opt.picked.ok { border-color: var(--ok); background: var(--ok-bg); }
+.opt.picked.ok .opt-l { background: var(--ok); color: #fff; }
+.opt.picked.no { border-color: var(--bad); background: var(--bad-bg); }
+.opt.picked.no .opt-l { background: var(--bad); color: #fff; }
+.dz-num .dz-slot { grid-template-columns: auto minmax(0, 1fr); }
+.dz-num .dz-lb { min-width: 2.2rem; text-align: center; font-weight: 800; color: var(--maroon); background: var(--gold-s); border-radius: 8px; padding: .3rem .5rem; }
+@media (max-width: 640px) { .dz-num .dz-slot { grid-template-columns: auto minmax(0, 1fr); } }
+
 </style>
 </head>
 <body>
@@ -1438,8 +1523,8 @@ body.settled .r2-stop { animation: none; }
         <span class="tab-ind" id="tabInd" aria-hidden="true"></span>
         <a href="#/" data-nav="home"><span class="t-ic" data-ic="home"></span><span class="t-l">Beranda</span></a>
         <a href="#/materi" data-nav="materi"><span class="t-ic" data-ic="book"></span><span class="t-l">Materi</span></a>
-        <a href="#/latihan" data-nav="latihan"><span class="t-ic" data-ic="pen"></span><span class="t-l">Latihan</span><span class="tbadge" id="badgeLat"></span></a>
-        <a href="#/scene/S12" data-nav="evaluasi"><span class="t-ic" data-ic="flag"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
+        <a href="#/scene/S12" data-nav="latihan"><span class="t-ic" data-ic="pen"></span><span class="t-l">Latihan</span><span class="tbadge" id="badgeLat"></span></a>
+        <a href="#/scene/S14" data-nav="evaluasi"><span class="t-ic" data-ic="flag"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
         <a href="#/panduan" data-nav="panduan"><span class="t-ic" data-ic="help"></span><span class="t-l">Panduan</span></a>
       </nav>
       <div class="nav-tools">
@@ -1466,7 +1551,7 @@ body.settled .r2-stop { animation: none; }
 'use strict';
 /* =========================================================================
    SMART EMAILING — modul pelatihan interaktif (Kelompok 7)
-   Tampilan modul 16:9: sampul → menu → scene S01–S13, latihan soal,
+   Tampilan modul 16:9: sampul → menu → scene S01–S16 (materi, latihan, aktivitas interaktif, evaluasi),
    evaluasi tanpa pilihan ganda. Semua progres tersimpan di browser.
    ========================================================================= */
 
@@ -1557,7 +1642,7 @@ const LOGO = `<svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect wid
 
 /* ---------- Penyimpanan progres ---------- */
 const KEY = 'smart-emailing:v2';
-const fresh = () => ({ done: {}, act: {}, lat: null, ev: null, feedback: null, sound: true, last: null });
+const fresh = () => ({ done: {}, act: {}, lat: null, akt: null, ev: null, feedback: null, sound: true, last: null, v2: true });
 let state = (() => { try { return Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { return fresh(); } })();
 let gameOn = false;
 function save() { if (gameOn) gameCheck(); try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* mode privat */ } SCORM.sync(); }
@@ -1591,8 +1676,10 @@ const SCORM = (() => {
   };
 })();
 const A = id => (state.act[id] = state.act[id] || {});
-/* Migrasi: soal latihan no. 7 dan 8 diganti, jawaban lamanya dibuang */
-if (state.lat && state.lat.v !== 2) { [6, 7].forEach(k => { delete state.lat.ans[k]; delete state.lat.res[k]; }); state.lat.v = 2; }
+/* Migrasi ke storyboard v2: latihan jadi 15 soal PG, evaluasi jadi 4 soal, penutup pindah ke S16 */
+if (state.lat && state.lat.v !== 3) state.lat = null;
+if (state.ev && state.ev.v !== 3) state.ev = null;
+if (!state.v2) { delete state.done.S12; delete state.done.S13; delete state.act.S12; delete state.act.S13; state.v2 = true; }
 
 /* ---------- Suara ---------- */
 let actx;
@@ -1624,8 +1711,8 @@ function celebrate() {
 /* =========================================================================
    DATA MATERI
    ========================================================================= */
-const NAMA = 'Syarif Udin', NAMAF = 'SyarifUdin';
-const ORDER = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'S13'];
+const NAMA = 'Syarifudin', NAMAF = 'Syarifudin';
+const ORDER = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'S13', 'S14', 'S15', 'S16'];
 const MATERI_SCENES = ['S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11'];
 const KKM = 75;
 
@@ -1637,7 +1724,10 @@ const MATERI = [
     desc: 'Susunan email lamaran, cara memperkenalkan diri, melampirkan CV, dan kesalahan yang sering terjadi.' },
   { id: 'm3', no: '03', short: 'Materi 3', title: 'Etika Berkirim Email', icon: 'send', scenes: ['S09', 'S10', 'S11'],
     desc: 'Kapan pakai CC dan BCC, jam yang pas untuk mengirim, cara follow-up ke HR, dan bahasa yang sopan.' },
-  { id: 'akhir', no: '04', short: 'Penutup', title: 'Evaluasi & Penutup', icon: 'award', scenes: ['S12', 'S13'] },
+  { id: 'latihan', no: '04', short: 'Latihan', title: 'Latihan', icon: 'pen', scenes: ['S12', 'S13'],
+    desc: '15 soal pilihan ganda dengan pembahasan, lalu tiga aktivitas interaktif.' },
+  { id: 'akhir', no: '05', short: 'Evaluasi', title: 'Evaluasi & Penutup', icon: 'flag', scenes: ['S14', 'S15', 'S16'],
+    desc: 'Cek syarat evaluasi, kerjakan evaluasi akhir, lalu penutup.' },
 ];
 const materiOf = id => MATERI.find(m => m.scenes.includes(id));
 
@@ -1724,32 +1814,49 @@ const SCENES = {
       'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital yang berlebihan.',
       'Gunakan kalimat efektif dan perhatikan ejaan serta tata bahasanya, supaya pesanmu tersampaikan dengan baik dan kamu terlihat profesional.'] }],
     narasi: 'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital berlebihan. Perhatikan juga ejaan dan tata bahasanya. Pilih kalimat yang paling pas di setiap kasus.' },
-  S12: { title: 'Evaluasi', type: 'Evaluasi akhir', wide: true,
-    tujuan: 'Kamu bisa menerapkan seluruh materi untuk menyusun email lamaran yang efektif dan sopan.',
-    narasi: 'Kamu sudah menyelesaikan semua materi. Sekarang saatnya evaluasi. Kerjakan dengan teliti. Nilaimu baru muncul setelah semua jawaban dikirim.' },
-  S13: { title: 'Penutup', type: 'Rangkuman + masukan', wide: true,
+  S12: { title: 'Latihan Soal', type: 'Pilihan ganda', wide: true,
+    tujuan: 'Menguji pemahaman ketiga materi lewat 15 soal pilihan ganda, lengkap dengan pembahasan.',
+    narasi: 'Sekarang waktunya kita latihan! Ada lima belas soal pilihan ganda, setiap kali menjawab, kamu langsung bisa lihat pembahasan soalnya. Skor latihan ini juga menentukan apakah kamu sudah siap ke tahap evaluasi.' },
+  S13: { title: 'Aktivitas Interaktif', type: 'Cocokkan, susun, perbaiki', wide: true,
+    tujuan: 'Berlatih lewat tiga aktivitas interaktif: mencocokkan istilah, menyusun email follow-up, dan memperbaiki kalimat.',
+    narasi: 'Sekarang kita akan latihan yang lebih interaktif. Pilih salah satu aktivitas, lalu kerjakan sampai selesai! Semua aktivitas harus dikerjakan sebelum kamu bisa lanjut ke tahap berikutnya.' },
+  S14: { title: 'Awal Evaluasi', type: 'Cek syarat', wide: true,
+    tujuan: 'Memastikan semua syarat evaluasi sudah terpenuhi.',
+    narasi: 'Sebelum masuk ke evaluasi, pastikan terlebih dahulu syarat untuk melakukan evaluasi terpenuhi. Selesaikan semua materi, capai skor minimal di latihan pilihan ganda, dan kerjakan semua aktivitas interaktif. Kalau semua sudah dikerjakan, kamu bisa memulai evaluasi.' },
+  S15: { title: 'Evaluasi Akhir', type: 'Evaluasi akhir', wide: true,
+    tujuan: 'Menerapkan seluruh materi untuk menyusun email lamaran yang efektif dan sopan.',
+    narasi: 'Ini adalah evaluasi akhir. Bentuk soalnya mirip dengan yang sudah kamu pelajari. Kali ini tidak ada keterangan benar atau salah dan tidak ada pembahasan. Kamu baru akan melihat nilai akhirnya di akhir. Kerjakan dengan teliti, ya!' },
+  S16: { title: 'Penutup', type: 'Rangkuman + masukan', wide: true,
     tujuan: 'Mengingat kembali seluruh materi dan memberi masukan untuk pelatihan ini.',
-    narasi: 'Selamat, kamu sudah menyelesaikan pelatihan Smart Emailing! Ingat lima hal ini: subject yang jelas, susunan yang rapi, bahasa yang sopan, lampiran yang lengkap, dan waktu kirim yang tepat. Simpan rangkuman ini sebagai pegangan. Sebelum pergi, isi masukan singkat supaya pelatihan ini bisa terus diperbaiki. Semoga sukses mendapatkan pekerjaan impianmu!' },
+    narasi: 'Selamat! Kamu sudah menyelesaikan pelatihan Smart Emailing. Dari yang sudah dipelajari, selalu ingat saat menyusun email, kamu harus memperhatikan: subject yang jelas, struktur yang rapi, bahasa yang sopan, lampiran yang lengkap, dan waktu mengirim email yang tepat. Simpan infografis ini sebagai panduan. Jangan lupa mengisi feedback agar pelatihan ini bisa menjadi lebih baik. Semoga sukses meraih pekerjaan impianmu!' },
 };
 
 /* ---------- Status kunci ---------- */
 const materiDone = () => MATERI_SCENES.every(id => state.done[id]);
 const evalPassed = () => !!(state.ev && state.ev.done && state.ev.score >= KKM);
+const LAT_MIN = 11; /* syarat evaluasi: latihan PG minimal 70% (11 dari 15 benar) */
+const AKT_KEYS = ['a', 'b', 'c'];
+const aktDone = () => AKT_KEYS.every(k => !!(state.akt && state.akt[k] && state.akt[k].done));
+const latSkor = () => state.lat ? Object.values(state.lat.res || {}).filter(Boolean).length : 0;
+const gateOk = () => materiDone() && latSkor() >= LAT_MIN && aktDone();
 /* Kunci berurutan: setiap scene baru terbuka setelah scene sebelumnya selesai (dibaca + aktivitasnya dikerjakan) */
 const locked = id => {
-  if (id === 'S12') return !materiDone();
-  if (id === 'S13') return !evalPassed();
+  if (id === 'S14') return !materiDone();
+  if (id === 'S15') return !gateOk();
+  if (id === 'S16') return !evalPassed();
   const i = ORDER.indexOf(id);
   return i > 0 && !state.done[ORDER[i - 1]];
 };
 const readAll = id => { const s = SCENES[id]; if (!s.uraian) return true; const r = A(id).read || []; return s.uraian.every((_, j) => r.includes(j)); };
 const doneCount = () => ORDER.filter(id => state.done[id]).length;
 const pct = () => Math.round(doneCount() / ORDER.length * 100);
-const nextOf = id => ({ S11: '#/latihan', S12: evalPassed() ? '#/scene/S13' : null, S13: null }[id] !== undefined
-  ? { S11: '#/latihan', S12: evalPassed() ? '#/scene/S13' : null, S13: null }[id]
-  : '#/scene/' + ORDER[ORDER.indexOf(id) + 1]);
-const prevOf = id => id === 'S12' ? '#/latihan' : (ORDER.indexOf(id) > 0 ? '#/scene/' + ORDER[ORDER.indexOf(id) - 1] : '#/materi');
-const resumeHref = () => { const id = MATERI_SCENES.concat('S01').find(x => !state.done[x]); return id ? '#/scene/' + (state.done.S01 ? id : 'S01') : (evalPassed() ? '#/scene/S13' : '#/scene/S12'); };
+const nextOf = id => id === 'S16' ? null : '#/scene/' + ORDER[ORDER.indexOf(id) + 1];
+const prevOf = id => ORDER.indexOf(id) > 0 ? '#/scene/' + ORDER[ORDER.indexOf(id) - 1] : '#/materi';
+const resumeHref = () => {
+  const id = ORDER.slice(0, 13).find(x => !state.done[x]);
+  if (id) return '#/scene/' + id;
+  return '#/scene/' + (!gateOk() ? 'S14' : !evalPassed() ? 'S15' : 'S16');
+};
 
 /* =========================================================================
    KOMPONEN BERSAMA
@@ -1783,11 +1890,11 @@ function mcq(el, { q, opts, onDone, store, key }) {
 /* =========================================================================
    NAVIGASI SAMPING (halaman scene, latihan, evaluasi)
    ========================================================================= */
-/* Rute belajar: jalur perangko S01–S13 di atas halaman (pengganti sidebar) */
+/* Rute belajar: jalur scene S01–S16 di atas halaman (pengganti sidebar) */
 function routeRail(cur) {
-  const groups = [...MATERI.slice(0, 4).map(m => [m.short, m.scenes]), ['Latihan', ['L']], ['Akhir', ['S12', 'S13']]];
-  const isDone = id => id === 'L' ? latDikerjakan() === LATIHAN.length : !!state.done[id];
-  const isLock = id => id === 'L' ? !materiDone() : locked(id);
+  const groups = MATERI.map(m => [m.short, m.scenes]);
+  const isDone = id => !!state.done[id];
+  const isLock = locked;
   const total = ORDER.length, n = doneCount(), p = Math.round(n / total * 100);
   const res = resumeHref(), resId = (res.match(/S\d+/) || [''])[0];
   let prevFull = true, k = 0;
@@ -1800,11 +1907,11 @@ function routeRail(cur) {
     return `<div class="r2-grp ${st}" style="--n:${ids.length}">
       <div class="r2-gh"><b>${label}</b><span>${full ? icon('check') : st === 'lock' ? icon('lock') : ''}${d}/${ids.length}</span></div>
       <div class="r2-stops" style="--fill:${fill.toFixed(1)}%">${ids.map(id => {
-        const isL = id === 'L', dn = isDone(id), lk = isLock(id), c = id === cur;
+        const dn = isDone(id), lk = isLock(id), c = id === cur;
         const cls = c ? 'cur' : dn ? 'done' : lk ? 'locked' : 'open';
-        const t = isL ? 'Latihan Soal' : SCENES[id].title;
-        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="${isL ? '#/latihan' : '#/scene/' + id}" data-peek="${id}" aria-label="${id} · ${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
-          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : `<b>${isL ? 'L' : id.slice(1)}</b>`}</span>
+        const t = SCENES[id].title;
+        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="#/scene/${id}" data-peek="${id}" aria-label="${id} · ${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
+          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : `<b>${id.slice(1)}</b>`}</span>
           <span class="r2-lbl">${c ? 'Di sini' : id}</span></a>`;
       }).join('')}</div></div>`;
   };
@@ -1833,16 +1940,15 @@ const PEEK_TEKS = {
   S09: 'Kapan pakai CC, kapan BCC, dan jam berapa email sebaiknya dikirim.',
   S10: 'Belum ada kabar dari HR? Di sini dibahas cara menanyakannya dengan sopan.',
   S11: 'Ubah kalimat santai jadi formal dan sopan, tanpa terdengar kaku.',
-  S12: 'Ujian akhir untuk mengukur pemahaman seluruh materi. Nilainya baru keluar setelah semua jawaban dikirim.',
-  S13: 'Rangkuman satu halaman yang bisa disimpan, ditambah tempat untuk memberi masukan.',
+  S12: '15 soal pilihan ganda dari ketiga materi. Pembahasannya langsung muncul setiap kali menjawab.',
+  S13: 'Tiga aktivitas bareng Salsa Rahma: cocokkan istilah, susun email follow-up, dan perbaiki kalimat.',
+  S14: 'Cek tiga syarat sebelum evaluasi: materi beres, latihan minimal 70%, dan aktivitas interaktif selesai.',
+  S15: 'Empat soal akhir tanpa tanda benar atau salah. Nilainya baru keluar di akhir.',
+  S16: 'Rangkuman satu halaman yang bisa disimpan, ditambah tempat untuk memberi masukan.',
 };
 const peekInfo = id => {
-  if (id === 'L') {
-    const lk = !materiDone();
-    return { code: 'L', grp: 'Latihan', title: 'Latihan Soal', type: `${LATIHAN.length} soal campuran`, desc: 'Pilihan ganda, benar/salah, pasangkan, urutkan, dan kelompokkan, lengkap dengan pembahasan.', st: lk ? 'lock' : 'open', why: 'Selesaikan semua scene materi dulu.' };
-  }
   const s = SCENES[id], m = materiOf(id), i = ORDER.indexOf(id);
-  const why = id === 'S12' ? 'Selesaikan semua scene materi dulu.' : id === 'S13' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${ORDER[i - 1]} · ${SCENES[ORDER[i - 1]].title} dulu.`;
+  const why = id === 'S14' ? 'Selesaikan semua scene materi dulu.' : id === 'S15' ? 'Penuhi tiga syarat di Awal Evaluasi dulu.' : id === 'S16' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${ORDER[i - 1]} · ${SCENES[ORDER[i - 1]].title} dulu.`;
   return { code: id, grp: m ? m.short : '', title: s.title, type: s.type, desc: PEEK_TEKS[id] || s.tujuan, st: state.done[id] ? 'done' : locked(id) ? 'lock' : 'open', why };
 };
 (() => {
@@ -1886,7 +1992,7 @@ function viewHome() {
         <div class="pill-tag"><span class="dot"></span>Media pembelajaran · Kelompok 7</div>
         <h1 class="hero-title">Smart <span>Emailing<svg class="swoosh" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><path d="M5 18 C 80 5, 170 3, 295 13"/></svg></span></h1>
         <p class="hero-hook"><span class="q-mark">“</span>Lamaran tak kunjung dibalas? Bisa jadi masalahnya ada di <mark>emailnya.</mark></p>
-        <p class="hero-sub">Pelatihan singkat untuk fresh graduate. Belajar menulis email lamaran yang rapi dan sopan lewat ${MATERI_SCENES.length} scene materi, ${LATIHAN.length} soal latihan, dan evaluasi akhir.</p>
+        <p class="hero-sub">Pelatihan singkat untuk fresh graduate. Belajar menulis email lamaran yang rapi dan sopan lewat ${MATERI_SCENES.length} scene materi, ${LATIHAN.length} soal latihan, 3 aktivitas interaktif, dan evaluasi akhir.</p>
         <div class="hero-cta">
           <a class="btn btn-gold btn-lg" href="${started ? res : '#/scene/S01'}">${started ? 'Lanjutkan belajar' : 'Mulai belajar'} ${icon('right')}</a>
           <a class="btn btn-ghost btn-lg" href="#/materi">Lihat materi</a>
@@ -1928,7 +2034,7 @@ function viewMateri() {
       <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 scene selesai</small></div></header>
     <div class="cat">${MATERI.map(m => `<article class="cat-card">
       <header><span class="cat-no">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.scenes.filter(id => state.done[id]).length}/${m.scenes.length}</span></header>
-      <div class="cat-list">${m.id === 'akhir' ? `<a class="srow" href="#/latihan"><span class="srow-st">L</span><span class="srow-t"><b>Latihan Soal</b><small>L · ${LATIHAN.length} soal campuran dengan pembahasan</small></span>${icon('right')}</a>` : ''}${m.scenes.map(row).join('')}</div>
+      <div class="cat-list">${m.scenes.map(row).join('')}</div>
     </article>`).join('')}</div>
   </div>`;
 }
@@ -1939,6 +2045,15 @@ function viewMateri() {
 const uraianSections = s => s.uraian.map((u, i) => `<section class="u-sec" id="u${i}"><h2 class="sec-title">${u.h}</h2>${u.p.map(p => p.startsWith('<ol') ? p : `<p>${p}</p>`).join('')}</section>`).join('');
 const uraianHTML = uraianSections;
 
+const ACT_HEAD = {
+  _: ['pointer', 'Aktivitas', 'Sekarang giliranmu'],
+  S01: ['inbox', 'Pengantar', 'Sebelum mulai'],
+  S12: ['pen', 'Latihan soal', 'Jawab dan baca pembahasannya'],
+  S13: ['grid', 'Aktivitas interaktif', 'Pilih aktivitasnya'],
+  S14: ['list', 'Awal evaluasi', 'Cek syarat evaluasi'],
+  S15: ['flag', 'Evaluasi akhir', 'Kerjakan evaluasinya'],
+  S16: ['award', 'Penutup', 'Rangkuman pelatihan'],
+};
 function viewScene(id) {
   const s = SCENES[id], m = materiOf(id), i = ORDER.indexOf(id);
   const text = (s.uraian || []).map(u => u.p.join(' ')).join(' ').replace(/<[^>]+>/g, '');
@@ -1965,7 +2080,7 @@ function viewScene(id) {
       </header>
       <div class="pin-note"><span class="pin" data-to="#/tujuan" title="Semua tujuan belajar"></span><b>Tujuan</b><p>${s.tujuan}</p></div>
       ${s.uraian ? `<section class="stepper" id="uraian"></section>` : ''}
-      <section class="act-sec" id="aktivitas"><div class="act-label"><span class="act-num" data-to="aktivitas" title="Ke aktivitas">${icon(id === 'S01' ? 'inbox' : id === 'S12' ? 'flag' : id === 'S13' ? 'award' : 'pointer')}</span><div><small>${id === 'S01' ? 'Pengantar' : id === 'S12' ? 'Evaluasi akhir' : id === 'S13' ? 'Penutup' : 'Aktivitas'}</small><h2 class="sec-title">${id === 'S01' ? 'Sebelum mulai' : id === 'S12' ? 'Kerjakan evaluasinya' : id === 'S13' ? 'Rangkuman pelatihan' : 'Sekarang giliranmu'}</h2></div></div><div class="act-card" id="activity"></div></section>
+      <section class="act-sec" id="aktivitas"><div class="act-label"><span class="act-num" data-to="aktivitas" title="Ke aktivitas">${icon((ACT_HEAD[id] || ACT_HEAD._)[0])}</span><div><small>${(ACT_HEAD[id] || ACT_HEAD._)[1]}</small><h2 class="sec-title">${(ACT_HEAD[id] || ACT_HEAD._)[2]}</h2></div></div><div class="act-card" id="activity"></div></section>
       <nav class="lesson-nav">${lessonNav(id)}</nav>
     </article>
   </div>`;
@@ -1994,9 +2109,9 @@ function renderSteps(id) {
 
 function lessonNav(id) {
   const nx = nextOf(id);
-  const label = id === 'S11' ? 'Ke latihan soal' : id === 'S12' ? 'Ke penutup' : 'Lanjut';
+  const label = { S11: 'Ke latihan soal', S12: 'Ke aktivitas interaktif', S13: 'Ke awal evaluasi', S14: 'Mulai evaluasi', S15: 'Ke penutup' }[id] || 'Lanjut';
   return `<a class="btn btn-outline" href="${prevOf(id)}">${icon('left')} Sebelumnya</a>
-    ${nx ? `<a class="btn btn-primary ${state.done[id] ? '' : 'is-locked'}" id="nextBtn" href="${nx}">${label} ${icon('right')}</a>` : id === 'S13' ? `<a class="btn btn-primary" href="#/">Selesai ${icon('check')}</a>` : ''}`;
+    ${nx ? `<a class="btn btn-primary ${state.done[id] ? '' : 'is-locked'}" id="nextBtn" href="${nx}">${label} ${icon('right')}</a>` : id === 'S16' ? `<a class="btn btn-primary" href="#/">Selesai ${icon('check')}</a>` : ''}`;
 }
 
 function mountScene(id) {
@@ -2004,6 +2119,8 @@ function mountScene(id) {
   if (btn) btn.addEventListener('click', e => {
     if (!btn.classList.contains('is-locked')) return;
     e.preventDefault();
+    const tahap = { S12: 'Jawab semua 15 soal latihan dulu, ya.', S13: 'Kerjakan ketiga aktivitas interaktif dulu, ya.', S14: 'Syarat evaluasi belum terpenuhi semua.', S15: `Nilai evaluasi minimal ${KKM} untuk membuka penutup.` }[id];
+    if (tahap) { toast(tahap); $('#aktivitas').scrollIntoView({ behavior: 'smooth' }); return; }
     const st = A(id), baca = !readAll(id);
     if (baca && st.actOk) { toast('Aktivitasnya sudah beres, tinggal baca kartu materi yang belum dibuka.'); $('#uraian').scrollIntoView({ behavior: 'smooth' }); }
     else { toast(baca ? 'Baca semua bagian materi dan selesaikan aktivitasnya dulu, ya.' : 'Selesaikan aktivitas di halaman ini dulu, ya.'); $(baca ? '#uraian' : '#aktivitas').scrollIntoView({ behavior: 'smooth' }); }
@@ -2118,7 +2235,7 @@ ACT.S01 = (el, done, st) => {
     <div class="i1-map">
       <h3>Isinya ada tiga</h3>
       <ol>${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<li><a href="#/scene/${m.scenes[0]}"><span>${m.no}</span>${m.title}</a></li>`).join('')}</ol>
-      <div class="i1-post">${icon('pen')} Habis itu latihan soal, terakhir evaluasi.</div>
+      <div class="i1-post">${icon('pen')} Habis itu latihan soal dan aktivitas interaktif, terakhir evaluasi.</div>
       <button type="button" class="btn btn-primary" data-ready>${icon('check')} Oke, aku siap</button>
     </div>
   </div>`;
@@ -2510,7 +2627,7 @@ ACT.S11 = (el, done, st) => {
 
 /* =========================================================================
    MESIN SOAL (dipakai latihan & evaluasi)
-   Tipe: mcq, match, order, sort, spot, hour
+   Tipe: mcq, match, order, sort, spot, hour, slots (seret kartu ke tempatnya)
    ========================================================================= */
 function qInit(q, ans) {
   if (ans !== undefined && ans !== null) return ans;
@@ -2519,6 +2636,7 @@ function qInit(q, ans) {
   if (q.type === 'sort') return q.items.map(() => -1);
   if (q.type === 'spot') return q.segs.map(() => false);
   if (q.type === 'hour') return 12;
+  if (q.type === 'slots') return q.slots.map(() => -1);
   return null;
 }
 function qScore(q, a) {
@@ -2530,13 +2648,14 @@ function qScore(q, a) {
     case 'sort': return q.items.filter((it, i) => a[i] === it[1]).length / q.items.length;
     case 'spot': return q.segs.filter((sg, i) => !!a[i] === !!sg[1]).length / q.segs.length;
     case 'hour': return a >= 8 && a <= 17 ? 1 : 0;
+    case 'slots': return a.filter((v, i) => v === i).length / a.length;
   }
   return 0;
 }
 function qAnswered(q, a) {
   if (a === null || a === undefined) return false;
   if (q.type === 'match') return a.every(Boolean);
-  if (q.type === 'sort') return a.every(v => v >= 0);
+  if (q.type === 'sort' || q.type === 'slots') return a.every(v => v >= 0);
   return true;
 }
 /* Render satu soal. mode: 'latihan' (ada pemeriksaan & pembahasan) atau 'ujian' (tanpa umpan balik) */
@@ -2549,9 +2668,37 @@ function qRender(box, q, a, { mode, checked, onChange }) {
   if (q.type === 'sort') body = `<div class="slist">${q.items.map((it, i) => `<div class="srow2 ${lock ? (a[i] === it[1] ? 'ok' : 'no') : ''}"><span class="s-t">${it[0]}</span><span class="seg2">${q.buckets.map((bk, b) => `<button type="button" data-s="${i}" data-b="${b}" class="${a[i] === b ? 'on' : ''}" ${lock ? 'disabled' : ''}>${bk}</button>`).join('')}</span></div>`).join('')}</div>`;
   if (q.type === 'spot') body = `<div class="mail spot spot-q">${q.segs.map((sg, i) => `<button type="button" class="sp ${a[i] ? 'marked' : ''}" data-sp="${i}">${sg[0]}</button>`).join('')}</div><p class="muted small">Ketuk bagian yang menurutmu salah. Ketuk lagi untuk membatalkan.</p>`;
   if (q.type === 'hour') body = `<div class="hour-q"><div class="clock-dig big">${String(a).padStart(2, '0')}.00</div><label class="range"><input type="range" min="0" max="23" value="${a}" data-hour aria-label="Jam kirim"><span class="range-scale"><i>00</i><i>06</i><i>12</i><i>18</i><i>23</i></span></label></div>`;
+  if (q.type === 'slots') {
+    q._ord = q._ord || shuffle(q.cards.map((_, i) => i));
+    const used = new Set(a.filter(v => v >= 0)), pick = box._pick;
+    body = `<div class="dz ${lock ? 'lock' : ''} ${q.slots.every(l => l.length <= 10) ? 'dz-num' : ''}">
+      <div class="dz-pool" data-pool>${q._ord.filter(c => !used.has(c)).map(c => `<button type="button" class="dz-card ${pick === c ? 'on' : ''}" draggable="true" data-card="${c}">${q.cards[c]}</button>`).join('') || '<small class="muted">Semua kartu sudah ditempatkan.</small>'}</div>
+      <ol class="dz-slots">${q.slots.map((lb, i) => `<li class="dz-slot ${a[i] >= 0 ? 'full' : ''} ${lock ? (a[i] === i ? 'ok' : 'no') : ''}" data-slot="${i}"><span class="dz-lb">${lb}</span><span class="dz-in">${a[i] >= 0 ? `<span class="dz-card in" ${lock ? '' : 'draggable="true"'} data-card="${a[i]}" data-from="${i}">${q.cards[a[i]]}</span>` : '<i>Taruh kartu di sini</i>'}</span></li>`).join('')}</ol></div>
+      ${lock ? '' : '<p class="muted small">Seret kartu ke tempatnya. Di HP: ketuk kartu, lalu ketuk tempatnya. Ketuk kartu yang sudah terpasang untuk mengembalikannya.</p>'}`;
+  }
   box.innerHTML = `<p class="q">${q.q}</p>${body}`;
+  if (q.type === 'slots' && !lock) {
+    const place = (c, i) => { const n = a.map(v => (v === c ? -1 : v)); n[i] = c; box._pick = undefined; onChange(n); };
+    const unplace = i => { const n = a.slice(); n[i] = -1; box._pick = undefined; onChange(n); };
+    box.ondragstart = e => { const c = e.target.closest('[data-card]'); if (!c) return; e.dataTransfer.setData('text/plain', c.dataset.card); e.dataTransfer.effectAllowed = 'move'; c.classList.add('drag'); };
+    box.ondragend = e => { const c = e.target.closest('[data-card]'); if (c) c.classList.remove('drag'); $$('.dz-slot.over', box).forEach(x => x.classList.remove('over')); };
+    box.ondragover = e => { const t = e.target.closest('[data-slot], [data-pool]'); if (!t) return; e.preventDefault(); $$('.dz-slot.over', box).forEach(x => x !== t && x.classList.remove('over')); t.classList.add('over'); };
+    box.ondrop = e => {
+      e.preventDefault(); const c = parseInt(e.dataTransfer.getData('text/plain'), 10); if (Number.isNaN(c)) return;
+      const sl = e.target.closest('[data-slot]'); if (sl) { sfx(); place(c, +sl.dataset.slot); return; }
+      if (e.target.closest('[data-pool]')) { const i = a.indexOf(c); if (i >= 0) unplace(i); }
+    };
+  }
   const set = v => { onChange(v); };
   box.onclick = e => {
+    if (q.type === 'slots') {
+      if (lock) return;
+      const card = e.target.closest('[data-card]'), sl = e.target.closest('[data-slot]');
+      if (card && card.dataset.from !== undefined && box._pick === undefined) { const n = a.slice(); n[+card.dataset.from] = -1; sfx(); onChange(n); return; }
+      if (card && card.dataset.from === undefined) { box._pick = box._pick === +card.dataset.card ? undefined : +card.dataset.card; $$('.dz-pool .dz-card', box).forEach(x => x.classList.toggle('on', +x.dataset.card === box._pick)); sfx(); return; }
+      if (sl && box._pick !== undefined) { const c = box._pick, n = a.map(v => (v === c ? -1 : v)); n[+sl.dataset.slot] = c; box._pick = undefined; sfx(); onChange(n); }
+      return;
+    }
     const o = e.target.closest('.opt'); if (o && !o.disabled) { set(+o.dataset.i); return; }
     const up = e.target.closest('[data-up]'); if (up) { const p = +up.dataset.up, n = a.slice(); [n[p - 1], n[p]] = [n[p], n[p - 1]]; set(n); return; }
     const dn = e.target.closest('[data-down]'); if (dn) { const p = +dn.dataset.down, n = a.slice(); [n[p + 1], n[p]] = [n[p], n[p + 1]]; set(n); return; }
@@ -2562,164 +2709,242 @@ function qRender(box, q, a, { mode, checked, onChange }) {
   box.oninput = e => { const h = e.target.closest('[data-hour]'); if (h) { $('.clock-dig', box).textContent = String(h.value).padStart(2, '0') + '.00'; onChange(+h.value, true); } };
 }
 
-/* ---------- Bank soal LATIHAN (soal baru, berbeda dari aktivitas di materi) ---------- */
+/* ---------- Bank soal LATIHAN S12 (storyboard: 15 soal PG, 5 per materi) ---------- */
 const LATIHAN = [
-  { type: 'mcq', topic: 'Kegunaan email', q: 'Dibanding aplikasi chat, apa kelebihan email di dunia kerja?', opts: ['Lebih santai dan boleh pakai emoji', 'Lebih formal, tersimpan rapi, dan bisa jadi bukti komunikasi', 'Pesannya otomatis hilang setelah dibaca', 'Hanya bisa dipakai untuk mengirim dokumen'], a: 1, why: 'Email lebih formal, tersimpan rapi, dan bisa dijadikan bukti komunikasi.' },
-  { type: 'mcq', topic: 'Bagian email', q: 'Urutan bagian email profesional yang benar adalah …', opts: ['Salam pembuka → subject → isi → tanda tangan → salam penutup', 'Isi → subject → salam penutup → salam pembuka → tanda tangan', 'Subject → salam pembuka → isi → salam penutup → tanda tangan', 'Tanda tangan → subject → isi → salam pembuka → salam penutup'], a: 2, why: 'Urutannya subject, salam pembuka, isi, salam penutup, lalu tanda tangan.' },
-  { type: 'mcq', topic: 'Subject', q: 'Subject yang baik itu …', opts: ['Panjang dan menceritakan seluruh isi email', 'Singkat, jelas, spesifik, dan sesuai tujuan email', 'Diberi kata “Penting!!” supaya cepat dibuka', 'Diisi sapaan seperti “Halo Kak”'], a: 1, why: 'Subject yang baik singkat, jelas, spesifik, dan menggambarkan tujuan email.' },
-  { type: 'mcq', topic: 'Susunan lamaran', q: 'Mana yang TIDAK perlu ada di email lamaran?', opts: ['Perkenalan diri singkat', 'Keterangan lampiran CV dan portofolio', 'Cerita tentang keluarga dan hobi', 'Salam penutup'], a: 2, why: 'Cerita pribadi yang tidak berhubungan dengan pekerjaan sebaiknya tidak ditulis.' },
-  { type: 'mcq', topic: 'Lampiran', q: 'Nama file CV yang paling rapi adalah …', opts: ['cv_fix_banget_revisi2.docx', 'IMG_2041.jpg', `CV_${NAMAF}.pdf`, 'lamaran baru.zip'], a: 2, why: 'Pakai format PDF dengan nama file yang rapi dan mudah dikenali.' },
-  { type: 'mcq', topic: 'Kesalahan umum', q: 'Mana yang termasuk kesalahan saat mengirim email lamaran?', opts: ['Menulis subject yang spesifik', 'Memakai bahasa formal', 'Menulis nama perusahaan dengan benar', 'Lupa melampirkan CV atau portofolio'], a: 3, why: 'Lupa melampirkan CV atau portofolio bisa membuat lamaran tidak diproses.' },
-  { type: 'mcq', topic: 'CC', q: 'Kapan sebaiknya kamu memakai CC?', opts: ['Saat ada pihak lain yang perlu tahu isi email, misalnya atasanmu', 'Saat ingin menyembunyikan alamat para penerima', 'Saat menulis subject email', 'Saat melampirkan CV dan portofolio'], a: 0, why: 'CC dipakai untuk mengirim salinan email kepada pihak lain yang perlu mengetahui isinya. Untuk menyembunyikan penerima, pakai BCC.' },
-  { type: 'mcq', topic: 'Waktu kirim', q: 'Kenapa waktu mengirim email perlu diperhatikan?', opts: ['Karena email yang dikirim malam hari otomatis terhapus', 'Karena waktu kirim memengaruhi kemungkinan email dibaca penerima', 'Karena email hanya bisa dikirim saat jam kerja', 'Karena waktu kirim tidak berpengaruh apa pun'], a: 1, why: 'Waktu pengiriman memengaruhi kemungkinan email dibaca. Itulah sebabnya email profesional dikirim di jam kerja.' },
-  { type: 'mcq', topic: 'Follow-up', q: 'Kalau belum ada kabar, kapan biasanya follow-up dikirim?', opts: ['Satu jam setelah lamaran dikirim', 'Sekitar 5–7 hari kerja setelah lamaran dikirim', 'Setiap hari sampai dibalas', 'Tidak perlu follow-up sama sekali'], a: 1, why: 'Follow-up biasanya dikirim sekitar 5–7 hari kerja setelah lamaran terkirim.' },
-  { type: 'mcq', topic: 'Bahasa', q: 'Kalimat mana yang paling pas untuk email profesional?', opts: ['Kak, gimana lamaran aku? 🙏', 'TOLONG SEGERA DIBALAS', 'gmn kabar lamaran sy', 'Mohon maaf mengganggu, saya ingin menanyakan perkembangan lamaran saya. Terima kasih.'], a: 3, why: 'Kalimat yang jelas dan sopan, tanpa singkatan, emoji, atau kapital berlebihan.' },
-  { type: 'mcq', topic: 'Salam pembuka', q: 'Apa fungsi salam pembuka di email?', opts: ['Menunjukkan rasa hormat kepada penerima', 'Menjelaskan isi email secara singkat', 'Menyebutkan lampiran yang dikirim', 'Menunjukkan nama pengirim'], a: 0, why: 'Salam pembuka dipakai untuk menunjukkan rasa hormat kepada penerima.' },
-  { type: 'mcq', topic: 'Perkenalan', q: 'Apa saja yang cukup disebutkan saat memperkenalkan diri di email lamaran?', opts: ['Nama, hobi, dan alamat rumah', 'Nama, latar belakang pendidikan, dan posisi yang dilamar', 'Nama orang tua dan jumlah saudara', 'Alasan kenapa sedang menganggur'], a: 1, why: 'Cukup sebutkan nama, latar belakang pendidikan, dan posisi yang dilamar.' },
-  { type: 'mcq', topic: 'Lampiran', q: 'Format file yang disarankan untuk CV dan portofolio adalah …', opts: ['JPG hasil foto layar', 'PDF', 'Link tanpa keterangan', 'Dokumen yang belum disimpan'], a: 1, why: 'CV dan portofolio sebaiknya dikirim dalam format PDF.' },
-  { type: 'mcq', topic: 'Email lamaran', q: 'Kenapa email lamaran disebut “kesan pertama”?', opts: ['Karena dikirim paling pagi', 'Karena perekrut mulai menilai kandidat dari email tersebut', 'Karena hanya dibaca satu kali', 'Karena harus dikirim sebelum wawancara'], a: 1, why: 'Email lamaran adalah kesan pertama yang memengaruhi penilaian perekrut.' },
-  { type: 'mcq', topic: 'Salam penutup', q: 'Salam penutup mana yang paling tepat?', opts: ['“Udah gitu aja, makasih.”', '“Hormat saya,” lalu nama pengirim', '“Ditunggu balasannya ASAP!!”', '“Bye 👋”'], a: 1, why: 'Salam penutup yang sopan, misalnya “Hormat saya,” lalu diikuti nama pengirim.' },
-  { type: 'mcq', topic: 'Follow-up', q: 'Bagaimana sebaiknya nada email follow-up?', opts: ['Tegas dan sedikit mendesak', 'Sopan, singkat, dan tidak memaksa', 'Panjang supaya HR paham', 'Santai seperti chat dengan teman'], a: 1, why: 'Email follow-up harus sopan, singkat, dan tidak terkesan memaksa.' },
-  { type: 'mcq', topic: 'Benar atau salah', q: '“CC dipakai untuk mengirim salinan email kepada orang yang perlu tahu isinya.”', opts: ['Benar', 'Salah'], a: 0, why: 'Benar. Itulah kegunaan CC (Carbon Copy).' },
-  { type: 'mcq', topic: 'Benar atau salah', q: '“Mengirim email lamaran tengah malam tidak masalah, asalkan isinya rapi.”', opts: ['Benar', 'Salah'], a: 1, why: 'Salah. Hindari mengirim email larut malam, kecuali ada keperluan mendesak.' },
-  { type: 'mcq', topic: 'Benar atau salah', q: '“Isi email lamaran sebaiknya panjang supaya perekrut tahu semua tentang kita.”', opts: ['Benar', 'Salah'], a: 1, why: 'Salah. Isi email sebaiknya singkat, padat, dan relevan.' },
-  { type: 'mcq', topic: 'Benar atau salah', q: '“Sebelum mengirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.”', opts: ['Benar', 'Salah'], a: 0, why: 'Benar. Lampiran yang gagal terunggah bisa membuat lamaranmu tidak diproses.' },
-  { type: 'match', topic: 'Istilah', q: 'Pasangkan istilah dengan artinya.', pairs: [['Subject', 'Judul singkat isi email'], ['CC', 'Salinan yang penerimanya terlihat'], ['BCC', 'Salinan yang penerimanya disembunyikan'], ['Follow-up', 'Menanyakan kabar proses rekrutmen']], why: 'Subject = judul email; CC = salinan terlihat; BCC = salinan tersembunyi; follow-up = menanyakan perkembangan lamaran.' },
-  { type: 'match', topic: 'Contoh & bagian', q: 'Pasangkan contoh tulisan dengan bagian emailnya.', pairs: [['“Yth. Tim Rekrutmen PT ABC,”', 'Salam pembuka'], [`“Hormat saya, ${NAMA}”`, 'Salam penutup'], [`“Application for Graphic Designer Position – ${NAMA}”`, 'Subject'], [`“CV_${NAMAF}.pdf”`, 'Lampiran']], why: 'Yth. … = salam pembuka; Hormat saya = salam penutup; Application for … = subject; CV_… .pdf = lampiran.' },
-  { type: 'order', topic: 'Email follow-up', q: 'Urutkan isi email follow-up dari atas ke bawah.', items: ['Yth. Tim Rekrutmen PT ABC,', `Saya ${NAMA}, pelamar posisi Graphic Designer.`, 'Saya telah mengirimkan lamaran beserta CV dan portofolio pada (tanggal).', 'Mohon informasi mengenai perkembangan proses seleksi.', 'Terima kasih atas waktu dan perhatian Bapak/Ibu.', `Hormat saya, ${NAMA}`], why: 'Salam pembuka → perkenalan → keterangan lamaran → pertanyaan → terima kasih → penutup.' },
-  { type: 'order', topic: 'Sebelum kirim', q: 'Urutkan langkah sebelum menekan tombol kirim, dari yang pertama.', items: ['Tulis subject yang jelas', 'Tulis salam pembuka dan isi email', 'Lampirkan CV dan portofolio (PDF)', 'Cek lagi lampiran sudah terunggah', 'Kirim di jam kerja'], why: 'Subject → salam dan isi → lampiran → cek lampiran → kirim di jam kerja.' },
-  { type: 'sort', topic: 'Kesalahan vs kebiasaan baik', q: 'Kelompokkan: mana kebiasaan baik dan mana kesalahan?', buckets: ['Kebiasaan baik', 'Kesalahan'], items: [['Subject spesifik sesuai posisi', 0], ['Alamat email berisi julukan', 1], ['Isi email singkat dan relevan', 0], ['Salah menulis nama perusahaan', 1], ['Mengirim di jam kerja', 0], ['Lupa melampirkan CV', 1]], why: 'Kesalahan umum: alamat email tidak profesional, salah tulis nama perusahaan, dan lupa lampiran.' },
+  { type: 'mcq', topic: 'Materi 1 · Fungsi email', q: 'Mengapa email lebih cocok daripada chat untuk urusan resmi?', opts: ['Selalu lebih cepat dibalas', 'Lebih formal dan tersimpan sebagai bukti', 'Tidak butuh internet', 'Boleh pakai emoji'], a: 1, why: 'Email lebih formal, terdokumentasi, dan bisa menjadi bukti komunikasi profesional.' },
+  { type: 'mcq', topic: 'Materi 1 · Struktur email', q: 'Bagian email yang merangkum isi email secara singkat adalah…', opts: ['Tanda tangan', 'Salam pembuka', 'Subject line', 'Salam penutup'], a: 2, why: 'Subject line menjelaskan isi email secara singkat dan jadi hal pertama yang dilihat penerima.' },
+  { type: 'mcq', topic: 'Materi 1 · Salam pembuka', q: 'Salam pembuka yang tepat untuk email ke tim rekrutmen PT Maju Jaya:', opts: ['Hai min', 'Yth. Tim Rekrutmen PT Maju Jaya,', 'Halo kak', 'Permisi'], a: 1, why: 'Salam pembuka menunjukkan rasa hormat. “Yth. Tim Rekrutmen PT Maju Jaya,” sopan dan menyebut penerimanya dengan jelas.' },
+  { type: 'mcq', topic: 'Materi 1 · Subject line', q: 'Subject yang paling tepat untuk Salsa Rahma yang melamar posisi Staf Administrasi adalah?', opts: ['Lamaran Kerja', 'Tolong dibaca ya', 'Application for Administrative Staff – Salsa Rahma', 'Penting banget'], a: 2, why: 'Subject yang baik singkat, jelas, spesifik, dan mencerminkan tujuan email: posisi yang dilamar dan nama pelamar.' },
+  { type: 'mcq', topic: 'Materi 1 · Tanda tangan', q: 'Apa isi bagian tanda tangan email?', opts: ['Nama lengkap dan kontak', 'Isi lamaran', 'Daftar kelebihan diri', 'Alasan keluar dari kerja lama'], a: 0, why: 'Tanda tangan menutup email dengan nama lengkap dan kontak pengirim.' },
+  { type: 'mcq', topic: 'Materi 2 · Email lamaran', q: 'Tujuan utama email lamaran kerja yaitu?', opts: ['Meminta gaji sebesar mungkin', 'Memperkenalkan diri, menyatakan minat pada posisi, dan mengirim dokumen', 'Bercerita tentang pengalaman hidup', 'Mengundang HR wawancara'], a: 1, why: 'Email lamaran dipakai untuk memperkenalkan diri, menyatakan minat pada posisi tertentu, dan mengirim CV serta portofolio.' },
+  { type: 'mcq', topic: 'Materi 2 · Isi email', q: 'Isi email lamaran sebaiknya…', opts: ['Sepanjang CV', 'Berisi seluruh riwayat hidup', 'Singkat dan relevan dengan posisi', 'Dikosongkan karena semua ada di lampiran'], a: 2, why: 'Isi email lamaran harus singkat, padat, dan relevan dengan posisi yang dilamar.' },
+  { type: 'mcq', topic: 'Materi 2 · Lampiran', q: 'Nama file lampiran yang paling profesional:', opts: ['final-final-baru.pdf', 'IMG_2031.jpg', 'cv terbaru banget.docx', 'CV_SalsaRahma.pdf'], a: 3, why: 'Gunakan format PDF dengan nama file yang profesional, misalnya CV_NamaLengkap.pdf.' },
+  { type: 'mcq', topic: 'Materi 2 · Sebelum kirim', q: 'Apa yang perlu dicek tepat sebelum menekan “Kirim”?', opts: ['Lampiran sudah terunggah dan bisa dibuka', 'Jumlah teman yang sedang online', 'Warna huruf', 'Lamanya waktu menulis'], a: 0, why: 'Sebelum mengirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.' },
+  { type: 'mcq', topic: 'Materi 2 · Alamat email', q: 'Alamat email yang paling pantas untuk melamar kerja:', opts: ['kucing_imut99@…', 'si_galau@…', 'salsa.rahma@…', 'anak_gaul@…'], a: 2, why: 'Alamat email yang tidak profesional termasuk kesalahan umum. Pakai alamat berisi nama asli.' },
+  { type: 'mcq', topic: 'Materi 3 · CC dan BCC', q: 'Atasanmu perlu tahu isi emailmu ke klien, tapi tidak perlu ikut membalas. Fitur yang tepat adalah?', opts: ['CC', 'BCC', 'Forward', 'Reply all'], a: 0, why: 'CC dipakai untuk mengirim salinan ke pihak lain yang perlu mengetahui isi email.' },
+  { type: 'mcq', topic: 'Materi 3 · Waktu kirim', q: 'Email lamaran selesai ditulis pukul 23.30. Sebaiknya kamu melakukan…', opts: ['Langsung kirim', 'Kirim ulang tiap jam', 'Jadwalkan kirim besok pagi di jam kerja', 'Tunggu sampai hari libur'], a: 2, why: 'Kirim email pada jam kerja (08.00–17.00) dan hindari mengirim larut malam atau hari libur.' },
+  { type: 'mcq', topic: 'Materi 3 · Follow-up', q: 'Baru 3 hari kerja sejak kamu mengirim lamaran dan belum ada kabar. Langkah terbaik yang kamu lakukan yaitu:', opts: ['Kirim email tiap jam', 'Telepon tengah malam', 'Melamar ulang ke posisi yang sama', 'Tunggu dulu sampai sekitar 5–7 hari kerja'], a: 3, why: 'Umumnya follow-up dilakukan sekitar 5–7 hari kerja setelah lamaran dikirim jika belum ada respons.' },
+  { type: 'mcq', topic: 'Materi 3 · Follow-up', q: 'Penutup email follow-up yang benar adalah?', opts: ['Cepetan dibalas dong', 'Ditunggu kabarnya ya', 'Terima kasih atas waktu dan perhatian Bapak/Ibu.', 'Bales ya!'], a: 2, why: 'Email follow-up disampaikan dengan sopan, singkat, dan tidak memaksa.' },
+  { type: 'mcq', topic: 'Materi 3 · Bahasa', q: 'Pernyataan yang benar tentang bahasa email profesional:', opts: ['Emoji boleh banyak supaya ramah', 'Huruf kapital semua menunjukkan penekanan', 'Singkatan seperti “sy” tidak masalah', 'Hindari bahasa gaul dan singkatan tidak baku'], a: 3, why: 'Bahasa email profesional harus jelas dan sopan, tanpa bahasa gaul, singkatan informal, emoji, dan huruf kapital semua.' },
 ];
 
-/* ---------- Bank soal EVALUASI (dari aktivitas materi, tanpa pilihan ganda) ---------- */
-const EVALUASI = [
+/* ---------- Bank soal evaluasi lama (dipakai ulang: soal tandai kesalahan) ---------- */
+const EVAL_LAMA = [
   { type: 'order', q: 'Susun bagian-bagian email profesional dari atas ke bawah.', items: ['Subject', 'Salam pembuka', 'Isi email', 'Salam penutup', 'Tanda tangan'] },
   { type: 'match', q: 'Pasangkan bagian email lamaran dengan fungsinya.', pairs: [['Perkenalan diri', 'Menyebut nama dan pendidikan'], ['Tujuan email', 'Menyebut posisi yang dilamar'], ['Keterangan lampiran', 'Menyebut CV dan portofolio'], ['Salam penutup', 'Mengakhiri email dengan sopan']] },
   { type: 'sort', q: 'Kelompokkan file berikut: mana yang layak dilampirkan?', buckets: ['Layak', 'Tidak layak'], items: [[`CV_${NAMAF}.pdf`, 0], ['cv baru final.docx', 1], [`Portfolio_${NAMAF}.pdf`, 0], ['scan0001.jpg', 1]] },
-  { type: 'spot', q: 'Tandai bagian email ini yang salah.', segs: [['Dari: syarif.kerenabis99@email.com', true], ['Kepada: Tim Rekrutmen PT ABC', false], ['Subject: Lamaran', true], ['Yth. Tim Rekrutmen PT ABC,', false], ['Halo kak, aku mau ngelamar yaa 😁', true], ['Hormat saya, Syarif Udin', false]] },
+  { type: 'spot', q: 'Tandai bagian email ini yang salah.', segs: [['Dari: syarif.kerenabis99@email.com', true], ['Kepada: Tim Rekrutmen PT ABC', false], ['Subject: Lamaran', true], ['Yth. Tim Rekrutmen PT ABC,', false], ['Halo kak, aku mau ngelamar yaa 😁', true], ['Hormat saya, Syarifudin', false]] },
   { type: 'match', q: 'Pilih fitur yang tepat untuk setiap situasi.', pairs: [['Atasanmu perlu tahu isi email yang kamu kirim ke klien', 'CC'], ['Pengumuman ke 20 orang yang tidak saling kenal', 'BCC'], ['Penerima utama email lamaranmu', 'Kepada']] },
   { type: 'hour', q: 'Atur jam yang tepat untuk mengirim email lamaran.' },
   { type: 'order', q: 'Lamaran belum dibalas. Urutkan langkah yang tepat.', items: ['Kirim lamaran di jam kerja', 'Tunggu sekitar 5–7 hari kerja', 'Belum ada kabar dari perusahaan', 'Kirim satu email follow-up yang sopan dan singkat'] },
   { type: 'sort', q: 'Kelompokkan kalimat berikut: formal atau tidak formal?', buckets: ['Formal', 'Tidak formal'], items: [['Mohon informasi mengenai perkembangan proses seleksi.', 0], ['Sy kirim lamaran ya, tolong dicek!!!', 1], ['Selamat pagi, Bapak/Ibu.', 0], ['Mohon info lanjutannya ya Kak 🙏', 1], ['SAYA MAU DAFTAR KERJA', 1], ['Terima kasih atas waktu dan perhatian Bapak/Ibu.', 0]] },
 ];
 
+/* ---------- Bank soal EVALUASI AKHIR S15 (4 soal dari interaksi di materi) ---------- */
+const EVALUASI = [
+  { type: 'slots', tag: 'Seret & letakkan', q: 'Seret setiap kartu ke urutan bagian email profesional yang benar.', slots: ['Bagian 1', 'Bagian 2', 'Bagian 3', 'Bagian 4', 'Bagian 5'], cards: ['Subject line', 'Salam pembuka', 'Isi email', 'Salam penutup', 'Tanda tangan'] },
+  { type: 'mcq', tag: 'Pilih jawaban', q: 'Salsa Rahma melamar posisi Content Writer. Subject email mana yang paling tepat?', opts: ['Lamaran kerja', 'Tolong dibaca ya kak', 'Application for Content Writer – Salsa Rahma', 'PENTING!!!'], a: 2 },
+  { ...EVAL_LAMA[3], tag: 'Tandai kesalahan' },
+  { type: 'mcq', tag: 'Pilih kalimat', q: 'Pilih kalimat yang paling tepat untuk email follow-up ke HR.', opts: ['Kak, lamaran aku gimana ya? 🙏', 'Mohon informasi mengenai perkembangan proses seleksi. Terima kasih.', 'TOLONG SEGERA DIBALAS!!!'], a: 1 },
+];
+
 /* =========================================================================
-   LAYAR: LATIHAN SOAL (ada pembahasan, hasil disimpan)
+   S12 — LATIHAN SOAL: 15 soal PG, pembahasan langsung muncul
    ========================================================================= */
-function viewLatihan() { return `<div class="lesson-wide wrap">${routeRail('L')}<div id="quiz"></div></div>`; }
-function mountLatihan() {
-  const L = state.lat = state.lat || { i: 0, ans: {}, res: {}, v: 2 }; save();
-  const box = $('#quiz');
+ACT.S12 = (el, done) => {
+  const L = state.lat = state.lat || { v: 3, i: 0, ans: {}, res: {} }; save();
+  const N = LATIHAN.length;
+  const dijawab = () => Object.keys(L.res).length;
   const render = () => {
-    const i = L.i, q = LATIHAN[i], checked = L.res[i] !== undefined, a = qInit(q, L.ans[i]);
-    if (L.ans[i] === undefined && q.type !== 'mcq') { L.ans[i] = a; save(); }
-    const benar = Object.values(L.res).filter(Boolean).length, dijawab = Object.keys(L.res).length;
-    const ok = materiDone();
-    box.innerHTML = `    <article class="sheet">
-      <div class="eyebrow">Latihan & Evaluasi · <span class="scode">L</span> · Latihan soal</div>
-      <h1 class="display">Latihan Soal</h1>
-      <p class="meta">${LATIHAN.length} soal campuran · jawab, periksa, lalu baca pembahasannya</p>
+    const i = L.i, q = LATIHAN[i], checked = L.res[i] !== undefined, a = L.ans[i] === undefined ? null : L.ans[i];
+    const benar = latSkor(), selesai = dijawab() === N, capai = benar >= LAT_MIN;
+    el.innerHTML = `
+      ${selesai ? `<div class="lat-done ${capai ? 'ok' : 'no'}">
+        <div class="ld-score"><b>${benar}</b><small>dari ${N} benar</small></div>
+        <div class="ld-txt"><span class="badge ${capai ? 'ok' : 'no'}">${icon(capai ? 'check' : 'refresh')} ${capai ? 'Capaian terpenuhi' : 'Belum terpenuhi'}</span>
+          <p>${capai ? 'Skormu sudah cukup untuk syarat evaluasi. Lanjut ke aktivitas interaktif.' : `Syarat evaluasi minimal ${LAT_MIN} dari ${N} benar. Coba ulangi latihannya.`}</p></div>
+        <div class="ld-btns"><button type="button" class="btn btn-outline btn-sm" data-reset>${icon('refresh')} Ulangi</button><a class="btn btn-primary btn-sm" href="#/scene/S13">Lanjut ${icon('right')}</a></div>
+      </div>` : ''}
       <div class="lat-panel">
-        <div class="score-box"><b>${benar}</b><span>benar dari ${dijawab} soal yang sudah diperiksa</span></div>
+        <div class="score-box"><b>${benar}</b><span>benar dari ${dijawab()} soal yang sudah dijawab</span></div>
         <div class="lat-nums"><div class="qgrid wide">${LATIHAN.map((_, k) => `<button type="button" class="qn ${k === i ? 'cur' : ''} ${L.res[k] === true ? 'ok' : L.res[k] === false ? 'no' : ''}" data-go="${k}">${k + 1}</button>`).join('')}</div>
-          <div class="legend-s"><span><i class="lg ok"></i>benar</span><span><i class="lg no"></i>belum tepat</span><button type="button" class="link-btn" data-reset>${icon('refresh')} Ulangi latihan</button></div></div>
+          <div class="legend-s"><span><i class="lg ok"></i>benar</span><span><i class="lg no"></i>belum tepat</span></div></div>
       </div>
-      <section class="act-sec"><div class="act-head"><span class="act-tag">${icon('pen')} ${q.topic}</span><span class="counter">Soal <b>${i + 1}</b> dari ${LATIHAN.length}</span></div>
-        <div class="act-card"><div id="qbox"></div><div class="fb" id="qfb" hidden></div>
-        <div class="quiz-foot">
-          <button type="button" class="btn btn-outline btn-sm" data-prev ${i === 0 ? 'disabled' : ''}>${icon('left')} Sebelumnya</button>
-          ${checked ? '' : `<button type="button" class="btn btn-primary btn-sm" data-check ${qAnswered(q, a) ? '' : 'disabled'}>Periksa jawaban</button>`}
-          <button type="button" class="btn btn-outline btn-sm" data-next ${i === LATIHAN.length - 1 ? 'disabled' : ''}>Berikutnya ${icon('right')}</button>
-        </div></div>
-      </section>
-      <nav class="lesson-nav">
-        <a class="btn btn-outline" href="#/scene/S11">${icon('left')} Kembali ke materi</a>
-        <a class="btn btn-primary ${ok ? '' : 'is-locked'}" href="#/scene/S12" id="nextBtn">${ok ? '' : icon('lock')} Ke evaluasi ${icon('right')}</a>
-      </nav>
-    </article>`;
-    qRender($('#qbox', box), q, a, { mode: 'latihan', checked, onChange: (v, soft) => { L.ans[i] = v; save(); if (!soft) render(); else { const c = $('[data-check]', box); if (c) c.disabled = false; } } });
-    if (checked) showFb($('#qfb', box), L.res[i], `${L.res[i] ? 'Benar!' : 'Belum tepat.'} ${q.why}`);
+      <div class="act-head"><span class="act-tag">${icon('pen')} ${q.topic}</span><span class="counter">Soal <b>${i + 1}</b> dari ${N}</span></div>
+      <div id="qbox"></div><div class="fb" id="qfb" hidden></div>
+      <div class="quiz-foot">
+        <button type="button" class="btn btn-outline btn-sm" data-prev ${i === 0 ? 'disabled' : ''}>${icon('left')} Sebelumnya</button>
+        ${checked ? '' : `<button type="button" class="btn btn-primary btn-sm" data-check ${a === null ? 'disabled' : ''}>Jawab</button>`}
+        <button type="button" class="btn btn-outline btn-sm" data-next ${i === N - 1 ? 'disabled' : ''}>Berikutnya ${icon('right')}</button>
+      </div>`;
+    qRender($('#qbox', el), q, a, { mode: 'latihan', checked, onChange: v => { L.ans[i] = v; save(); render(); } });
+    if (checked) showFb($('#qfb', el), L.res[i], `${L.res[i] ? 'Benar!' : 'Belum tepat.'} ${q.why}`);
   };
   render();
-  box.addEventListener('click', e => {
-    const nb = e.target.closest('#nextBtn'); if (nb && nb.classList.contains('is-locked')) { e.preventDefault(); toast('Evaluasi terbuka setelah semua scene materi selesai.'); return; }
-    const go = e.target.closest('[data-go]'); if (go) { L.i = +go.dataset.go; save(); render(); return; }
+  if (dijawab() === N) done(true);
+  el.onclick = e => {
+    const go = e.target.closest('[data-go]'); if (go) { L.i = +go.dataset.go; save(); sfx(); render(); return; }
     if (e.target.closest('[data-prev]')) { L.i = Math.max(0, L.i - 1); save(); render(); return; }
-    if (e.target.closest('[data-next]')) { L.i = Math.min(LATIHAN.length - 1, L.i + 1); save(); render(); return; }
-    if (e.target.closest('[data-check]')) { const q = LATIHAN[L.i], ok = qScore(q, L.ans[L.i]) === 1; L.res[L.i] = ok; L.streak = ok ? (L.streak || 0) + 1 : 0; L.best = Math.max(L.best || 0, L.streak); if (L.streak >= 2) comboPop(L.streak); save(); sfx(ok ? 'ok' : 'no'); render(); updateBar(); if (Object.keys(L.res).length === LATIHAN.length) toast('Semua soal latihan sudah dikerjakan.'); return; }
-    if (e.target.closest('[data-reset]')) { if (!confirm('Ulangi latihan dari awal? Jawaban latihan akan dihapus.')) return; state.lat = { i: 0, ans: {}, res: {}, v: 2 }; save(); updateBar(); mountLatihan(); }
-  });
-}
+    if (e.target.closest('[data-next]')) { L.i = Math.min(N - 1, L.i + 1); save(); render(); return; }
+    if (e.target.closest('[data-check]')) {
+      const q = LATIHAN[L.i], ok = qScore(q, L.ans[L.i]) === 1;
+      L.res[L.i] = ok; L.streak = ok ? (L.streak || 0) + 1 : 0; L.best = Math.max(L.best || 0, L.streak);
+      if (L.streak >= 2) comboPop(L.streak);
+      save(); sfx(ok ? 'ok' : 'no'); updateBar();
+      /* lompat ke soal berikutnya yang belum dijawab setelah pembahasan dibaca */
+      render();
+      if (dijawab() === N) { done(false); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      return;
+    }
+    if (e.target.closest('[data-reset]')) {
+      if (!confirm('Ulangi latihan dari awal? Jawaban latihan akan dihapus.')) return;
+      state.lat = { v: 3, i: 0, ans: {}, res: {}, best: L.best || 0 }; save(); updateBar(); ACT.S12(el, done);
+    }
+  };
+};
 
 /* =========================================================================
-   S12 — EVALUASI: tanpa umpan balik per soal, hanya nilai akhir
+   S13 — AKTIVITAS INTERAKTIF: A cocokkan istilah, B susun follow-up, C perbaiki kalimat
+   Tokoh: Salsa Rahma, pelamar posisi Content Writer
    ========================================================================= */
-ACT.S12 = (el, done, st) => {
-  if (!materiDone()) {
-    const left = MATERI_SCENES.filter(id => !state.done[id]);
-    el.innerHTML = `<div class="lockbox"><a href="#/scene/${left[0]}" title="Lanjutkan materi">${icon('lock')}</a><h3>Evaluasi masih terkunci</h3><p class="muted">Beresin dulu materinya. Masih ada ${left.length} scene:</p>
-      <div class="rec-links">${left.map(id => `<a class="rec-link" href="#/scene/${id}">${id} · ${SCENES[id].title}</a>`).join('')}</div></div>`;
-    return;
-  }
-  const E = state.ev = state.ev || { i: 0, ans: {}, done: false }; save();
-  const N = EVALUASI.length;
-  const TYPE = { order: ['list', 'Urutkan'], match: ['branch', 'Pasangkan'], sort: ['layers', 'Kelompokkan'], spot: ['search', 'Tandai kesalahan'], hour: ['clock', 'Atur jam'] };
-  const touched = k => !!(E.touched && E.touched[k]);
-  let dir = 0, justSealed = -1, mode = 'q';
-  const anim = (sel, frames, ms) => { const c = $(sel, el); if (!c || reduced) return; try { c.animate(frames, { duration: ms, easing: 'cubic-bezier(.2,.8,.2,1)' }); } catch (e) { /* tanpa animasi */ } };
-  const stamps = cur => `<div class="stamps" role="list">${EVALUASI.map((q, k) => `<button type="button" role="listitem" class="stamp ${k === cur ? 'cur' : ''} ${touched(k) ? 'sealed' : ''} ${k === justSealed ? 'just' : ''}" data-go="${k}" title="Soal ${k + 1} · ${TYPE[q.type][1]}"><span class="st-n">${k + 1}</span>${icon(TYPE[q.type][0])}</button>`).join('')}</div>`;
+const AKT_A = { type: 'slots', q: 'Seret setiap istilah ke definisi yang sesuai.',
+  slots: ['Ringkasan singkat isi email yang pertama kali dilihat penerima', 'Mengirim salinan ke pihak lain yang perlu tahu isi email', 'Mengirim salinan tanpa memperlihatkan identitas penerima lain', 'Email untuk menanyakan perkembangan proses rekrutmen', 'Nama lengkap dan kontak pengirim di akhir email'],
+  cards: ['Subject line', 'CC', 'BCC', 'Follow-up', 'Signature'] };
+const AKT_B = { type: 'slots', q: 'Susun kalimat email follow-up Salsa dari atas ke bawah.',
+  slots: ['1', '2', '3', '4', '5'],
+  cards: ['Yth. Tim Rekrutmen PT Maju Jaya,', 'Saya Salsa Rahma, pelamar posisi Content Writer.', 'Pada (tanggal) saya telah mengirimkan lamaran beserta CV dan portofolio. Mohon informasi mengenai perkembangan proses seleksi.', 'Terima kasih atas waktu dan perhatian Bapak/Ibu.', 'Hormat saya, Salsa Rahma'] };
+const AKT_C = [
+  { segs: ['Halo kak,', 'saya Salsa Rahma, pelamar posisi Content Writer.'], bad: 0, opts: ['Yth. Tim Rekrutmen,', 'Hai min,', 'Halo kakak,'], a: 0, why: 'Email resmi dibuka dengan sapaan yang hormat, misalnya “Yth. Tim Rekrutmen,”.' },
+  { segs: ['Saya sudah mengirimkan CV dan portofolio,', 'tolong dicek ya!!!'], bad: 1, opts: ['cek dong!!', 'mohon dapat diperiksa.', 'buruan dicek 🙏'], a: 1, why: 'Hindari tanda seru berlebihan dan nada memerintah. Pakai kalimat permohonan yang sopan.' },
+  { segs: ['Mohon informasi mengenai perkembangan proses seleksi.', 'Thx 🙏'], bad: 1, opts: ['Makasih kak 😊', 'TERIMA KASIH!!!', 'Terima kasih atas waktu dan perhatian Bapak/Ibu.'], a: 2, why: 'Hindari singkatan, emoji, dan huruf kapital semua. Tulis ucapan terima kasih yang lengkap.' },
+];
+const AKT_INFO = {
+  a: ['A', 'branch', 'Cocokkan istilah', 'Seret 5 istilah ke definisinya. 1 poin per pasangan.', 5],
+  b: ['B', 'list', 'Susun email follow-up', 'Urutkan 5 kalimat email follow-up Salsa. 1 poin kalau urutannya benar semua.', 1],
+  c: ['C', 'type', 'Perbaiki kalimat', 'Ketuk bagian kalimat yang tidak pantas, lalu pilih penggantinya. 1 poin per kalimat.', 3],
+};
+ACT.S13 = (el, done) => {
+  const K = state.akt = state.akt || {}; save();
+  const st = k => (K[k] = K[k] || {});
+  const finishAll = silent => { if (aktDone()) done(silent); };
+  const menu = () => {
+    el.innerHTML = `<p class="muted">Kerjakan ketiga aktivitas. Urutannya bebas, dan semuanya harus selesai sebelum lanjut.</p>
+      <div class="akt-grid">${AKT_KEYS.map(k => { const [L, ic, t, d, max] = AKT_INFO[k], s = K[k] || {}; return `<button type="button" class="akt-card ${s.done ? 'done' : ''}" data-open="${k}">
+        <span class="akt-l">${s.done ? icon('check') : L}</span><span class="akt-ic">${icon(ic)}</span>
+        <b>${t}</b><small>${d}</small>
+        <span class="akt-st">${s.done ? `Skor ${s.score}/${max} · kerjakan lagi` : 'Belum dikerjakan'}</span></button>`; }).join('')}</div>
+      <p class="akt-sum">${icon('check')} ${AKT_KEYS.filter(k => K[k] && K[k].done).length} dari 3 aktivitas selesai</p>`;
+  };
+  const frame = (k, inner) => `<div class="akt-frame"><div class="akt-top"><button type="button" class="btn btn-outline btn-sm" data-menu>${icon('left')} Daftar aktivitas</button><b>Aktivitas ${AKT_INFO[k][0]} · ${AKT_INFO[k][2]}</b></div>${inner}</div>`;
+  /* A dan B: seret kartu, lalu periksa */
+  const slotAct = (k, q, scoreOf, msg) => {
+    const s = st(k), checked = !!s.checked, a = s.ans || qInit(q);
+    el.innerHTML = frame(k, `<div id="qbox"></div><div class="fb" id="qfb" hidden></div>
+      <div class="quiz-foot">${checked ? `<button type="button" class="btn btn-outline btn-sm" data-redo>${icon('refresh')} Coba lagi</button><button type="button" class="btn btn-primary btn-sm" data-menu>Kembali ke daftar ${icon('right')}</button>` : `<button type="button" class="btn btn-primary btn-sm" data-cek ${qAnswered(q, a) ? '' : 'disabled'}>Periksa</button>`}</div>`);
+    qRender($('#qbox', el), q, a, { mode: 'latihan', checked, onChange: v => { s.ans = v; save(); slotAct(k, q, scoreOf, msg); } });
+    if (checked) showFb($('#qfb', el), s.score === AKT_INFO[k][4], msg(s.score));
+    el.querySelector('[data-cek]') && (el.querySelector('[data-cek]').onclick = () => {
+      s.checked = true; s.score = scoreOf(s.ans); s.done = true; save(); sfx(s.score === AKT_INFO[k][4] ? 'ok' : 'no'); updateBar(); slotAct(k, q, scoreOf, msg); finishAll(false);
+    });
+    el.querySelector('[data-redo]') && (el.querySelector('[data-redo]').onclick = () => { s.checked = false; s.ans = null; q._ord = null; save(); slotAct(k, q, scoreOf, msg); });
+  };
+  const actA = () => slotAct('a', AKT_A, a => a.filter((v, i) => v === i).length,
+    sc => sc === 5 ? 'Tepat! Semua istilah sudah cocok dengan definisinya.' : `Skormu ${sc}/5. Pasangan yang benar: Subject line = ringkasan isi email, CC = salinan untuk pihak yang perlu tahu, BCC = salinan tanpa memperlihatkan penerima lain, Follow-up = menanyakan perkembangan rekrutmen, Signature = nama dan kontak.`);
+  const actB = () => slotAct('b', AKT_B, a => (a.every((v, i) => v === i) ? 1 : 0),
+    sc => sc === 1 ? 'Tepat! Urutan email follow-up Salsa sudah benar.' : 'Belum tepat. Urutan yang benar: salam pembuka → perkenalan → tujuan → ucapan terima kasih → penutup.');
+  /* C: ketuk bagian yang tidak pantas, lalu pilih penggantinya */
+  const actC = () => {
+    const s = st('c'); s.i = s.i || 0; s.pts = s.pts || {};
+    if (s.i >= AKT_C.length) {
+      el.innerHTML = frame('c', `<div class="akt-end">${icon('check')}<h3>Ketiga kalimat sudah diperbaiki</h3><p class="muted">Skor ${s.score}/3.</p>
+        <div class="row-btns"><button type="button" class="btn btn-outline btn-sm" data-redo>${icon('refresh')} Coba lagi</button><button type="button" class="btn btn-primary btn-sm" data-menu>Kembali ke daftar ${icon('right')}</button></div></div>`);
+      el.querySelector('[data-redo]').onclick = () => { K.c = { done: s.done, score: s.score }; save(); actC(); };
+      return;
+    }
+    const c = AKT_C[s.i], found = !!s.found, fixed = s.fixed;
+    el.innerHTML = frame('c', `<div class="act-head"><span class="act-tag">${icon('type')} Kalimat ${s.i + 1} dari ${AKT_C.length}</span></div>
+      <p class="q">${found ? 'Pilih pengganti yang paling tepat.' : 'Ketuk bagian kalimat yang tidak pantas untuk email profesional.'}</p>
+      <div class="fix-line">${c.segs.map((t, j) => `<button type="button" class="fix-seg ${found && j === c.bad ? (fixed ? 'fixed' : 'bad') : ''}" data-seg="${j}" ${found ? 'disabled' : ''}>${j === c.bad && fixed ? c.opts[c.a] : t}</button>`).join(' ')}</div>
+      ${found && !fixed ? `<div class="opts">${c.opts.map((t, j) => `<button type="button" class="opt" data-rep="${j}"><span class="opt-l">${'ABC'[j]}</span><span class="opt-t">${t}</span></button>`).join('')}</div>` : ''}
+      <div class="fb" id="qfb" hidden></div>
+      ${fixed ? `<div class="quiz-foot"><button type="button" class="btn btn-primary btn-sm" data-nextc>${s.i === AKT_C.length - 1 ? 'Selesai' : 'Kalimat berikutnya'} ${icon('right')}</button></div>` : ''}`);
+    if (fixed) showFb($('#qfb', el), true, `Tepat! ${c.why}`);
+    el.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => {
+      if (+b.dataset.seg === c.bad) { s.found = true; save(); sfx('ok'); actC(); }
+      else { sfx('no'); showFb($('#qfb', el), false, 'Bagian ini sudah tepat. Cari bagian lain yang kurang pantas.'); b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); }
+    });
+    el.querySelectorAll('[data-rep]').forEach(b => b.onclick = () => {
+      const j = +b.dataset.rep;
+      if (s.pts[s.i] === undefined) s.pts[s.i] = j === c.a ? 1 : 0;
+      if (j === c.a) { s.fixed = true; save(); sfx('ok'); actC(); }
+      else { save(); sfx('no'); b.classList.add('no'); b.disabled = true; showFb($('#qfb', el), false, 'Belum tepat. Pilih pengganti yang lebih sopan dan formal.'); }
+    });
+    const nx = el.querySelector('[data-nextc]');
+    if (nx) nx.onclick = () => {
+      s.i++; s.found = false; s.fixed = false;
+      if (s.i >= AKT_C.length) { s.score = Object.values(s.pts).reduce((t, v) => t + v, 0); s.done = true; updateBar(); finishAll(false); }
+      save(); sfx(); actC();
+    };
+  };
+  const open = { a: actA, b: actB, c: () => { const s = st('c'); if (s.done && s.i >= AKT_C.length) { actC(); return; } if (!s.i || s.i >= AKT_C.length) { K.c = { done: s.done, score: s.score, i: 0, pts: {} }; save(); } actC(); } };
+  menu();
+  finishAll(true);
+  el.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]'); if (o) { sfx(); open[o.dataset.open](); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (e.target.closest('[data-menu]')) { sfx(); menu(); }
+  });
+};
 
+/* =========================================================================
+   S14 — AWAL EVALUASI: gerbang tiga syarat sebelum evaluasi
+   ========================================================================= */
+ACT.S14 = (el, done) => {
+  const kurang = MATERI_SCENES.find(id => !state.done[id]);
+  const syarat = [
+    [materiDone(), 'Materi 1–3 (S02–S11) selesai semua', `${MATERI_SCENES.filter(id => state.done[id]).length} dari ${MATERI_SCENES.length} scene materi selesai`, kurang ? '#/scene/' + kurang : '#/scene/S02'],
+    [latSkor() >= LAT_MIN, `Latihan pilihan ganda (S12) minimal 70% (${LAT_MIN} dari ${LATIHAN.length} benar)`, `Skormu sekarang ${latSkor()} dari ${LATIHAN.length} benar`, '#/scene/S12'],
+    [aktDone(), 'Latihan interaktif (S13) semua aktivitas dikerjakan', `${AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length} dari 3 aktivitas selesai`, '#/scene/S13'],
+  ];
+  const ok = gateOk();
+  el.innerHTML = `<div class="gate">
+    ${syarat.map(([y, t, d, h], i) => `<div class="gate-row ${y ? 'ok' : ''}" style="--i:${i}"><span class="gate-ic">${icon(y ? 'check' : 'lock')}</span><div><b>${t}</b><small>${d}</small></div>${y ? '<span class="gate-ok">Terpenuhi</span>' : `<a class="btn btn-outline btn-sm" href="${h}">Kerjakan ${icon('right')}</a>`}</div>`).join('')}
+    <div class="gate-go">${ok ? `<a class="btn btn-gold btn-lg" href="#/scene/S15">${icon('flag')} Mulai Evaluasi</a>` : `<button type="button" class="btn btn-gold btn-lg" disabled>${icon('lock')} Mulai Evaluasi</button><small class="muted">Tombol terbuka setelah ketiga syarat terpenuhi.</small>`}</div>
+  </div>`;
+  if (ok) done(!!state.done.S14);
+};
+
+/* =========================================================================
+   S15 — EVALUASI AKHIR: 4 soal, jawaban dikunci setelah disimpan, hanya nilai akhir
+   ========================================================================= */
+ACT.S15 = (el, done) => {
+  const E = state.ev = state.ev || { v: 3, i: 0, ans: {}, done: false }; save();
+  const N = EVALUASI.length;
+  const anim = (sel, frames, ms) => { const c = $(sel, el); if (!c || reduced) return; try { c.animate(frames, { duration: ms, easing: 'cubic-bezier(.2,.8,.2,1)' }); } catch (e) { /* tanpa animasi */ } };
   const intro = () => {
-    mode = 'intro';
     el.innerHTML = `<div class="ev-intro2">
       <div class="ev-stats"><div><b>${N}</b><span>soal</span></div><div><b>${KKM}</b><span>batas lulus</span></div><div><b>${icon('eyeoff')}</b><span>tanpa tanda benar/salah</span></div></div>
-      <p>Soalnya mirip aktivitas yang sudah kamu kerjakan di materi. Ada lima jenis, sentuh kartunya untuk lihat contoh:</p>
-      <div class="type-tiles">${Object.entries(TYPE).map(([k, [ic, t]]) => `<div class="tt" tabindex="0"><div class="tt-in"><div class="tt-f">${icon(ic)}<b>${t}</b></div><div class="tt-b">${{ order: 'Susun bagian email dari atas ke bawah.', match: 'Pasangkan bagian email dengan fungsinya.', sort: 'Pisahkan mana yang layak dan tidak.', spot: 'Ketuk bagian email yang salah.', hour: 'Geser jam kirim yang tepat.' }[k]}</div></div></div>`).join('')}</div>
-      <p class="muted">Selama mengerjakan nggak ada tanda benar atau salah. Jawaban tersimpan sendiri, nilainya keluar setelah semua dikirim.</p>
+      <p>Bentuk soalnya mirip dengan aktivitas di materi. Setiap soal punya tombol <b>Simpan jawaban</b>, dan jawaban yang sudah disimpan tidak bisa diubah lagi.</p>
+      <p class="muted">Tidak ada pembahasan. Nilai akhir muncul setelah soal terakhir disimpan.</p>
       <button type="button" class="btn btn-primary btn-lg" data-start>Mulai evaluasi ${icon('right')}</button></div>`;
   };
-
   const render = () => {
-    mode = 'q';
     const i = E.i, q = EVALUASI[i], a = qInit(q, E.ans[i]);
-    if (E.ans[i] === undefined) { E.ans[i] = a; save(); }
-    const answered = EVALUASI.filter((_, k) => touched(k)).length;
-    el.innerHTML = `<div class="ev-top"><div><small>Soal ${i + 1} dari ${N} · ${TYPE[q.type][1]}</small><b>${answered}/${N} terjawab</b></div><span class="ev-saved" id="evSaved">${icon('check')} Tersimpan</span></div>
-      ${stamps(i)}
+    if (E.ans[i] === undefined && q.type !== 'mcq') { E.ans[i] = a; save(); }
+    el.innerHTML = `<div class="ev-top"><div><small>Soal ${i + 1} dari ${N} · ${q.tag}</small><b>${i} dari ${N} tersimpan</b></div></div>
+      <div class="stamps" aria-hidden="true">${EVALUASI.map((_, k) => `<span class="stamp ${k === i ? 'cur' : ''} ${k < i ? 'sealed' : ''}"><span class="st-n">${k + 1}</span></span>`).join('')}</div>
       <div class="ev-deck"><div class="ev-card"><div id="qbox"></div></div></div>
-      <div class="quiz-foot">
-        <button type="button" class="btn btn-outline" data-prev ${i === 0 ? 'disabled' : ''}>${icon('left')} Sebelumnya</button>
-        ${i < N - 1 ? `<button type="button" class="btn btn-primary" data-next>Berikutnya ${icon('right')}</button>` : `<button type="button" class="btn btn-gold" data-review>${icon('list')} Periksa lembar jawaban</button>`}
-      </div>`;
-    qRender($('#qbox', el), q, a, { mode: 'ujian', onChange: (v, soft) => {
-      const first = !touched(i);
-      E.ans[i] = v; E.touched = E.touched || {}; E.touched[i] = true; save();
-      if (!soft) { dir = 0; justSealed = first ? i : -1; render(); }
-      const sv = $('#evSaved', el); if (sv) { sv.classList.remove('show'); void sv.offsetWidth; sv.classList.add('show'); }
-    } });
-    if (dir) anim('.ev-card', [{ opacity: 0, transform: `translateX(${dir * 90}px) rotate(${dir * 2}deg)` }, { opacity: 1, transform: 'none' }], 480);
-    justSealed = -1;
+      <div class="quiz-foot"><span></span><button type="button" class="btn btn-primary" data-save ${qAnswered(q, E.ans[i] === undefined ? null : E.ans[i]) ? '' : 'disabled'}>${icon('check')} Simpan jawaban</button></div>`;
+    qRender($('#qbox', el), q, E.ans[i] === undefined ? a : E.ans[i], { mode: 'ujian', onChange: (v, soft) => { E.ans[i] = v; save(); if (!soft) render(); else { const b = $('[data-save]', el); if (b) b.disabled = false; } } });
+    anim('.ev-card', [{ opacity: 0, transform: 'translateX(60px)' }, { opacity: 1, transform: 'none' }], 420);
   };
-
-  const review = () => {
-    mode = 'review';
-    const answered = EVALUASI.filter((_, k) => touched(k)).length;
-    el.innerHTML = `<div class="ev-top"><div><small>Lembar jawaban</small><b>${answered}/${N} terjawab</b></div></div>
-      <p class="muted">Amplop yang tertutup artinya sudah dijawab. Klik amplopnya kalau mau cek lagi.</p>
-      <div class="envs">${EVALUASI.map((q, k) => `<button type="button" class="env ${touched(k) ? 'sealed' : 'open'}" data-go="${k}"><span class="env-ic">${icon(touched(k) ? 'mail' : 'inbox')}</span><b>Soal ${k + 1}</b><small>${touched(k) ? 'Terjawab' : 'Belum dijawab'}</small></button>`).join('')}</div>
-      <div class="quiz-foot"><button type="button" class="btn btn-outline" data-back>${icon('left')} Kembali mengerjakan</button><button type="button" class="btn btn-primary btn-lg" data-submit>${icon('send')} Kirim semua jawaban</button></div>`;
-    anim('.envs', [{ opacity: 0, transform: 'translateY(20px)' }, { opacity: 1, transform: 'none' }], 450);
-  };
-
-  const result = (animated) => {
-    mode = 'result';
+  const result = animated => {
     const pass = E.score >= KKM;
     el.innerHTML = `<div class="ev-result ${pass ? 'pass' : 'fail'}">
       <div class="ring big" style="--p:${animated ? 0 : E.score}"><b>${animated ? 0 : E.score}</b><small>nilai akhir</small></div>
-      <div><div class="badge ${pass ? 'ok' : 'no'}">${pass ? icon('check') + ' Lulus' : icon('refresh') + ' Perlu mengulang'}</div>
+      <div><div class="badge ${pass ? 'ok' : 'no'}">${pass ? icon('check') + ' Lulus' : icon('refresh') + ' Belum lulus'}</div>
         <h3>${pass ? 'Selamat, kamu lulus evaluasi!' : 'Belum lulus kali ini.'}</h3>
-        <p class="muted">${pass ? 'Lanjut ke penutup, ada rangkuman yang bisa kamu simpan.' : `Butuh minimal ${KKM}. Coba ulang materinya dari Materi 1, lalu kerjakan lagi.`}</p>
-        <div class="row-btns">${pass ? `<a class="btn btn-primary" href="#/scene/S13">Ke penutup ${icon('right')}</a><a class="btn btn-gold" href="#/sertifikat">${icon('award')} Ambil sertifikat</a>` : `<a class="btn btn-primary" href="#/scene/S02">${icon('book')} Pelajari lagi materinya</a><button type="button" class="btn btn-outline" data-retry>${icon('refresh')} Kerjakan ulang</button>`}</div>
+        <p class="muted">${pass ? 'Lanjut ke penutup, ada rangkuman yang bisa kamu simpan.' : `Butuh minimal ${KKM}. Pelajari ulang materinya dari Materi 1, atau coba evaluasi lagi.`}</p>
+        <div class="row-btns">${pass ? `<a class="btn btn-primary" href="#/scene/S16">Ke penutup ${icon('right')}</a><a class="btn btn-gold" href="#/sertifikat">${icon('award')} Sertifikat</a>` : `<a class="btn btn-primary" href="#/scene/S02">${icon('book')} Pelajari Ulang</a><button type="button" class="btn btn-outline" data-retry>${icon('refresh')} Coba Evaluasi Lagi</button>`}</div>
       </div></div>`;
     if (animated) {
       const ring = $('.ring', el), b = $('.ring b', el), t0 = performance.now();
@@ -2730,42 +2955,24 @@ ACT.S12 = (el, done, st) => {
       if (pass) celebrate();
     }
   };
-
   const submit = () => {
-    /* Hanya soal yang benar-benar dijawab yang dinilai (jawaban bawaan tidak diberi poin) */
-    const total = EVALUASI.reduce((sum, q, k) => sum + (touched(k) ? qScore(q, E.ans[k]) : 0), 0);
+    const total = EVALUASI.reduce((sum, q, k) => sum + qScore(q, E.ans[k]), 0);
     E.score = Math.round(total / N * 100); E.done = true; save(); updateBar();
-    el.innerHTML = `<div class="sending"><span class="plane">${icon('send')}</span><b>Mengirim jawaban…</b></div>`;
-    sfx('click');
+    el.innerHTML = `<div class="sending"><span class="plane">${icon('send')}</span><b>Menghitung nilai…</b></div>`;
     later(() => { sfx(E.score >= KKM ? 'ok' : 'no'); result(true); if (E.score >= KKM) done(false); }, reduced ? 0 : 1100);
   };
-
-  const goTo = k => { if (k < 0 || k >= N || (k === E.i && mode === 'q')) return; dir = k >= E.i ? 1 : -1; E.i = k; save(); sfx(); render(); };
   if (E.done) { result(false); if (E.score >= KKM) done(true); }
   else if (E.started) render(); else intro();
-
   el.onclick = e => {
-    if (e.target.closest('[data-start]')) { E.started = true; save(); sfx(); dir = 1; render(); return; }
-    if (e.target.closest('[data-retry]')) { state.ev = { i: 0, ans: {}, done: false, started: true }; save(); ACT.S12(el, done, st); return; }
-    const g = e.target.closest('[data-go]'); if (g) { goTo(+g.dataset.go); return; }
-    if (e.target.closest('[data-prev]')) { goTo(E.i - 1); return; }
-    if (e.target.closest('[data-next]')) { goTo(E.i + 1); return; }
-    if (e.target.closest('[data-review]')) { sfx(); review(); return; }
-    if (e.target.closest('[data-back]')) { dir = -1; render(); return; }
-    if (e.target.closest('[data-submit]')) submit();
+    if (e.target.closest('[data-start]')) { E.started = true; save(); sfx(); render(); return; }
+    if (e.target.closest('[data-retry]')) { EVALUASI.forEach(q => { q._ord = null; }); state.ev = { v: 3, i: 0, ans: {}, done: false, started: true }; save(); updateBar(); ACT.S15(el, done); return; }
+    if (e.target.closest('[data-save]')) { sfx(); E.i++; save(); if (E.i >= N) submit(); else render(); }
   };
-  const onKey = e => {
-    if (mode !== 'q' || /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)) return;
-    if (e.key === 'ArrowRight' && E.i < N - 1) { e.preventDefault(); goTo(E.i + 1); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(E.i - 1); }
-  };
-  document.addEventListener('keydown', onKey);
-  onLeave(() => document.removeEventListener('keydown', onKey));
 };
 
-/* S13 — rangkuman + masukan */
-ACT.S13 = (el, done) => {
-  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/scene/S12" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum kebuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/scene/S12">Ke evaluasi ${icon('right')}</a></div>`; return; }
+/* S16 — rangkuman + masukan */
+ACT.S16 = (el, done) => {
+  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/scene/S15" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum kebuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/scene/S15">Ke evaluasi ${icon('right')}</a></div>`; return; }
   const fb = state.feedback;
   const thanks = f => `<div class="thanks"><a href="#/" title="Beranda">${icon('check')}</a><h3>Makasih, masukanmu sudah masuk.</h3><p class="muted">Nilai ${f.rate}/5${f.saran ? ` · “${esc(f.saran)}”` : ''}</p></div>`;
   el.innerHTML = `<div class="infog" id="infog">
@@ -2798,7 +3005,7 @@ const GLOSARIUM = [
   ['CC (Carbon Copy)', 'Mengirim salinan email kepada orang lain yang perlu tahu isinya. Alamatnya terlihat oleh semua penerima.', 'S09'],
   ['CV dan portofolio', 'Dokumen pendukung lamaran. Kirim dalam format PDF dengan nama file yang rapi.', 'S06'],
   ['Email lamaran kerja', 'Email untuk memperkenalkan diri, menyampaikan minat pada posisi tertentu, dan mengirim CV serta portofolio.', 'S05'],
-  ['Evaluasi', 'Soal akhir tanpa pilihan ganda. Terbuka setelah semua materi selesai, dan hanya menampilkan nilai akhir.', 'S12'],
+  ['Evaluasi akhir', 'Empat soal akhir tanpa tanda benar atau salah. Jawaban dikunci setelah disimpan, dan hanya nilai akhir yang ditampilkan.', 'S15'],
   ['Follow-up', 'Email untuk menanyakan kabar proses rekrutmen, biasanya 5–7 hari kerja setelah lamaran dikirim.', 'S10'],
   ['Isi email', 'Bagian yang memuat pesan utama, ditulis jelas dan ringkas.', 'S03'],
   ['Jam kerja', 'Waktu yang pas untuk mengirim email profesional, sekitar pukul 08.00–17.00.', 'S09'],
@@ -2812,16 +3019,18 @@ const pageWrap = (eyebrow, title, inner, grup = 'Panduan') => `<div class="page 
 
 function viewTujuan() {
   return `
-    <div class="goal-main"><p>Setelah mengikuti pelatihan ini, peserta mampu <b>merancang email lamaran kerja yang efektif</b>, sesuai susunan dan etika komunikasi profesional di dunia kerja.</p><small>Sasaran: fresh graduate</small></div>
+    <div class="goal-main"><p><b>Tujuan umum:</b> fresh graduate mampu <b>merancang email lamaran kerja</b> dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p>
+      <p>Setelah mengikuti pelatihan, peserta mampu:</p>
+      <ul class="goal-list">${['menjelaskan fungsi email dalam dunia kerja;', 'membuat email profesional untuk kebutuhan mencari kerja;', 'mengidentifikasi struktur email profesional;', 'menjelaskan fungsi CC dan BCC;', 'menentukan waktu yang tepat mengirim email dan melakukan follow-up kepada HR;', 'menyusun email follow-up yang sopan dan profesional;', 'menerapkan bahasa formal dan profesional dalam email.'].map(t => `<li>${t}</li>`).join('')}</ul>
+      <small>Sasaran: fresh graduate</small></div>
     <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Kode</th><th>Topik</th><th>Tujuan</th></tr></thead><tbody>
       ${ORDER.map(id => `<tr><td><a href="#/scene/${id}">${id}</a></td><td>${SCENES[id].title}</td><td>${SCENES[id].tujuan}</td></tr>`).join('')}
-      <tr><td><a href="#/latihan">L</a></td><td>Latihan Soal</td><td>Menguji pemahaman lewat ${LATIHAN.length} soal campuran beserta pembahasannya.</td></tr>
     </tbody></table></div>`;
 }
 function viewPetunjuk() {
   const kode = [['Normal', 'Tombol', 'Tampilan awal sebelum disentuh.'], ['Hover', 'Tombol', 'Tampilan saat kursor ada di atas tombol (hanya di laptop).'], ['Hit', 'Tombol', 'Diklik atau diketuk untuk lanjut ke tahap berikutnya.'], ['Swipe', 'Objek', 'Digeser atau digulir.'], ['Seret & letakkan', 'Objek', 'Seret lalu lepaskan. Di HP: ketuk kartu, lalu ketuk slotnya.'], ['Show', 'Objek', 'Penjelasan atau umpan balik yang muncul setelah suatu aksi.']];
   return `
-    <div class="how">${[['inbox', 'Mulai dari pengantar', 'S01 isinya gambaran singkat: mau belajar apa dan urutannya gimana.', '#/scene/S01'], ['book', 'Baca per kartu', 'Materinya dipecah jadi kartu-kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'], ['pointer', 'Coba aktivitasnya', 'Tiap scene ada satu aktivitas. Tombol Lanjut baru nyala setelah aktivitasnya selesai.', '#/scene/S02'], ['lock', 'Satu per satu', 'Scene dibuka berurutan. Jawabanmu tersimpan, jadi aman kalau ditinggal dulu.', '#/materi'], ['pen', 'Latihan soal', `${LATIHAN.length} soal campuran. Tiap jawaban langsung dicek dan ada penjelasannya.`, '#/latihan'], ['flag', 'Evaluasi', `Kebuka setelah materi beres. Nilainya baru keluar di akhir, minimal ${KKM} untuk lulus.`, '#/scene/S12']].map(([ic, t, d, h]) => `<a class="how-item" href="${h}"><span class="how-ic">${icon(ic)}</span><div><b>${t}</b><p>${d}</p></div></a>`).join('')}</div>
+    <div class="how">${[['inbox', 'Mulai dari pengantar', 'S01 isinya gambaran singkat: mau belajar apa dan urutannya gimana.', '#/scene/S01'], ['book', 'Baca per kartu', 'Materinya dipecah jadi kartu-kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'], ['pointer', 'Coba aktivitasnya', 'Tiap scene ada satu aktivitas. Tombol Lanjut baru nyala setelah aktivitasnya selesai.', '#/scene/S02'], ['lock', 'Satu per satu', 'Scene dibuka berurutan. Jawabanmu tersimpan, jadi aman kalau ditinggal dulu.', '#/materi'], ['pen', 'Latihan', `${LATIHAN.length} soal pilihan ganda dengan pembahasan, lalu 3 aktivitas interaktif.`, '#/scene/S12'], ['flag', 'Evaluasi', `Terbuka kalau materi beres, latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar, dan semua aktivitas selesai. Lulus kalau nilainya minimal ${KKM}.`, '#/scene/S14']].map(([ic, t, d, h]) => `<a class="how-item" href="${h}"><span class="how-ic">${icon(ic)}</span><div><b>${t}</b><p>${d}</p></div></a>`).join('')}</div>
     <h2 class="h2">Kode interaksi</h2>
     <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Kode</th><th>Untuk</th><th>Artinya</th></tr></thead><tbody>${kode.map(([a, b, c]) => `<tr><td><b>${a}</b></td><td>${b}</td><td>${c}</td></tr>`).join('')}</tbody></table></div>
     <h2 class="h2">Progres</h2>
@@ -2838,8 +3047,9 @@ function viewAlur() {
     <div class="flow">
       <div class="frow"><span class="fterm">Mulai</span>${arrow}<div class="fgroup"><span class="fg-l">Pembuka</span>${node('S01')}</div></div>
       ${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<div class="frow">${arrow}<div class="fgroup"><span class="fg-l">${m.short} · ${m.title}</span>${m.scenes.map(node).join(arrow)}</div></div>`).join('')}
-      <div class="frow">${arrow}<a class="fnode" href="#/latihan"><span class="fcode">L</span><b>Latihan Soal</b></a>${arrow}<span class="fdecide">Semua materi selesai?</span>${arrow}${node('S12', 'dark')}${arrow}<span class="fdecide">Nilai ≥ ${KKM}?</span></div>
-      <div class="frow split"><div class="fbranch ok"><span class="fb-l">Ya</span>${node('S13')}${arrow}<span class="fterm">Selesai</span></div><div class="fbranch no"><span class="fb-l">Tidak</span><a class="fnode" href="#/scene/S02"><span class="fcode">S02</span><b>Ulangi dari Materi 1</b></a></div></div>
+      <div class="frow">${arrow}<div class="fgroup"><span class="fg-l">Latihan</span>${node('S12')}${arrow}${node('S13')}</div></div>
+      <div class="frow">${arrow}${node('S14')}${arrow}<span class="fdecide">Syarat terpenuhi?</span>${arrow}${node('S15', 'dark')}${arrow}<span class="fdecide">Nilai ≥ ${KKM}?</span></div>
+      <div class="frow split"><div class="fbranch ok"><span class="fb-l">Ya</span>${node('S16')}${arrow}<span class="fterm">Selesai</span></div><div class="fbranch no"><span class="fb-l">Tidak</span><a class="fnode" href="#/scene/S02"><span class="fcode">S02</span><b>Ulangi dari Materi 1</b></a></div></div>
     </div>`;
 }
 function viewPeta() {
@@ -2847,7 +3057,7 @@ function viewPeta() {
   return `
     <div class="cmap"><a class="cm-root" href="#/scene/S01">${icon('mail')}<b>Smart Emailing</b></a>
       <div class="cm-cols">${MATERI.filter(m => topics[m.id]).map(m => `<div class="cm-col"><a class="cm-m" href="#/scene/${m.scenes[0]}"><span>${m.no}</span><b>${m.title}</b></a><ul>${topics[m.id].map(([t, id]) => `<li><a class="cm-t ${state.done[id] ? 'done' : ''}" href="#/scene/${id}">${t}<small>${id}</small></a></li>`).join('')}</ul></div>`).join('')}</div>
-      <div class="cm-end"><a href="#/latihan">${icon('pen')} Latihan soal</a><a href="#/scene/S12">${icon('flag')} Evaluasi</a><a href="#/scene/S13">${icon('award')} Penutup</a></div>
+      <div class="cm-end"><a href="#/scene/S12">${icon('pen')} Latihan soal</a><a href="#/scene/S13">${icon('grid')} Aktivitas interaktif</a><a href="#/scene/S15">${icon('flag')} Evaluasi</a><a href="#/scene/S16">${icon('award')} Penutup</a></div>
     </div>`;
 }
 function viewGlosarium() {
@@ -2897,9 +3107,10 @@ function xpParts() {
     ['book', 'Scene materi (50/scene)', MATERI_SCENES.filter(id => state.done[id]).length * 50, MATERI_SCENES.length * 50],
     ['pen', 'Soal latihan benar (20/soal)', latBenar() * 20, LATIHAN.length * 20],
     ['star', 'Bonus combo latihan (10 × combo terbaik)', Math.min(state.lat && state.lat.best || 0, LATIHAN.length) * 10, LATIHAN.length * 10],
+    ['grid', 'Aktivitas interaktif (30/aktivitas)', AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length * 30, 90],
     ['flag', 'Nilai evaluasi (×3)', ev === null ? 0 : ev * 3, 300],
     ['award', 'Bonus lulus evaluasi', evalPassed() ? 100 : 0, 100],
-    ['check', 'Penutup', state.done.S13 ? 30 : 0, 30],
+    ['check', 'Penutup', state.done.S16 ? 30 : 0, 30],
   ];
 }
 const xpTotal = () => xpParts().reduce((t, p) => t + p[2], 0);
@@ -2916,12 +3127,13 @@ const BADGES = [
   { k: 'm1', ic: 'mail', t: 'Paham Dasar Email', d: 'Menyelesaikan semua scene Materi 1.', to: '#/scene/S02', ok: () => materiSelesai('m1') },
   { k: 'm2', ic: 'briefcase', t: 'Siap Melamar', d: 'Menyelesaikan semua scene Materi 2.', to: '#/scene/S05', ok: () => materiSelesai('m2') },
   { k: 'm3', ic: 'shield', t: 'Beretika', d: 'Menyelesaikan semua scene Materi 3.', to: '#/scene/S09', ok: () => materiSelesai('m3') },
-  { k: 'rajin', ic: 'pen', t: 'Rajin Berlatih', d: 'Memeriksa semua soal latihan.', to: '#/latihan', ok: () => latDikerjakan() === LATIHAN.length },
-  { k: 'jitu', ic: 'target', t: 'Latihan Sempurna', d: 'Semua soal latihan dijawab benar.', to: '#/latihan', ok: () => latBenar() === LATIHAN.length },
-  { k: 'combo', ic: 'star', t: 'Tak Terbendung', d: 'Combo 5× di latihan soal.', to: '#/latihan', ok: () => !!(state.lat && state.lat.best >= 5) },
-  { k: 'lulus', ic: 'flag', t: 'Lulus Evaluasi', d: `Nilai evaluasi minimal ${KKM}.`, to: '#/scene/S12', ok: evalPassed },
-  { k: 'seratus', ic: 'award', t: 'Nilai Sempurna', d: 'Nilai evaluasi 100.', to: '#/scene/S12', ok: () => evScore() === 100 },
-  { k: 'masukan', ic: 'chat', t: 'Memberi Masukan', d: 'Mengisi masukan di penutup.', to: '#/scene/S13', ok: () => !!state.feedback },
+  { k: 'rajin', ic: 'pen', t: 'Capaian Terpenuhi', d: `Latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar.`, to: '#/scene/S12', ok: () => latBenar() >= LAT_MIN },
+  { k: 'jitu', ic: 'target', t: 'Latihan Sempurna', d: 'Semua soal latihan dijawab benar.', to: '#/scene/S12', ok: () => latBenar() === LATIHAN.length },
+  { k: 'combo', ic: 'star', t: 'Tak Terbendung', d: 'Combo 5× di latihan soal.', to: '#/scene/S12', ok: () => !!(state.lat && state.lat.best >= 5) },
+  { k: 'akt', ic: 'grid', t: 'Serba Bisa', d: 'Menyelesaikan ketiga aktivitas interaktif.', to: '#/scene/S13', ok: aktDone },
+  { k: 'lulus', ic: 'flag', t: 'Lulus Evaluasi', d: `Nilai evaluasi minimal ${KKM}.`, to: '#/scene/S15', ok: evalPassed },
+  { k: 'seratus', ic: 'award', t: 'Nilai Sempurna', d: 'Nilai evaluasi 100.', to: '#/scene/S15', ok: () => evScore() === 100 },
+  { k: 'masukan', ic: 'chat', t: 'Memberi Masukan', d: 'Mengisi masukan di penutup.', to: '#/scene/S16', ok: () => !!state.feedback },
 ];
 const badgesGot = () => BADGES.filter(b => b.ok());
 
@@ -3012,7 +3224,6 @@ const PAGES = {
   '': { v: viewHome, title: '' },
   materi: { v: viewMateri, title: 'Materi', nav: 'materi' },
   menu: { v: viewMateri, title: 'Materi', nav: 'materi' },
-  latihan: { v: viewLatihan, m: mountLatihan, title: 'Latihan soal', nav: 'latihan' },
   panduan: { v: () => viewPanduan('panduan'), m: () => mountPanduan('panduan'), title: 'Panduan', nav: 'panduan' },
   tujuan: { v: () => viewPanduan('tujuan'), m: () => mountPanduan('tujuan'), title: 'Panduan', nav: 'panduan' },
   petunjuk: { v: () => viewPanduan('petunjuk'), m: () => mountPanduan('petunjuk'), title: 'Panduan', nav: 'panduan' },
@@ -3031,12 +3242,11 @@ let routeToken = 0, firstRoute = true, lastKey = null;
 const GUIDE = ['panduan', 'tujuan', 'petunjuk', 'alur', 'peta', 'glosarium'];
 function pickTransition(from, to) {
   if (from === to) return null;
-  if (to === 'S12') return 'curtain';
-  if (to === 'S13') return 'circle';
+  if (to === 'S15') return 'curtain';
+  if (to === 'S16') return 'circle';
   const fi = ORDER.indexOf(from), ti = ORDER.indexOf(to);
   if (ti >= 0 && fi >= 0) return ti > fi ? 'slideL' : 'slideR';
   if (ti >= 0) return 'wipe';
-  if (to === 'latihan') return 'flip';
   if (to === '') return 'zoom';
   if (to === 'materi' || to === 'menu') return 'rise';
   if (GUIDE.includes(to)) return 'blur';
@@ -3079,11 +3289,13 @@ function pageEnter(t) {
     later(() => an.cancel(), T_DUR[t] + 300);
   } catch (e) { app.getAnimations && app.getAnimations().forEach(a => a.cancel()); }
 }
+const NAV_OF = id => (['S12', 'S13'].includes(id) ? 'latihan' : ['S14', 'S15', 'S16'].includes(id) ? 'evaluasi' : 'materi');
 async function route() {
   const token = ++routeToken;
   cleanups.forEach(fn => fn()); cleanups = [];
   closeMenu();
   const [page = '', arg] = location.hash.replace(/^#\/?/, '').split('/');
+  if (page === 'latihan') { location.replace('#/scene/S12'); return; }
   const isScene = page === 'scene' && SCENES[arg];
   const curtain = $('#curtain');
   const key = isScene ? arg : (PAGES[page] ? page : '');
@@ -3100,25 +3312,18 @@ async function route() {
   if (app.getAnimations) app.getAnimations().forEach(a => a.cancel());
   firstRoute = false;
   let navKey = '';
-  if (isScene && locked(arg) && MATERI_SCENES.concat('S01').includes(arg)) {
-    const prev = ORDER[ORDER.indexOf(arg) - 1];
+  if (isScene && locked(arg)) {
+    const why = peekInfo(arg).why, back = arg === 'S15' ? '#/scene/S14' : resumeHref();
     app.innerHTML = `<div class="lesson-wide wrap">${routeRail(arg)}<article class="sheet"><div class="lockbox">${icon('lock')}<h3>${arg} · ${SCENES[arg].title} masih terkunci</h3>
-      <p class="muted">Selesaikan <b>${prev} · ${SCENES[prev].title}</b> dulu, ya. Baca semua kartunya dan kerjakan aktivitasnya.</p>
-      <a class="btn btn-primary" href="${resumeHref()}">Lanjutkan ke ${(resumeHref().match(/S\d+/) || ['S01'])[0]} ${icon('right')}</a></div></article></div>`;
-    navKey = 'materi';
+      <p class="muted">${why}</p>
+      <a class="btn btn-primary" href="${back}">Lanjutkan ke ${(back.match(/S\d+/) || ['S01'])[0]} ${icon('right')}</a></div></article></div>`;
+    navKey = NAV_OF(arg);
     document.title = `${arg} terkunci — Smart Emailing`;
-  } else if (page === 'latihan' && !materiDone()) {
-    const left = MATERI_SCENES.filter(id => !state.done[id]);
-    app.innerHTML = `<div class="lesson-wide wrap">${routeRail('L')}<article class="sheet"><div class="lockbox">${icon('lock')}<h3>Latihan soal masih terkunci</h3>
-      <p class="muted">Latihan kebuka kalau semua materi sudah beres. Kurang <b>${left.length}</b> scene lagi.</p>
-      <a class="btn btn-primary" href="${resumeHref()}">Lanjutkan ke ${(resumeHref().match(/S\d+/) || ['S01'])[0]} ${icon('right')}</a></div></article></div>`;
-    navKey = 'latihan';
-    document.title = 'Latihan terkunci — Smart Emailing';
   } else if (isScene) {
     state.last = arg; save();
     app.innerHTML = viewScene(arg);
     mountScene(arg);
-    navKey = arg === 'S12' ? 'evaluasi' : 'materi';
+    navKey = NAV_OF(arg);
     document.title = `${arg} · ${SCENES[arg].title} — Smart Emailing`;
   } else {
     const p = PAGES[page] || PAGES[''];
@@ -3156,19 +3361,20 @@ function updateBar() {
   /* Badge ala notifikasi email */
   const belum = LATIHAN.length - Object.keys((state.lat && state.lat.res) || {}).length;
   const bl = $('#badgeLat'); bl.textContent = belum > 0 ? belum : ''; bl.classList.toggle('on', belum > 0); bl.title = belum > 0 ? `${belum} soal latihan belum dikerjakan` : '';
-  const be = $('#badgeEv'); be.className = 'tbadge ' + (evalPassed() ? 'on ok' : !materiDone() ? 'on lock' : '');
-  be.innerHTML = evalPassed() ? icon('check') : !materiDone() ? icon('lock') : '';
-  be.title = evalPassed() ? 'Evaluasi sudah lulus' : !materiDone() ? 'Terbuka setelah semua materi selesai' : '';
+  const be = $('#badgeEv'); be.className = 'tbadge ' + (evalPassed() ? 'on ok' : !gateOk() ? 'on lock' : '');
+  be.innerHTML = evalPassed() ? icon('check') : !gateOk() ? icon('lock') : '';
+  be.title = evalPassed() ? 'Evaluasi sudah lulus' : !gateOk() ? 'Terbuka setelah tiga syarat di Awal Evaluasi terpenuhi' : '';
   if (!$('#progPop').hidden) renderPop();
 }
 function renderPop() {
   const latOk = state.lat ? Object.values(state.lat.res || {}).filter(Boolean).length : 0;
   const ev = state.ev && state.ev.done ? state.ev.score : null;
-  $('#progPop').innerHTML = `<div class="pp-h"><b>Progres kamu</b><small>${doneCount()} dari 13 scene selesai</small></div>
+  $('#progPop').innerHTML = `<div class="pp-h"><b>Progres kamu</b><small>${doneCount()} dari ${ORDER.length} scene selesai</small></div>
     <a class="pp-lv" href="#/pencapaian">${levelCard('mini')}<span class="pp-bdg">${BADGES.map(b => `<i class="${b.ok() ? 'on' : ''}" title="${b.t}">${icon(b.ok() ? b.ic : 'lock')}</i>`).join('')}</span></a>
     ${MATERI.map(m => { const d = m.scenes.filter(id => state.done[id]).length; return `<div class="pp-row"><span>${m.short}</span><span class="bar"><i style="width:${d / m.scenes.length * 100}%"></i></span><b>${d}/${m.scenes.length}</b></div>`; }).join('')}
     <div class="pp-sub"><span>${icon('pen')} Latihan</span><b>${latOk}/${LATIHAN.length} benar</b></div>
-    <div class="pp-sub"><span>${icon('flag')} Evaluasi</span><b>${ev !== null ? 'Nilai ' + ev : materiDone() ? 'Siap dikerjakan' : 'Terkunci'}</b></div>
+    <div class="pp-sub"><span>${icon('grid')} Aktivitas interaktif</span><b>${AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length}/3 selesai</b></div>
+    <div class="pp-sub"><span>${icon('flag')} Evaluasi</span><b>${ev !== null ? 'Nilai ' + ev : gateOk() ? 'Siap dikerjakan' : 'Terkunci'}</b></div>
     <a class="btn btn-primary btn-sm" href="${doneCount() ? resumeHref() : '#/scene/S01'}">${doneCount() ? 'Lanjutkan belajar' : 'Mulai belajar'} ${icon('right')}</a>`;
 }
 function togglePop(force) {

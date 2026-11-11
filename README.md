@@ -29,7 +29,7 @@ Banyak lamaran kerja tidak dibalas bukan karena pelamarnya kurang mampu, tapi ka
 |---|---|
 | **Sasaran** | Fresh graduate yang sedang bersiap melamar kerja |
 | **Tujuan** | Peserta mampu merancang email lamaran kerja yang efektif, sesuai susunan dan etika komunikasi profesional |
-| **Isi** | 3 materi · 10 scene materi · 25 soal latihan · 8 soal evaluasi · rangkuman |
+| **Isi** | 3 materi · 10 scene materi · 15 soal latihan · 3 aktivitas interaktif · 4 soal evaluasi akhir · rangkuman |
 | **Akses** | Online, offline (satu file HTML), atau di LMS (SCORM 1.2) tanpa internet dan tanpa akun |
 
 ## Alur belajar
@@ -39,9 +39,10 @@ Mulai → S01 Pengantar
       → Materi 1: Dasar Komunikasi lewat Email      (S02 · S03 · S04)
       → Materi 2: Menulis Email Lamaran Kerja       (S05 · S06 · S07 · S08)
       → Materi 3: Etika Berkirim Email              (S09 · S10 · S11)
-      → Latihan soal (L)
-      → Semua materi selesai? → S12 Evaluasi → Nilai ≥ 75? → Ya: S13 Penutup
-                                                           → Tidak: ulangi dari Materi 1
+      → Latihan: S12 Latihan Soal (15 PG) · S13 Aktivitas Interaktif
+      → S14 Awal Evaluasi: materi selesai + latihan ≥ 70% + semua aktivitas selesai?
+      → S15 Evaluasi Akhir → Nilai ≥ 75? → Ya: S16 Penutup
+                                       → Tidak: Pelajari Ulang (S02) atau Coba Evaluasi Lagi
 ```
 
 ![Flowchart alur belajar](docs/screenshots/10-flowchart.png)
@@ -82,27 +83,37 @@ Setiap scene memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan o
 | S10 | Follow-up ke HR | Pilih langkahmu |
 | S11 | Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
 
-### 4. Latihan soal
-Ada **25 soal campuran**: pilihan ganda, benar/salah, memasangkan, mengurutkan, dan mengelompokkan. Setiap jawaban langsung diperiksa dan disertai pembahasan. Nomor soal berwarna hijau untuk jawaban benar dan merah untuk yang belum tepat, dan soal bisa dikerjakan ulang kapan saja.
+### 4. Latihan soal (S12)
+Ada **15 soal pilihan ganda**, 5 soal untuk setiap materi. Setelah menekan **Jawab**, pembahasannya langsung muncul. Nomor soal berwarna hijau untuk jawaban benar dan merah untuk yang belum tepat. Setelah soal ke-15, tampil skor (jumlah benar dari 15) dengan status **Capaian terpenuhi** atau **Belum terpenuhi**, plus tombol *Ulangi* dan *Lanjut*.
 
 ![Latihan soal](docs/screenshots/06-latihan.png)
 
-### 5. Evaluasi akhir (S12)
-- **Terkunci** sampai semua scene materi selesai.
-- Berisi **8 soal tanpa pilihan ganda** yang diambil dari jenis aktivitas di materi: urutkan, pasangkan, kelompokkan, tandai kesalahan, dan atur jam kirim.
-- Selama mengerjakan **tidak ada tanda benar/salah**. Jawaban tersimpan otomatis, dan setiap soal yang sudah dijawab ditandai cap.
-- Sebelum dikirim, peserta bisa memeriksa lembar jawabannya. **Nilai akhir** baru muncul setelah semua jawaban dikirim, dengan batas lulus **75**.
+### 5. Aktivitas interaktif (S13)
+Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar posisi Content Writer. Ketiganya harus dikerjakan.
+- **A. Cocokkan istilah:** seret 5 istilah (subject line, CC, BCC, follow-up, signature) ke definisinya. 1 poin per pasangan.
+- **B. Susun email follow-up:** urutkan 5 kalimat email follow-up Salsa. 1 poin kalau urutannya benar semua.
+- **C. Perbaiki kalimat:** ketuk bagian kalimat yang tidak pantas, lalu pilih penggantinya dari 3 opsi. 1 poin per kalimat.
+
+![Aktivitas interaktif](docs/screenshots/16-aktivitas-interaktif.png)
+
+### 6. Awal evaluasi (S14) dan evaluasi akhir (S15)
+- **Awal Evaluasi** menampilkan tiga syarat dengan tanda centang atau gembok: materi 1–3 selesai, latihan pilihan ganda minimal **70% (11 dari 15 benar)**, dan semua aktivitas interaktif selesai. Syarat yang belum terpenuhi punya tombol **Kerjakan**, dan tombol **Mulai Evaluasi** baru terbuka setelah ketiganya terpenuhi.
+- **Evaluasi Akhir** berisi **4 soal** yang diambil dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal.
+- Tidak ada tanda benar/salah dan tidak ada pembahasan. Setiap soal punya tombol **Simpan jawaban**, dan jawaban yang sudah disimpan tidak bisa diubah.
+- Layar akhir hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**). Kalau belum lulus, ada tombol **Pelajari Ulang** (kembali ke S02) dan **Coba Evaluasi Lagi**.
+
+![Awal evaluasi](docs/screenshots/17-awal-evaluasi.png)
 
 | Mengerjakan evaluasi | Hasil evaluasi |
 |---|---|
 | ![Soal evaluasi](docs/screenshots/07-evaluasi.png) | ![Hasil evaluasi](docs/screenshots/08-hasil-evaluasi.png) |
 
-### 6. Penutup (S13)
+### 7. Penutup (S16)
 Terbuka setelah peserta lulus evaluasi. Isinya rangkuman satu halaman yang bisa disimpan sebagai PDF, ditambah formulir masukan (rating bintang dan saran).
 
 ![Rangkuman penutup](docs/screenshots/09-penutup.png)
 
-### 7. Tampilan di HP
+### 8. Tampilan di HP
 Di HP, semua halaman tampil layar penuh dengan menu di bagian bawah. Seret & letakkan diganti dengan *ketuk kartu, lalu ketuk slotnya*.
 
 <p align="center">
@@ -111,17 +122,17 @@ Di HP, semua halaman tampil layar penuh dengan menu di bagian bawah. Seret & let
   <img src="docs/screenshots/12-hp-scene.png" width="260" alt="Scene di HP">
 </p>
 
-### 8. Materi terbuka berurutan
-Setiap scene baru terbuka setelah scene sebelumnya selesai, dan latihan soal terbuka setelah semua scene materi selesai. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Scene yang belum terbuka ditandai gembok di Rute Belajar dan halaman Materi.
+### 9. Materi terbuka berurutan
+Setiap scene baru terbuka setelah scene sebelumnya selesai, termasuk latihan soal dan aktivitas interaktif. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Scene yang belum terbuka ditandai gembok di Rute Belajar dan halaman Materi.
 
 ![Scene terkunci](docs/screenshots/15-scene-terkunci.png)
 
-### 9. Gamifikasi: skor, lencana, dan reward
+### 10. Gamifikasi: skor, lencana, dan reward
 | Unsur | Isinya |
 |---|---|
-| **Skor (XP)** | Pengantar 20 · setiap scene materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.700 XP) |
+| **Skor (XP)** | Pengantar 20 · setiap scene materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
 | **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300) |
-| **10 lencana** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Rajin Berlatih, Latihan Sempurna, Tak Terbendung (combo 5×), Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
+| **11 lencana** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Serba Bisa (semua aktivitas interaktif), Tak Terbendung (combo 5×), Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
 | **Reward** | Animasi "+XP", kartu "Lencana baru!" dan "Naik level!", konfeti, combo saat latihan, dan **sertifikat** dengan nama peserta setelah lulus evaluasi (bisa disimpan sebagai PDF) |
 
 | Halaman pencapaian | Sertifikat |
