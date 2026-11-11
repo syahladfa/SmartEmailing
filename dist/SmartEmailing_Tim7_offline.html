@@ -1730,6 +1730,8 @@ const MATERI = [
     desc: 'Cek syarat evaluasi, kerjakan evaluasi akhir, lalu penutup.' },
 ];
 const materiOf = id => MATERI.find(m => m.scenes.includes(id));
+/* Kode scene yang tampil di layar cukup angkanya (S05 → 5); alamat #/scene/S05 tidak berubah */
+const kode = id => String(+String(id).slice(1));
 
 const SCENES = {
   S01: { title: 'Selamat Datang', type: 'Pengantar', wide: true,
@@ -1910,9 +1912,9 @@ function routeRail(cur) {
         const dn = isDone(id), lk = isLock(id), c = id === cur;
         const cls = c ? 'cur' : dn ? 'done' : lk ? 'locked' : 'open';
         const t = SCENES[id].title;
-        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="#/scene/${id}" data-peek="${id}" aria-label="${id} · ${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
-          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : `<b>${id.slice(1)}</b>`}</span>
-          <span class="r2-lbl">${c ? 'Di sini' : id}</span></a>`;
+        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="#/scene/${id}" data-peek="${id}" aria-label="${kode(id)} · ${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
+          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : `<b>${kode(id)}</b>`}</span>
+          <span class="r2-lbl">${c ? 'Di sini' : kode(id)}</span></a>`;
       }).join('')}</div></div>`;
   };
   return `<nav class="rail r2" aria-label="Rute belajar">
@@ -1920,7 +1922,7 @@ function routeRail(cur) {
       <span class="rail-ic">${icon('map')}</span>
       <div class="r2-tt"><b>Rute Belajar</b><small><b>${n}</b> dari ${total} scene selesai</small></div>
       <div class="r2-prog" title="${p}% selesai"><span class="r2-bar"><i style="width:${p}%"></i></span><b>${p}%</b></div>
-      <div class="r2-act">${resId && resId !== cur && !isLock(resId) ? `<a class="r2-go" href="${res}">${icon('right')} Lanjut ${resId}</a>` : ''}<a class="rail-all" href="#/materi">${icon('grid')}<span>Semua materi</span></a></div>
+      <div class="r2-act">${resId && resId !== cur && !isLock(resId) ? `<a class="r2-go" href="${res}">${icon('right')} Lanjut ke ${kode(resId)}</a>` : ''}<a class="rail-all" href="#/materi">${icon('grid')}<span>Semua materi</span></a></div>
     </div>
     <div class="r2-track">${groups.map(grp).join('')}</div>
   </nav>`;
@@ -1948,8 +1950,8 @@ const PEEK_TEKS = {
 };
 const peekInfo = id => {
   const s = SCENES[id], m = materiOf(id), i = ORDER.indexOf(id);
-  const why = id === 'S14' ? 'Selesaikan semua scene materi dulu.' : id === 'S15' ? 'Penuhi tiga syarat di Awal Evaluasi dulu.' : id === 'S16' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${ORDER[i - 1]} · ${SCENES[ORDER[i - 1]].title} dulu.`;
-  return { code: id, grp: m ? m.short : '', title: s.title, type: s.type, desc: PEEK_TEKS[id] || s.tujuan, st: state.done[id] ? 'done' : locked(id) ? 'lock' : 'open', why };
+  const why = id === 'S14' ? 'Selesaikan semua scene materi dulu.' : id === 'S15' ? 'Penuhi tiga syarat di Awal Evaluasi dulu.' : id === 'S16' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${kode(ORDER[i - 1])} · ${SCENES[ORDER[i - 1]].title} dulu.`;
+  return { code: kode(id), grp: m ? m.short : '', title: s.title, type: s.type, desc: PEEK_TEKS[id] || s.tujuan, st: state.done[id] ? 'done' : locked(id) ? 'lock' : 'open', why };
 };
 (() => {
   const el = document.createElement('div');
@@ -1999,15 +2001,15 @@ function viewHome() {
         </div>
       </div>
       <div class="hero-art">
-        <div class="mailcard" data-to="#/scene/S05" title="Susunan email lamaran (S05)">
+        <div class="mailcard" data-to="#/scene/S05" title="Susunan email lamaran (scene 5)">
           <div class="mc-top"><i></i><i></i><i></i></div>
           <div class="mc-row"><small>Subject</small>Application for Graphic Designer Position – ${NAMA}</div>
           <div class="mc-line w70"></div><div class="mc-line"></div><div class="mc-line w85"></div>
-          <div class="mc-attach" data-to="#/scene/S06" title="Melampirkan CV (S06)">${icon('clip')} CV_${NAMAF}.pdf</div>
+          <div class="mc-attach" data-to="#/scene/S06" title="Melampirkan CV (scene 6)">${icon('clip')} CV_${NAMAF}.pdf</div>
         </div>
-        <span class="chip-f c1" data-to="#/scene/S04" title="Subject yang efektif (S04)">${icon('check')} Subject jelas</span>
-        <span class="chip-f c2" data-to="#/scene/S09" title="Waktu mengirim email (S09)">${icon('clock')} 08.00–17.00</span>
-        <span class="chip-f c3" data-to="#/scene/S06" title="Mengirim CV (S06)">${icon('send')} Siap dikirim</span>
+        <span class="chip-f c1" data-to="#/scene/S04" title="Subject yang efektif (scene 4)">${icon('check')} Subject jelas</span>
+        <span class="chip-f c2" data-to="#/scene/S09" title="Waktu mengirim email (scene 9)">${icon('clock')} 08.00–17.00</span>
+        <span class="chip-f c3" data-to="#/scene/S06" title="Mengirim CV (scene 6)">${icon('send')} Siap dikirim</span>
       </div>
     </div>
   </section>
@@ -2028,7 +2030,7 @@ function viewHome() {
    KATALOG MATERI
    ========================================================================= */
 function viewMateri() {
-  const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/scene/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : id}</span><span class="srow-t"><b>${SCENES[id].title}</b><small>${id} · ${SCENES[id].type}</small></span>${icon('right')}</a>`; };
+  const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/scene/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : kode(id)}</span><span class="srow-t"><b>${SCENES[id].title}</b><small>${kode(id)} · ${SCENES[id].type}</small></span>${icon('right')}</a>`; };
   return `<div class="page wrap">
     <header class="page-head"><div class="eyebrow">Materi</div><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Scene berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
       <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 scene selesai</small></div></header>
@@ -2075,7 +2077,7 @@ function viewScene(id) {
         <div class="mv-meta">
           <div class="mv-from"><b>Smart Emailing</b><small>kepada: kamu · ± ${mins} menit</small></div>
           <h1 class="display">${s.title}</h1>
-          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl code" data-to="#/alur" title="Lihat di flowchart">${id}</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span></div>
+          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl code" data-to="#/alur" title="Lihat di flowchart">${kode(id)}</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span></div>
         </div>
       </header>
       <div class="pin-note"><span class="pin" data-to="#/tujuan" title="Semua tujuan belajar"></span><b>Tujuan</b><p>${s.tujuan}</p></div>
@@ -2141,7 +2143,7 @@ function mountScene(id) {
     if (freshDone && !silent) celebrate();
     const rail = $('.rail'); if (rail) rail.outerHTML = routeRail(id);
     const nx = ORDER[ORDER.indexOf(id) + 1];
-    if (freshDone && !silent && nx && MATERI_SCENES.includes(nx)) toast(`${nx} · ${SCENES[nx].title} sudah kebuka.`);
+    if (freshDone && !silent && nx && MATERI_SCENES.includes(nx)) toast(`${kode(nx)} · ${SCENES[nx].title} sudah kebuka.`);
   };
   const done = silent => {
     const st = A(id), first = !st.actOk;
@@ -2174,7 +2176,7 @@ const HINT_AKT = {
 function hintFor(id) {
   const s = SCENES[id], st = A(id), nx = ORDER[ORDER.indexOf(id) + 1];
   const sisa = s.uraian ? s.uraian.length - s.uraian.filter((_, j) => (st.read || []).includes(j)).length : 0;
-  if (state.done[id]) return { t: `Scene ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'S12' ? 'langkah berikutnya' : nx}.`, to: '#nextBtn' };
+  if (state.done[id]) return { t: `Scene ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'S12' ? 'langkah berikutnya' : 'scene ' + kode(nx)}.`, to: '#nextBtn' };
   if (!st.actOk && (readAll(id) || s.uraianAfter)) return { t: `${readAll(id) ? 'Materinya sudah kebaca semua. ' : ''}Sekarang giliran aktivitas di bawah: ${HINT_AKT[id] || 'selesaikan aktivitasnya.'}`, to: '#activity' };
   if (!st.actOk) return { t: `Masih ada <b>${sisa} kartu materi</b> yang belum dibaca. Klik <b>Berikutnya</b> di kartu materi, setelah itu kerjakan aktivitasnya.`, to: '#uraian .st-tab:not(.read)' };
   return { t: `Tinggal satu langkah lagi: buka <b>${sisa} kartu materi</b> yang belum dibaca supaya scene berikutnya terbuka.`, to: '#uraian .st-tab:not(.read)' };
@@ -2901,9 +2903,9 @@ ACT.S13 = (el, done) => {
 ACT.S14 = (el, done) => {
   const kurang = MATERI_SCENES.find(id => !state.done[id]);
   const syarat = [
-    [materiDone(), 'Materi 1–3 (S02–S11) selesai semua', `${MATERI_SCENES.filter(id => state.done[id]).length} dari ${MATERI_SCENES.length} scene materi selesai`, kurang ? '#/scene/' + kurang : '#/scene/S02'],
-    [latSkor() >= LAT_MIN, `Latihan pilihan ganda (S12) minimal 70% (${LAT_MIN} dari ${LATIHAN.length} benar)`, `Skormu sekarang ${latSkor()} dari ${LATIHAN.length} benar`, '#/scene/S12'],
-    [aktDone(), 'Latihan interaktif (S13) semua aktivitas dikerjakan', `${AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length} dari 3 aktivitas selesai`, '#/scene/S13'],
+    [materiDone(), 'Materi 1–3 (scene 2–11) selesai semua', `${MATERI_SCENES.filter(id => state.done[id]).length} dari ${MATERI_SCENES.length} scene materi selesai`, kurang ? '#/scene/' + kurang : '#/scene/S02'],
+    [latSkor() >= LAT_MIN, `Latihan pilihan ganda (scene 12) minimal 70% (${LAT_MIN} dari ${LATIHAN.length} benar)`, `Skormu sekarang ${latSkor()} dari ${LATIHAN.length} benar`, '#/scene/S12'],
+    [aktDone(), 'Latihan interaktif (scene 13) semua aktivitas dikerjakan', `${AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length} dari 3 aktivitas selesai`, '#/scene/S13'],
   ];
   const ok = gateOk();
   el.innerHTML = `<div class="gate">
@@ -2978,12 +2980,12 @@ ACT.S16 = (el, done) => {
   el.innerHTML = `<div class="infog" id="infog">
     <div class="ig-head"><a class="brand-mark sm" href="#/" title="Beranda">${LOGO}</a><div><b>SMART EMAILING</b><small>Rangkuman pelatihan</small></div></div>
     <div class="ig-grid">
-      <div class="ig"><h4 data-to="#/scene/S03" title="Buka S03">${icon('layers')} Bagian email</h4><ol><li>Subject</li><li>Salam pembuka</li><li>Isi email</li><li>Salam penutup</li><li>Tanda tangan</li></ol></div>
-      <div class="ig"><h4 data-to="#/scene/S08" title="Buka S08">${icon('list')} Cek sebelum kirim</h4><ul class="ticks"><li>Subject jelas</li><li>Salam sesuai</li><li>Perkenalan singkat</li><li>Lampiran disebutkan</li><li>Bahasa formal</li></ul></div>
-      <div class="ig"><h4 data-to="#/scene/S09" title="Buka S09">${icon('users')} CC dan BCC</h4><p><b>CC</b>: salinan, penerimanya terlihat.</p><p><b>BCC</b>: salinan, penerimanya disembunyikan.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S09" title="Buka S09">${icon('clock')} Waktu kirim</h4><p class="ig-big">08.00–17.00</p><p>Di jam kerja. Hindari larut malam dan hari libur.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S10" title="Buka S10">${icon('calendar')} Follow-up</h4><p class="ig-big">5–7 hari kerja</p><p>Kalau belum ada kabar. Sopan, singkat, tidak memaksa.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S11" title="Buka S11">${icon('type')} Bahasa</h4><p>Jelas dan sopan. Tanpa bahasa gaul, singkatan, emoji, atau kapital berlebihan.</p></div>
+      <div class="ig"><h4 data-to="#/scene/S03" title="Buka scene 3">${icon('layers')} Bagian email</h4><ol><li>Subject</li><li>Salam pembuka</li><li>Isi email</li><li>Salam penutup</li><li>Tanda tangan</li></ol></div>
+      <div class="ig"><h4 data-to="#/scene/S08" title="Buka scene 8">${icon('list')} Cek sebelum kirim</h4><ul class="ticks"><li>Subject jelas</li><li>Salam sesuai</li><li>Perkenalan singkat</li><li>Lampiran disebutkan</li><li>Bahasa formal</li></ul></div>
+      <div class="ig"><h4 data-to="#/scene/S09" title="Buka scene 9">${icon('users')} CC dan BCC</h4><p><b>CC</b>: salinan, penerimanya terlihat.</p><p><b>BCC</b>: salinan, penerimanya disembunyikan.</p></div>
+      <div class="ig"><h4 data-to="#/scene/S09" title="Buka scene 9">${icon('clock')} Waktu kirim</h4><p class="ig-big">08.00–17.00</p><p>Di jam kerja. Hindari larut malam dan hari libur.</p></div>
+      <div class="ig"><h4 data-to="#/scene/S10" title="Buka scene 10">${icon('calendar')} Follow-up</h4><p class="ig-big">5–7 hari kerja</p><p>Kalau belum ada kabar. Sopan, singkat, tidak memaksa.</p></div>
+      <div class="ig"><h4 data-to="#/scene/S11" title="Buka scene 11">${icon('type')} Bahasa</h4><p>Jelas dan sopan. Tanpa bahasa gaul, singkatan, emoji, atau kapital berlebihan.</p></div>
     </div>
   </div>
   <div class="row-btns"><button type="button" class="btn btn-outline btn-sm" data-print>${icon('printer')} Simpan rangkuman (PDF)</button><a class="btn btn-gold btn-sm" href="#/sertifikat">${icon('award')} Ambil sertifikat</a><a class="btn btn-outline btn-sm" href="#/pencapaian">${icon('star')} Pencapaianku</a></div>
@@ -3024,13 +3026,13 @@ function viewTujuan() {
       <ul class="goal-list">${['menjelaskan fungsi email dalam dunia kerja;', 'membuat email profesional untuk kebutuhan mencari kerja;', 'mengidentifikasi struktur email profesional;', 'menjelaskan fungsi CC dan BCC;', 'menentukan waktu yang tepat mengirim email dan melakukan follow-up kepada HR;', 'menyusun email follow-up yang sopan dan profesional;', 'menerapkan bahasa formal dan profesional dalam email.'].map(t => `<li>${t}</li>`).join('')}</ul>
       <small>Sasaran: fresh graduate</small></div>
     <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Kode</th><th>Topik</th><th>Tujuan</th></tr></thead><tbody>
-      ${ORDER.map(id => `<tr><td><a href="#/scene/${id}">${id}</a></td><td>${SCENES[id].title}</td><td>${SCENES[id].tujuan}</td></tr>`).join('')}
+      ${ORDER.map(id => `<tr><td><a href="#/scene/${id}">${kode(id)}</a></td><td>${SCENES[id].title}</td><td>${SCENES[id].tujuan}</td></tr>`).join('')}
     </tbody></table></div>`;
 }
 function viewPetunjuk() {
   const kode = [['Normal', 'Tombol', 'Tampilan awal sebelum disentuh.'], ['Hover', 'Tombol', 'Tampilan saat kursor ada di atas tombol (hanya di laptop).'], ['Hit', 'Tombol', 'Diklik atau diketuk untuk lanjut ke tahap berikutnya.'], ['Swipe', 'Objek', 'Digeser atau digulir.'], ['Seret & letakkan', 'Objek', 'Seret lalu lepaskan. Di HP: ketuk kartu, lalu ketuk slotnya.'], ['Show', 'Objek', 'Penjelasan atau umpan balik yang muncul setelah suatu aksi.']];
   return `
-    <div class="how">${[['inbox', 'Mulai dari pengantar', 'S01 isinya gambaran singkat: mau belajar apa dan urutannya gimana.', '#/scene/S01'], ['book', 'Baca per kartu', 'Materinya dipecah jadi kartu-kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'], ['pointer', 'Coba aktivitasnya', 'Tiap scene ada satu aktivitas. Tombol Lanjut baru nyala setelah aktivitasnya selesai.', '#/scene/S02'], ['lock', 'Satu per satu', 'Scene dibuka berurutan. Jawabanmu tersimpan, jadi aman kalau ditinggal dulu.', '#/materi'], ['pen', 'Latihan', `${LATIHAN.length} soal pilihan ganda dengan pembahasan, lalu 3 aktivitas interaktif.`, '#/scene/S12'], ['flag', 'Evaluasi', `Terbuka kalau materi beres, latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar, dan semua aktivitas selesai. Lulus kalau nilainya minimal ${KKM}.`, '#/scene/S14']].map(([ic, t, d, h]) => `<a class="how-item" href="${h}"><span class="how-ic">${icon(ic)}</span><div><b>${t}</b><p>${d}</p></div></a>`).join('')}</div>
+    <div class="how">${[['inbox', 'Mulai dari pengantar', 'Scene 1 isinya gambaran singkat: mau belajar apa dan urutannya gimana.', '#/scene/S01'], ['book', 'Baca per kartu', 'Materinya dipecah jadi kartu-kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'], ['pointer', 'Coba aktivitasnya', 'Tiap scene ada satu aktivitas. Tombol Lanjut baru nyala setelah aktivitasnya selesai.', '#/scene/S02'], ['lock', 'Satu per satu', 'Scene dibuka berurutan. Jawabanmu tersimpan, jadi aman kalau ditinggal dulu.', '#/materi'], ['pen', 'Latihan', `${LATIHAN.length} soal pilihan ganda dengan pembahasan, lalu 3 aktivitas interaktif.`, '#/scene/S12'], ['flag', 'Evaluasi', `Terbuka kalau materi beres, latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar, dan semua aktivitas selesai. Lulus kalau nilainya minimal ${KKM}.`, '#/scene/S14']].map(([ic, t, d, h]) => `<a class="how-item" href="${h}"><span class="how-ic">${icon(ic)}</span><div><b>${t}</b><p>${d}</p></div></a>`).join('')}</div>
     <h2 class="h2">Kode interaksi</h2>
     <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Kode</th><th>Untuk</th><th>Artinya</th></tr></thead><tbody>${kode.map(([a, b, c]) => `<tr><td><b>${a}</b></td><td>${b}</td><td>${c}</td></tr>`).join('')}</tbody></table></div>
     <h2 class="h2">Progres</h2>
@@ -3040,7 +3042,7 @@ function viewPetunjuk() {
 function mountPetunjuk() { $('#resetBtn').onclick = () => { if (!confirm('Hapus semua progres, jawaban, dan nilai di browser ini?')) return; const snd = state.sound; state = fresh(); state.sound = snd; save(); updateBar(); toast('Progres sudah dihapus.'); }; }
 
 function viewAlur() {
-  const node = (id, cls = '') => `<a class="fnode ${cls} ${state.done[id] ? 'ok' : ''}" href="#/scene/${id}"><span class="fcode">${id}</span><b>${SCENES[id].title}</b></a>`;
+  const node = (id, cls = '') => `<a class="fnode ${cls} ${state.done[id] ? 'ok' : ''}" href="#/scene/${id}"><span class="fcode">${kode(id)}</span><b>${SCENES[id].title}</b></a>`;
   const arrow = '<span class="farrow" aria-hidden="true"></span>';
   return `
     <p class="muted small">Klik kotaknya untuk langsung ke scene itu.</p>
@@ -3049,21 +3051,21 @@ function viewAlur() {
       ${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<div class="frow">${arrow}<div class="fgroup"><span class="fg-l">${m.short} · ${m.title}</span>${m.scenes.map(node).join(arrow)}</div></div>`).join('')}
       <div class="frow">${arrow}<div class="fgroup"><span class="fg-l">Latihan</span>${node('S12')}${arrow}${node('S13')}</div></div>
       <div class="frow">${arrow}${node('S14')}${arrow}<span class="fdecide">Syarat terpenuhi?</span>${arrow}${node('S15', 'dark')}${arrow}<span class="fdecide">Nilai ≥ ${KKM}?</span></div>
-      <div class="frow split"><div class="fbranch ok"><span class="fb-l">Ya</span>${node('S16')}${arrow}<span class="fterm">Selesai</span></div><div class="fbranch no"><span class="fb-l">Tidak</span><a class="fnode" href="#/scene/S02"><span class="fcode">S02</span><b>Ulangi dari Materi 1</b></a></div></div>
+      <div class="frow split"><div class="fbranch ok"><span class="fb-l">Ya</span>${node('S16')}${arrow}<span class="fterm">Selesai</span></div><div class="fbranch no"><span class="fb-l">Tidak</span><a class="fnode" href="#/scene/S02"><span class="fcode">2</span><b>Ulangi dari Materi 1</b></a></div></div>
     </div>`;
 }
 function viewPeta() {
   const topics = { m1: [['Kegunaan email di dunia kerja', 'S02'], ['Bagian-bagian email', 'S03'], ['Subject yang efektif', 'S04'], ['Salam pembuka dan penutup', 'S04']], m2: [['Fungsi dan susunan email lamaran', 'S05'], ['Memperkenalkan diri', 'S06'], ['Melampirkan CV dan portofolio', 'S06'], ['Kesalahan yang sering terjadi', 'S07'], ['Praktik menulis email lamaran', 'S08']], m3: [['CC dan BCC', 'S09'], ['Waktu mengirim email', 'S09'], ['Follow-up ke HR', 'S10'], ['Bahasa formal dan sopan', 'S11']] };
   return `
     <div class="cmap"><a class="cm-root" href="#/scene/S01">${icon('mail')}<b>Smart Emailing</b></a>
-      <div class="cm-cols">${MATERI.filter(m => topics[m.id]).map(m => `<div class="cm-col"><a class="cm-m" href="#/scene/${m.scenes[0]}"><span>${m.no}</span><b>${m.title}</b></a><ul>${topics[m.id].map(([t, id]) => `<li><a class="cm-t ${state.done[id] ? 'done' : ''}" href="#/scene/${id}">${t}<small>${id}</small></a></li>`).join('')}</ul></div>`).join('')}</div>
+      <div class="cm-cols">${MATERI.filter(m => topics[m.id]).map(m => `<div class="cm-col"><a class="cm-m" href="#/scene/${m.scenes[0]}"><span>${m.no}</span><b>${m.title}</b></a><ul>${topics[m.id].map(([t, id]) => `<li><a class="cm-t ${state.done[id] ? 'done' : ''}" href="#/scene/${id}">${t}<small>${kode(id)}</small></a></li>`).join('')}</ul></div>`).join('')}</div>
       <div class="cm-end"><a href="#/scene/S12">${icon('pen')} Latihan soal</a><a href="#/scene/S13">${icon('grid')} Aktivitas interaktif</a><a href="#/scene/S15">${icon('flag')} Evaluasi</a><a href="#/scene/S16">${icon('award')} Penutup</a></div>
     </div>`;
 }
 function viewGlosarium() {
   return `
     <label class="search">${icon('search')}<input id="gq" type="search" placeholder="Cari istilah…" aria-label="Cari istilah"></label>
-    <dl class="gloss">${GLOSARIUM.map(([t, d, id]) => `<div class="g-item" data-t="${(t + ' ' + d).toLowerCase()}"><dt>${t}</dt><dd>${d} <a href="#/scene/${id}">${id} ${icon('right')}</a></dd></div>`).join('')}</dl>
+    <dl class="gloss">${GLOSARIUM.map(([t, d, id]) => `<div class="g-item" data-t="${(t + ' ' + d).toLowerCase()}"><dt>${t}</dt><dd>${d} <a href="#/scene/${id}">${kode(id)} ${icon('right')}</a></dd></div>`).join('')}</dl>
     <p class="muted" id="gEmpty" hidden>Istilah tidak ditemukan.</p>`;
 }
 function mountGlosarium() { $('#gq').oninput = e => { const q = e.target.value.trim().toLowerCase(); let n = 0; $$('.g-item').forEach(g => { const s = !q || g.dataset.t.includes(q); g.hidden = !s; n += s; }); $('#gEmpty').hidden = n > 0; }; }
@@ -3123,7 +3125,7 @@ function levelOf(xp) {
 }
 const materiSelesai = mid => MATERI.find(m => m.id === mid).scenes.every(id => state.done[id]);
 const BADGES = [
-  { k: 'mulai', ic: 'inbox', t: 'Langkah Pertama', d: 'Menyelesaikan pengantar (S01).', to: '#/scene/S01', ok: () => !!state.done.S01 },
+  { k: 'mulai', ic: 'inbox', t: 'Langkah Pertama', d: 'Menyelesaikan pengantar (scene 1).', to: '#/scene/S01', ok: () => !!state.done.S01 },
   { k: 'm1', ic: 'mail', t: 'Paham Dasar Email', d: 'Menyelesaikan semua scene Materi 1.', to: '#/scene/S02', ok: () => materiSelesai('m1') },
   { k: 'm2', ic: 'briefcase', t: 'Siap Melamar', d: 'Menyelesaikan semua scene Materi 2.', to: '#/scene/S05', ok: () => materiSelesai('m2') },
   { k: 'm3', ic: 'shield', t: 'Beretika', d: 'Menyelesaikan semua scene Materi 3.', to: '#/scene/S09', ok: () => materiSelesai('m3') },
@@ -3301,7 +3303,7 @@ async function route() {
   const key = isScene ? arg : (PAGES[page] ? page : '');
   const tr = firstRoute || reduced ? null : pickTransition(lastKey, key);
   if (tr === 'curtain') {
-    $('.cur-code', curtain).textContent = arg;
+    $('.cur-code', curtain).textContent = kode(arg);
     $('.cur-title', curtain).textContent = SCENES[arg].title;
     curtain.className = 'curtain cover';
     await wait(420); if (token !== routeToken) return;
@@ -3314,17 +3316,17 @@ async function route() {
   let navKey = '';
   if (isScene && locked(arg)) {
     const why = peekInfo(arg).why, back = arg === 'S15' ? '#/scene/S14' : resumeHref();
-    app.innerHTML = `<div class="lesson-wide wrap">${routeRail(arg)}<article class="sheet"><div class="lockbox">${icon('lock')}<h3>${arg} · ${SCENES[arg].title} masih terkunci</h3>
+    app.innerHTML = `<div class="lesson-wide wrap">${routeRail(arg)}<article class="sheet"><div class="lockbox">${icon('lock')}<h3>${kode(arg)} · ${SCENES[arg].title} masih terkunci</h3>
       <p class="muted">${why}</p>
-      <a class="btn btn-primary" href="${back}">Lanjutkan ke ${(back.match(/S\d+/) || ['S01'])[0]} ${icon('right')}</a></div></article></div>`;
+      <a class="btn btn-primary" href="${back}">Lanjutkan ke scene ${kode((back.match(/S\d+/) || ['S01'])[0])} ${icon('right')}</a></div></article></div>`;
     navKey = NAV_OF(arg);
-    document.title = `${arg} terkunci — Smart Emailing`;
+    document.title = `${kode(arg)} terkunci — Smart Emailing`;
   } else if (isScene) {
     state.last = arg; save();
     app.innerHTML = viewScene(arg);
     mountScene(arg);
     navKey = NAV_OF(arg);
-    document.title = `${arg} · ${SCENES[arg].title} — Smart Emailing`;
+    document.title = `${kode(arg)} · ${SCENES[arg].title} — Smart Emailing`;
   } else {
     const p = PAGES[page] || PAGES[''];
     app.innerHTML = p.v(); p.m && p.m();

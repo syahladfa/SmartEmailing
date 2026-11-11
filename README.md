@@ -35,14 +35,14 @@ Banyak lamaran kerja tidak dibalas bukan karena pelamarnya kurang mampu, tapi ka
 ## Alur belajar
 
 ```
-Mulai → S01 Pengantar
-      → Materi 1: Dasar Komunikasi lewat Email      (S02 · S03 · S04)
-      → Materi 2: Menulis Email Lamaran Kerja       (S05 · S06 · S07 · S08)
-      → Materi 3: Etika Berkirim Email              (S09 · S10 · S11)
-      → Latihan: S12 Latihan Soal (15 PG) · S13 Aktivitas Interaktif
-      → S14 Awal Evaluasi: materi selesai + latihan ≥ 70% + semua aktivitas selesai?
-      → S15 Evaluasi Akhir → Nilai ≥ 75? → Ya: S16 Penutup
-                                       → Tidak: Pelajari Ulang (S02) atau Coba Evaluasi Lagi
+Mulai → 1 Pengantar
+      → Materi 1: Dasar Komunikasi lewat Email      (2 · 3 · 4)
+      → Materi 2: Menulis Email Lamaran Kerja       (5 · 6 · 7 · 8)
+      → Materi 3: Etika Berkirim Email              (9 · 10 · 11)
+      → Latihan: 12 Latihan Soal (15 PG) · 13 Aktivitas Interaktif
+      → 14 Awal Evaluasi: materi selesai + latihan ≥ 70% + semua aktivitas selesai?
+      → 15 Evaluasi Akhir → Nilai ≥ 75? → Ya: 16 Penutup
+                                       → Tidak: Pelajari Ulang (scene 2) atau Coba Evaluasi Lagi
 ```
 
 ![Flowchart alur belajar](docs/screenshots/10-flowchart.png)
@@ -60,35 +60,35 @@ Setiap scene ditampilkan seperti email masuk. Di atasnya ada **Rute Belajar**, d
 - **Materi** yang dibaca per kartu (Bagian 1, 2, …)
 - **Aktivitas**. Tombol *Lanjut* baru aktif setelah aktivitasnya selesai.
 
-![Halaman scene S04](docs/screenshots/03-scene.png)
+![Halaman scene 4](docs/screenshots/03-scene.png)
 
 ### 3. Aktivitas interaktif
 Setiap scene memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan otomatis.
 
-| Seret & letakkan (S03) | Temukan kesalahan (S07) |
+| Seret & letakkan (scene 3) | Temukan kesalahan (scene 7) |
 |---|---|
 | ![Aktivitas seret dan letakkan](docs/screenshots/04-aktivitas.png) | ![Aktivitas temukan kesalahan](docs/screenshots/05-temukan-kesalahan.png) |
 
 | Kode | Scene | Aktivitas |
 |---|---|---|
-| S01 | Selamat Datang | Pengantar: contoh email sebelum dan sesudah + peta materi |
-| S02 | Kegunaan Email di Dunia Kerja | Klik informasi |
-| S03 | Bagian-Bagian Email | Seret & letakkan |
-| S04 | Subject, Salam Pembuka, dan Penutup | Studi kasus + kuis |
-| S05 | Susunan Email Lamaran Kerja | Klik bagian email |
-| S06 | Memperkenalkan Diri dan Mengirim CV | Simulasi menulis email |
-| S07 | Kesalahan yang Sering Terjadi | Temukan 6 kesalahan |
-| S08 | Praktik Menulis Email Lamaran | Form + daftar periksa + contoh jawaban |
-| S09 | CC, BCC, dan Waktu Mengirim | Animasi + atur jam + kuis |
-| S10 | Follow-up ke HR | Pilih langkahmu |
-| S11 | Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
+| 1 | Selamat Datang | Pengantar: contoh email sebelum dan sesudah + peta materi |
+| 2 | Kegunaan Email di Dunia Kerja | Klik informasi |
+| 3 | Bagian-Bagian Email | Seret & letakkan |
+| 4 | Subject, Salam Pembuka, dan Penutup | Studi kasus + kuis |
+| 5 | Susunan Email Lamaran Kerja | Klik bagian email |
+| 6 | Memperkenalkan Diri dan Mengirim CV | Simulasi menulis email |
+| 7 | Kesalahan yang Sering Terjadi | Temukan 6 kesalahan |
+| 8 | Praktik Menulis Email Lamaran | Form + daftar periksa + contoh jawaban |
+| 9 | CC, BCC, dan Waktu Mengirim | Animasi + atur jam + kuis |
+| 10 | Follow-up ke HR | Pilih langkahmu |
+| 11 | Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
 
-### 4. Latihan soal (S12)
+### 4. Latihan soal (scene 12)
 Ada **15 soal pilihan ganda**, 5 soal untuk setiap materi. Setelah menekan **Jawab**, pembahasannya langsung muncul. Nomor soal berwarna hijau untuk jawaban benar dan merah untuk yang belum tepat. Setelah soal ke-15, tampil skor (jumlah benar dari 15) dengan status **Capaian terpenuhi** atau **Belum terpenuhi**, plus tombol *Ulangi* dan *Lanjut*.
 
 ![Latihan soal](docs/screenshots/06-latihan.png)
 
-### 5. Aktivitas interaktif (S13)
+### 5. Aktivitas interaktif (scene 13)
 Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar posisi Content Writer. Ketiganya harus dikerjakan.
 - **A. Cocokkan istilah:** seret 5 istilah (subject line, CC, BCC, follow-up, signature) ke definisinya. 1 poin per pasangan.
 - **B. Susun email follow-up:** urutkan 5 kalimat email follow-up Salsa. 1 poin kalau urutannya benar semua.
@@ -96,11 +96,11 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 
 ![Aktivitas interaktif](docs/screenshots/16-aktivitas-interaktif.png)
 
-### 6. Awal evaluasi (S14) dan evaluasi akhir (S15)
+### 6. Awal evaluasi (scene 14) dan evaluasi akhir (scene 15)
 - **Awal Evaluasi** menampilkan tiga syarat dengan tanda centang atau gembok: materi 1–3 selesai, latihan pilihan ganda minimal **70% (11 dari 15 benar)**, dan semua aktivitas interaktif selesai. Syarat yang belum terpenuhi punya tombol **Kerjakan**, dan tombol **Mulai Evaluasi** baru terbuka setelah ketiganya terpenuhi.
 - **Evaluasi Akhir** berisi **4 soal** yang diambil dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal.
 - Tidak ada tanda benar/salah dan tidak ada pembahasan. Setiap soal punya tombol **Simpan jawaban**, dan jawaban yang sudah disimpan tidak bisa diubah.
-- Layar akhir hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**). Kalau belum lulus, ada tombol **Pelajari Ulang** (kembali ke S02) dan **Coba Evaluasi Lagi**.
+- Layar akhir hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**). Kalau belum lulus, ada tombol **Pelajari Ulang** (kembali ke 2) dan **Coba Evaluasi Lagi**.
 
 ![Awal evaluasi](docs/screenshots/17-awal-evaluasi.png)
 
@@ -108,7 +108,7 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 |---|---|
 | ![Soal evaluasi](docs/screenshots/07-evaluasi.png) | ![Hasil evaluasi](docs/screenshots/08-hasil-evaluasi.png) |
 
-### 7. Penutup (S16)
+### 7. Penutup (scene 16)
 Terbuka setelah peserta lulus evaluasi. Isinya rangkuman satu halaman yang bisa disimpan sebagai PDF, ditambah formulir masukan (rating bintang dan saran).
 
 ![Rangkuman penutup](docs/screenshots/09-penutup.png)
