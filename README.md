@@ -49,13 +49,25 @@ Mulai → 1 Pengantar
 
 ## Isi di dalam web
 
+### Menu samping, Dashboard, dan halaman Lainnya
+Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Alur belajar, Peta konsep, Glosarium, FAQ) dan **Lainnya** (Dashboard, Progres belajar, Pengaturan, Tentang & tim) yang bisa dibuka-tutup. Di bawah menu ada kartu **Perjalanan belajar** (maskot Surti, level, dan persen progres). Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
+
+- **Dashboard** (`#/dashboard`): sapaan sesuai jam (dengan nama kalau sudah diisi di Pengaturan), progres keseluruhan, 5 kartu statistik dari data asli (total materi, materi selesai, soal latihan dikerjakan, status evaluasi, progres), **Lanjutkan belajar** yang membuka scene atau latihan terakhir tepat di posisinya, dan **Aktivitas terbaru**.
+- **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, cap pos harian dan streak mingguan, radar profil kemampuan (Dasar Email, Email Lamaran, Etika, Praktik), koleksi 11 segel lilin (klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
+- **Pengaturan** (`#/pengaturan`): efek suara, menu ringkas, kurangi animasi, nama, dan hapus progres.
+- **Tentang & tim** (`#/tentang`): judul proyek, tujuan umum, isi pelatihan, format interaksi, tim, dan teknologi.
+
+![Progres belajar](docs/screenshots/22-progres.png)
+
+![Dashboard](docs/screenshots/18-dashboard.png)
+
 ### 1. Beranda dan katalog materi
-Beranda dibuat ringkas dan muat satu layar: pengenalan pelatihan dengan tombol **Mulai/Lanjutkan belajar** yang langsung membuka scene terakhir, lalu pintasan ke Tujuan, Petunjuk, Alur, dan Peta Konsep. Halaman **Materi** menampilkan ketiga materi beserta scene-nya. Scene yang sudah selesai diberi tanda centang, dan scene yang masih terkunci diberi gembok.
+Beranda adalah hero marun layar penuh: judul besar **SMART EMAILING**, tombol **Lanjut belajar** yang langsung membuka scene terakhir, dan tumpukan kartu Materi 1–3 yang bisa digeser, lengkap dengan progres dan scene berikutnya. Halaman **Materi** menampilkan ketiga materi beserta scene-nya. Scene yang sudah selesai diberi tanda centang, dan scene yang masih terkunci diberi gembok.
 
 ![Katalog materi](docs/screenshots/02-materi.png)
 
 ### 2. Halaman scene
-Setiap scene ditampilkan seperti email masuk. Di atasnya ada **Rute Belajar**, deretan kode scene yang bisa diklik untuk berpindah scene. Isi setiap scene:
+Setiap scene ditampilkan seperti email masuk, dengan progress bar posisi belajar di bagian atas. Isi setiap scene:
 - **Tujuan** scene dalam bentuk catatan tempel
 - **Materi** yang dibaca per kartu (Bagian 1, 2, …)
 - **Aktivitas**. Tombol *Lanjut* baru aktif setelah aktivitasnya selesai.
@@ -83,10 +95,17 @@ Setiap scene memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan o
 | 10 | Follow-up ke HR | Pilih langkahmu |
 | 11 | Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
 
-### 4. Latihan soal (scene 12)
-Ada **15 soal pilihan ganda**, 5 soal untuk setiap materi. Setelah menekan **Jawab**, pembahasannya langsung muncul. Nomor soal berwarna hijau untuk jawaban benar dan merah untuk yang belum tepat. Setelah soal ke-15, tampil skor (jumlah benar dari 15) dengan status **Capaian terpenuhi** atau **Belum terpenuhi**, plus tombol *Ulangi* dan *Lanjut*.
+### 4. Latihan soal (scene 12 dan halaman Latihan)
+15 soal pilihan ganda dari storyboard dibagi jadi **Latihan Materi 1, 2, dan 3** (5 soal per materi). Halaman **Latihan** (`#/latihan`) menampilkan kartu setiap latihan dengan status *Belum mulai / Sedang dikerjakan / Selesai*, nilai terakhir, dan progres, ditambah kartu tiga aktivitas interaktif.
 
-![Latihan soal](docs/screenshots/06-latihan.png)
+- **Layar kuis** memakai seluruh layar: satu soal per tampilan, progress bar, navigator nomor soal (sudah dijawab, belum dijawab, sedang aktif), Sebelumnya/Berikutnya (juga tombol panah ← →), dan **Selesai**. Pembahasan langsung muncul setelah menekan **Jawab**, lengkap dengan tautan ke scene materi terkait.
+- **Layar hasil:** nilai, jumlah benar/salah, persentase, waktu pengerjaan, status *Capaian terpenuhi* (≥ 70%), dan tombol Review jawaban, Ulangi, Daftar latihan, Dashboard.
+- **Review jawaban:** jawabanmu, jawaban yang tepat, dan pembahasan setiap soal dari percobaan terakhir.
+- Jawaban, nilai, riwayat percobaan, dan posisi soal tersimpan, jadi aman walau halaman di-refresh. Syarat evaluasi tetap minimal 11 dari 15 benar.
+
+| Daftar latihan | Layar kuis | Hasil |
+|---|---|---|
+| ![Daftar latihan](docs/screenshots/19-daftar-latihan.png) | ![Kuis](docs/screenshots/20-kuis.png) | ![Hasil latihan](docs/screenshots/21-hasil-latihan.png) |
 
 ### 5. Aktivitas interaktif (scene 13)
 Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar posisi Content Writer. Ketiganya harus dikerjakan.
@@ -97,10 +116,11 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 ![Aktivitas interaktif](docs/screenshots/16-aktivitas-interaktif.png)
 
 ### 6. Awal evaluasi (scene 14) dan evaluasi akhir (scene 15)
-- **Awal Evaluasi** menampilkan tiga syarat dengan tanda centang atau gembok: materi 1–3 selesai, latihan pilihan ganda minimal **70% (11 dari 15 benar)**, dan semua aktivitas interaktif selesai. Syarat yang belum terpenuhi punya tombol **Kerjakan**, dan tombol **Mulai Evaluasi** baru terbuka setelah ketiganya terpenuhi.
-- **Evaluasi Akhir** berisi **4 soal** yang diambil dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal.
-- Tidak ada tanda benar/salah dan tidak ada pembahasan. Setiap soal punya tombol **Simpan jawaban**, dan jawaban yang sudah disimpan tidak bisa diubah.
-- Layar akhir hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**). Kalau belum lulus, ada tombol **Pelajari Ulang** (kembali ke 2) dan **Coba Evaluasi Lagi**.
+- **Awal Evaluasi** adalah pos pemeriksaan: panel besar "SIAP EVALUASI?" dengan cincin x/3 syarat, lalu 3 kartu syarat bernomor (materi selesai, latihan minimal **11 dari 15 benar**, 3 aktivitas interaktif) dengan progress bar dan tombol **Kerjakan** ke bagian yang kurang. Tombol **Mulai evaluasi** baru menyala setelah ketiganya terpenuhi.
+- **Evaluasi Akhir** berjalan dalam mode ujian layar penuh (menu samping disembunyikan). Sebelum soal pertama ada layar **Aturan main** berisi 4 kartu.
+- Ada **4 soal** dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal. Setiap soal punya kotak **Cara menjawab**.
+- Tidak ada tanda benar/salah. Tombol **Simpan jawaban** memunculkan konfirmasi dulu, karena jawaban yang sudah disimpan tidak bisa diubah.
+- Layar hasil hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**), dengan langkah berikutnya: Penutup dan Sertifikat, atau Pelajari ulang dan Coba lagi.
 
 ![Awal evaluasi](docs/screenshots/17-awal-evaluasi.png)
 
@@ -108,13 +128,24 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 |---|---|
 | ![Soal evaluasi](docs/screenshots/07-evaluasi.png) | ![Hasil evaluasi](docs/screenshots/08-hasil-evaluasi.png) |
 
+### Panduan
+Enam halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Berikutnya di bawah:
+- **Petunjuk:** 4 langkah memakai web, dan **kode interaksi** yang bisa dicoba langsung (Normal, Hover, Hit, Swipe, Seret & letakkan, Show).
+- **Tujuan belajar:** tujuan umum, 7 tujuan khusus, dan tujuan per scene yang dikelompokkan per materi.
+- **Alur belajar:** garis waktu dari Mulai sampai Selesai, dengan titik keputusan dan posisimu sekarang.
+- **Peta konsep:** peta isi pelatihan dengan cabang per materi.
+- **Glosarium:** pencarian dan indeks A–Z.
+- **FAQ:** tanya-jawab per kategori.
+
+![Panduan](docs/screenshots/23-panduan.png)
+
 ### 7. Penutup (scene 16)
 Terbuka setelah peserta lulus evaluasi. Isinya rangkuman satu halaman yang bisa disimpan sebagai PDF, ditambah formulir masukan (rating bintang dan saran).
 
 ![Rangkuman penutup](docs/screenshots/09-penutup.png)
 
 ### 8. Tampilan di HP
-Di HP, semua halaman tampil layar penuh dengan menu di bagian bawah. Seret & letakkan diganti dengan *ketuk kartu, lalu ketuk slotnya*.
+Di HP, semua halaman tampil layar penuh dan menu dibuka lewat tombol ☰. Seret & letakkan diganti dengan *ketuk kartu, lalu ketuk slotnya*.
 
 <p align="center">
   <img src="docs/screenshots/11-hp-beranda.png" width="260" alt="Beranda di HP">
@@ -123,23 +154,21 @@ Di HP, semua halaman tampil layar penuh dengan menu di bagian bawah. Seret & let
 </p>
 
 ### 9. Materi terbuka berurutan
-Setiap scene baru terbuka setelah scene sebelumnya selesai, termasuk latihan soal dan aktivitas interaktif. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Scene yang belum terbuka ditandai gembok di Rute Belajar dan halaman Materi.
+Setiap scene baru terbuka setelah scene sebelumnya selesai, termasuk latihan soal dan aktivitas interaktif. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Scene yang belum terbuka ditandai gembok di halaman Katalog.
 
 ![Scene terkunci](docs/screenshots/15-scene-terkunci.png)
 
-### 10. Gamifikasi: skor, lencana, dan reward
+### 10. Gamifikasi: skor, level, segel, dan reward
 | Unsur | Isinya |
 |---|---|
 | **Skor (XP)** | Pengantar 20 · setiap scene materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
-| **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300) |
-| **11 lencana** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Serba Bisa (semua aktivitas interaktif), Tak Terbendung (combo 5×), Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
-| **Reward** | Animasi "+XP", kartu "Lencana baru!" dan "Naik level!", konfeti, combo saat latihan, dan **sertifikat** dengan nama peserta setelah lulus evaluasi (bisa disimpan sebagai PDF) |
-
-| Halaman pencapaian | Sertifikat |
-|---|---|
-| ![Pencapaian](docs/screenshots/13-pencapaian.png) | ![Sertifikat](docs/screenshots/14-sertifikat.png) |
+| **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300), ditampilkan sebagai rute pos dengan perangko |
+| **11 segel** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Tak Terbendung (combo 5×), Serba Bisa, Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
+| **Mingguan** | Tugas minggu ini, cap pos harian, minggu berturut-turut, dan rekor (dihitung dari riwayat aktivitas) |
+| **Reward** | Kartu "Lencana baru!" dan "Naik level!", konfeti, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
 
 ## Fitur lain
+- **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Dashboard, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
 - **Progres tersimpan otomatis** di browser: scene selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
 - **Cincin progres dan badge** di navbar: persentase belajar, jumlah soal latihan yang belum dikerjakan, dan status evaluasi.
 - **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per scene, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.

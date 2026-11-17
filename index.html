@@ -7,25 +7,57 @@
   <meta name="description" content="Smart Emailing: pelatihan interaktif menulis email lamaran kerja yang rapi dan sopan untuk fresh graduate.">
   <meta name="theme-color" content="#3b1119">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=64475b70d3">
+  <link rel="stylesheet" href="css/styles.css?v=0e1a4c1f55">
 </head>
 <body>
+  <aside class="sb" id="side" aria-label="Menu utama">
+    <div class="sb-top">
+      <a class="sb-brand" href="#/" aria-label="Smart Emailing, ke beranda">
+        <span class="brand-mark" id="brandMark"></span>
+        <span class="sb-word">Smart<em>Emailing</em></span>
+      </a>
+      <button type="button" class="sb-mini" id="sideMini" aria-label="Ciutkan menu" data-tip="Ciutkan menu"><span class="t-ic" data-ic="panel"></span></button>
+    </div>
+    <nav class="sb-nav" id="navLinks" aria-label="Navigasi utama">
+      <a href="#/" data-nav="home" data-tip="Beranda"><span class="t-ic" style="--tc:#e8743b" data-px="home"></span><span class="t-l">Beranda</span></a>
+      <a href="#/materi" data-nav="katalog" data-tip="Katalog"><span class="t-ic" style="--tc:#8a5cc7" data-px="katalog"></span><span class="t-l">Katalog</span></a>
+      <a href="#/scene/S01" data-nav="materi" data-tip="Materi" id="navMateri"><span class="t-ic" style="--tc:#3e7bd6" data-px="materi"></span><span class="t-l">Materi</span><span class="sb-count" id="badgeMat"></span></a>
+      <a href="#/latihan" data-nav="latihan" data-tip="Latihan"><span class="t-ic" style="--tc:#2f9e6e" data-px="latihan"></span><span class="t-l">Latihan</span><span class="tbadge" id="badgeLat"></span></a>
+      <a href="#/scene/S14" data-nav="evaluasi" data-tip="Evaluasi"><span class="t-ic" style="--tc:#a0662e" data-px="evaluasi"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
+      <div class="sb-grp" data-grp="panduan">
+        <button type="button" class="sb-gh" aria-expanded="false" data-tip="Panduan"><span class="t-ic" style="--tc:#c2453b" data-px="panduan"></span><span class="t-l">Panduan</span><span class="sb-chev" data-ic="down"></span></button>
+        <div class="sb-sub"><div>
+          <a href="#/petunjuk" data-nav="petunjuk" data-tip="Petunjuk"><span class="t-ic" style="--tc:#e0636a" data-px="petunjuk"></span><span class="t-l">Petunjuk</span></a>
+          <a href="#/tujuan" data-nav="tujuan" data-tip="Tujuan belajar"><span class="t-ic" style="--tc:#1f9e8f" data-px="tujuan"></span><span class="t-l">Tujuan belajar</span></a>
+          <a href="#/alur" data-nav="alur" data-tip="Alur belajar"><span class="t-ic" style="--tc:#5b5fc7" data-px="alur"></span><span class="t-l">Alur belajar</span></a>
+          <a href="#/peta" data-nav="peta" data-tip="Peta konsep"><span class="t-ic" style="--tc:#3e7bd6" data-px="peta"></span><span class="t-l">Peta konsep</span></a>
+          <a href="#/glosarium" data-nav="glosarium" data-tip="Glosarium"><span class="t-ic" style="--tc:#d08a1e" data-px="glosarium"></span><span class="t-l">Glosarium</span></a>
+          <a href="#/faq" data-nav="faq" data-tip="FAQ"><span class="t-ic" style="--tc:#c2457e" data-px="faq"></span><span class="t-l">FAQ</span></a>
+        </div></div>
+      </div>
+      <div class="sb-grp" data-grp="lainnya">
+        <button type="button" class="sb-gh" aria-expanded="false" data-tip="Lainnya"><span class="t-ic" style="--tc:#6b5b8a" data-px="lainnya"></span><span class="t-l">Lainnya</span><span class="sb-chev" data-ic="down"></span></button>
+        <div class="sb-sub"><div>
+          <a href="#/dashboard" data-nav="dashboard" data-tip="Dashboard"><span class="t-ic" style="--tc:#3e7bd6" data-px="dashboard"></span><span class="t-l">Dashboard</span></a>
+          <a href="#/progres" data-nav="progres" data-tip="Progres belajar"><span class="t-ic" style="--tc:#d08a1e" data-px="progres"></span><span class="t-l">Progres belajar</span></a>
+          <a href="#/pengaturan" data-nav="pengaturan" data-tip="Pengaturan"><span class="t-ic" style="--tc:#6b7280" data-px="pengaturan"></span><span class="t-l">Pengaturan</span></a>
+          <a href="#/tentang" data-nav="tentang" data-tip="Tentang & tim"><span class="t-ic" style="--tc:#c2457e" data-px="tentang"></span><span class="t-l">Tentang & tim</span></a>
+        </div></div>
+      </div>
+    </nav>
+    <a class="sb-journey" id="sbJourney" href="#/progres" aria-label="Perjalanan belajar"></a>
+  </aside>
+  <div class="sb-scrim" id="sbScrim" aria-hidden="true"></div>
+
   <header class="nav" id="nav">
     <div class="wrap nav-in">
+      <button type="button" class="icon-btn burger" id="burger" aria-label="Buka menu" aria-expanded="false"><span class="t-ic" data-ic="menu"></span></button>
       <a class="brand" href="#/" aria-label="Smart Emailing, ke beranda">
-        <span class="brand-mark" id="brandMark"></span>
+        <span class="brand-mark" id="brandMark2"></span>
         <span class="brand-text"><b>Smart<em>Emailing</em></b><small>Pelatihan email lamaran</small></span>
       </a>
-      <nav class="tabs" id="navLinks" aria-label="Navigasi utama">
-        <span class="tab-ind" id="tabInd" aria-hidden="true"></span>
-        <a href="#/" data-nav="home"><span class="t-ic" data-ic="home"></span><span class="t-l">Beranda</span></a>
-        <a href="#/materi" data-nav="materi"><span class="t-ic" data-ic="book"></span><span class="t-l">Materi</span></a>
-        <a href="#/scene/S12" data-nav="latihan"><span class="t-ic" data-ic="pen"></span><span class="t-l">Latihan</span><span class="tbadge" id="badgeLat"></span></a>
-        <a href="#/scene/S14" data-nav="evaluasi"><span class="t-ic" data-ic="flag"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
-        <a href="#/panduan" data-nav="panduan"><span class="t-ic" data-ic="help"></span><span class="t-l">Panduan</span></a>
-      </nav>
+      <b class="pg-title" id="pgTitle"></b>
       <div class="nav-tools">
-        <button class="xp-chip" id="xpChip" type="button" aria-label="Lihat pencapaian"></button>
         <button class="icon-btn" id="soundBtn" type="button" aria-label="Efek suara"></button>
         <button class="ring-btn" id="progBtn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Lihat progres">
           <svg viewBox="0 0 40 40" aria-hidden="true"><circle class="rb-bg" cx="20" cy="20" r="16"/><circle class="rb-fg" id="progRing" cx="20" cy="20" r="16"/></svg>
@@ -44,6 +76,6 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/app.js?v=64475b70d3"></script>
+  <script src="js/app.js?v=0e1a4c1f55"></script>
 </body>
 </html>

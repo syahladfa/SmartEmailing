@@ -25,10 +25,13 @@ DIST.mkdir(exist_ok=True)
 
 html = (ROOT / "index.html").read_text(encoding="utf-8")
 css = (ROOT / "css/styles.css").read_text(encoding="utf-8")
+# Font lokal ditanam langsung (data URI) supaya versi satu file tetap jalan tanpa internet
+css_inline = re.sub(r"url\('\.\./assets/fonts/([\w.-]+\.woff2)'\)",
+                    lambda m: "url(data:font/woff2;base64," + base64.b64encode((ROOT / "assets/fonts" / m.group(1)).read_bytes()).decode() + ")", css)
 js = (ROOT / "js/app.js").read_text(encoding="utf-8").replace("</script", "<\\/script")
 icon = base64.b64encode((ROOT / "assets/img/favicon.svg").read_bytes()).decode()
 
-html = re.sub(r'<link rel="stylesheet" href="css/styles\.css(\?v=[\w-]+)?">', lambda m: f"<style>\n{css}\n</style>", html)
+html = re.sub(r'<link rel="stylesheet" href="css/styles\.css(\?v=[\w-]+)?">', lambda m: f"<style>\n{css_inline}\n</style>", html)
 html = re.sub(r'<script src="js/app\.js(\?v=[\w-]+)?"></script>', lambda m: f"<script>\n{js}\n</script>", html)
 html = html.replace('href="assets/img/favicon.svg"', f'href="data:image/svg+xml;base64,{icon}"')
 assert not re.search(r'(src|href)="(https?:)?//', html), "Masih ada tautan eksternal!"
@@ -42,6 +45,8 @@ with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
         put(z, f"SmartEmailing_Tim7/{p}", (ROOT / p).read_bytes())
     for img in sorted((ROOT / "assets/img").glob("*.svg")):
         put(z, f"SmartEmailing_Tim7/assets/img/{img.name}", img.read_bytes())
+    for font in sorted((ROOT / "assets/fonts").glob("*.woff2")):
+        put(z, f"SmartEmailing_Tim7/assets/fonts/{font.name}", font.read_bytes())
 
 # Paket SCORM 1.2 (imsmanifest.xml harus berada di akar zip)
 MANIFEST = """<?xml version="1.0" encoding="UTF-8"?>
