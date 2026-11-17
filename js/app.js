@@ -2183,7 +2183,7 @@ function homeCards() {
       : lk ? `<span class="gc-lock">${icon('lock')} Selesaikan bagian sebelumnya dulu</span>`
       : `<a class="gbtn y sm" href="#/bagian/${nx}">${d ? 'Lanjut belajar' : 'Mulai materi'} ${icon('right')}</a>`;
     return `<article class="gcard" data-m="${m.id}" tabindex="-1">
-      <div class="gc-art">${ART[m.id]}<span class="gc-no">${m.no}</span></div>
+      <div class="gc-art">${ART[m.id]}</div>
       <div class="gc-body"><small class="gc-k">${label}</small><h3>${m.title}</h3>
         <p class="gc-next">${d === n ? 'Selesai semua. Tinggal ulas kalau perlu.' : `Berikutnya: <b>${BAGIAN[nx].title}</b>`}</p>
         <span class="gc-bar"><i style="width:${d / n * 100}%"></i></span>

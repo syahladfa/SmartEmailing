@@ -1841,7 +1841,6 @@ body.is-home .pg-title { display: none; }
 @keyframes floaty { 50% { transform: translateY(-8px) rotate(-.6deg); } }
 .gc-art { position: relative; display: grid; place-items: center; height: 44%; min-height: 9rem; background: radial-gradient(rgba(122, 31, 46, .12) 1px, transparent 1.3px) 0 0 / 12px 12px, linear-gradient(135deg, var(--gold-s), #f3d79a); border-bottom: 3px solid var(--maroon-3); }
 .gc-art .pix { width: 62%; height: auto; filter: drop-shadow(4px 5px 0 rgba(59, 17, 25, .25)); }
-.gc-no { position: absolute; right: .8rem; top: .5rem; font: 400 2.6rem/1 var(--f-display); color: rgba(59, 17, 25, .18); }
 .gc-body { display: grid; align-content: start; gap: .45rem; padding: 1.1rem 1.2rem 1.2rem; }
 .gc-k { font: 800 .74rem/1.2 var(--f-head); letter-spacing: .04em; color: #c2453b; }
 .gcard h3 { margin: 0; font: 800 1.35rem/1.15 var(--f-head); color: var(--maroon-3); letter-spacing: -.01em; }
@@ -4612,7 +4611,7 @@ function homeCards() {
       : lk ? `<span class="gc-lock">${icon('lock')} Selesaikan bagian sebelumnya dulu</span>`
       : `<a class="gbtn y sm" href="#/bagian/${nx}">${d ? 'Lanjut belajar' : 'Mulai materi'} ${icon('right')}</a>`;
     return `<article class="gcard" data-m="${m.id}" tabindex="-1">
-      <div class="gc-art">${ART[m.id]}<span class="gc-no">${m.no}</span></div>
+      <div class="gc-art">${ART[m.id]}</div>
       <div class="gc-body"><small class="gc-k">${label}</small><h3>${m.title}</h3>
         <p class="gc-next">${d === n ? 'Selesai semua. Tinggal ulas kalau perlu.' : `Berikutnya: <b>${BAGIAN[nx].title}</b>`}</p>
         <span class="gc-bar"><i style="width:${d / n * 100}%"></i></span>
