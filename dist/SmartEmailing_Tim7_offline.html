@@ -223,9 +223,9 @@ body.settled .swoosh path { animation: none; stroke-dashoffset: 0; }
 .mat-card small { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
 .mat-card h3 { font-size: 1.3rem; color: var(--maroon-2); margin: .1rem 0 .4rem; }
 .mat-card p { color: var(--muted); font-size: .92rem; flex: 1; }
-.mat-scenes { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
-.mat-scenes span { font-size: .72rem; font-weight: 700; padding: .2em .6em; border-radius: 7px; background: var(--sand); color: var(--maroon); }
-.mat-scenes span.ok { background: var(--maroon); color: var(--gold-s); }
+.mat-bagians { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
+.mat-bagians span { font-size: .72rem; font-weight: 700; padding: .2em .6em; border-radius: 7px; background: var(--sand); color: var(--maroon); }
+.mat-bagians span.ok { background: var(--maroon); color: var(--gold-s); }
 .mat-foot { display: flex; align-items: center; gap: .7rem; }
 .mat-foot .bar { flex: 1; }
 .mat-foot b { font-size: .85rem; color: var(--maroon-2); }
@@ -360,8 +360,8 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .ip-card p { margin: 0; }
 .ip-ic, .hs-num { width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--maroon); color: var(--gold-s); display: grid; place-items: center; font-weight: 800; }
 
-/* S02 laptop */
-.s02 { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; align-items: center; }
+/* Bagian laptop */
+.laptop-info { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; align-items: center; }
 .lscreen { background: var(--maroon-2); border: 8px solid #3a2a2d; border-bottom-width: 11px; border-radius: 13px 13px 5px 5px; padding: .6rem; aspect-ratio: 16 / 10; display: flex; flex-direction: column; }
 .lbar { display: flex; align-items: center; gap: 4px; color: rgba(251, 245, 236, .6); font-size: .66rem; margin-bottom: .5rem; }
 .lbar span { margin-left: 6px; }
@@ -378,7 +378,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .cmp-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
 .cmp-chips span { display: inline-flex; align-items: center; gap: .35rem; background: var(--card); border-radius: 999px; padding: .3em .75em; font-size: .8rem; font-weight: 600; color: var(--maroon-2); }
 
-/* S03 seret & letakkan */
+/* Bagian seret & letakkan */
 .dnd { display: grid; grid-template-columns: 11rem 1fr; gap: .9rem; align-items: start; }
 .dcards { display: grid; gap: .45rem; align-content: start; }
 .dcard { display: flex; align-items: center; gap: .5rem; padding: .55rem .7rem; border-radius: 10px; border: 2px solid var(--line); background: var(--gold-s); font-weight: 600; font-size: .86rem; cursor: grab; text-align: left; transition: transform .15s, box-shadow .15s, border-color .15s; }
@@ -406,7 +406,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .slot-txt { display: grid; font-size: .86rem; }
 .slot-txt small { color: var(--muted); font-size: .76rem; }
 
-/* S04 */
+/* Bagian */
 .ibx-compare, .salam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
 .salam-grid { margin-top: .7rem; }
 .ibx { border-radius: var(--r-sm); padding: .65rem; border: 2px solid; }
@@ -420,7 +420,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .salam h4 { color: var(--maroon-2); font-size: .86rem; margin-bottom: .2rem; }
 .salam .code { display: block; background: #fff; padding: .4rem .55rem; margin-top: .35rem; border-radius: 8px; }
 
-/* S05/S07/S10 email */
+/* Bagian email */
 .hs-wrap, .spot-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: .9rem; align-items: start; }
 .mail { background: #fff; border-radius: 13px; border: 1px solid var(--line); box-shadow: var(--shadow); padding: .5rem .8rem .8rem; }
 .mail-meta { display: flex; gap: .6rem; align-items: center; padding: .4rem 0; border-bottom: 1px solid var(--line); font-size: .84rem; flex-wrap: wrap; }
@@ -443,7 +443,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .hs-list li.on { color: var(--maroon-2); font-weight: 600; }
 .hs-list li.on .ic { color: var(--ok); width: 14px; height: 14px; }
 
-/* S06 */
+/* Bagian */
 .compose { background: #fff; border-radius: 13px; border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; }
 .compose-top { display: flex; align-items: center; gap: .45rem; background: var(--maroon-2); color: var(--cream); padding: .45rem .8rem; font-weight: 600; font-size: .82rem; }
 .cf { display: flex; gap: .6rem; padding: .4rem .8rem; border-bottom: 1px solid var(--line); font-size: .84rem; }
@@ -457,7 +457,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .choice-group { margin-top: .8rem; }
 .choice-group h4 { font-size: .9rem; color: var(--maroon-2); margin-bottom: .4rem; }
 
-/* S07 */
+/* Bagian */
 .sp { display: block; width: 100%; text-align: left; background: none; border: 2px solid transparent; border-radius: 8px; padding: .3rem .45rem; cursor: pointer; font-size: .86rem; line-height: 1.45; position: relative; transition: background .2s, border-color .2s; }
 .mail-meta .sp, .mail-attach .sp { width: auto; flex: 1; }
 .sp:hover { background: var(--gold-s); }
@@ -474,7 +474,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .found-list li small { color: var(--muted); }
 .found-list li.empty { border-left-color: var(--sand); color: var(--muted); box-shadow: none; background: transparent; }
 
-/* S08 */
+/* Bagian */
 .practice { display: grid; grid-template-columns: 12rem 1fr; gap: .9rem; align-items: start; }
 .vacancy { background: var(--maroon-2); color: var(--cream); border-radius: var(--r-sm); padding: .8rem; }
 .vacancy small { color: var(--gold-l); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
@@ -495,7 +495,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .pc-mail p { margin: 0 0 .5em; word-wrap: break-word; }
 .pc-note { grid-column: 1 / -1; display: flex; gap: .4rem; align-items: center; background: var(--info-bg); padding: .5rem .7rem; border-radius: var(--r-sm); margin: 0; font-size: .84rem; }
 
-/* S09 */
+/* Bagian */
 .cc-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: .9rem; align-items: center; }
 .cc-diagram { background: var(--card); border-radius: var(--r-sm); padding: .6rem; display: grid; justify-items: center; gap: .5rem; border: 1px solid var(--line); }
 .cc-diagram svg { width: 100%; }
@@ -542,7 +542,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .days span.off { background: var(--bad-bg); color: var(--bad); }
 .days small { color: var(--muted); margin-left: .3rem; font-size: .74rem; }
 
-/* S10 */
+/* Bagian */
 .sc-chat { display: flex; gap: .6rem; align-items: flex-start; }
 .sc-av { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--gold-s); color: var(--maroon); font-weight: 800; display: grid; place-items: center; flex: none; font-size: .8rem; }
 .bubble { background: var(--card); border: 1px solid var(--line); border-radius: 4px 14px 14px 14px; padding: .55rem .8rem; max-width: 34rem; }
@@ -562,7 +562,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .bcard.no { border-color: var(--bad); background: var(--bad-bg); }
 .followup { margin-top: .6rem; }
 
-/* S11 */
+/* Bagian */
 .steps { display: flex; gap: .3rem; margin-bottom: .6rem; }
 .step { flex: 1; height: 6px; border-radius: 6px; background: var(--sand); border: 0; padding: 0; cursor: pointer; }
 .step:disabled { cursor: default; }
@@ -641,7 +641,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .rec-link { display: inline-flex; align-items: center; gap: .35rem; background: var(--card); border: 1px solid var(--line); padding: .35em .8em; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .8rem; color: var(--maroon); }
 .rec-link:hover { border-color: var(--maroon); }
 
-/* S13 */
+/* Bagian */
 .infog { background: var(--maroon-2); color: var(--cream); border-radius: var(--r); padding: .9rem; }
 .ig-head { display: flex; gap: .6rem; align-items: center; margin-bottom: .7rem; }
 .ig-head b { display: block; letter-spacing: .08em; font-size: .9rem; }
@@ -814,7 +814,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
   .cat-card header { grid-template-columns: auto 1fr; }
   .cat-p { grid-column: 1 / -1; justify-self: start; }
   .big-card { flex-direction: column; }
-  .s02, .dnd, .hs-wrap, .spot-wrap, .practice, .cc-wrap, .time-wrap, .ibx-compare, .salam-grid, .pcompare, .branch, .ig-grid, .how, .gloss, .cm-cols, .ev-result, .ev-stats, .vs { grid-template-columns: 1fr; }
+  .laptop-info, .dnd, .hs-wrap, .spot-wrap, .practice, .cc-wrap, .time-wrap, .ibx-compare, .salam-grid, .pcompare, .branch, .ig-grid, .how, .gloss, .cm-cols, .ev-result, .ev-stats, .vs { grid-template-columns: 1fr; }
   .ev-nav { grid-template-columns: repeat(8, 1fr); }
   .mrow { grid-template-columns: 1fr; }
   .srow2 { flex-direction: column; align-items: flex-start; }
@@ -835,7 +835,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
   body.print-infog .infog { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
-/* Daftar scene: selalu terbuka di laptop, bisa dibuka-tutup di layar kecil */
+/* Daftar bagian: selalu terbuka di laptop, bisa dibuka-tutup di layar kecil */
 .side-list > summary { display: none; }
 @media (max-width: 1080px) {
   .side-list > summary { display: flex; align-items: center; gap: .5rem; list-style: none; cursor: pointer; font-weight: 700; font-size: .9rem; color: var(--maroon-2); padding: .55rem .7rem; border-radius: 10px; background: var(--paper); }
@@ -846,7 +846,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
 }
 
 /* =========================================================================
-   HALAMAN SCENE GAYA APLIKASI EMAIL
+   HALAMAN Bagian GAYA APLIKASI EMAIL
    ========================================================================= */
 /* Sidebar: kotak masuk */
 .ib-head { display: flex; gap: .7rem; align-items: center; margin-bottom: .8rem; }
@@ -1146,7 +1146,7 @@ a.how-item { color: inherit; text-decoration: none; border-radius: 14px; transit
 a.how-item:hover { background: rgba(226, 176, 74, .12); transform: translateX(3px); }
 a.brand-mark { text-decoration: none; }
 
-/* S01 — pengantar */
+/* Bagian — pengantar */
 .intro1 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; align-items: start; }
 .i1-q { font-size: 1.25rem; font-weight: 700; color: var(--maroon-2); line-height: 1.4; margin: 0 0 1rem; }
 .i1-mails { display: grid; gap: .6rem; margin-bottom: 1rem; }
@@ -1312,7 +1312,7 @@ a.brand-mark { text-decoration: none; }
   .home-fit .sc-ic { margin-bottom: .45rem; }
 }
 
-/* ---------- Mini preview scene ---------- */
+/* ---------- Mini preview bagian ---------- */
 .peek { position: fixed; z-index: 90; left: 0; top: 0; width: min(300px, calc(100vw - 16px)); padding: .85rem .95rem .9rem; border-radius: 14px; background: var(--card); color: var(--ink); border: 1px solid rgba(92, 21, 34, .18); box-shadow: 0 18px 40px -14px rgba(36, 10, 16, .45), 0 2px 6px rgba(36, 10, 16, .08); pointer-events: none; visibility: hidden; transform: translateY(-4px) scale(.98); }
 .peek.up { transform: translateY(4px) scale(.98); }
 .peek.show { visibility: visible; transform: none; transition: transform .18s var(--ease); }
@@ -1446,7 +1446,7 @@ body.settled .r2-stop { animation: none; }
 .dz.lock .dz-card { cursor: default; }
 @media (max-width: 640px) { .dz-slot { grid-template-columns: 1fr; gap: .4rem; } }
 
-/* ---------- S12 hasil latihan ---------- */
+/* ---------- Bagian hasil latihan ---------- */
 .lat-done { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.1rem; padding: 1rem 1.2rem; margin-bottom: 1rem; border-radius: 16px; background: var(--ok-bg); border: 1px solid rgba(47, 111, 78, .3); animation: popIn .4s var(--ease); }
 .lat-done.no { background: var(--bad-bg); border-color: rgba(179, 65, 47, .3); }
 .ld-score { display: grid; place-items: center; width: 4.6rem; height: 4.6rem; border-radius: 50%; background: #fff; text-align: center; line-height: 1.1; }
@@ -1456,7 +1456,7 @@ body.settled .r2-stop { animation: none; }
 .ld-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
 @media (max-width: 640px) { .lat-done { grid-template-columns: auto 1fr; } .ld-btns { grid-column: 1 / -1; } }
 
-/* ---------- S13 aktivitas interaktif ---------- */
+/* ---------- Bagian aktivitas interaktif ---------- */
 .akt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .9rem; margin: .8rem 0; }
 .akt-card { position: relative; display: grid; gap: .3rem; justify-items: start; text-align: left; padding: 1.1rem 1.1rem 1rem; border-radius: 18px; background: var(--card); border: 1.5px solid var(--line); color: var(--ink); font: inherit; cursor: pointer; box-shadow: var(--shadow); transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
 .akt-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
@@ -1484,7 +1484,7 @@ body.settled .r2-stop { animation: none; }
 .fix-seg.fixed { background: var(--ok-bg); border: 1.5px solid var(--ok); color: var(--ok); font-weight: 600; }
 .opt.no { border-color: var(--bad); background: var(--bad-bg); }
 
-/* ---------- S14 gerbang evaluasi ---------- */
+/* ---------- Bagian gerbang evaluasi ---------- */
 .gate { display: grid; gap: .7rem; }
 .gate-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .9rem; padding: .9rem 1rem; border-radius: 14px; background: var(--paper); border: 1.5px solid var(--line); animation: popIn .45s var(--ease) both; animation-delay: calc(var(--i) * 180ms); }
 .gate-row b { display: block; color: var(--maroon-2); font-size: .95rem; line-height: 1.35; }
@@ -1926,12 +1926,12 @@ body.is-home .nav-in > .brand .brand-text small { color: rgba(251, 245, 236, .65
 .gh-h.gh-brand { line-height: 1; letter-spacing: .015em; }
 .gh-h.gh-brand > span { display: block; }
 .gh-h.gh-brand > span + span { margin-top: .04em; }
-/* posisi belajar di halaman scene: progress bar, tanpa angka dan panah */
+/* posisi belajar di halaman bagian: progress bar, tanpa angka dan panah */
 .mv-prog { flex: 1; max-width: 320px; margin-left: auto; height: 8px; border-radius: 99px; background: var(--sand); overflow: hidden; }
 .mv-prog i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--maroon), var(--gold-l)); transition: width .8s var(--ease); }
 
 /* =========================================================================
-   EVALUASI: pos pemeriksaan (scene 14) dan mode ujian (scene 15)
+   EVALUASI: pos pemeriksaan syarat dan mode ujian
    ========================================================================= */
 .evx { padding-top: 1.4rem; }
 .evx-act { display: block; }
@@ -2371,9 +2371,9 @@ body.settled .steps li, body.settled .goal-grid li, body.settled .cm2-col { anim
     <nav class="sb-nav" id="navLinks" aria-label="Navigasi utama">
       <a href="#/" data-nav="home" data-tip="Beranda"><span class="t-ic" style="--tc:#e8743b" data-px="home"></span><span class="t-l">Beranda</span></a>
       <a href="#/materi" data-nav="katalog" data-tip="Katalog"><span class="t-ic" style="--tc:#8a5cc7" data-px="katalog"></span><span class="t-l">Katalog</span></a>
-      <a href="#/scene/S01" data-nav="materi" data-tip="Materi" id="navMateri"><span class="t-ic" style="--tc:#3e7bd6" data-px="materi"></span><span class="t-l">Materi</span><span class="sb-count" id="badgeMat"></span></a>
+      <a href="#/bagian/pengantar" data-nav="materi" data-tip="Materi" id="navMateri"><span class="t-ic" style="--tc:#3e7bd6" data-px="materi"></span><span class="t-l">Materi</span><span class="sb-count" id="badgeMat"></span></a>
       <a href="#/latihan" data-nav="latihan" data-tip="Latihan"><span class="t-ic" style="--tc:#2f9e6e" data-px="latihan"></span><span class="t-l">Latihan</span><span class="tbadge" id="badgeLat"></span></a>
-      <a href="#/scene/S14" data-nav="evaluasi" data-tip="Evaluasi"><span class="t-ic" style="--tc:#a0662e" data-px="evaluasi"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
+      <a href="#/bagian/awal-evaluasi" data-nav="evaluasi" data-tip="Evaluasi"><span class="t-ic" style="--tc:#a0662e" data-px="evaluasi"></span><span class="t-l">Evaluasi</span><span class="tbadge" id="badgeEv"></span></a>
       <div class="sb-grp" data-grp="panduan">
         <button type="button" class="sb-gh" aria-expanded="false" data-tip="Panduan"><span class="t-ic" style="--tc:#c2453b" data-px="panduan"></span><span class="t-l">Panduan</span><span class="sb-chev" data-ic="down"></span></button>
         <div class="sb-sub"><div>
@@ -2430,7 +2430,7 @@ body.settled .steps li, body.settled .goal-grid li, body.settled .cm2-col { anim
 'use strict';
 /* =========================================================================
    SMART EMAILING — modul pelatihan interaktif (Kelompok 7)
-   Tampilan modul 16:9: sampul → menu → scene S01–S16 (materi, latihan, aktivitas interaktif, evaluasi),
+   Tampilan modul 16:9: sampul → menu → bagian pengantar–penutup (materi, latihan, aktivitas interaktif, evaluasi),
    evaluasi tanpa pilihan ganda. Semua progres tersimpan di browser.
    ========================================================================= */
 
@@ -2531,6 +2531,15 @@ const LOGO = `<svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect wid
 const KEY = 'smart-emailing:v2';
 const fresh = () => ({ done: {}, act: {}, lat: null, akt: null, ev: null, feedback: null, sound: true, last: null, v2: true, log: [], resume: null, ui: {} });
 let state = (() => { try { return Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { return fresh(); } })();
+/* Migrasi ID lama (S01–S16) ke ID bernama, supaya progres peserta lama tetap terbaca */
+const ID_LAMA = { S01: 'pengantar', S02: 'kegunaan-email', S03: 'bagian-email', S04: 'subject-dan-salam', S05: 'susunan-email', S06: 'perkenalan-dan-cv', S07: 'kesalahan-email', S08: 'praktik-email', S09: 'cc-bcc-waktu', S10: 'follow-up', S11: 'bahasa-formal', S12: 'latihan-soal', S13: 'aktivitas-interaktif', S14: 'awal-evaluasi', S15: 'evaluasi-akhir', S16: 'penutup' };
+(() => {
+  ['done', 'act'].forEach(k => { const o = state[k]; if (!o) return; Object.keys(ID_LAMA).forEach(old => { if (old in o) { if (!(ID_LAMA[old] in o)) o[ID_LAMA[old]] = o[old]; delete o[old]; } }); });
+  if (state.last && ID_LAMA[state.last]) state.last = ID_LAMA[state.last];
+  if (state.resume) { if (state.resume.id && ID_LAMA[state.resume.id]) state.resume.id = ID_LAMA[state.resume.id]; if (state.resume.kind === 'scene') state.resume.kind = 'bagian'; if (state.resume.href) state.resume.href = state.resume.href.replace(/#\/scene\/(S\d\d)/, (m, id) => '#/bagian/' + (ID_LAMA[id] || id)); }
+  (state.log || []).forEach(e => { if (e.id && ID_LAMA[e.id]) e.id = ID_LAMA[e.id]; });
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* mode privat */ }
+})();
 let gameOn = false;
 function save() { if (gameOn) gameCheck(); try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* mode privat */ } SCORM.sync(); }
 
@@ -2563,10 +2572,10 @@ const SCORM = (() => {
   };
 })();
 const A = id => (state.act[id] = state.act[id] || {});
-/* Migrasi ke storyboard v2: latihan jadi 15 soal PG, evaluasi jadi 4 soal, penutup pindah ke S16 */
+/* Migrasi ke storyboard v2: latihan jadi 15 soal PG, evaluasi jadi 4 soal, penutup pindah ke penutup */
 if (state.lat && state.lat.v !== 3) state.lat = null;
 if (state.ev && state.ev.v !== 3) state.ev = null;
-if (!state.v2) { delete state.done.S12; delete state.done.S13; delete state.act.S12; delete state.act.S13; state.v2 = true; }
+if (!state.v2) { delete state.done['latihan-soal']; delete state.done['aktivitas-interaktif']; delete state.act['latihan-soal']; delete state.act['aktivitas-interaktif']; state.v2 = true; }
 
 /* ---------- Suara ---------- */
 let actx;
@@ -2600,44 +2609,42 @@ function celebrate() {
    DATA MATERI
    ========================================================================= */
 const NAMA = 'Syarifudin', NAMAF = 'Syarifudin';
-const ORDER = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11', 'S12', 'S13', 'S14', 'S15', 'S16'];
-const MATERI_SCENES = ['S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10', 'S11'];
+const ORDER = ['pengantar', 'kegunaan-email', 'bagian-email', 'subject-dan-salam', 'susunan-email', 'perkenalan-dan-cv', 'kesalahan-email', 'praktik-email', 'cc-bcc-waktu', 'follow-up', 'bahasa-formal', 'latihan-soal', 'aktivitas-interaktif', 'awal-evaluasi', 'evaluasi-akhir', 'penutup'];
+const MATERI_BAGIAN = ['kegunaan-email', 'bagian-email', 'subject-dan-salam', 'susunan-email', 'perkenalan-dan-cv', 'kesalahan-email', 'praktik-email', 'cc-bcc-waktu', 'follow-up', 'bahasa-formal'];
 const KKM = 75;
 
 const MATERI = [
-  { id: 'intro', no: '00', short: 'Pembuka', title: 'Pembuka', icon: 'inbox', scenes: ['S01'] },
-  { id: 'm1', no: '01', short: 'Materi 1', title: 'Dasar Komunikasi lewat Email', icon: 'mail', scenes: ['S02', 'S03', 'S04'],
+  { id: 'intro', no: '00', short: 'Pembuka', title: 'Pembuka', icon: 'inbox', bagian: ['pengantar'] },
+  { id: 'm1', no: '01', short: 'Materi 1', title: 'Dasar Komunikasi lewat Email', icon: 'mail', bagian: ['kegunaan-email', 'bagian-email', 'subject-dan-salam'],
     desc: 'Kegunaan email di dunia kerja, bagian-bagian email, subject, serta salam pembuka dan penutup.' },
-  { id: 'm2', no: '02', short: 'Materi 2', title: 'Menulis Email Lamaran Kerja', icon: 'briefcase', scenes: ['S05', 'S06', 'S07', 'S08'],
+  { id: 'm2', no: '02', short: 'Materi 2', title: 'Menulis Email Lamaran Kerja', icon: 'briefcase', bagian: ['susunan-email', 'perkenalan-dan-cv', 'kesalahan-email', 'praktik-email'],
     desc: 'Susunan email lamaran, cara memperkenalkan diri, melampirkan CV, dan kesalahan yang sering terjadi.' },
-  { id: 'm3', no: '03', short: 'Materi 3', title: 'Etika Berkirim Email', icon: 'send', scenes: ['S09', 'S10', 'S11'],
+  { id: 'm3', no: '03', short: 'Materi 3', title: 'Etika Berkirim Email', icon: 'send', bagian: ['cc-bcc-waktu', 'follow-up', 'bahasa-formal'],
     desc: 'Kapan pakai CC dan BCC, jam yang pas untuk mengirim, cara follow-up ke HR, dan bahasa yang sopan.' },
-  { id: 'latihan', no: '04', short: 'Latihan', title: 'Latihan', icon: 'pen', scenes: ['S12', 'S13'],
+  { id: 'latihan', no: '04', short: 'Latihan', title: 'Latihan', icon: 'pen', bagian: ['latihan-soal', 'aktivitas-interaktif'],
     desc: '15 soal pilihan ganda dengan pembahasan, lalu tiga aktivitas interaktif.' },
-  { id: 'akhir', no: '05', short: 'Evaluasi', title: 'Evaluasi & Penutup', icon: 'flag', scenes: ['S14', 'S15', 'S16'],
+  { id: 'akhir', no: '05', short: 'Evaluasi', title: 'Evaluasi & Penutup', icon: 'flag', bagian: ['awal-evaluasi', 'evaluasi-akhir', 'penutup'],
     desc: 'Cek syarat evaluasi, kerjakan evaluasi akhir, lalu penutup.' },
 ];
-const materiOf = id => MATERI.find(m => m.scenes.includes(id));
-/* Kode scene yang tampil di layar cukup angkanya (S05 → 5); alamat #/scene/S05 tidak berubah */
-const kode = id => String(+String(id).slice(1));
+const materiOf = id => MATERI.find(m => m.bagian.includes(id));
 
-const SCENES = {
-  S01: { title: 'Selamat Datang', type: 'Pengantar', wide: true,
+const BAGIAN = {
+  'pengantar': { title: 'Selamat Datang', type: 'Pengantar', wide: true,
     tujuan: 'Mengenal pelatihan ini: tujuannya apa dan materinya apa saja.',
     narasi: 'Halo, selamat datang di pelatihan Smart Emailing. Pernah kirim lamaran kerja, tapi tak kunjung dibalas? Bisa jadi masalahnya ada di email yang kamu kirim. Di sini kamu belajar bikin email lamaran yang rapi, plus cara berkomunikasi dengan HR lewat email tanpa canggung. Materinya ada tiga: dasar komunikasi lewat email, menulis email lamaran, dan etika berkirim email. Setelah itu, kamu bisa berlatih soal, lalu mengerjakan evaluasi. Yuk, kita mulai!' },
-  S02: { title: 'Kegunaan Email di Dunia Kerja', type: 'Klik informasi',
+  'kegunaan-email': { title: 'Kegunaan Email di Dunia Kerja', type: 'Klik informasi',
     tujuan: 'Kamu bisa menjelaskan kegunaan email di dunia kerja dan alasan komunikasi lewat email perlu dijaga tetap profesional.',
     uraian: [{ h: 'Kenapa Email Masih Penting?', p: [
       'Di dunia kerja, email masih jadi salah satu jalur komunikasi resmi. Lewat email, orang menyampaikan informasi, mengirim dokumen, melamar pekerjaan, berkoordinasi dengan rekan kerja, sampai berhubungan dengan klien.',
       'Dibanding aplikasi chat, email terasa lebih formal, tersimpan rapi, dan bisa dijadikan bukti komunikasi. Karena itu, kemampuan menulis email yang baik jadi bekal penting untuk fresh graduate dan pencari kerja.'] }],
     narasi: 'Email masih jadi jalur komunikasi resmi di dunia kerja. Klik keempat ikon di layar laptop untuk melihat kegunaannya. Dibanding chat, email lebih formal, tersimpan rapi, dan bisa jadi bukti komunikasi. Itu sebabnya menulis email dengan baik adalah keterampilan penting buat fresh graduate.' },
-  S03: { title: 'Bagian-Bagian Email', type: 'Seret & letakkan',
+  'bagian-email': { title: 'Bagian-Bagian Email', type: 'Seret & letakkan',
     tujuan: 'Kamu bisa mengenali bagian-bagian email profesional.',
     uraian: [{ h: 'Lima Bagian Email Profesional', p: [
       'Email profesional punya lima bagian: <b>subject</b> (judul email), <b>salam pembuka</b>, <b>isi email</b>, <b>salam penutup</b>, dan <b>tanda tangan</b>.',
       'Tiap bagian punya tugasnya sendiri. Subject menjelaskan isi email secara singkat, sedangkan isi email memuat pesan utama yang ditulis jelas dan ringkas.'] }],
     narasi: 'Email profesional terdiri atas lima bagian. Subject menjelaskan isi email secara singkat. Salam pembuka menunjukkan rasa hormat. Isi email memuat pesan utama dengan jelas dan ringkas. Salam penutup mengakhiri email dengan sopan, lalu ditutup dengan tanda tangan. Sekarang, coba pasang kartu-kartu ini di tempat yang benar.' },
-  S04: { title: 'Subject, Salam Pembuka, dan Penutup', type: 'Studi kasus + kuis',
+  'subject-dan-salam': { title: 'Subject, Salam Pembuka, dan Penutup', type: 'Studi kasus + kuis',
     tujuan: 'Kamu bisa menulis subject yang efektif serta memakai salam pembuka dan penutup yang sesuai.',
     uraian: [
       { h: 'Menulis Subject yang Efektif', p: [
@@ -2648,7 +2655,7 @@ const SCENES = {
         'Salam pembuka menunjukkan rasa hormat kepada penerima, misalnya <q>Yth. Tim Rekrutmen PT ABC,</q> atau <q>Dear Hiring Manager,</q>.',
         'Salam penutup mengakhiri email dengan sopan, misalnya <q>Hormat saya,</q> atau <q>Best regards,</q> lalu diikuti nama pengirim. Salam yang tepat menunjukkan bahwa kamu paham etika berkomunikasi.'] }],
     narasi: 'Subject adalah hal pertama yang dilihat HR. Subject yang baik itu singkat, jelas, spesifik, dan sesuai tujuan email. Coba bandingkan dua kotak masuk ini. Untuk salam pembuka, kamu bisa memakai "Yth. Tim Rekrutmen PT ABC," atau "Dear Hiring Manager,". Untuk penutup, pakai "Hormat saya," atau "Best regards," lalu tulis namamu.' },
-  S05: { title: 'Susunan Email Lamaran Kerja', type: 'Klik bagian email',
+  'susunan-email': { title: 'Susunan Email Lamaran Kerja', type: 'Klik bagian email',
     tujuan: 'Kamu bisa menjelaskan fungsi email lamaran dan menyusunnya sesuai format yang profesional.',
     uraian: [
       { h: 'Apa Itu Email Lamaran Kerja?', p: [
@@ -2659,7 +2666,7 @@ const SCENES = {
         '<ol class="ol"><li>subject yang jelas</li><li>salam pembuka</li><li>perkenalan diri singkat</li><li>tujuan mengirim email</li><li>keterangan lampiran CV dan portofolio</li><li>salam penutup</li></ol>',
         'Tulis isinya singkat, padat, dan relevan supaya mudah dibaca perekrut.'] }],
     narasi: 'Email lamaran adalah caramu memperkenalkan diri, menunjukkan minat pada posisi tertentu, dan mengirim CV serta portofolio. Email inilah kesan pertamamu di mata perekrut. Urutannya: subject yang jelas, salam pembuka, perkenalan singkat, tujuan email, keterangan lampiran, lalu salam penutup. Klik tiap bagian untuk melihat fungsinya.' },
-  S06: { title: 'Memperkenalkan Diri dan Mengirim CV', type: 'Simulasi',
+  'perkenalan-dan-cv': { title: 'Memperkenalkan Diri dan Mengirim CV', type: 'Simulasi',
     tujuan: 'Kamu bisa memperkenalkan diri secara profesional dan mengirim CV serta portofolio dengan benar.',
     uraian: [
       { h: 'Memperkenalkan Diri ke HR', p: [
@@ -2669,19 +2676,19 @@ const SCENES = {
         `Lampirkan CV dan portofolio dalam format yang sesuai, misalnya PDF. Beri nama file yang rapi dan mudah dikenali, seperti <code>CV_${NAMAF}.pdf</code> atau <code>Portfolio_${NAMAF}.pdf</code>.`,
         'Sebelum menekan tombol kirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.'] }],
     narasi: `Saat memperkenalkan diri, cukup sebutkan nama, latar belakang pendidikan, dan posisi yang dilamar. Fokus pada kemampuan yang mendukung posisi itu, dan tinggalkan cerita pribadi yang tidak berkaitan. Untuk lampiran, pakai format PDF dengan nama file yang rapi, misalnya CV_${NAMAF}.pdf dan Portfolio_${NAMAF}.pdf. Sebelum mengirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.` },
-  S07: { title: 'Kesalahan yang Sering Terjadi', type: 'Temukan kesalahan', uraianAfter: true,
+  'kesalahan-email': { title: 'Kesalahan yang Sering Terjadi', type: 'Temukan kesalahan', uraianAfter: true,
     tujuan: 'Kamu bisa menemukan kesalahan yang sering muncul di email lamaran.',
     uraian: [{ h: 'Hindari Kesalahan Ini', p: [
       'Kesalahan yang sering dilakukan fresh graduate antara lain: alamat email yang tidak profesional, subject yang tidak jelas, salah menulis nama perusahaan, bahasa yang tidak formal, isi email yang terlalu panjang, dan lupa melampirkan CV atau portofolio.',
       'Kesalahan-kesalahan kecil seperti ini bisa membuat lamaranmu tidak diproses lebih lanjut.'] }],
     narasi: 'Sekarang, anggap dirimu seorang perekrut. Ada beberapa kesalahan di email ini. Klik bagian yang menurutmu salah.' },
-  S08: { title: 'Praktik Menulis Email Lamaran', type: 'Praktik',
+  'praktik-email': { title: 'Praktik Menulis Email Lamaran', type: 'Praktik',
     tujuan: 'Kamu bisa membuat email lamaran untuk keperluan mencari kerja.',
     uraian: [{ h: 'Cara Mengerjakan', p: [
       'Isi setiap bagian email, lalu cek lagi tulisanmu dengan daftar periksa di samping.',
       'Praktik ini tidak dinilai otomatis. Setelah emailmu dikirim, bandingkan dengan contoh jawaban yang muncul.'] }],
     narasi: 'Saatnya praktik. Tulis email lamaran untuk lowongan di samping, dan terapkan susunan serta format yang sudah kamu pelajari.' },
-  S09: { title: 'CC, BCC, dan Waktu Mengirim', type: 'Penjelasan visual + kuis',
+  'cc-bcc-waktu': { title: 'CC, BCC, dan Waktu Mengirim', type: 'Penjelasan visual + kuis',
     tujuan: 'Kamu bisa menjelaskan kegunaan CC dan BCC serta memilih waktu yang tepat untuk mengirim email.',
     uraian: [
       { h: 'Memakai CC dan BCC dengan Tepat', p: [
@@ -2692,60 +2699,60 @@ const SCENES = {
         'Waktu kirim ikut menentukan apakah emailmu cepat dibaca. Kirim email profesional di jam kerja, sekitar pukul 08.00–17.00.',
         'Hindari mengirim larut malam, saat hari libur, atau di waktu yang kurang pas, kecuali memang ada keperluan yang mendesak.'] }],
     narasi: 'CC atau Carbon Copy dipakai untuk mengirim salinan ke orang lain yang perlu tahu isi email. BCC atau Blind Carbon Copy juga mengirim salinan, tetapi alamat penerimanya disembunyikan, jadi privasi tetap terjaga. Untuk waktu, kirimlah email di jam kerja, sekitar pukul delapan pagi sampai lima sore. Hindari larut malam atau hari libur, kecuali memang mendesak.' },
-  S10: { title: 'Follow-up ke HR', type: 'Pilih langkahmu',
+  'follow-up': { title: 'Follow-up ke HR', type: 'Pilih langkahmu',
     tujuan: 'Kamu bisa menulis email follow-up ke HR dengan sopan dan profesional.',
     uraian: [{ h: 'Menanyakan Kabar Lamaran', p: [
       'Follow-up adalah email untuk menanyakan perkembangan proses rekrutmen setelah beberapa waktu. Tulislah dengan sopan, singkat, dan tidak terkesan memaksa.',
       'Biasanya follow-up dikirim sekitar <b>5–7 hari kerja</b> setelah lamaran terkirim, kalau belum ada kabar dari perusahaan.'] }],
     narasi: 'Follow-up dipakai untuk menanyakan perkembangan proses rekrutmen. Sampaikan dengan sopan, singkat, dan jangan terkesan memaksa. Biasanya follow-up dikirim sekitar lima sampai tujuh hari kerja setelah lamaran terkirim, kalau belum ada kabar. Sekarang, bantu Syarif memilih langkah yang tepat.' },
-  S11: { title: 'Bahasa yang Formal dan Sopan', type: 'Pilih kalimat',
+  'bahasa-formal': { title: 'Bahasa yang Formal dan Sopan', type: 'Pilih kalimat',
     tujuan: 'Kamu bisa memakai bahasa yang formal dan profesional di email.',
     uraian: [{ h: 'Menulis dengan Bahasa yang Profesional', p: [
       'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital yang berlebihan.',
       'Gunakan kalimat efektif dan perhatikan ejaan serta tata bahasanya, supaya pesanmu tersampaikan dengan baik dan kamu terlihat profesional.'] }],
     narasi: 'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital berlebihan. Perhatikan juga ejaan dan tata bahasanya. Pilih kalimat yang paling pas di setiap kasus.' },
-  S12: { title: 'Latihan Soal', type: 'Pilihan ganda', wide: true,
+  'latihan-soal': { title: 'Latihan Soal', type: 'Pilihan ganda', wide: true,
     tujuan: 'Menguji pemahaman ketiga materi lewat 15 soal pilihan ganda, lengkap dengan pembahasan.',
     narasi: 'Sekarang waktunya kita latihan! Ada lima belas soal pilihan ganda, setiap kali menjawab, kamu langsung bisa lihat pembahasan soalnya. Skor latihan ini juga menentukan apakah kamu sudah siap ke tahap evaluasi.' },
-  S13: { title: 'Aktivitas Interaktif', type: 'Cocokkan, susun, perbaiki', wide: true,
+  'aktivitas-interaktif': { title: 'Aktivitas Interaktif', type: 'Cocokkan, susun, perbaiki', wide: true,
     tujuan: 'Berlatih lewat tiga aktivitas interaktif: mencocokkan istilah, menyusun email follow-up, dan memperbaiki kalimat.',
     narasi: 'Sekarang kita akan latihan yang lebih interaktif. Pilih salah satu aktivitas, lalu kerjakan sampai selesai! Semua aktivitas harus dikerjakan sebelum kamu bisa lanjut ke tahap berikutnya.' },
-  S14: { title: 'Awal Evaluasi', type: 'Cek syarat', wide: true,
+  'awal-evaluasi': { title: 'Awal Evaluasi', type: 'Cek syarat', wide: true,
     tujuan: 'Memastikan semua syarat evaluasi sudah terpenuhi.',
     narasi: 'Sebelum masuk ke evaluasi, pastikan terlebih dahulu syarat untuk melakukan evaluasi terpenuhi. Selesaikan semua materi, capai skor minimal di latihan pilihan ganda, dan kerjakan semua aktivitas interaktif. Kalau semua sudah dikerjakan, kamu bisa memulai evaluasi.' },
-  S15: { title: 'Evaluasi Akhir', type: 'Evaluasi akhir', wide: true,
+  'evaluasi-akhir': { title: 'Evaluasi Akhir', type: 'Evaluasi akhir', wide: true,
     tujuan: 'Menerapkan seluruh materi untuk menyusun email lamaran yang efektif dan sopan.',
     narasi: 'Ini adalah evaluasi akhir. Bentuk soalnya mirip dengan yang sudah kamu pelajari. Kali ini tidak ada keterangan benar atau salah dan tidak ada pembahasan. Kamu baru akan melihat nilai akhirnya di akhir. Kerjakan dengan teliti, ya!' },
-  S16: { title: 'Penutup', type: 'Rangkuman + masukan', wide: true,
+  'penutup': { title: 'Penutup', type: 'Rangkuman + masukan', wide: true,
     tujuan: 'Mengingat kembali seluruh materi dan memberi masukan untuk pelatihan ini.',
     narasi: 'Selamat! Kamu sudah menyelesaikan pelatihan Smart Emailing. Dari yang sudah dipelajari, selalu ingat saat menyusun email, kamu harus memperhatikan: subject yang jelas, struktur yang rapi, bahasa yang sopan, lampiran yang lengkap, dan waktu mengirim email yang tepat. Simpan infografis ini sebagai panduan. Jangan lupa mengisi feedback agar pelatihan ini bisa menjadi lebih baik. Semoga sukses meraih pekerjaan impianmu!' },
 };
 
 /* ---------- Status kunci ---------- */
-const materiDone = () => MATERI_SCENES.every(id => state.done[id]);
+const materiDone = () => MATERI_BAGIAN.every(id => state.done[id]);
 const evalPassed = () => !!(state.ev && state.ev.done && state.ev.score >= KKM);
 const LAT_MIN = 11; /* syarat evaluasi: latihan PG minimal 70% (11 dari 15 benar) */
 const AKT_KEYS = ['a', 'b', 'c'];
 const aktDone = () => AKT_KEYS.every(k => !!(state.akt && state.akt[k] && state.akt[k].done));
 const latSkor = () => state.lat ? Object.values(state.lat.res || {}).filter(Boolean).length : 0;
 const gateOk = () => materiDone() && latSkor() >= LAT_MIN && aktDone();
-/* Kunci berurutan: setiap scene baru terbuka setelah scene sebelumnya selesai (dibaca + aktivitasnya dikerjakan) */
+/* Kunci berurutan: setiap bagian baru terbuka setelah bagian sebelumnya selesai (dibaca + aktivitasnya dikerjakan) */
 const locked = id => {
-  if (id === 'S14') return !materiDone();
-  if (id === 'S15') return !gateOk();
-  if (id === 'S16') return !evalPassed();
+  if (id === 'awal-evaluasi') return !materiDone();
+  if (id === 'evaluasi-akhir') return !gateOk();
+  if (id === 'penutup') return !evalPassed();
   const i = ORDER.indexOf(id);
   return i > 0 && !state.done[ORDER[i - 1]];
 };
-const readAll = id => { const s = SCENES[id]; if (!s.uraian) return true; const r = A(id).read || []; return s.uraian.every((_, j) => r.includes(j)); };
+const readAll = id => { const s = BAGIAN[id]; if (!s.uraian) return true; const r = A(id).read || []; return s.uraian.every((_, j) => r.includes(j)); };
 const doneCount = () => ORDER.filter(id => state.done[id]).length;
 const pct = () => Math.round(doneCount() / ORDER.length * 100);
-const nextOf = id => id === 'S16' ? null : '#/scene/' + ORDER[ORDER.indexOf(id) + 1];
-const prevOf = id => ORDER.indexOf(id) > 0 ? '#/scene/' + ORDER[ORDER.indexOf(id) - 1] : '#/materi';
+const nextOf = id => id === 'penutup' ? null : '#/bagian/' + ORDER[ORDER.indexOf(id) + 1];
+const prevOf = id => ORDER.indexOf(id) > 0 ? '#/bagian/' + ORDER[ORDER.indexOf(id) - 1] : '#/materi';
 const resumeHref = () => {
   const id = ORDER.slice(0, 13).find(x => !state.done[x]);
-  if (id) return '#/scene/' + id;
-  return '#/scene/' + (!gateOk() ? 'S14' : !evalPassed() ? 'S15' : 'S16');
+  if (id) return '#/bagian/' + id;
+  return '#/bagian/' + (!gateOk() ? 'awal-evaluasi' : !evalPassed() ? 'evaluasi-akhir' : 'penutup');
 };
 
 /* =========================================================================
@@ -2778,15 +2785,15 @@ function mcq(el, { q, opts, onDone, store, key }) {
 }
 
 /* =========================================================================
-   NAVIGASI SAMPING (halaman scene, latihan, evaluasi)
+   NAVIGASI SAMPING (halaman bagian, latihan, evaluasi)
    ========================================================================= */
-/* Rute belajar: jalur scene S01–S16 di atas halaman (pengganti sidebar) */
+/* Rute belajar: jalur bagian pengantar–penutup di atas halaman (pengganti sidebar) */
 function routeRail(cur) {
-  const groups = MATERI.map(m => [m.short, m.scenes]);
+  const groups = MATERI.map(m => [m.short, m.bagian]);
   const isDone = id => !!state.done[id];
   const isLock = locked;
   const total = ORDER.length, n = doneCount(), p = Math.round(n / total * 100);
-  const res = resumeHref(), resId = (res.match(/S\d+/) || [''])[0];
+  const res = resumeHref(), resId = (res.split('/').pop() || '');
   let prevFull = true, k = 0;
   const grp = ([label, ids]) => {
     const d = ids.filter(isDone).length, full = d === ids.length, anyOpen = ids.some(id => !isLock(id));
@@ -2799,47 +2806,47 @@ function routeRail(cur) {
       <div class="r2-stops" style="--fill:${fill.toFixed(1)}%">${ids.map(id => {
         const dn = isDone(id), lk = isLock(id), c = id === cur;
         const cls = c ? 'cur' : dn ? 'done' : lk ? 'locked' : 'open';
-        const t = SCENES[id].title;
-        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="#/scene/${id}" data-peek="${id}" aria-label="${kode(id)} · ${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
-          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : `<b>${kode(id)}</b>`}</span>
-          <span class="r2-lbl">${c ? 'Di sini' : kode(id)}</span></a>`;
+        const t = BAGIAN[id].title;
+        return `<a class="r2-stop ${cls} ${dn ? 'is-done' : ''}" style="--i:${k++}" href="#/bagian/${id}" data-peek="${id}" aria-label="${t}${dn ? ' (selesai)' : lk ? ' (terkunci)' : ''}"${c ? ' aria-current="step"' : ''}>
+          <span class="r2-dot">${dn && !c ? icon('check') : lk ? icon('lock') : icon((materiOf(id) || {}).icon || 'book')}</span>
+          <span class="r2-lbl">${c ? 'Di sini' : ''}</span></a>`;
       }).join('')}</div></div>`;
   };
   return `<nav class="rail r2" aria-label="Rute belajar">
     <div class="r2-head">
       <span class="rail-ic">${icon('map')}</span>
-      <div class="r2-tt"><b>Rute Belajar</b><small><b>${n}</b> dari ${total} scene selesai</small></div>
+      <div class="r2-tt"><b>Rute Belajar</b><small><b>${n}</b> dari ${total} bagian selesai</small></div>
       <div class="r2-prog" title="${p}% selesai"><span class="r2-bar"><i style="width:${p}%"></i></span><b>${p}%</b></div>
-      <div class="r2-act">${resId && resId !== cur && !isLock(resId) ? `<a class="r2-go" href="${res}">${icon('right')} Lanjut ke ${kode(resId)}</a>` : ''}<a class="rail-all" href="#/materi">${icon('grid')}<span>Semua materi</span></a></div>
+      <div class="r2-act">${resId && resId !== cur && !isLock(resId) ? `<a class="r2-go" href="${res}">${icon('right')} Lanjutkan belajar</a>` : ''}<a class="rail-all" href="#/materi">${icon('grid')}<span>Semua materi</span></a></div>
     </div>
     <div class="r2-track">${groups.map(grp).join('')}</div>
   </nav>`;
 }
 
-/* Mini preview saat kursor/fokus berada di scene pada Rute Belajar dan daftar materi.
+/* Mini preview saat kursor/fokus berada di bagian pada Rute Belajar dan daftar materi.
    Ditempel di <body> dengan posisi fixed supaya tidak terpotong oleh wadah yang bisa digulir */
 const PEEK_TEKS = {
-  S01: 'Kenalan dulu dengan pelatihannya: mau belajar apa saja dan urutannya seperti apa.',
-  S02: 'Kenapa email masih jadi andalan di kantor, dan kenapa nadanya harus tetap profesional.',
-  S03: 'Bongkar satu per satu bagian email, mulai dari subject sampai tanda tangan.',
-  S04: 'Cara menulis subject yang bikin email dibuka, plus salam pembuka dan penutup yang pas.',
-  S05: 'Lihat kerangka email lamaran yang rapi, lalu pahami fungsi tiap bagiannya.',
-  S06: 'Latihan memperkenalkan diri dengan singkat dan melampirkan CV serta portofolio tanpa salah.',
-  S07: 'Berburu kesalahan kecil yang sering bikin lamaran dilewati HR.',
-  S08: 'Saatnya praktik: susun email lamaranmu sendiri sampai siap dikirim.',
-  S09: 'Kapan pakai CC, kapan BCC, dan jam berapa email sebaiknya dikirim.',
-  S10: 'Belum ada kabar dari HR? Di sini dibahas cara menanyakannya dengan sopan.',
-  S11: 'Ubah kalimat santai jadi formal dan sopan, tanpa terdengar kaku.',
-  S12: '15 soal pilihan ganda dari ketiga materi. Pembahasannya langsung muncul setiap kali menjawab.',
-  S13: 'Tiga aktivitas bareng Salsa Rahma: cocokkan istilah, susun email follow-up, dan perbaiki kalimat.',
-  S14: 'Cek tiga syarat sebelum evaluasi: materi beres, latihan minimal 70%, dan aktivitas interaktif selesai.',
-  S15: 'Empat soal akhir tanpa tanda benar atau salah. Nilainya baru keluar di akhir.',
-  S16: 'Rangkuman satu halaman yang bisa disimpan, ditambah tempat untuk memberi masukan.',
+  'pengantar': 'Kenalan dulu dengan pelatihannya: mau belajar apa saja dan urutannya seperti apa.',
+  'kegunaan-email': 'Kenapa email masih jadi andalan di kantor, dan kenapa nadanya harus tetap profesional.',
+  'bagian-email': 'Bongkar satu per satu bagian email, mulai dari subject sampai tanda tangan.',
+  'subject-dan-salam': 'Cara menulis subject yang bikin email dibuka, plus salam pembuka dan penutup yang pas.',
+  'susunan-email': 'Lihat kerangka email lamaran yang rapi, lalu pahami fungsi tiap bagiannya.',
+  'perkenalan-dan-cv': 'Latihan memperkenalkan diri dengan singkat dan melampirkan CV serta portofolio tanpa salah.',
+  'kesalahan-email': 'Berburu kesalahan kecil yang sering bikin lamaran dilewati HR.',
+  'praktik-email': 'Saatnya praktik: susun email lamaranmu sendiri sampai siap dikirim.',
+  'cc-bcc-waktu': 'Kapan pakai CC, kapan BCC, dan jam berapa email sebaiknya dikirim.',
+  'follow-up': 'Belum ada kabar dari HR? Di sini dibahas cara menanyakannya dengan sopan.',
+  'bahasa-formal': 'Ubah kalimat santai jadi formal dan sopan, tanpa terdengar kaku.',
+  'latihan-soal': '15 soal pilihan ganda dari ketiga materi. Pembahasannya langsung muncul setiap kali menjawab.',
+  'aktivitas-interaktif': 'Tiga aktivitas bareng Salsa Rahma: cocokkan istilah, susun email follow-up, dan perbaiki kalimat.',
+  'awal-evaluasi': 'Cek tiga syarat sebelum evaluasi: materi beres, latihan minimal 70%, dan aktivitas interaktif selesai.',
+  'evaluasi-akhir': 'Empat soal akhir tanpa tanda benar atau salah. Nilainya baru keluar di akhir.',
+  'penutup': 'Rangkuman satu halaman yang bisa disimpan, ditambah tempat untuk memberi masukan.',
 };
 const peekInfo = id => {
-  const s = SCENES[id], m = materiOf(id), i = ORDER.indexOf(id);
-  const why = id === 'S14' ? 'Selesaikan semua scene materi dulu.' : id === 'S15' ? 'Penuhi tiga syarat di Awal Evaluasi dulu.' : id === 'S16' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${kode(ORDER[i - 1])} · ${SCENES[ORDER[i - 1]].title} dulu.`;
-  return { code: kode(id), grp: m ? m.short : '', title: s.title, type: s.type, desc: PEEK_TEKS[id] || s.tujuan, st: state.done[id] ? 'done' : locked(id) ? 'lock' : 'open', why };
+  const s = BAGIAN[id], m = materiOf(id), i = ORDER.indexOf(id);
+  const why = id === 'awal-evaluasi' ? 'Selesaikan semua bagian materi dulu.' : id === 'evaluasi-akhir' ? 'Penuhi tiga syarat di Awal Evaluasi dulu.' : id === 'penutup' ? `Lulus evaluasi dulu (nilai minimal ${KKM}).` : i < 1 ? '' : `Selesaikan ${BAGIAN[ORDER[i - 1]].title} dulu.`;
+  return { grp: m ? m.short : '', title: s.title, type: s.type, desc: PEEK_TEKS[id] || s.tujuan, st: state.done[id] ? 'done' : locked(id) ? 'lock' : 'open', why };
 };
 (() => {
   const el = document.createElement('div');
@@ -2850,7 +2857,7 @@ const peekInfo = id => {
   const show = t => {
     const p = peekInfo(t.dataset.peek); if (!p) return;
     cur = t;
-    el.innerHTML = `<div class="pk-top"><span class="pk-code">${p.code}</span><small>${p.grp}</small><span class="pk-st ${p.st}">${icon(p.st === 'done' ? 'check' : p.st === 'lock' ? 'lock' : 'right')}${p.st === 'done' ? 'Selesai' : p.st === 'lock' ? 'Terkunci' : 'Bisa dibuka'}</span></div>
+    el.innerHTML = `<div class="pk-top"><small>${p.grp}</small><span class="pk-st ${p.st}">${icon(p.st === 'done' ? 'check' : p.st === 'lock' ? 'lock' : 'right')}${p.st === 'done' ? 'Selesai' : p.st === 'lock' ? 'Terkunci' : 'Bisa dibuka'}</span></div>
       <b class="pk-t">${p.title}</b><small class="pk-type">${icon('pointer')} ${p.type}</small>
       <p class="pk-d">${p.desc}</p>${p.st === 'lock' ? `<div class="pk-why">${icon('lock')} ${p.why}</div>` : ''}`;
     el.classList.add('show');
@@ -2877,49 +2884,49 @@ const peekInfo = id => {
    KATALOG MATERI
    ========================================================================= */
 function viewMateri() {
-  const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/scene/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : kode(id)}</span><span class="srow-t"><b>${SCENES[id].title}</b><small>${kode(id)} · ${SCENES[id].type}</small></span>${icon('right')}</a>`; };
+  const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/bagian/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : icon('book')}</span><span class="srow-t"><b>${BAGIAN[id].title}</b><small>${BAGIAN[id].type}</small></span>${icon('right')}</a>`; };
   return `<div class="page wrap">
-    <header class="page-head"><div class="eyebrow">Materi</div><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Scene berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
-      <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 scene selesai</small></div></header>
+    <header class="page-head"><div class="eyebrow">Materi</div><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Bagian berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
+      <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 bagian selesai</small></div></header>
     <div class="cat">${MATERI.map(m => `<article class="cat-card">
-      <header><span class="cat-no">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.scenes.filter(id => state.done[id]).length}/${m.scenes.length}</span></header>
-      <div class="cat-list">${m.scenes.map(row).join('')}</div>
+      <header><span class="cat-no">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span></header>
+      <div class="cat-list">${m.bagian.map(row).join('')}</div>
     </article>`).join('')}</div>
   </div>`;
 }
 
 /* =========================================================================
-   HALAMAN SCENE (gaya halaman pelajaran)
+   HALAMAN Bagian (gaya halaman pelajaran)
    ========================================================================= */
 const uraianSections = s => s.uraian.map((u, i) => `<section class="u-sec" id="u${i}"><h2 class="sec-title">${u.h}</h2>${u.p.map(p => p.startsWith('<ol') ? p : `<p>${p}</p>`).join('')}</section>`).join('');
 const uraianHTML = uraianSections;
 
 const ACT_HEAD = {
   _: ['pointer', 'Aktivitas', 'Sekarang giliranmu'],
-  S01: ['inbox', 'Pengantar', 'Sebelum mulai'],
-  S12: ['pen', 'Latihan soal', 'Jawab dan baca pembahasannya'],
-  S13: ['grid', 'Aktivitas interaktif', 'Pilih aktivitasnya'],
-  S14: ['list', 'Awal evaluasi', 'Cek syarat evaluasi'],
-  S15: ['flag', 'Evaluasi akhir', 'Kerjakan evaluasinya'],
-  S16: ['award', 'Penutup', 'Rangkuman pelatihan'],
+  'pengantar': ['inbox', 'Pengantar', 'Sebelum mulai'],
+  'latihan-soal': ['pen', 'Latihan soal', 'Jawab dan baca pembahasannya'],
+  'aktivitas-interaktif': ['grid', 'Aktivitas interaktif', 'Pilih aktivitasnya'],
+  'awal-evaluasi': ['list', 'Awal evaluasi', 'Cek syarat evaluasi'],
+  'evaluasi-akhir': ['flag', 'Evaluasi akhir', 'Kerjakan evaluasinya'],
+  'penutup': ['award', 'Penutup', 'Rangkuman pelatihan'],
 };
-function viewScene(id) {
-  const s = SCENES[id], m = materiOf(id), i = ORDER.indexOf(id);
+function viewBagian(id) {
+  const s = BAGIAN[id], m = materiOf(id), i = ORDER.indexOf(id);
   const text = (s.uraian || []).map(u => u.p.join(' ')).join(' ').replace(/<[^>]+>/g, '');
   const mins = Math.max(1, Math.round(text.split(/\s+/).length / 170));
-  if (id === 'S14' || id === 'S15') return `<div class="lesson-wide wrap evx"><section id="aktivitas"><div id="activity" class="evx-act"></div></section><nav class="lesson-nav evx-nav">${lessonNav(id)}</nav></div>`;
+  if (id === 'awal-evaluasi' || id === 'evaluasi-akhir') return `<div class="lesson-wide wrap evx"><section id="aktivitas"><div id="activity" class="evx-act"></div></section><nav class="lesson-nav evx-nav">${lessonNav(id)}</nav></div>`;
   return `<div class="lesson-wide wrap">
     <article class="sheet mail-view">
       <div class="mv-bar">
         <a class="mv-btn" href="#/materi" title="Semua materi">${icon('left')}<span>Materi</span></a>
-        <span class="mv-prog" role="progressbar" aria-label="Posisi belajar" aria-valuemin="1" aria-valuemax="${ORDER.length}" aria-valuenow="${i + 1}" title="Scene ${i + 1} dari ${ORDER.length}"><i style="width:${(i + 1) / ORDER.length * 100}%"></i></span>
+        <span class="mv-prog" role="progressbar" aria-label="Posisi belajar" aria-valuemin="1" aria-valuemax="${ORDER.length}" aria-valuenow="${i + 1}" title="${s.title}"><i style="width:${(i + 1) / ORDER.length * 100}%"></i></span>
       </div>
       <header class="mv-head">
         <span class="mv-av" data-to="#/" title="Beranda">${LOGO}</span>
         <div class="mv-meta">
           <div class="mv-from"><b>Smart Emailing</b><small>kepada: kamu · ± ${mins} menit</small></div>
           <h1 class="display">${s.title}</h1>
-          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl code" data-to="#/alur" title="Lihat di flowchart">${kode(id)}</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span></div>
+          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl" data-to="#/alur" title="Lihat di flowchart">Bagian</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span></div>
         </div>
       </header>
       <div class="pin-note"><span class="pin" data-to="#/tujuan" title="Semua tujuan belajar"></span><b>Tujuan</b><p>${s.tujuan}</p></div>
@@ -2933,7 +2940,7 @@ function viewScene(id) {
 /* Materi dibaca per kartu; posisi kartu disimpan */
 function renderSteps(id) {
   const box = $('#uraian'); if (!box) return;
-  const s = SCENES[id], st = A(id);
+  const s = BAGIAN[id], st = A(id);
   if (s.uraianAfter && !state.done[id] && !st.actOk) {
     box.innerHTML = `<div class="step-card locked">${icon('eyeoff')}<div><b>Nanti dulu, ya</b><p>Bagian ini sengaja ditutup dulu biar jawabannya nggak bocor. Temukan semua kesalahannya di aktivitas bawah, nanti kebuka sendiri.</p><button type="button" class="btn btn-primary btn-sm" data-go-act>Ke aktivitas ${icon('down')}</button></div></div>`;
     return;
@@ -2953,17 +2960,17 @@ function renderSteps(id) {
 
 function lessonNav(id) {
   const nx = nextOf(id);
-  const label = { S11: 'Ke latihan soal', S12: 'Ke aktivitas interaktif', S13: 'Ke awal evaluasi', S14: 'Mulai evaluasi', S15: 'Ke penutup' }[id] || 'Lanjut';
+  const label = { 'bahasa-formal': 'Ke latihan soal', 'latihan-soal': 'Ke aktivitas interaktif', 'aktivitas-interaktif': 'Ke awal evaluasi', 'awal-evaluasi': 'Mulai evaluasi', 'evaluasi-akhir': 'Ke penutup' }[id] || 'Lanjut';
   return `<a class="btn btn-outline" href="${prevOf(id)}">${icon('left')} Sebelumnya</a>
-    ${nx ? `<a class="btn btn-primary ${state.done[id] ? '' : 'is-locked'}" id="nextBtn" href="${nx}">${label} ${icon('right')}</a>` : id === 'S16' ? `<a class="btn btn-primary" href="#/">Selesai ${icon('check')}</a>` : ''}`;
+    ${nx ? `<a class="btn btn-primary ${state.done[id] ? '' : 'is-locked'}" id="nextBtn" href="${nx}">${label} ${icon('right')}</a>` : id === 'penutup' ? `<a class="btn btn-primary" href="#/">Selesai ${icon('check')}</a>` : ''}`;
 }
 
-function mountScene(id) {
+function mountBagian(id) {
   const btn = $('#nextBtn');
   if (btn) btn.addEventListener('click', e => {
     if (!btn.classList.contains('is-locked')) return;
     e.preventDefault();
-    const tahap = { S12: 'Jawab semua 15 soal latihan dulu, ya.', S13: 'Kerjakan ketiga aktivitas interaktif dulu, ya.', S14: 'Syarat evaluasi belum terpenuhi semua.', S15: `Nilai evaluasi minimal ${KKM} untuk membuka penutup.` }[id];
+    const tahap = { 'latihan-soal': 'Jawab semua 15 soal latihan dulu, ya.', 'aktivitas-interaktif': 'Kerjakan ketiga aktivitas interaktif dulu, ya.', 'awal-evaluasi': 'Syarat evaluasi belum terpenuhi semua.', 'evaluasi-akhir': `Nilai evaluasi minimal ${KKM} untuk membuka penutup.` }[id];
     if (tahap) { toast(tahap); $('#aktivitas').scrollIntoView({ behavior: 'smooth' }); return; }
     const st = A(id), baca = !readAll(id);
     if (baca && st.actOk) { toast('Aktivitasnya sudah beres, tinggal baca kartu materi yang belum dibuka.'); $('#uraian').scrollIntoView({ behavior: 'smooth' }); }
@@ -2976,7 +2983,7 @@ function mountScene(id) {
     const b = e.target.closest('[data-step]'); if (!b || b.disabled) return;
     A(id).step = Math.max(0, +b.dataset.step); save(); sfx(); renderSteps(id); finish(false);
   });
-  /* Scene selesai = aktivitas beres + semua kartu materi sudah dibuka */
+  /* Bagian selesai = aktivitas beres + semua kartu materi sudah dibuka */
   const finish = silent => {
     if (state.done[id] || !A(id).actOk || !readAll(id)) return;
     const freshDone = true;
@@ -2985,43 +2992,43 @@ function mountScene(id) {
     if (freshDone && !silent) celebrate();
     const rail = $('.rail'); if (rail) rail.outerHTML = routeRail(id);
     const nx = ORDER[ORDER.indexOf(id) + 1];
-    if (freshDone && !silent && nx && MATERI_SCENES.includes(nx)) toast(`${kode(nx)} · ${SCENES[nx].title} sudah kebuka.`);
+    if (freshDone && !silent && nx && MATERI_BAGIAN.includes(nx)) toast(`${BAGIAN[nx].title} sudah kebuka.`);
   };
   const done = silent => {
     const st = A(id), first = !st.actOk;
     st.actOk = true; save();
-    if (SCENES[id].uraianAfter) renderSteps(id);
+    if (BAGIAN[id].uraianAfter) renderSteps(id);
     if (state.done[id]) { if (btn) btn.classList.remove('is-locked'); return; }
     if (readAll(id)) finish(silent);
-    else if (first && !silent) { sfx('ok'); toast('Aktivitas beres. Scene berikutnya kebuka setelah semua kartu materi dibaca.'); }
+    else if (first && !silent) { sfx('ok'); toast('Aktivitas beres. Bagian berikutnya kebuka setelah semua kartu materi dibaca.'); }
   };
   ACT[id]($('#activity'), done, A(id));
-  if (MATERI_SCENES.includes(id)) hintCoach(id);
+  if (MATERI_BAGIAN.includes(id)) hintCoach(id);
 }
 
 /* =========================================================================
-   HINT ALA GAME — muncul kalau peserta diam terlalu lama di scene materi,
-   isinya menyesuaikan langkah yang masih kurang untuk membuka scene berikutnya
+   HINT ALA GAME — muncul kalau peserta diam terlalu lama di bagian materi,
+   isinya menyesuaikan langkah yang masih kurang untuk membuka bagian berikutnya
    ========================================================================= */
 const HINT_AKT = {
-  S02: 'Klik setiap kotak informasi sampai semuanya terbuka.',
-  S03: 'Seret setiap kartu ke bagian email yang cocok. Di HP: ketuk kartunya, lalu ketuk slotnya.',
-  S04: 'Baca studi kasusnya, lalu jawab pertanyaan kuisnya.',
-  S05: 'Klik setiap bagian email untuk melihat penjelasannya.',
-  S06: 'Ikuti simulasinya sampai emailnya siap dikirim.',
-  S07: 'Klik bagian email yang menurutmu salah sampai semua kesalahannya ketemu.',
-  S08: 'Isi form email lamarannya, lalu cocokkan dengan daftar periksa.',
-  S09: 'Atur jam kirim yang tepat dan jawab kuisnya.',
-  S10: 'Pilih langkah yang paling tepat di setiap situasi.',
-  S11: 'Pilih kalimat yang paling formal dan sopan.',
+  'kegunaan-email': 'Klik setiap kotak informasi sampai semuanya terbuka.',
+  'bagian-email': 'Seret setiap kartu ke bagian email yang cocok. Di HP: ketuk kartunya, lalu ketuk slotnya.',
+  'subject-dan-salam': 'Baca studi kasusnya, lalu jawab pertanyaan kuisnya.',
+  'susunan-email': 'Klik setiap bagian email untuk melihat penjelasannya.',
+  'perkenalan-dan-cv': 'Ikuti simulasinya sampai emailnya siap dikirim.',
+  'kesalahan-email': 'Klik bagian email yang menurutmu salah sampai semua kesalahannya ketemu.',
+  'praktik-email': 'Isi form email lamarannya, lalu cocokkan dengan daftar periksa.',
+  'cc-bcc-waktu': 'Atur jam kirim yang tepat dan jawab kuisnya.',
+  'follow-up': 'Pilih langkah yang paling tepat di setiap situasi.',
+  'bahasa-formal': 'Pilih kalimat yang paling formal dan sopan.',
 };
 function hintFor(id) {
-  const s = SCENES[id], st = A(id), nx = ORDER[ORDER.indexOf(id) + 1];
+  const s = BAGIAN[id], st = A(id), nx = ORDER[ORDER.indexOf(id) + 1];
   const sisa = s.uraian ? s.uraian.length - s.uraian.filter((_, j) => (st.read || []).includes(j)).length : 0;
-  if (state.done[id]) return { t: `Scene ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'S12' ? 'langkah berikutnya' : 'scene ' + kode(nx)}.`, to: '#nextBtn' };
+  if (state.done[id]) return { t: `Bagian ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'latihan-soal' ? 'langkah berikutnya' : 'bagian ' + BAGIAN[nx].title}.`, to: '#nextBtn' };
   if (!st.actOk && (readAll(id) || s.uraianAfter)) return { t: `${readAll(id) ? 'Materinya sudah kebaca semua. ' : ''}Sekarang giliran aktivitas di bawah: ${HINT_AKT[id] || 'selesaikan aktivitasnya.'}`, to: '#activity' };
   if (!st.actOk) return { t: `Masih ada <b>${sisa} kartu materi</b> yang belum dibaca. Klik <b>Berikutnya</b> di kartu materi, setelah itu kerjakan aktivitasnya.`, to: '#uraian .st-tab:not(.read)' };
-  return { t: `Tinggal satu langkah lagi: buka <b>${sisa} kartu materi</b> yang belum dibaca supaya scene berikutnya terbuka.`, to: '#uraian .st-tab:not(.read)' };
+  return { t: `Tinggal satu langkah lagi: buka <b>${sisa} kartu materi</b> yang belum dibaca supaya bagian berikutnya terbuka.`, to: '#uraian .st-tab:not(.read)' };
 }
 function hintCoach(id) {
   const FIRST = 30000, NEXT = 60000;
@@ -3061,12 +3068,12 @@ function hintCoach(id) {
 }
 
 /* =========================================================================
-   AKTIVITAS PER SCENE — setiap hasil disimpan di state.act[id]
+   AKTIVITAS PER Bagian — setiap hasil disimpan di state.act[id]
    ========================================================================= */
 const ACT = {};
 
-/* S01 — pengantar: masalah yang sering terjadi + peta materi */
-ACT.S01 = (el, done, st) => {
+/* pengantar — pengantar: masalah yang sering terjadi + peta materi */
+ACT['pengantar'] = (el, done, st) => {
   el.innerHTML = `<div class="intro1">
     <div class="i1-case">
       <p class="i1-q">Pernah kirim lamaran kerja, tapi tak kunjung dibalas? Bisa jadi masalahnya ada di email yang kamu kirim.</p>
@@ -3078,7 +3085,7 @@ ACT.S01 = (el, done, st) => {
     </div>
     <div class="i1-map">
       <h3>Isinya ada tiga</h3>
-      <ol>${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<li><a href="#/scene/${m.scenes[0]}"><span>${m.no}</span>${m.title}</a></li>`).join('')}</ol>
+      <ol>${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<li><a href="#/bagian/${m.bagian[0]}"><span>${m.no}</span>${m.title}</a></li>`).join('')}</ol>
       <div class="i1-post">${icon('pen')} Habis itu latihan soal dan aktivitas interaktif, terakhir evaluasi.</div>
       <button type="button" class="btn btn-primary" data-ready>${icon('check')} Oke, aku siap</button>
     </div>
@@ -3089,12 +3096,12 @@ ACT.S01 = (el, done, st) => {
   if (st.ok || st.played) finish(true);
 };
 
-/* S02 — klik 4 ikon di laptop */
-ACT.S02 = (el, done, st) => {
+/* kegunaan-email — klik 4 ikon di laptop */
+ACT['kegunaan-email'] = (el, done, st) => {
   const items = [['megaphone', 'Menyampaikan informasi', 'Untuk pengumuman atau pesan resmi.'], ['file', 'Mengirim dokumen', 'Untuk mengirim CV, laporan, dan file lainnya.'], ['briefcase', 'Melamar kerja', 'Untuk memperkenalkan diri kepada perusahaan.'], ['users', 'Berkoordinasi', 'Untuk berkomunikasi dengan rekan kerja dan klien.']];
   st.seen = st.seen || [];
   el.innerHTML = `${actHead('pointer', 'Klik informasi', 'Dibuka <b>0</b> dari 4')}
-  <div class="s02">
+  <div class="laptop-info">
     <div class="laptop"><div class="lscreen"><div class="lbar"><i></i><i></i><i></i><span>Email di dunia kerja</span></div>
       <div class="lgrid">${items.map(([ic, t], i) => `<button type="button" class="lico" data-i="${i}"><span class="lico-c">${icon(ic)}<span class="lico-ck">${icon('check')}</span></span><span>${t}</span></button>`).join('')}</div></div><div class="lbase"></div></div>
     <div class="info-panel" aria-live="polite"><div class="ip-empty">${icon('pointer')}<p>Klik salah satu ikon di layar laptop.</p></div></div>
@@ -3114,8 +3121,8 @@ ACT.S02 = (el, done, st) => {
   el.onclick = e => { const b = e.target.closest('.lico'); if (b) open(+b.dataset.i, false); };
 };
 
-/* S03 — seret & letakkan 5 bagian email */
-ACT.S03 = (el, done, st) => {
+/* bagian-email — seret & letakkan 5 bagian email */
+ACT['bagian-email'] = (el, done, st) => {
   const parts = [['subject', 'Subject', 'Menjelaskan isi email secara singkat.'], ['greeting', 'Salam pembuka', 'Menunjukkan rasa hormat.'], ['body', 'Isi email', 'Memuat pesan utama, jelas dan ringkas.'], ['closing', 'Salam penutup', 'Mengakhiri email dengan sopan.'], ['signature', 'Tanda tangan', 'Nama pengirim, setelah salam penutup.']];
   st.placed = st.placed || [];
   let selected = null;
@@ -3166,8 +3173,8 @@ ACT.S03 = (el, done, st) => {
   el.addEventListener('drop', e => { const s = e.target.closest('.slot'); if (s) { e.preventDefault(); s.classList.remove('over'); tryPlace(e.dataTransfer.getData('text/plain'), s); } });
 };
 
-/* S04 — bandingkan kotak masuk + kuis subject */
-ACT.S04 = (el, done, st) => {
+/* subject-dan-salam — bandingkan kotak masuk + kuis subject */
+ACT['subject-dan-salam'] = (el, done, st) => {
   const row = (s, g) => `<div class="cmp-row ${g ? 'good' : ''}"><span class="iav">${g ? 'SU' : ''}</span><span>${s}</span></div>`;
   el.innerHTML = `${actHead('search', 'Studi kasus')}
   <div class="ibx-compare">
@@ -3186,8 +3193,8 @@ ACT.S04 = (el, done, st) => {
     { t: 'Halo Kak', fb: 'Kurang pas. Ini sapaan santai, bukan subject, dan tidak menjelaskan isi email.' }] });
 };
 
-/* S05 — hotspot email lamaran */
-ACT.S05 = (el, done, st) => {
+/* susunan-email — hotspot email lamaran */
+ACT['susunan-email'] = (el, done, st) => {
   const hs = [['Subject yang jelas', 'Bagian pertama yang dilihat perekrut. Buat singkat, jelas, spesifik, dan sesuai tujuan email.'], ['Salam pembuka', 'Menunjukkan rasa hormat kepada penerima.'], ['Perkenalan diri singkat', 'Sebutkan nama dan latar belakang pendidikan secara singkat.'], ['Tujuan mengirim email', 'Sampaikan posisi yang kamu lamar.'], ['Keterangan lampiran', 'Sebutkan CV dan portofolio yang dilampirkan dalam format PDF.'], ['Salam penutup', 'Akhiri email dengan sopan, lalu tulis namamu.']];
   st.seen = st.seen || [];
   el.innerHTML = `${actHead('pointer', 'Klik bagian email', 'Dibuka <b>0</b> dari 6')}
@@ -3218,8 +3225,8 @@ ACT.S05 = (el, done, st) => {
   el.onclick = e => { const b = e.target.closest('.hs'); if (b) open(+b.dataset.i, false); };
 };
 
-/* S06 — simulasi menulis email: pilih perkenalan + nama file */
-ACT.S06 = (el, done, st) => {
+/* perkenalan-dan-cv — simulasi menulis email: pilih perkenalan + nama file */
+ACT['perkenalan-dan-cv'] = (el, done, st) => {
   el.innerHTML = `${actHead('pen', 'Simulasi', '<b>0</b> dari 2 tepat')}
   <div class="compose">
     <div class="compose-top">${icon('pen')} Tulis Email</div>
@@ -3230,9 +3237,9 @@ ACT.S06 = (el, done, st) => {
   </div>
   <div class="choice-group"><h4>1. Kalimat perkenalan yang tepat</h4><div class="mcq" id="mIntro"></div></div>
   <div class="choice-group"><h4>2. Nama file lampiran yang tepat</h4><div class="mcq" id="mFile"></div></div>
-  <div class="fb" id="s06fb" hidden></div>`;
+  <div class="fb" id="composeFb" hidden></div>`;
   let ok = 0;
-  const hit = silent => { ok++; $('.counter b', el).textContent = ok; if (ok === 2) { showFb($('#s06fb', el), null, 'Emailmu siap dikirim. Jangan lupa cek lagi, pastikan lampirannya sudah terunggah dan bisa dibuka.'); done(silent); } };
+  const hit = silent => { ok++; $('.counter b', el).textContent = ok; if (ok === 2) { showFb($('#composeFb', el), null, 'Emailmu siap dikirim. Jangan lupa cek lagi, pastikan lampirannya sudah terunggah dan bisa dibuka.'); done(silent); } };
   mcq($('#mIntro', el), { store: st, key: 'intro', opts: [
     { t: `“Saya ${NAMA}, lulusan S1 Desain Komunikasi Visual, bermaksud melamar posisi Graphic Designer.”`, ok: true, fb: 'Tepat. Singkat dan relevan: ada nama, latar belakang pendidikan, dan posisi yang dilamar.' },
     { t: '“Halo kak, aku Syarif, hobi main game, lagi nganggur nih.”', fb: 'Kurang pas. Bahasanya santai, dan isinya cerita pribadi yang tidak berhubungan dengan pekerjaan.' },
@@ -3245,8 +3252,8 @@ ACT.S06 = (el, done, st) => {
     onDone: silent => { const f = $('#fillFile', el); f.innerHTML = `<span class="attach">${icon('file')} CV_${NAMAF}.pdf</span>`; f.classList.add('filled'); hit(silent); } });
 };
 
-/* S07 — temukan 6 kesalahan */
-ACT.S07 = (el, done, st) => {
+/* kesalahan-email — temukan 6 kesalahan */
+ACT['kesalahan-email'] = (el, done, st) => {
   const segs = {
     from: ['Alamat email tidak profesional', 'Pakai alamat email yang memuat nama aslimu, bukan julukan.'],
     subject: ['Subject tidak jelas', `Subject yang baik itu spesifik, misalnya “Application for Graphic Designer Position – ${NAMA}”.`],
@@ -3293,8 +3300,8 @@ ACT.S07 = (el, done, st) => {
   };
 };
 
-/* S08 — praktik menulis email (draf & hasil disimpan) */
-ACT.S08 = (el, done, st) => {
+/* praktik-email — praktik menulis email (draf & hasil disimpan) */
+ACT['praktik-email'] = (el, done, st) => {
   const d = st.draft || {};
   const checks = ['Subject jelas', 'Salam sudah sesuai', 'Perkenalan singkat', 'Lampiran disebutkan', 'Bahasa formal'];
   el.innerHTML = `${actHead('pen', 'Praktik')}
@@ -3331,8 +3338,8 @@ ACT.S08 = (el, done, st) => {
   form.onsubmit = e => { e.preventDefault(); const v = read(); st.sent = v; save(); sfx('ok'); showCompare(v); box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); done(false); };
 };
 
-/* S09 — CC/BCC + jam (angka 12 di atas) + 2 kuis */
-ACT.S09 = (el, done, st) => {
+/* cc-bcc-waktu — CC/BCC + jam (angka 12 di atas) + 2 kuis */
+ACT['cc-bcc-waktu'] = (el, done, st) => {
   const R = 84;
   const pt = (h, r) => { const a = (h % 12) / 12 * 2 * Math.PI - Math.PI / 2; return [100 + r * Math.cos(a), 100 + r * Math.sin(a)]; };
   /* Busur jam kerja 08.00 → 17.00 (searah jarum jam melewati angka 12) */
@@ -3400,8 +3407,8 @@ ACT.S09 = (el, done, st) => {
     { t: 'Hari libur', fb: 'Kurang pas. Hindari hari libur, kecuali memang mendesak.' }] });
 };
 
-/* S10 — pilih langkah follow-up */
-ACT.S10 = (el, done, st) => {
+/* follow-up — pilih langkah follow-up */
+ACT['follow-up'] = (el, done, st) => {
   const choices = [
     { k: 'A', t: 'Kirim email follow-up yang sopan dan singkat.', ok: true },
     { k: 'B', t: 'Kirim email setiap hari sampai dibalas.', fb: 'Kurang tepat. HR bisa merasa terganggu. Follow-up cukup sekali, sopan, dan tidak memaksa.' },
@@ -3431,8 +3438,8 @@ ACT.S10 = (el, done, st) => {
   el.onclick = e => { const b = e.target.closest('.bcard'); if (!b || b.disabled) return; st.tried.push(b.dataset.k); save(); choose(b.dataset.k, false); };
 };
 
-/* S11 — 3 kasus pilih kalimat */
-ACT.S11 = (el, done, st) => {
+/* bahasa-formal — 3 kasus pilih kalimat */
+ACT['bahasa-formal'] = (el, done, st) => {
   const cases = [
     { bad: 'Mohon info lanjutannya ya Kak, makasih 🙏', good: 'Mohon informasi mengenai perkembangan proses seleksi. Terima kasih.', wb: 'Kurang pas: ada bahasa gaul (“info”, “ya Kak”, “makasih”) dan emoji.', wg: 'Tepat: jelas, sopan, dan mudah dipahami.' },
     { bad: 'Sy kirim lamaran ya, tolong dicek!!!', good: 'Saya telah mengirimkan lamaran. Mohon dapat diperiksa. Terima kasih.', wb: 'Kurang pas: ada singkatan tidak resmi (“Sy”) dan tanda seru berlebihan.', wg: 'Tepat: kalimatnya efektif, ejaannya benar.' },
@@ -3555,7 +3562,7 @@ function qRender(box, q, a, { mode, checked, onChange }) {
   box.oninput = e => { const h = e.target.closest('[data-hour]'); if (h) { $('.clock-dig', box).textContent = String(h.value).padStart(2, '0') + '.00'; onChange(+h.value, true); } };
 }
 
-/* ---------- Bank soal LATIHAN S12 (storyboard: 15 soal PG, 5 per materi) ---------- */
+/* ---------- Bank soal LATIHAN latihan-soal (storyboard: 15 soal PG, 5 per materi) ---------- */
 const LATIHAN = [
   { type: 'mcq', topic: 'Materi 1 · Fungsi email', q: 'Mengapa email lebih cocok daripada chat untuk urusan resmi?', opts: ['Selalu lebih cepat dibalas', 'Lebih formal dan tersimpan sebagai bukti', 'Tidak butuh internet', 'Boleh pakai emoji'], a: 1, why: 'Email lebih formal, terdokumentasi, dan bisa menjadi bukti komunikasi profesional.' },
   { type: 'mcq', topic: 'Materi 1 · Struktur email', q: 'Bagian email yang merangkum isi email secara singkat adalah…', opts: ['Tanda tangan', 'Salam pembuka', 'Subject line', 'Salam penutup'], a: 2, why: 'Subject line menjelaskan isi email secara singkat dan jadi hal pertama yang dilihat penerima.' },
@@ -3586,7 +3593,7 @@ const EVAL_LAMA = [
   { type: 'sort', q: 'Kelompokkan kalimat berikut: formal atau tidak formal?', buckets: ['Formal', 'Tidak formal'], items: [['Mohon informasi mengenai perkembangan proses seleksi.', 0], ['Sy kirim lamaran ya, tolong dicek!!!', 1], ['Selamat pagi, Bapak/Ibu.', 0], ['Mohon info lanjutannya ya Kak 🙏', 1], ['SAYA MAU DAFTAR KERJA', 1], ['Terima kasih atas waktu dan perhatian Bapak/Ibu.', 0]] },
 ];
 
-/* ---------- Bank soal EVALUASI AKHIR S15 (4 soal dari interaksi di materi) ---------- */
+/* ---------- Bank soal EVALUASI AKHIR evaluasi-akhir (4 soal dari interaksi di materi) ---------- */
 const EVALUASI = [
   { type: 'slots', tag: 'Seret & letakkan', q: 'Seret setiap kartu ke urutan bagian email profesional yang benar.', slots: ['Bagian 1', 'Bagian 2', 'Bagian 3', 'Bagian 4', 'Bagian 5'], cards: ['Subject line', 'Salam pembuka', 'Isi email', 'Salam penutup', 'Tanda tangan'] },
   { type: 'mcq', tag: 'Pilih jawaban', q: 'Salsa Rahma melamar posisi Content Writer. Subject email mana yang paling tepat?', opts: ['Lamaran kerja', 'Tolong dibaca ya kak', 'Application for Content Writer – Salsa Rahma', 'PENTING!!!'], a: 2 },
@@ -3595,9 +3602,9 @@ const EVALUASI = [
 ];
 
 /* =========================================================================
-   S12 — LATIHAN SOAL: 15 soal PG, pembahasan langsung muncul
+   latihan-soal — LATIHAN SOAL: 15 soal PG, pembahasan langsung muncul
    ========================================================================= */
-ACT.S12 = (el, done) => {
+ACT['latihan-soal'] = (el, done) => {
   el.innerHTML = `<p class="muted">Latihan dibagi per materi. Setiap soal langsung dicek dan ada pembahasannya. Untuk syarat evaluasi, total benar minimal ${LAT_MIN} dari ${LATIHAN.length}.</p>
     <div class="ex-grid">${LAT_SETS.map(exCard).join('')}</div>
     <p class="akt-sum">${icon('pen')} ${latDijawab()} dari ${LATIHAN.length} soal dijawab · ${latSkor()} benar</p>`;
@@ -3605,7 +3612,7 @@ ACT.S12 = (el, done) => {
 };
 
 /* =========================================================================
-   S13 — AKTIVITAS INTERAKTIF: A cocokkan istilah, B susun follow-up, C perbaiki kalimat
+   aktivitas-interaktif — AKTIVITAS INTERAKTIF: A cocokkan istilah, B susun follow-up, C perbaiki kalimat
    Tokoh: Salsa Rahma, pelamar posisi Content Writer
    ========================================================================= */
 const AKT_A = { type: 'slots', q: 'Seret setiap istilah ke definisi yang sesuai.',
@@ -3624,7 +3631,7 @@ const AKT_INFO = {
   b: ['B', 'list', 'Susun email follow-up', 'Urutkan 5 kalimat email follow-up Salsa. 1 poin kalau urutannya benar semua.', 1],
   c: ['C', 'type', 'Perbaiki kalimat', 'Ketuk bagian kalimat yang tidak pantas, lalu pilih penggantinya. 1 poin per kalimat.', 3],
 };
-ACT.S13 = (el, done) => {
+ACT['aktivitas-interaktif'] = (el, done) => {
   const K = state.akt = state.akt || {}; save();
   const st = k => (K[k] = K[k] || {});
   const finishAll = silent => { if (aktDone()) done(silent); };
@@ -3698,21 +3705,21 @@ ACT.S13 = (el, done) => {
 };
 
 /* =========================================================================
-   S14 — AWAL EVALUASI: pos pemeriksaan tiga syarat sebelum evaluasi
+   awal-evaluasi — AWAL EVALUASI: pos pemeriksaan tiga syarat sebelum evaluasi
    ========================================================================= */
-ACT.S14 = (el, done) => {
-  const kurang = MATERI_SCENES.find(id => !state.done[id]);
-  const mDone = MATERI_SCENES.filter(id => state.done[id]).length, aDone = AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length;
+ACT['awal-evaluasi'] = (el, done) => {
+  const kurang = MATERI_BAGIAN.find(id => !state.done[id]);
+  const mDone = MATERI_BAGIAN.filter(id => state.done[id]).length, aDone = AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length;
   const syarat = [
-    [materiDone(), 'book', 'Selesaikan semua materi', 'Scene 2–11 dibaca dan aktivitasnya dikerjakan.', mDone, MATERI_SCENES.length, kurang ? '#/scene/' + kurang : '#/scene/S02'],
+    [materiDone(), 'book', 'Selesaikan semua materi', 'Semua bagian materi dibaca dan aktivitasnya dikerjakan.', mDone, MATERI_BAGIAN.length, kurang ? '#/bagian/' + kurang : '#/bagian/kegunaan-email'],
     [latSkor() >= LAT_MIN, 'clipcheck', `Latihan soal minimal ${LAT_MIN} benar`, `70% dari ${LATIHAN.length} soal pilihan ganda di halaman Latihan.`, Math.min(latSkor(), LAT_MIN), LAT_MIN, '#/latihan'],
-    [aktDone(), 'grid', 'Kerjakan 3 aktivitas interaktif', 'Cocokkan istilah, susun email follow-up, dan perbaiki kalimat.', aDone, 3, '#/scene/S13'],
+    [aktDone(), 'grid', 'Kerjakan 3 aktivitas interaktif', 'Cocokkan istilah, susun email follow-up, dan perbaiki kalimat.', aDone, 3, '#/bagian/aktivitas-interaktif'],
   ];
   const ok = gateOk(), n = syarat.filter(s => s[0]).length, firstTodo = syarat.find(s => !s[0]);
   el.innerHTML = `<section class="cp">
     <div class="cp-hero">
       <div class="cp-ring" style="--p:${n / 3 * 100}"><b>${n}<small>/3</small></b><span>syarat</span></div>
-      <div class="cp-t"><small class="ph-k">Scene 14 · Awal evaluasi</small>
+      <div class="cp-t"><small class="ph-k">Awal evaluasi</small>
         <h1>${ok ? 'Siap evaluasi!' : 'Siap evaluasi?'}</h1>
         <p>${ok ? `Ketiga syarat sudah terpenuhi. Evaluasi berisi ${EVALUASI.length} soal, dan nilai minimal ${KKM} untuk lulus.` : `Penuhi ${3 - n} syarat lagi untuk membuka evaluasi akhir. Klik <b>Kerjakan</b> untuk langsung ke bagian yang kurang.`}</p></div>
     </div>
@@ -3723,14 +3730,14 @@ ACT.S14 = (el, done) => {
         <div class="cp-bar"><span class="bar"><i style="width:${cur / max * 100}%"></i></span><em>${cur}/${max}</em></div></div>
       ${y ? `<span class="cp-ok">${icon('check')} Terpenuhi</span>` : `<a class="btn btn-primary btn-sm" href="${h}">Kerjakan ${icon('right')}</a>`}
     </li>`).join('')}</ol>
-    <div class="cp-go">${ok ? `<a class="gbtn y lg" href="#/scene/S15">${icon('flag')} Mulai evaluasi</a><small>Kamu bisa membaca aturannya dulu sebelum soal pertama.</small>`
+    <div class="cp-go">${ok ? `<a class="gbtn y lg" href="#/bagian/evaluasi-akhir">${icon('flag')} Mulai evaluasi</a><small>Kamu bisa membaca aturannya dulu sebelum soal pertama.</small>`
       : `<span class="gbtn lg cp-off" aria-disabled="true">${icon('lock')} Mulai evaluasi</span><small>Terbuka setelah ketiga syarat terpenuhi. Berikutnya: <a href="${firstTodo[6]}">${firstTodo[2].toLowerCase()}</a>.</small>`}</div>
   </section>`;
-  if (ok) done(!!state.done.S14);
+  if (ok) done(!!state.done['awal-evaluasi']);
 };
 
 /* =========================================================================
-   S15 — EVALUASI AKHIR: mode ujian layar penuh, 4 soal, jawaban dikunci setelah disimpan
+   evaluasi-akhir — EVALUASI AKHIR: mode ujian layar penuh, 4 soal, jawaban dikunci setelah disimpan
    ========================================================================= */
 const EV_CARA = {
   slots: 'Seret setiap kartu ke kotak bagian yang tepat. Di HP: ketuk kartunya, lalu ketuk kotaknya. Ketuk kartu yang sudah terpasang untuk mengembalikannya.',
@@ -3738,7 +3745,7 @@ const EV_CARA = {
   spot: 'Ketuk setiap bagian email yang menurutmu salah. Ketuk lagi untuk membatalkan.',
 };
 const evFocus = on => document.body.classList.toggle('focus-mode', on);
-ACT.S15 = (el, done) => {
+ACT['evaluasi-akhir'] = (el, done) => {
   const E = state.ev = state.ev || { v: 3, i: 0, ans: {}, done: false }; save();
   const N = EVALUASI.length;
   const anim = (sel, frames, ms) => { const c = $(sel, el); if (!c || reduced) return; try { c.animate(frames, { duration: ms, easing: 'cubic-bezier(.2,.8,.2,1)' }); } catch (e) { /* tanpa animasi */ } };
@@ -3752,9 +3759,9 @@ ACT.S15 = (el, done) => {
   const intro = () => {
     evFocus(false);
     el.innerHTML = `<section class="exm-intro">
-      <div class="exm-hero"><small class="ph-k">Scene 15 · Evaluasi akhir</small><h1>Aturan main</h1><p>Baca dulu sebentar, supaya tidak kaget di tengah jalan.</p></div>
+      <div class="exm-hero"><small class="ph-k">Evaluasi akhir</small><h1>Aturan main</h1><p>Baca dulu sebentar, supaya tidak kaget di tengah jalan.</p></div>
       <ol class="exm-rules">${rules.map(([ic, t, d], k) => `<li style="--i:${k}"><span class="exm-ric">${icon(ic)}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol>
-      <div class="exm-go"><button type="button" class="gbtn y lg" data-start>Mulai evaluasi ${icon('right')}</button><a class="exm-back" href="#/scene/S14">${icon('left')} Kembali ke syarat</a></div>
+      <div class="exm-go"><button type="button" class="gbtn y lg" data-start>Mulai evaluasi ${icon('right')}</button><a class="exm-back" href="#/bagian/awal-evaluasi">${icon('left')} Kembali ke syarat</a></div>
     </section>`;
   };
   const render = () => {
@@ -3766,7 +3773,7 @@ ACT.S15 = (el, done) => {
       <header class="exm-top">
         <div class="exm-tt"><small>Evaluasi akhir</small><b>Soal ${i + 1} <span>dari ${N}</span></b></div>
         <div class="exm-seg" aria-hidden="true">${EVALUASI.map((_, k) => `<i class="${k < i ? 'done' : k === i ? 'cur' : ''}"></i>`).join('')}</div>
-        <a class="exm-x" href="#/scene/S14" title="Keluar sementara. Jawaban yang sudah disimpan tetap aman.">${icon('x')}<span>Keluar</span></a>
+        <a class="exm-x" href="#/bagian/awal-evaluasi" title="Keluar sementara. Jawaban yang sudah disimpan tetap aman.">${icon('x')}<span>Keluar</span></a>
       </header>
       <div class="exm-card">
         <span class="exm-tag">${icon('pointer')} ${q.tag}</span>
@@ -3791,7 +3798,7 @@ ACT.S15 = (el, done) => {
       <div class="exm-rb"><span class="exm-badge">${pass ? icon('check') + ' Lulus' : icon('refresh') + ' Belum lulus'}</span>
         <h1>${pass ? 'Selamat, kamu lulus!' : 'Belum lulus kali ini'}</h1>
         <p>${pass ? `Nilaimu ${E.score}, di atas batas lulus ${KKM}. Lanjut ke penutup untuk rangkuman, lalu cetak sertifikatmu.` : `Nilaimu ${E.score}, batas lulusnya ${KKM}. Pelajari ulang materinya mulai dari Materi 1, atau langsung coba evaluasi lagi.`}</p>
-        <div class="row-btns">${pass ? `<a class="gbtn y" href="#/scene/S16">Ke penutup ${icon('right')}</a><a class="gbtn w" href="#/sertifikat">${icon('award')} Sertifikat</a>` : `<a class="gbtn y" href="#/scene/S02">${icon('book')} Pelajari ulang</a><button type="button" class="gbtn w" data-retry>${icon('refresh')} Coba evaluasi lagi</button>`}</div>
+        <div class="row-btns">${pass ? `<a class="gbtn y" href="#/bagian/penutup">Ke penutup ${icon('right')}</a><a class="gbtn w" href="#/sertifikat">${icon('award')} Sertifikat</a>` : `<a class="gbtn y" href="#/bagian/kegunaan-email">${icon('book')} Pelajari ulang</a><button type="button" class="gbtn w" data-retry>${icon('refresh')} Coba evaluasi lagi</button>`}</div>
       </div></section>`;
     if (animated) {
       const ring = $('.ring', el), b = $('.ring b', el), t0 = performance.now();
@@ -3804,7 +3811,7 @@ ACT.S15 = (el, done) => {
   };
   const submit = () => {
     const total = EVALUASI.reduce((sum, q, k) => sum + qScore(q, E.ans[k]), 0);
-    E.score = Math.round(total / N * 100); E.done = true; save(); updateBar(); logAct('ev', 'S15', { s: E.score });
+    E.score = Math.round(total / N * 100); E.done = true; save(); updateBar(); logAct('ev', 'evaluasi-akhir', { s: E.score });
     evFocus(true);
     el.innerHTML = `<div class="sending"><span class="plane">${icon('send')}</span><b>Menghitung nilai…</b></div>`;
     if (E.score >= KKM) done(true);
@@ -3814,7 +3821,7 @@ ACT.S15 = (el, done) => {
   else if (E.started) render(); else intro();
   el.onclick = e => {
     if (e.target.closest('[data-start]')) { E.started = true; save(); sfx(); render(); scrollTo({ top: 0 }); return; }
-    if (e.target.closest('[data-retry]')) { EVALUASI.forEach(q => { q._ord = null; }); state.ev = { v: 3, i: 0, ans: {}, done: false, started: true }; save(); updateBar(); ACT.S15(el, done); return; }
+    if (e.target.closest('[data-retry]')) { EVALUASI.forEach(q => { q._ord = null; }); state.ev = { v: 3, i: 0, ans: {}, done: false, started: true }; save(); updateBar(); ACT['evaluasi-akhir'](el, done); return; }
     const box = $('#exmConfirm', el);
     if (e.target.closest('[data-save]')) { sfx(); if (box) { box.hidden = false; $('[data-confirm]', box).focus(); } return; }
     if (e.target.closest('[data-cancel]') || (box && e.target === box)) { box.hidden = true; return; }
@@ -3822,20 +3829,20 @@ ACT.S15 = (el, done) => {
   };
 };
 
-/* S16 — rangkuman + masukan */
-ACT.S16 = (el, done) => {
-  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/scene/S15" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum kebuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/scene/S15">Ke evaluasi ${icon('right')}</a></div>`; return; }
+/* penutup — rangkuman + masukan */
+ACT['penutup'] = (el, done) => {
+  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/bagian/evaluasi-akhir" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum kebuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/bagian/evaluasi-akhir">Ke evaluasi ${icon('right')}</a></div>`; return; }
   const fb = state.feedback;
   const thanks = f => `<div class="thanks"><a href="#/" title="Beranda">${icon('check')}</a><h3>Makasih, masukanmu sudah masuk.</h3><p class="muted">Nilai ${f.rate}/5${f.saran ? ` · “${esc(f.saran)}”` : ''}</p></div>`;
   el.innerHTML = `<div class="infog" id="infog">
     <div class="ig-head"><a class="brand-mark sm" href="#/" title="Beranda">${LOGO}</a><div><b>SMART EMAILING</b><small>Rangkuman pelatihan</small></div></div>
     <div class="ig-grid">
-      <div class="ig"><h4 data-to="#/scene/S03" title="Buka scene 3">${icon('layers')} Bagian email</h4><ol><li>Subject</li><li>Salam pembuka</li><li>Isi email</li><li>Salam penutup</li><li>Tanda tangan</li></ol></div>
-      <div class="ig"><h4 data-to="#/scene/S08" title="Buka scene 8">${icon('list')} Cek sebelum kirim</h4><ul class="ticks"><li>Subject jelas</li><li>Salam sesuai</li><li>Perkenalan singkat</li><li>Lampiran disebutkan</li><li>Bahasa formal</li></ul></div>
-      <div class="ig"><h4 data-to="#/scene/S09" title="Buka scene 9">${icon('users')} CC dan BCC</h4><p><b>CC</b>: salinan, penerimanya terlihat.</p><p><b>BCC</b>: salinan, penerimanya disembunyikan.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S09" title="Buka scene 9">${icon('clock')} Waktu kirim</h4><p class="ig-big">08.00–17.00</p><p>Di jam kerja. Hindari larut malam dan hari libur.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S10" title="Buka scene 10">${icon('calendar')} Follow-up</h4><p class="ig-big">5–7 hari kerja</p><p>Kalau belum ada kabar. Sopan, singkat, tidak memaksa.</p></div>
-      <div class="ig"><h4 data-to="#/scene/S11" title="Buka scene 11">${icon('type')} Bahasa</h4><p>Jelas dan sopan. Tanpa bahasa gaul, singkatan, emoji, atau kapital berlebihan.</p></div>
+      <div class="ig"><h4 data-to="#/bagian/bagian-email" title="Buka bagian email">${icon('layers')} Bagian email</h4><ol><li>Subject</li><li>Salam pembuka</li><li>Isi email</li><li>Salam penutup</li><li>Tanda tangan</li></ol></div>
+      <div class="ig"><h4 data-to="#/bagian/praktik-email" title="Buka praktik menulis email">${icon('list')} Cek sebelum kirim</h4><ul class="ticks"><li>Subject jelas</li><li>Salam sesuai</li><li>Perkenalan singkat</li><li>Lampiran disebutkan</li><li>Bahasa formal</li></ul></div>
+      <div class="ig"><h4 data-to="#/bagian/cc-bcc-waktu" title="Buka materi CC, BCC, dan waktu mengirim">${icon('users')} CC dan BCC</h4><p><b>CC</b>: salinan, penerimanya terlihat.</p><p><b>BCC</b>: salinan, penerimanya disembunyikan.</p></div>
+      <div class="ig"><h4 data-to="#/bagian/cc-bcc-waktu" title="Buka materi CC, BCC, dan waktu mengirim">${icon('clock')} Waktu kirim</h4><p class="ig-big">08.00–17.00</p><p>Di jam kerja. Hindari larut malam dan hari libur.</p></div>
+      <div class="ig"><h4 data-to="#/bagian/follow-up" title="Buka materi follow-up">${icon('calendar')} Follow-up</h4><p class="ig-big">5–7 hari kerja</p><p>Kalau belum ada kabar. Sopan, singkat, tidak memaksa.</p></div>
+      <div class="ig"><h4 data-to="#/bagian/bahasa-formal" title="Buka materi bahasa formal">${icon('type')} Bahasa</h4><p>Jelas dan sopan. Tanpa bahasa gaul, singkatan, emoji, atau kapital berlebihan.</p></div>
     </div>
   </div>
   <div class="row-btns"><button type="button" class="btn btn-outline btn-sm" data-print>${icon('printer')} Simpan rangkuman (PDF)</button><a class="btn btn-gold btn-sm" href="#/sertifikat">${icon('award')} Ambil sertifikat</a><a class="btn btn-outline btn-sm" href="#/progres">${icon('star')} Pencapaianku</a></div>
@@ -3853,19 +3860,19 @@ ACT.S16 = (el, done) => {
    LAYAR PANDUAN
    ========================================================================= */
 const GLOSARIUM = [
-  ['BCC (Blind Carbon Copy)', 'Mengirim salinan email dengan alamat penerima yang disembunyikan dari penerima lain.', 'S09'],
-  ['CC (Carbon Copy)', 'Mengirim salinan email kepada orang lain yang perlu tahu isinya. Alamatnya terlihat oleh semua penerima.', 'S09'],
-  ['CV dan portofolio', 'Dokumen pendukung lamaran. Kirim dalam format PDF dengan nama file yang rapi.', 'S06'],
-  ['Email lamaran kerja', 'Email untuk memperkenalkan diri, menyampaikan minat pada posisi tertentu, dan mengirim CV serta portofolio.', 'S05'],
-  ['Evaluasi akhir', 'Empat soal akhir tanpa tanda benar atau salah. Jawaban dikunci setelah disimpan, dan hanya nilai akhir yang ditampilkan.', 'S15'],
-  ['Follow-up', 'Email untuk menanyakan kabar proses rekrutmen, biasanya 5–7 hari kerja setelah lamaran dikirim.', 'S10'],
-  ['Isi email', 'Bagian yang memuat pesan utama, ditulis jelas dan ringkas.', 'S03'],
-  ['Jam kerja', 'Waktu yang pas untuk mengirim email profesional, sekitar pukul 08.00–17.00.', 'S09'],
-  ['Lampiran', 'File yang ikut dikirim bersama email, misalnya CV dan portofolio.', 'S06'],
-  ['Salam pembuka', 'Kalimat pembuka yang menunjukkan rasa hormat, misalnya “Yth. Tim Rekrutmen PT ABC,”.', 'S04'],
-  ['Salam penutup', 'Kalimat penutup yang sopan, misalnya “Hormat saya,” lalu diikuti nama.', 'S04'],
-  ['Subject', 'Judul email. Bagian pertama yang dilihat penerima, jadi harus singkat, jelas, dan spesifik.', 'S04'],
-  ['Tanda tangan', 'Nama pengirim di bagian paling bawah email.', 'S03'],
+  ['BCC (Blind Carbon Copy)', 'Mengirim salinan email dengan alamat penerima yang disembunyikan dari penerima lain.', 'cc-bcc-waktu'],
+  ['CC (Carbon Copy)', 'Mengirim salinan email kepada orang lain yang perlu tahu isinya. Alamatnya terlihat oleh semua penerima.', 'cc-bcc-waktu'],
+  ['CV dan portofolio', 'Dokumen pendukung lamaran. Kirim dalam format PDF dengan nama file yang rapi.', 'perkenalan-dan-cv'],
+  ['Email lamaran kerja', 'Email untuk memperkenalkan diri, menyampaikan minat pada posisi tertentu, dan mengirim CV serta portofolio.', 'susunan-email'],
+  ['Evaluasi akhir', 'Empat soal akhir tanpa tanda benar atau salah. Jawaban dikunci setelah disimpan, dan hanya nilai akhir yang ditampilkan.', 'evaluasi-akhir'],
+  ['Follow-up', 'Email untuk menanyakan kabar proses rekrutmen, biasanya 5–7 hari kerja setelah lamaran dikirim.', 'follow-up'],
+  ['Isi email', 'Bagian yang memuat pesan utama, ditulis jelas dan ringkas.', 'bagian-email'],
+  ['Jam kerja', 'Waktu yang pas untuk mengirim email profesional, sekitar pukul 08.00–17.00.', 'cc-bcc-waktu'],
+  ['Lampiran', 'File yang ikut dikirim bersama email, misalnya CV dan portofolio.', 'perkenalan-dan-cv'],
+  ['Salam pembuka', 'Kalimat pembuka yang menunjukkan rasa hormat, misalnya “Yth. Tim Rekrutmen PT ABC,”.', 'subject-dan-salam'],
+  ['Salam penutup', 'Kalimat penutup yang sopan, misalnya “Hormat saya,” lalu diikuti nama.', 'subject-dan-salam'],
+  ['Subject', 'Judul email. Bagian pertama yang dilihat penerima, jadi harus singkat, jelas, dan spesifik.', 'subject-dan-salam'],
+  ['Tanda tangan', 'Nama pengirim di bagian paling bawah email.', 'bagian-email'],
 ];
 const pageWrap = (eyebrow, title, inner, grup = 'Panduan') => `<div class="page wrap"><article class="sheet wide"><div class="eyebrow">${grup} · ${eyebrow}</div><h1 class="display">${title}</h1>${inner}</article></div>`;
 
@@ -3882,14 +3889,14 @@ const evScore = () => state.ev && state.ev.done ? state.ev.score : null;
 function xpParts() {
   const ev = evScore();
   return [
-    ['inbox', 'Pengantar', state.done.S01 ? 20 : 0, 20],
-    ['book', 'Scene materi (50/scene)', MATERI_SCENES.filter(id => state.done[id]).length * 50, MATERI_SCENES.length * 50],
+    ['inbox', 'Pengantar', state.done['pengantar'] ? 20 : 0, 20],
+    ['book', 'Bagian materi (50/bagian)', MATERI_BAGIAN.filter(id => state.done[id]).length * 50, MATERI_BAGIAN.length * 50],
     ['pen', 'Soal latihan benar (20/soal)', latBenar() * 20, LATIHAN.length * 20],
     ['star', 'Bonus combo latihan (10 × combo terbaik)', Math.min(state.lat && state.lat.best || 0, LATIHAN.length) * 10, LATIHAN.length * 10],
     ['grid', 'Aktivitas interaktif (30/aktivitas)', AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length * 30, 90],
     ['flag', 'Nilai evaluasi (×3)', ev === null ? 0 : ev * 3, 300],
     ['award', 'Bonus lulus evaluasi', evalPassed() ? 100 : 0, 100],
-    ['check', 'Penutup', state.done.S16 ? 30 : 0, 30],
+    ['check', 'Penutup', state.done['penutup'] ? 30 : 0, 30],
   ];
 }
 const xpTotal = () => xpParts().reduce((t, p) => t + p[2], 0);
@@ -3900,19 +3907,19 @@ function levelOf(xp) {
   const nx = LEVELS[k + 1];
   return { n: k + 1, name: LEVELS[k][1], min: LEVELS[k][0], next: nx ? nx[0] : null, nextName: nx ? nx[1] : null, pct: nx ? Math.round((xp - LEVELS[k][0]) / (nx[0] - LEVELS[k][0]) * 100) : 100 };
 }
-const materiSelesai = mid => MATERI.find(m => m.id === mid).scenes.every(id => state.done[id]);
+const materiSelesai = mid => MATERI.find(m => m.id === mid).bagian.every(id => state.done[id]);
 const BADGES = [
-  { k: 'mulai', ic: 'inbox', t: 'Langkah Pertama', d: 'Menyelesaikan pengantar (scene 1).', to: '#/scene/S01', ok: () => !!state.done.S01 },
-  { k: 'm1', ic: 'mail', t: 'Paham Dasar Email', d: 'Menyelesaikan semua scene Materi 1.', to: '#/scene/S02', ok: () => materiSelesai('m1') },
-  { k: 'm2', ic: 'briefcase', t: 'Siap Melamar', d: 'Menyelesaikan semua scene Materi 2.', to: '#/scene/S05', ok: () => materiSelesai('m2') },
-  { k: 'm3', ic: 'shield', t: 'Beretika', d: 'Menyelesaikan semua scene Materi 3.', to: '#/scene/S09', ok: () => materiSelesai('m3') },
-  { k: 'rajin', ic: 'pen', t: 'Capaian Terpenuhi', d: `Latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar.`, to: '#/scene/S12', ok: () => latBenar() >= LAT_MIN },
-  { k: 'jitu', ic: 'target', t: 'Latihan Sempurna', d: 'Semua soal latihan dijawab benar.', to: '#/scene/S12', ok: () => latBenar() === LATIHAN.length },
-  { k: 'combo', ic: 'star', t: 'Tak Terbendung', d: 'Combo 5× di latihan soal.', to: '#/scene/S12', ok: () => !!(state.lat && state.lat.best >= 5) },
-  { k: 'akt', ic: 'grid', t: 'Serba Bisa', d: 'Menyelesaikan ketiga aktivitas interaktif.', to: '#/scene/S13', ok: aktDone },
-  { k: 'lulus', ic: 'flag', t: 'Lulus Evaluasi', d: `Nilai evaluasi minimal ${KKM}.`, to: '#/scene/S15', ok: evalPassed },
-  { k: 'seratus', ic: 'award', t: 'Nilai Sempurna', d: 'Nilai evaluasi 100.', to: '#/scene/S15', ok: () => evScore() === 100 },
-  { k: 'masukan', ic: 'chat', t: 'Memberi Masukan', d: 'Mengisi masukan di penutup.', to: '#/scene/S16', ok: () => !!state.feedback },
+  { k: 'mulai', ic: 'inbox', t: 'Langkah Pertama', d: 'Menyelesaikan pengantar.', to: '#/bagian/pengantar', ok: () => !!state.done['pengantar'] },
+  { k: 'm1', ic: 'mail', t: 'Paham Dasar Email', d: 'Menyelesaikan semua bagian Dasar Komunikasi lewat Email.', to: '#/bagian/kegunaan-email', ok: () => materiSelesai('m1') },
+  { k: 'm2', ic: 'briefcase', t: 'Siap Melamar', d: 'Menyelesaikan semua bagian Menulis Email Lamaran Kerja.', to: '#/bagian/susunan-email', ok: () => materiSelesai('m2') },
+  { k: 'm3', ic: 'shield', t: 'Beretika', d: 'Menyelesaikan semua bagian Etika Berkirim Email.', to: '#/bagian/cc-bcc-waktu', ok: () => materiSelesai('m3') },
+  { k: 'rajin', ic: 'pen', t: 'Capaian Terpenuhi', d: `Latihan minimal ${LAT_MIN} dari ${LATIHAN.length} benar.`, to: '#/bagian/latihan-soal', ok: () => latBenar() >= LAT_MIN },
+  { k: 'jitu', ic: 'target', t: 'Latihan Sempurna', d: 'Semua soal latihan dijawab benar.', to: '#/bagian/latihan-soal', ok: () => latBenar() === LATIHAN.length },
+  { k: 'combo', ic: 'star', t: 'Tak Terbendung', d: 'Combo 5× di latihan soal.', to: '#/bagian/latihan-soal', ok: () => !!(state.lat && state.lat.best >= 5) },
+  { k: 'akt', ic: 'grid', t: 'Serba Bisa', d: 'Menyelesaikan ketiga aktivitas interaktif.', to: '#/bagian/aktivitas-interaktif', ok: aktDone },
+  { k: 'lulus', ic: 'flag', t: 'Lulus Evaluasi', d: `Nilai evaluasi minimal ${KKM}.`, to: '#/bagian/evaluasi-akhir', ok: evalPassed },
+  { k: 'seratus', ic: 'award', t: 'Nilai Sempurna', d: 'Nilai evaluasi 100.', to: '#/bagian/evaluasi-akhir', ok: () => evScore() === 100 },
+  { k: 'masukan', ic: 'chat', t: 'Memberi Masukan', d: 'Mengisi masukan di penutup.', to: '#/bagian/penutup', ok: () => !!state.feedback },
 ];
 const badgesGot = () => BADGES.filter(b => b.ok());
 
@@ -3960,7 +3967,7 @@ const levelCard = (cls = '') => { const xp = xpTotal(), L = levelOf(xp); return 
 function pencapaianBody() {
   const got = badgesGot().length;
   return `<h2 class="h2">Pencapaian</h2>
-    <p class="muted">XP didapat dari scene yang beres, jawaban latihan yang benar, dan nilai evaluasi. Makin banyak XP, makin naik levelmu.</p>
+    <p class="muted">XP didapat dari bagian yang beres, jawaban latihan yang benar, dan nilai evaluasi. Makin banyak XP, makin naik levelmu.</p>
     ${levelCard('big')}
     <h2 class="h2">Asal XP</h2>
     <div class="xp-list">${xpParts().map(([ic, t, v, m]) => `<div class="xp-row ${v >= m ? 'full' : ''}"><span class="xp-ic">${icon(ic)}</span><span>${t}</span><span class="bar"><i style="width:${m ? v / m * 100 : 0}%"></i></span><b>${v}/${m}</b></div>`).join('')}</div>
@@ -3968,11 +3975,11 @@ function pencapaianBody() {
     <div class="bdg-grid">${BADGES.map(badgeTile).join('')}</div>
     <h2 class="h2">Tangga level</h2>
     <ol class="lv-ladder">${LEVELS.map(([min, n], i) => `<li class="${xpTotal() >= min ? 'on' : ''}"><b>${i + 1}</b><span>${n}</span><small>${min} XP</small></li>`).join('')}</ol>
-    <div class="cert-cta">${icon(evalPassed() ? 'award' : 'lock')}<div><b>Sertifikat</b><p class="muted">${evalPassed() ? 'Kamu sudah lulus evaluasi. Sertifikatmu siap dicetak.' : `Terbuka setelah kamu lulus evaluasi dengan nilai minimal ${KKM}.`}</p></div><a class="btn ${evalPassed() ? 'btn-gold' : 'btn-outline'}" href="${evalPassed() ? '#/sertifikat' : gateOk() ? '#/scene/S15' : '#/scene/S14'}">${evalPassed() ? 'Lihat sertifikat' : materiDone() ? 'Ke evaluasi' : 'Lanjutkan belajar'} ${icon('right')}</a></div>`;
+    <div class="cert-cta">${icon(evalPassed() ? 'award' : 'lock')}<div><b>Sertifikat</b><p class="muted">${evalPassed() ? 'Kamu sudah lulus evaluasi. Sertifikatmu siap dicetak.' : `Terbuka setelah kamu lulus evaluasi dengan nilai minimal ${KKM}.`}</p></div><a class="btn ${evalPassed() ? 'btn-gold' : 'btn-outline'}" href="${evalPassed() ? '#/sertifikat' : gateOk() ? '#/bagian/evaluasi-akhir' : '#/bagian/awal-evaluasi'}">${evalPassed() ? 'Lihat sertifikat' : materiDone() ? 'Ke evaluasi' : 'Lanjutkan belajar'} ${icon('right')}</a></div>`;
 }
 
 function viewSertifikat() {
-  if (!evalPassed()) return pageWrap('Sertifikat', 'Sertifikat belum terbuka', `<div class="lockbox"><a href="#/scene/S14" title="Ke evaluasi">${icon('lock')}</a><h3>Lulus evaluasi dulu, ya</h3><p class="muted">Sertifikat terbuka setelah nilai evaluasimu minimal ${KKM}.</p><a class="btn btn-primary" href="${materiDone() ? '#/scene/S14' : resumeHref()}">${materiDone() ? 'Ke evaluasi' : 'Lanjutkan belajar'} ${icon('right')}</a></div>`, 'Progres');
+  if (!evalPassed()) return pageWrap('Sertifikat', 'Sertifikat belum terbuka', `<div class="lockbox"><a href="#/bagian/awal-evaluasi" title="Ke evaluasi">${icon('lock')}</a><h3>Lulus evaluasi dulu, ya</h3><p class="muted">Sertifikat terbuka setelah nilai evaluasimu minimal ${KKM}.</p><a class="btn btn-primary" href="${materiDone() ? '#/bagian/awal-evaluasi' : resumeHref()}">${materiDone() ? 'Ke evaluasi' : 'Lanjutkan belajar'} ${icon('right')}</a></div>`, 'Progres');
   const g = state.game || {};
   if (!g.tgl) { g.tgl = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }); save(); }
   const L = levelOf(xpTotal());
@@ -4007,7 +4014,7 @@ const UI = () => (state.ui = state.ui || {});
 function logAct(k, id, extra = {}) {
   const L = state.log = state.log || [];
   const last = L[L.length - 1];
-  /* membuka scene yang sama berturut-turut cukup diperbarui waktunya, tidak dicatat dobel */
+  /* membuka bagian yang sama berturut-turut cukup diperbarui waktunya, tidak dicatat dobel */
   if (k === 'open' && last && last.k === 'open' && last.id === id && dayKey(last.t) === dayKey(Date.now())) { last.t = Date.now(); save(); return; }
   L.push({ t: Date.now(), k, id, ...extra });
   if (L.length > 2000) L.splice(0, L.length - 2000);
@@ -4029,8 +4036,8 @@ const LAT_SETS = [{ id: 'm1', from: 0 }, { id: 'm2', from: 5 }, { id: 'm3', from
   const m = MATERI.find(x => x.id === S.id);
   return { ...S, no: m.no, title: `Latihan ${m.short}`, topik: m.title, desc: m.desc, ix: [0, 1, 2, 3, 4].map(k => S.from + k) };
 });
-/* scene materi yang dibahas setiap soal latihan (untuk pembahasan) */
-const LAT_REL = ['S02', 'S03', 'S04', 'S04', 'S03', 'S05', 'S05', 'S06', 'S06', 'S07', 'S09', 'S09', 'S10', 'S10', 'S11'];
+/* bagian materi yang dibahas setiap soal latihan (untuk pembahasan) */
+const LAT_REL = ['kegunaan-email', 'bagian-email', 'subject-dan-salam', 'subject-dan-salam', 'bagian-email', 'susunan-email', 'susunan-email', 'perkenalan-dan-cv', 'perkenalan-dan-cv', 'kesalahan-email', 'cc-bcc-waktu', 'cc-bcc-waktu', 'follow-up', 'follow-up', 'bahasa-formal'];
 const latState = () => (state.lat = state.lat || { v: 3, i: 0, ans: {}, res: {} });
 const setInfo = id => { const L = latState(); L.sets = L.sets || {}; return (L.sets[id] = L.sets[id] || {}); };
 const setOf = id => LAT_SETS.find(S => S.id === id);
@@ -4047,7 +4054,7 @@ const aktStat = k => { const s = (state.akt || {})[k] || {}; return { status: s.
 const latDijawab = () => Object.keys(latState().res || {}).length;
 
 function exCard(S) {
-  const st = setStat(S), lk = locked('S12'), pctAns = Math.round(st.dijawab / st.n * 100);
+  const st = setStat(S), lk = locked('latihan-soal'), pctAns = Math.round(st.dijawab / st.n * 100);
   const cta = lk ? `<span class="btn btn-outline btn-sm" aria-disabled="true">${icon('lock')} Terkunci</span>`
     : st.status === 'done' ? `<a class="btn btn-outline btn-sm" href="#/latihan/${S.id}/hasil">Lihat hasil</a><a class="btn btn-primary btn-sm" href="#/latihan/${S.id}" data-retry-set="${S.id}">${icon('refresh')} Ulangi</a>`
     : `<a class="btn btn-primary btn-sm" href="#/latihan/${S.id}">${st.status === 'go' ? 'Lanjutkan' : 'Mulai latihan'} ${icon('right')}</a>`;
@@ -4060,12 +4067,12 @@ function exCard(S) {
   </article>`;
 }
 function aktCard(k) {
-  const [L, ic, t, d, max] = AKT_INFO[k], st = aktStat(k), lk = locked('S13');
+  const [L, ic, t, d, max] = AKT_INFO[k], st = aktStat(k), lk = locked('aktivitas-interaktif');
   return `<article class="ex-card ${st.status} ${lk ? 'locked' : ''}">
     <div class="ex-top"><span class="ex-no">${icon(ic)}</span><span class="ex-st ${st.status}">${STATUS_TXT[st.status]}</span></div>
     <h3>Aktivitas ${L} · ${t}</h3><small class="ex-topik">${d}</small>
     <div class="ex-meta"><span>${icon('award')} ${st.status === 'done' ? `Skor ${st.score}/${max}` : 'Belum ada skor'}</span></div>
-    <div class="ex-cta">${lk ? `<span class="btn btn-outline btn-sm" aria-disabled="true">${icon('lock')} Selesaikan latihan soal dulu</span>` : `<a class="btn ${st.status === 'done' ? 'btn-outline' : 'btn-primary'} btn-sm" href="#/scene/S13" data-akt-open="${k}">${st.status === 'done' ? 'Kerjakan lagi' : 'Mulai aktivitas'} ${icon('right')}</a>`}</div>
+    <div class="ex-cta">${lk ? `<span class="btn btn-outline btn-sm" aria-disabled="true">${icon('lock')} Selesaikan latihan soal dulu</span>` : `<a class="btn ${st.status === 'done' ? 'btn-outline' : 'btn-primary'} btn-sm" href="#/bagian/aktivitas-interaktif" data-akt-open="${k}">${st.status === 'done' ? 'Kerjakan lagi' : 'Mulai aktivitas'} ${icon('right')}</a>`}</div>
   </article>`;
 }
 function retrySet(id) {
@@ -4086,11 +4093,11 @@ document.addEventListener('click', e => {
 
 /* ---------- Halaman daftar latihan ---------- */
 function viewLatihanList() {
-  const benar = latSkor(), lk = locked('S12');
+  const benar = latSkor(), lk = locked('latihan-soal');
   return `<div class="page wrap lms">
     <header class="ph"><div><small class="ph-k">Latihan</small><h1>Latihan</h1><p>Latihan soal per materi dan aktivitas interaktif. Hasilnya dipakai untuk syarat evaluasi.</p></div>
       <div class="ph-sum"><div><b>${benar}/${LATIHAN.length}</b><small>soal benar</small></div><div><b>${AKT_KEYS.filter(k => aktStat(k).status === 'done').length}/3</b><small>aktivitas selesai</small></div><div class="${benar >= LAT_MIN ? 'ok' : ''}"><b>${benar >= LAT_MIN ? icon('check') : `${LAT_MIN}`}</b><small>${benar >= LAT_MIN ? 'syarat latihan terpenuhi' : 'benar minimal untuk evaluasi'}</small></div></div></header>
-    ${lk ? `<div class="note-lock">${icon('lock')}<div><b>Latihan masih terkunci</b><p>Selesaikan semua scene materi dulu. ${MATERI_SCENES.filter(id => state.done[id]).length} dari ${MATERI_SCENES.length} scene materi sudah selesai.</p></div><a class="btn btn-primary btn-sm" href="${resumeHref()}">Lanjutkan materi ${icon('right')}</a></div>` : ''}
+    ${lk ? `<div class="note-lock">${icon('lock')}<div><b>Latihan masih terkunci</b><p>Selesaikan semua bagian materi dulu. ${MATERI_BAGIAN.filter(id => state.done[id]).length} dari ${MATERI_BAGIAN.length} bagian materi sudah selesai.</p></div><a class="btn btn-primary btn-sm" href="${resumeHref()}">Lanjutkan materi ${icon('right')}</a></div>` : ''}
     <h2 class="sec-h">Latihan soal <small>pilihan ganda · pembahasan langsung muncul</small></h2>
     <div class="ex-grid">${LAT_SETS.map(exCard).join('')}</div>
     <h2 class="sec-h">Aktivitas interaktif <small>bersama Salsa Rahma</small></h2>
@@ -4100,14 +4107,14 @@ function viewLatihanList() {
 
 /* ---------- Layar kuis: satu soal per layar ---------- */
 function quizLock() {
-  return `<div class="page wrap lms"><article class="sheet"><div class="lockbox">${icon('lock')}<h3>Latihan masih terkunci</h3><p class="muted">Selesaikan semua scene materi dulu.</p><a class="btn btn-primary" href="${resumeHref()}">Lanjutkan materi ${icon('right')}</a></div></article></div>`;
+  return `<div class="page wrap lms"><article class="sheet"><div class="lockbox">${icon('lock')}<h3>Latihan masih terkunci</h3><p class="muted">Selesaikan semua bagian materi dulu.</p><a class="btn btn-primary" href="${resumeHref()}">Lanjutkan materi ${icon('right')}</a></div></article></div>`;
 }
 function viewQuiz(S) {
-  if (locked('S12')) return quizLock();
+  if (locked('latihan-soal')) return quizLock();
   return `<div class="quiz wrap" id="quiz"></div>`;
 }
 function mountQuiz(S) {
-  if (locked('S12')) return;
+  if (locked('latihan-soal')) return;
   const L = latState(), inf = setInfo(S.id), box = $('#quiz'), n = S.ix.length;
   inf.i = Math.min(inf.i || 0, n - 1);
   setResume('#/latihan/' + S.id, 'lat', S.id);
@@ -4133,7 +4140,7 @@ function mountQuiz(S) {
     if (checked) {
       showFb($('#qfb', box), L.res[g], `${L.res[g] ? 'Benar!' : `Belum tepat. Jawaban yang tepat: <b>${q.opts[q.a]}</b>.`} ${q.why}`);
       const r = LAT_REL[g];
-      $('#qrel', box).innerHTML = `<a class="qz-rel" href="#/scene/${r}">${icon('book')} Materi terkait: ${kode(r)} · ${SCENES[r].title}</a>`;
+      $('#qrel', box).innerHTML = `<a class="qz-rel" href="#/bagian/${r}">${icon('book')} Materi terkait: ${BAGIAN[r].title}</a>`;
     }
     if (dir && !reduced) { const c = $('.qz-card', box); try { c.animate([{ opacity: 0, transform: `translateX(${dir * 40}px)` }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' }); } catch (e) { /* tanpa animasi */ } }
   };
@@ -4160,8 +4167,8 @@ function mountQuiz(S) {
       if (!inf.startedAt) inf.startedAt = Date.now();
       L.res[g] = ok; L.streak = ok ? (L.streak || 0) + 1 : 0; L.best = Math.max(L.best || 0, L.streak);
       if (L.streak >= 2) comboPop(L.streak);
-      /* semua 15 soal sudah dijawab: scene Latihan Soal ikut selesai */
-      if (latDijawab() === LATIHAN.length && !state.done.S12) { state.done.S12 = true; logAct('done', 'S12'); }
+      /* semua 15 soal sudah dijawab: bagian Latihan Soal ikut selesai */
+      if (latDijawab() === LATIHAN.length && !state.done['latihan-soal']) { state.done['latihan-soal'] = true; logAct('done', 'latihan-soal'); }
       save(); sfx(ok ? 'ok' : 'no'); dir = 0; render(); updateBar();
     }
   };
@@ -4176,7 +4183,7 @@ function mountQuiz(S) {
 
 /* ---------- Hasil dan review latihan ---------- */
 function viewQuizResult(S) {
-  if (locked('S12')) return quizLock();
+  if (locked('latihan-soal')) return quizLock();
   const st = setStat(S), r = st.last;
   if (!r) return `<div class="page wrap lms"><div class="empty">${icon('pen')}<h3>Belum ada hasil</h3><p>Kerjakan ${S.title} dulu, hasilnya akan muncul di sini.</p><a class="btn btn-primary" href="#/latihan/${S.id}">Mulai latihan ${icon('right')}</a></div></div>`;
   const p = Math.round(r.benar / r.n * 100), capai = p >= 70, L = latState();
@@ -4195,7 +4202,7 @@ function viewQuizResult(S) {
   </div>`;
 }
 function viewQuizReview(S) {
-  if (locked('S12')) return quizLock();
+  if (locked('latihan-soal')) return quizLock();
   const L = latState(), r = setStat(S).last;
   if (!r) return viewQuizResult(S);
   return `<div class="page wrap lms">
@@ -4205,7 +4212,7 @@ function viewQuizReview(S) {
       <div class="rv-h"><span class="rv-n">${j + 1}</span><b>${q.q}</b><span class="badge ${ok ? 'ok' : 'no'}">${icon(ok ? 'check' : 'x')} ${ok ? 'Benar' : 'Salah'}</span></div>
       <p><small>Jawabanmu</small>${a === undefined || a === null ? '<i>tidak dijawab</i>' : q.opts[a]}</p>
       ${ok ? '' : `<p><small>Jawaban tepat</small>${q.opts[q.a]}</p>`}
-      <p class="rv-why">${q.why} <a href="#/scene/${rel}">${kode(rel)} · ${SCENES[rel].title} ${icon('right')}</a></p></li>`; }).join('')}</ol>
+      <p class="rv-why">${q.why} <a href="#/bagian/${rel}">${BAGIAN[rel].title} ${icon('right')}</a></p></li>`; }).join('')}</ol>
   </div>`;
 }
 function viewLatihanPage() {
@@ -4239,17 +4246,17 @@ function evalTxt() {
   return gateOk() ? ['Siap', 'Syarat sudah terpenuhi'] : ['Terkunci', 'Penuhi 3 syarat dulu'];
 }
 function continueCard() {
-  const r = state.resume || (state.last && SCENES[state.last] ? { kind: 'scene', id: state.last, href: '#/scene/' + state.last } : null);
-  if (!r) return `<div class="empty sm">${icon('inbox')}<h3>Belum mulai belajar</h3><p>Mulai dari pengantar. Posisi belajarmu akan tersimpan otomatis.</p><a class="btn btn-primary" href="#/scene/S01">Mulai belajar ${icon('right')}</a></div>`;
+  const r = state.resume || (state.last && BAGIAN[state.last] ? { kind: 'bagian', id: state.last, href: '#/bagian/' + state.last } : null);
+  if (!r) return `<div class="empty sm">${icon('inbox')}<h3>Belum mulai belajar</h3><p>Mulai dari pengantar. Posisi belajarmu akan tersimpan otomatis.</p><a class="btn btn-primary" href="#/bagian/pengantar">Mulai belajar ${icon('right')}</a></div>`;
   let title, sub, p, status, hint = '';
   if (r.kind === 'lat' && setOf(r.id)) {
     const S = setOf(r.id), st = setStat(S);
     title = S.title; sub = `Latihan · ${S.topik}`; p = Math.round(st.dijawab / st.n * 100); status = STATUS_TXT[st.status];
     hint = `${st.dijawab} dari ${st.n} soal dijawab`;
   } else {
-    const id = r.id, s = SCENES[id], st = A(id), tot = (s.uraian || []).length, baca = (st.read || []).filter(j => j < tot).length;
+    const id = r.id, s = BAGIAN[id], st = A(id), tot = (s.uraian || []).length, baca = (st.read || []).filter(j => j < tot).length;
     const akt = state.done[id] || st.actOk;
-    title = `${kode(id)} · ${s.title}`; sub = `${(materiOf(id) || {}).short || ''} · ${s.type}`;
+    title = s.title; sub = `${(materiOf(id) || {}).short || ''} · ${s.type}`;
     p = state.done[id] ? 100 : Math.round(((tot ? baca / tot : 1) * (tot ? .6 : 0) + (akt ? (tot ? .4 : 1) : 0)) * 100);
     status = state.done[id] ? 'Selesai' : 'Sedang dipelajari';
     hint = state.done[id] ? 'Materi dan aktivitasnya sudah selesai.' : tot ? `${baca} dari ${tot} kartu materi dibaca · aktivitas ${akt ? 'selesai' : 'belum'}` : `Aktivitas ${akt ? 'selesai' : 'belum selesai'}`;
@@ -4262,37 +4269,37 @@ function continueCard() {
     <div class="row-btns"><a class="btn btn-primary" href="${r.href}">${done ? 'Buka lagi' : 'Lanjutkan belajar'} ${icon('right')}</a>${done && nx !== r.href ? `<a class="btn btn-outline" href="${nx}">Langkah berikutnya ${icon('right')}</a>` : ''}</div>`;
 }
 const ACT_TXT = {
-  open: e => [icon('book'), `Membuka ${kode(e.id)} · ${SCENES[e.id] ? SCENES[e.id].title : ''}`, '#/scene/' + e.id],
-  done: e => [icon('check'), `Menyelesaikan ${kode(e.id)} · ${SCENES[e.id] ? SCENES[e.id].title : ''}`, '#/scene/' + e.id],
+  open: e => [icon('book'), `Membuka ${BAGIAN[e.id] ? BAGIAN[e.id].title : ''}`, '#/bagian/' + e.id],
+  done: e => [icon('check'), `Menyelesaikan ${BAGIAN[e.id] ? BAGIAN[e.id].title : ''}`, '#/bagian/' + e.id],
   lat: e => [icon('pen'), `Menyelesaikan ${setOf(e.id) ? setOf(e.id).title : 'latihan'} · ${e.b}/${e.n} benar`, `#/latihan/${e.id}/hasil`],
-  akt: e => [icon('grid'), `Menyelesaikan Aktivitas ${AKT_INFO[e.id] ? AKT_INFO[e.id][0] + ' · ' + AKT_INFO[e.id][2] : ''} · skor ${e.s}`, '#/scene/S13'],
-  ev: e => [icon('flag'), `Mengerjakan evaluasi akhir · nilai ${e.s} (${e.s >= KKM ? 'lulus' : 'belum lulus'})`, '#/scene/S15'],
+  akt: e => [icon('grid'), `Menyelesaikan Aktivitas ${AKT_INFO[e.id] ? AKT_INFO[e.id][0] + ' · ' + AKT_INFO[e.id][2] : ''} · skor ${e.s}`, '#/bagian/aktivitas-interaktif'],
+  ev: e => [icon('flag'), `Mengerjakan evaluasi akhir · nilai ${e.s} (${e.s >= KKM ? 'lulus' : 'belum lulus'})`, '#/bagian/evaluasi-akhir'],
 };
 function activityList(max = 6) {
   const L = (state.log || []).filter(e => ACT_TXT[e.k]).slice(-max).reverse();
-  if (!L.length) return `<div class="empty sm">${icon('clock')}<h3>Belum ada aktivitas tercatat</h3><p>Setiap scene yang dibuka, latihan, dan evaluasi akan tercatat di sini.</p></div>`;
+  if (!L.length) return `<div class="empty sm">${icon('clock')}<h3>Belum ada aktivitas tercatat</h3><p>Setiap bagian yang dibuka, latihan, dan evaluasi akan tercatat di sini.</p></div>`;
   return `<ol class="acts">${L.map(e => { const [ic, t, h] = ACT_TXT[e.k](e); return `<li class="act-${e.k}"><span class="act-ic">${ic}</span><a href="${h}">${t}</a><time>${sejak(e.t)}</time></li>`; }).join('')}</ol>`;
 }
 function viewDashboard() {
   const h = new Date().getHours(), sapa = h < 11 ? 'Selamat pagi' : h < 15 ? 'Selamat siang' : h < 18 ? 'Selamat sore' : 'Selamat malam';
   const nama = state.game && state.game.nama ? state.game.nama.split(' ')[0] : '';
-  const p = pct(), mDone = MATERI_SCENES.filter(id => state.done[id]).length, ev = evalTxt();
+  const p = pct(), mDone = MATERI_BAGIAN.filter(id => state.done[id]).length, ev = evalTxt();
   const desc = !doneCount() ? 'Belum ada progres. Mulai dari pengantar, lalu ikuti rute belajarnya.'
     : evalPassed() ? 'Kamu sudah lulus evaluasi. Rangkuman dan sertifikat siap dibuka kapan saja.'
     : materiDone() ? 'Semua materi sudah selesai. Lanjutkan latihan dan siapkan evaluasi.'
-    : `Kamu sedang di ${(materiOf((resumeHref().match(/S\d+/) || ['S01'])[0]) || {}).title || 'materi'}. Lanjutkan pelan-pelan.`;
+    : `Kamu sedang di ${(materiOf((resumeHref().split('/').pop() || 'pengantar')) || {}).title || 'materi'}. Lanjutkan pelan-pelan.`;
   const stat = (ic, val, lbl, sub, href, cls = '') => `<a class="dstat ${cls}" href="${href}"><span class="stat-ic">${icon(ic)}</span><b>${val}</b><span class="stat-l">${lbl}</span><small>${sub}</small></a>`;
   return `<div class="page wrap lms dash">
     <section class="dash-hi">
       <div><small class="ph-k">${new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}</small>
         <h1>${sapa}${nama ? `, ${esc(nama)}` : ''}</h1><p>${desc}</p></div>
-      <div class="dash-p"><div class="dp-top"><span>Progres keseluruhan</span><b><span data-count="${p}">${p}</span>%</b></div><span class="bar"><i style="width:${p}%"></i></span><small>${doneCount()} dari ${ORDER.length} scene selesai</small></div>
+      <div class="dash-p"><div class="dp-top"><span>Progres keseluruhan</span><b><span data-count="${p}">${p}</span>%</b></div><span class="bar"><i style="width:${p}%"></i></span><small>${doneCount()} dari ${ORDER.length} bagian selesai</small></div>
     </section>
     <section class="dstats" aria-label="Statistik belajar">
-      ${stat('book', `<span data-count="${MATERI_SCENES.length}">${MATERI_SCENES.length}</span>`, 'Total materi', '3 topik · scene 2–11', '#/materi')}
-      ${stat('check', `<span data-count="${mDone}">${mDone}</span>/${MATERI_SCENES.length}`, 'Materi selesai', mDone === MATERI_SCENES.length ? 'Semua materi beres' : `${MATERI_SCENES.length - mDone} scene lagi`, '#/materi')}
+      ${stat('book', `<span data-count="${MATERI_BAGIAN.length}">${MATERI_BAGIAN.length}</span>`, 'Total materi', '3 topik · semua bagian materi', '#/materi')}
+      ${stat('check', `<span data-count="${mDone}">${mDone}</span>/${MATERI_BAGIAN.length}`, 'Materi selesai', mDone === MATERI_BAGIAN.length ? 'Semua materi beres' : `${MATERI_BAGIAN.length - mDone} bagian lagi`, '#/materi')}
       ${stat('pen', `<span data-count="${latDijawab()}">${latDijawab()}</span>/${LATIHAN.length}`, 'Soal latihan dikerjakan', `${latSkor()} benar · aktivitas ${AKT_KEYS.filter(k => aktStat(k).status === 'done').length}/3`, '#/latihan')}
-      ${stat('flag', ev[0], 'Status evaluasi', ev[1], gateOk() || evScore() !== null ? '#/scene/S15' : '#/scene/S14', evalPassed() ? 'ok' : '')}
+      ${stat('flag', ev[0], 'Status evaluasi', ev[1], gateOk() || evScore() !== null ? '#/bagian/evaluasi-akhir' : '#/bagian/awal-evaluasi', evalPassed() ? 'ok' : '')}
       ${stat('award', `<span data-count="${p}">${p}</span>%`, 'Progres belajar', `Level ${levelOf(xpTotal()).n} · ${xpTotal()} XP`, '#/progres')}
     </section>
     <div class="dash-grid">
@@ -4333,7 +4340,7 @@ function aktivitasBelajar() {
 }
 function tugasMinggu(a) {
   return [
-    ['book', 'Selesaikan 2 scene', a.week.filter(e => e.k === 'done').length, 2],
+    ['book', 'Selesaikan 2 bagian', a.week.filter(e => e.k === 'done').length, 2],
     ['clipcheck', 'Selesaikan 1 latihan soal', a.week.filter(e => e.k === 'lat').length, 1],
     ['calendar', 'Belajar di 3 hari berbeda', a.hariIni.size, 3],
   ];
@@ -4343,9 +4350,9 @@ function profilKemampuan() {
   const L = latState();
   const materi = m => {
     const M = MATERI.find(x => x.id === m), S = setOf(m);
-    const scene = M.scenes.filter(id => state.done[id]).length / M.scenes.length;
+    const bagian = M.bagian.filter(id => state.done[id]).length / M.bagian.length;
     const lat = S.ix.filter(g => L.res[g] === true).length / S.ix.length;
-    return { v: Math.round((scene * .5 + lat * .5) * 100), d: `${M.scenes.filter(id => state.done[id]).length}/${M.scenes.length} scene · latihan ${S.ix.filter(g => L.res[g] === true).length}/${S.ix.length}` };
+    return { v: Math.round((bagian * .5 + lat * .5) * 100), d: `${M.bagian.filter(id => state.done[id]).length}/${M.bagian.length} bagian · latihan ${S.ix.filter(g => L.res[g] === true).length}/${S.ix.length}` };
   };
   const ak = AKT_KEYS.map(k => { const s = (state.akt || {})[k]; return s && s.done ? (s.score || 0) / AKT_INFO[k][4] : 0; });
   const akt = ak.reduce((t, v) => t + v, 0) / ak.length, ev = evScore();
@@ -4371,10 +4378,10 @@ function radarSVG(P) {
 }
 /* progres setiap lencana: [nilai sekarang, target] */
 const BADGE_PROG = {
-  mulai: () => [state.done.S01 ? 1 : 0, 1],
-  m1: () => [MATERI.find(m => m.id === 'm1').scenes.filter(id => state.done[id]).length, 3],
-  m2: () => [MATERI.find(m => m.id === 'm2').scenes.filter(id => state.done[id]).length, 4],
-  m3: () => [MATERI.find(m => m.id === 'm3').scenes.filter(id => state.done[id]).length, 3],
+  mulai: () => [state.done['pengantar'] ? 1 : 0, 1],
+  m1: () => [MATERI.find(m => m.id === 'm1').bagian.filter(id => state.done[id]).length, 3],
+  m2: () => [MATERI.find(m => m.id === 'm2').bagian.filter(id => state.done[id]).length, 4],
+  m3: () => [MATERI.find(m => m.id === 'm3').bagian.filter(id => state.done[id]).length, 3],
   rajin: () => [Math.min(latBenar(), LAT_MIN), LAT_MIN],
   jitu: () => [latBenar(), LATIHAN.length],
   combo: () => [Math.min((state.lat && state.lat.best) || 0, 5), 5],
@@ -4417,7 +4424,7 @@ function viewProgres() {
       <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Profil kemampuan email</h2></div>
         <div class="radar-wrap">${radarSVG(P)}
           <ul class="skill">${P.map(([n, x]) => `<li><span><b>${n}</b><em>${x.v}</em></span><span class="bar"><i style="width:${x.v}%"></i></span><small>${x.d}</small></li>`).join('')}</ul></div>
-        <p class="muted small">Skor materi = 50% scene selesai + 50% latihan benar. Praktik = 50% aktivitas + 50% evaluasi.</p></section>
+        <p class="muted small">Skor materi = 50% bagian selesai + 50% latihan benar. Praktik = 50% aktivitas + 50% evaluasi.</p></section>
 
       <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Cap pos harian</h2><span class="ex-st ${a.hariIni.size >= 3 ? 'done' : 'go'}">${a.hariIni.size}/3 hari</span></div>
         <div class="cap-row">${HARI.map((h, k) => `<span class="cap-d ${a.hariIni.has(k) ? 'on' : ''} ${k === today ? 'today' : ''}"><i>${a.hariIni.has(k) ? icon('mail') : ''}</i><small>${h}</small></span>`).join('')}</div>
@@ -4431,14 +4438,14 @@ function viewProgres() {
 
     <div class="pg-grid">
       <section class="card"><div class="card-h"><h2>Materi</h2><a href="#/materi">Katalog ${icon('right')}</a></div>
-        ${MATERI.filter(m => /^m\d$|intro/.test(m.id)).map(m => row(m.short === 'Pembuka' ? 'Pembuka' : `${m.short} · ${m.title}`, m.scenes.filter(id => state.done[id]).length, m.scenes.length, '#/scene/' + (m.scenes.find(id => !state.done[id] && !locked(id)) || m.scenes[0]))).join('')}</section>
+        ${MATERI.filter(m => /^m\d$|intro/.test(m.id)).map(m => row(m.short === 'Pembuka' ? 'Pembuka' : `${m.short} · ${m.title}`, m.bagian.filter(id => state.done[id]).length, m.bagian.length, '#/bagian/' + (m.bagian.find(id => !state.done[id] && !locked(id)) || m.bagian[0]))).join('')}</section>
       <section class="card"><div class="card-h"><h2>Latihan</h2><a href="#/latihan">Buka latihan ${icon('right')}</a></div>
         ${LAT_SETS.map(S => { const st = setStat(S); return row(S.title, st.benar, st.n, st.status === 'done' ? `#/latihan/${S.id}/hasil` : `#/latihan/${S.id}`, `${STATUS_TXT[st.status]}${st.tries ? ` · ${st.tries}× dikerjakan` : ''}`); }).join('')}
-        ${AKT_KEYS.map(k => { const st = aktStat(k), max = AKT_INFO[k][4]; return row(`Aktivitas ${AKT_INFO[k][0]} · ${AKT_INFO[k][2]}`, st.status === 'done' ? st.score : 0, max, '#/scene/S13', STATUS_TXT[st.status]); }).join('')}</section>
-      <section class="card"><div class="card-h"><h2>Evaluasi</h2><a href="#/scene/S14">Cek syarat ${icon('right')}</a></div>
-        ${row('Materi selesai', MATERI_SCENES.filter(id => state.done[id]).length, MATERI_SCENES.length, '#/materi')}
+        ${AKT_KEYS.map(k => { const st = aktStat(k), max = AKT_INFO[k][4]; return row(`Aktivitas ${AKT_INFO[k][0]} · ${AKT_INFO[k][2]}`, st.status === 'done' ? st.score : 0, max, '#/bagian/aktivitas-interaktif', STATUS_TXT[st.status]); }).join('')}</section>
+      <section class="card"><div class="card-h"><h2>Evaluasi</h2><a href="#/bagian/awal-evaluasi">Cek syarat ${icon('right')}</a></div>
+        ${row('Materi selesai', MATERI_BAGIAN.filter(id => state.done[id]).length, MATERI_BAGIAN.length, '#/materi')}
         ${row(`Latihan benar (minimal ${LAT_MIN})`, Math.min(latSkor(), LATIHAN.length), LATIHAN.length, '#/latihan')}
-        ${row('Aktivitas interaktif', AKT_KEYS.filter(k => aktStat(k).status === 'done').length, 3, '#/scene/S13')}
+        ${row('Aktivitas interaktif', AKT_KEYS.filter(k => aktStat(k).status === 'done').length, 3, '#/bagian/aktivitas-interaktif')}
         <p class="pg-ev"><span class="ex-st ${evalPassed() ? 'done' : evScore() !== null ? 'go' : 'new'}">${ev[0]}</span> ${ev[1]}</p>
         <div class="cert-cta mini">${icon(evalPassed() ? 'award' : 'lock')}<div><b>Sertifikat</b><p class="muted">${evalPassed() ? 'Siap dicetak.' : `Terbuka setelah lulus evaluasi (nilai ≥ ${KKM}).`}</p></div>${evalPassed() ? `<a class="btn btn-gold btn-sm" href="#/sertifikat">Lihat ${icon('right')}</a>` : ''}</div></section>
       <section class="card"><div class="card-h"><h2>Asal XP</h2></div>
@@ -4585,10 +4592,10 @@ function sideInit() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') drawer(false); });
 }
 function sideUpdate() {
-  const mDone = MATERI_SCENES.filter(id => state.done[id]).length;
-  const nx = state.done.S01 ? (MATERI_SCENES.find(id => !state.done[id]) || (state.last && MATERI_SCENES.includes(state.last) ? state.last : 'S11')) : 'S01';
-  const nm = $('#navMateri'); if (nm) nm.href = '#/scene/' + nx;
-  const bm = $('#badgeMat'); if (bm) bm.textContent = `${mDone}/${MATERI_SCENES.length}`;
+  const mDone = MATERI_BAGIAN.filter(id => state.done[id]).length;
+  const nx = state.done['pengantar'] ? (MATERI_BAGIAN.find(id => !state.done[id]) || (state.last && MATERI_BAGIAN.includes(state.last) ? state.last : 'bahasa-formal')) : 'pengantar';
+  const nm = $('#navMateri'); if (nm) nm.href = '#/bagian/' + nx;
+  const bm = $('#badgeMat'); if (bm) bm.textContent = `${mDone}/${MATERI_BAGIAN.length}`;
   const L = levelOf(xpTotal()), p = pct(), j = $('#sbJourney');
   if (j) j.innerHTML = `<span class="sbj-m">${MASCOT}</span><span class="sbj-t"><b>Perjalanan belajar</b><small>Lv ${L.n} · ${L.name}</small><span class="sbj-bar"><i style="width:${p}%"></i></span></span><b class="sbj-p">${p}%</b>`;
 }
@@ -4598,23 +4605,23 @@ function sideUpdate() {
    ========================================================================= */
 function homeCards() {
   return MATERI.filter(m => /^m\d$/.test(m.id)).map(m => {
-    const d = m.scenes.filter(id => state.done[id]).length, n = m.scenes.length;
-    const nx = m.scenes.find(id => !state.done[id]), lk = nx ? locked(nx) : false;
-    const label = d === n ? `Materi ${+m.no} · semua scene beres` : `Materi ${+m.no} · ${d}/${n} scene beres`;
-    const cta = d === n ? `<a class="gbtn y sm" href="#/scene/${m.scenes[0]}">Ulas lagi ${icon('right')}</a>`
-      : lk ? `<span class="gc-lock">${icon('lock')} Selesaikan scene sebelumnya dulu</span>`
-      : `<a class="gbtn y sm" href="#/scene/${nx}">${d ? 'Lanjut belajar' : 'Mulai materi'} ${icon('right')}</a>`;
+    const d = m.bagian.filter(id => state.done[id]).length, n = m.bagian.length;
+    const nx = m.bagian.find(id => !state.done[id]), lk = nx ? locked(nx) : false;
+    const label = d === n ? `Materi ${+m.no} · semua bagian beres` : `Materi ${+m.no} · ${d}/${n} bagian beres`;
+    const cta = d === n ? `<a class="gbtn y sm" href="#/bagian/${m.bagian[0]}">Ulas lagi ${icon('right')}</a>`
+      : lk ? `<span class="gc-lock">${icon('lock')} Selesaikan bagian sebelumnya dulu</span>`
+      : `<a class="gbtn y sm" href="#/bagian/${nx}">${d ? 'Lanjut belajar' : 'Mulai materi'} ${icon('right')}</a>`;
     return `<article class="gcard" data-m="${m.id}" tabindex="-1">
       <div class="gc-art">${ART[m.id]}<span class="gc-no">${m.no}</span></div>
       <div class="gc-body"><small class="gc-k">${label}</small><h3>${m.title}</h3>
-        <p class="gc-next">${d === n ? 'Selesai semua. Tinggal ulas kalau perlu.' : `Berikutnya: <b>${SCENES[nx].title}</b>`}</p>
+        <p class="gc-next">${d === n ? 'Selesai semua. Tinggal ulas kalau perlu.' : `Berikutnya: <b>${BAGIAN[nx].title}</b>`}</p>
         <span class="gc-bar"><i style="width:${d / n * 100}%"></i></span>
         ${cta}</div>
     </article>`;
   }).join('');
 }
 function viewHome() {
-  const started = doneCount() > 0, res = started ? resumeHref() : '#/scene/S01';
+  const started = doneCount() > 0, res = started ? resumeHref() : '#/bagian/pengantar';
   return `<section class="gh">
     <div class="gh-in">
       <div class="gh-txt">
@@ -4634,8 +4641,8 @@ function viewHome() {
 function mountHome() {
   const stack = $('#gstack'); if (!stack) return;
   const cards = $$('.gcard', stack), n = cards.length;
-  const cur = (resumeHref().match(/S\d+/) || ['S02'])[0];
-  let i = Math.max(0, cards.findIndex(c => MATERI.find(m => m.id === c.dataset.m).scenes.includes(cur)));
+  const cur = (resumeHref().split('/').pop() || 'kegunaan-email');
+  let i = Math.max(0, cards.findIndex(c => MATERI.find(m => m.id === c.dataset.m).bagian.includes(cur)));
   const dots = $('#gdots');
   const paint = () => {
     cards.forEach((c, k) => { const pos = (k - i + n) % n; c.dataset.pos = pos; c.setAttribute('aria-hidden', String(pos !== 0)); $$('a', c).forEach(a => { a.tabIndex = pos === 0 ? 0 : -1; }); });
@@ -4659,8 +4666,8 @@ const FAQ = [
   ['Apa itu Smart Emailing?', 'Pelatihan singkat berbasis multimedia untuk membantu fresh graduate menulis email lamaran kerja yang rapi, sopan, dan sesuai etika komunikasi di dunia kerja.'],
   ['Untuk siapa pelatihan ini?', 'Untuk fresh graduate yang sedang bersiap melamar kerja.'],
   ['Materinya apa saja?', `Ada tiga materi: dasar komunikasi lewat email, menulis email lamaran kerja, dan etika berkirim email. Setelah itu ada ${LATIHAN.length} soal latihan, 3 aktivitas interaktif, dan evaluasi akhir.`],
-  ['Harus belajar berurutan?', 'Ya. Setiap scene baru terbuka setelah scene sebelumnya selesai: semua kartu materinya sudah dibaca dan aktivitasnya sudah dikerjakan. Latihan terbuka setelah semua materi selesai.'],
-  ['Apa syarat untuk mengerjakan evaluasi?', `Tiga hal: semua scene materi selesai, latihan pilihan ganda minimal ${LAT_MIN} dari ${LATIHAN.length} benar, dan ketiga aktivitas interaktif sudah dikerjakan. Statusnya bisa dicek di halaman Awal Evaluasi.`],
+  ['Harus belajar berurutan?', 'Ya. Setiap bagian baru terbuka setelah bagian sebelumnya selesai: semua kartu materinya sudah dibaca dan aktivitasnya sudah dikerjakan. Latihan terbuka setelah semua materi selesai.'],
+  ['Apa syarat untuk mengerjakan evaluasi?', `Tiga hal: semua bagian materi selesai, latihan pilihan ganda minimal ${LAT_MIN} dari ${LATIHAN.length} benar, dan ketiga aktivitas interaktif sudah dikerjakan. Statusnya bisa dicek di halaman Awal Evaluasi.`],
   ['Bagaimana evaluasi dinilai?', `Evaluasi berisi ${EVALUASI.length} soal tanpa tanda benar atau salah. Jawaban dikunci setelah disimpan, dan nilai muncul di akhir. Batas lulusnya ${KKM}. Kalau belum lulus, kamu bisa mempelajari ulang materinya atau langsung mencoba lagi.`],
   ['Progresku tersimpan di mana?', 'Di browser yang kamu pakai, tanpa akun. Jawaban dan nilaimu tetap ada walau halaman ditutup. Kalau data browser dihapus, progres mulai dari awal. Kalau dibuka lewat LMS (paket SCORM), status dan nilai juga tercatat di LMS.'],
 ];
@@ -4704,10 +4711,10 @@ const pageHero = (ic, color, kicker, title, sub, side = '') => `<header class="p
 /* ---------- Petunjuk ---------- */
 function viewPetunjuk() {
   const langkah = [
-    ['home', 'Mulai dari Beranda', 'Tekan Lanjut belajar. Kamu langsung dibawa ke scene yang sedang kamu kerjakan.', '#/'],
-    ['materi', 'Baca kartu materinya', 'Setiap scene dipecah jadi kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'],
+    ['home', 'Mulai dari Beranda', 'Tekan Lanjut belajar. Kamu langsung dibawa ke bagian yang sedang kamu kerjakan.', '#/'],
+    ['materi', 'Baca kartu materinya', 'Setiap bagian dipecah jadi kartu pendek. Pindah kartu pakai tombol Berikutnya.', '#/materi'],
     ['latihan', 'Kerjakan aktivitasnya', 'Tombol Lanjut di bawah baru menyala setelah semua kartu dibaca dan aktivitas selesai.', resumeHref()],
-    ['evaluasi', 'Latihan, lalu evaluasi', `${LATIHAN.length} soal latihan dan 3 aktivitas jadi syarat evaluasi. Lulus kalau nilai minimal ${KKM}.`, '#/scene/S14'],
+    ['evaluasi', 'Latihan, lalu evaluasi', `${LATIHAN.length} soal latihan dan 3 aktivitas jadi syarat evaluasi. Lulus kalau nilai minimal ${KKM}.`, '#/bagian/awal-evaluasi'],
   ];
   const kode = [
     ['normal', 'Normal', 'Tampilan awal tombol sebelum disentuh.'],
@@ -4749,41 +4756,41 @@ function viewTujuan() {
   return `<blockquote class="goal-q"><small>Tujuan umum</small><p>Fresh graduate mampu <b>merancang email lamaran kerja</b> dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p></blockquote>
     <h2 class="gd-h">Setelah pelatihan, kamu mampu</h2>
     <ol class="goal-grid">${TUJUAN_KHUSUS.map((t, k) => `<li style="--i:${k}"><span>${k + 1}</span>${t.charAt(0).toUpperCase() + t.slice(1)}.</li>`).join('')}</ol>
-    <h2 class="gd-h">Tujuan per scene</h2>
-    <div class="goal-groups">${MATERI.map(m => `<details class="gg" ${m.scenes.includes((resumeHref().match(/S\d+/) || [''])[0]) ? 'open' : ''}><summary><span class="gg-no">${m.no}</span><b>${m.short === 'Pembuka' ? 'Pembuka' : `${m.short} · ${m.title}`}</b><span class="gg-c">${m.scenes.filter(id => state.done[id]).length}/${m.scenes.length}</span><span class="gg-chev">${icon('down')}</span></summary>
-      <ul>${m.scenes.map(id => `<li class="${state.done[id] ? 'ok' : ''}"><a href="#/scene/${id}"><span class="gg-k">${state.done[id] ? icon('check') : kode(id)}</span><span><b>${SCENES[id].title}</b><small>${SCENES[id].tujuan}</small></span></a></li>`).join('')}</ul></details>`).join('')}</div>`;
+    <h2 class="gd-h">Tujuan per bagian</h2>
+    <div class="goal-groups">${MATERI.map(m => `<details class="gg" ${m.bagian.includes((resumeHref().split('/').pop() || '')) ? 'open' : ''}><summary><span class="gg-no">${m.no}</span><b>${m.short === 'Pembuka' ? 'Pembuka' : `${m.short} · ${m.title}`}</b><span class="gg-c">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span><span class="gg-chev">${icon('down')}</span></summary>
+      <ul>${m.bagian.map(id => `<li class="${state.done[id] ? 'ok' : ''}"><a href="#/bagian/${id}"><span class="gg-k">${state.done[id] ? icon('check') : icon('book')}</span><span><b>${BAGIAN[id].title}</b><small>${BAGIAN[id].tujuan}</small></span></a></li>`).join('')}</ul></details>`).join('')}</div>`;
 }
 
 /* ---------- Alur belajar ---------- */
 function viewAlur() {
-  const cur = (resumeHref().match(/S\d+/) || [''])[0];
-  const chip = id => `<a class="fl-s ${state.done[id] ? 'ok' : ''} ${id === cur ? 'cur' : ''} ${locked(id) ? 'lk' : ''}" href="#/scene/${id}" data-peek="${id}"><b>${kode(id)}</b><span>${SCENES[id].title}</span></a>`;
+  const cur = (resumeHref().split('/').pop() || '');
+  const chip = id => `<a class="fl-s ${state.done[id] ? 'ok' : ''} ${id === cur ? 'cur' : ''} ${locked(id) ? 'lk' : ''}" href="#/bagian/${id}" data-peek="${id}">${icon('book')}<span>${BAGIAN[id].title}</span></a>`;
   const blok = (no, t, ids, cls = '') => `<li class="fl-b ${cls} ${ids.every(id => state.done[id]) ? 'ok' : ''}"><span class="fl-dot">${ids.every(id => state.done[id]) ? icon('check') : no}</span><div class="fl-in"><b class="fl-t">${t}</b><div class="fl-ss">${ids.map(chip).join('')}</div></div></li>`;
   const tanya = (t, ya, tidak) => `<li class="fl-q"><span class="fl-dia">?</span><div class="fl-in"><b class="fl-t">${t}</b><div class="fl-br"><span class="yes">${icon('check')} ${ya}</span><span class="no">${icon('x')} ${tidak}</span></div></div></li>`;
   return `<p class="gd-lead">Ikuti dari atas ke bawah. Kotak yang sedang kamu kerjakan diberi garis emas.</p>
     <ol class="flow2">
       <li class="fl-end"><span class="fl-dot">${icon('play')}</span><div class="fl-in"><b class="fl-t">Mulai</b></div></li>
-      ${blok('0', 'Pembuka', ['S01'])}
-      ${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => blok(+m.no, `${m.short} · ${m.title}`, m.scenes)).join('')}
-      ${blok('4', 'Latihan', ['S12', 'S13'])}
+      ${blok('0', 'Pembuka', ['pengantar'])}
+      ${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => blok(+m.no, `${m.short} · ${m.title}`, m.bagian)).join('')}
+      ${blok('4', 'Latihan', ['latihan-soal', 'aktivitas-interaktif'])}
       ${tanya('Syarat evaluasi terpenuhi?', 'lanjut ke evaluasi', 'kerjakan yang kurang')}
-      ${blok('5', 'Evaluasi', ['S14', 'S15'], 'dark')}
-      ${tanya(`Nilai minimal ${KKM}?`, 'lanjut ke penutup', 'pelajari ulang dari scene 2')}
-      ${blok('6', 'Penutup', ['S16'])}
+      ${blok('5', 'Evaluasi', ['awal-evaluasi', 'evaluasi-akhir'], 'dark')}
+      ${tanya(`Nilai minimal ${KKM}?`, 'lanjut ke penutup', 'pelajari ulang materi')}
+      ${blok('6', 'Penutup', ['penutup'])}
       <li class="fl-end"><span class="fl-dot">${icon('flag')}</span><div class="fl-in"><b class="fl-t">Selesai</b></div></li>
     </ol>`;
 }
 
 /* ---------- Peta konsep ---------- */
 function viewPeta() {
-  const topics = { m1: [['Kegunaan email di dunia kerja', 'S02'], ['Bagian-bagian email', 'S03'], ['Subject yang efektif', 'S04'], ['Salam pembuka dan penutup', 'S04']], m2: [['Fungsi dan susunan email lamaran', 'S05'], ['Memperkenalkan diri', 'S06'], ['Melampirkan CV dan portofolio', 'S06'], ['Kesalahan yang sering terjadi', 'S07'], ['Praktik menulis email lamaran', 'S08']], m3: [['CC dan BCC', 'S09'], ['Waktu mengirim email', 'S09'], ['Follow-up ke HR', 'S10'], ['Bahasa formal dan sopan', 'S11']] };
+  const topics = { m1: [['Kegunaan email di dunia kerja', 'kegunaan-email'], ['Bagian-bagian email', 'bagian-email'], ['Subject yang efektif', 'subject-dan-salam'], ['Salam pembuka dan penutup', 'subject-dan-salam']], m2: [['Fungsi dan susunan email lamaran', 'susunan-email'], ['Memperkenalkan diri', 'perkenalan-dan-cv'], ['Melampirkan CV dan portofolio', 'perkenalan-dan-cv'], ['Kesalahan yang sering terjadi', 'kesalahan-email'], ['Praktik menulis email lamaran', 'praktik-email']], m3: [['CC dan BCC', 'cc-bcc-waktu'], ['Waktu mengirim email', 'cc-bcc-waktu'], ['Follow-up ke HR', 'follow-up'], ['Bahasa formal dan sopan', 'bahasa-formal']] };
   const warna = { m1: '#3e7bd6', m2: '#c2453b', m3: '#2f9e6e' };
   return `<div class="cmap2">
-    <a class="cm2-root" href="#/scene/S01"><span>${MASCOT}</span><b>Smart Emailing</b><small>Menulis email lamaran yang profesional</small></a>
+    <a class="cm2-root" href="#/bagian/pengantar"><span>${MASCOT}</span><b>Smart Emailing</b><small>Menulis email lamaran yang profesional</small></a>
     <div class="cm2-cols">${MATERI.filter(m => topics[m.id]).map((m, k) => `<section class="cm2-col" style="--tc:${warna[m.id]};--i:${k}">
-      <a class="cm2-m" href="#/scene/${m.scenes[0]}"><span>${m.no}</span><b>${m.title}</b></a>
-      <ul>${topics[m.id].map(([t, id]) => `<li><a class="${state.done[id] ? 'ok' : ''}" href="#/scene/${id}">${t}<small>${kode(id)}</small></a></li>`).join('')}</ul></section>`).join('')}</div>
-    <div class="cm2-end">${[['latihan', 'Latihan soal', '#/latihan'], ['latihan', 'Aktivitas interaktif', '#/scene/S13'], ['evaluasi', 'Evaluasi akhir', '#/scene/S14'], ['progres', 'Penutup & sertifikat', '#/scene/S16']].map(([ic, t, h]) => `<a href="${h}"><span>${pxi(ic)}</span>${t}</a>`).join('')}</div>
+      <a class="cm2-m" href="#/bagian/${m.bagian[0]}"><span>${m.no}</span><b>${m.title}</b></a>
+      <ul>${topics[m.id].map(([t, id]) => `<li><a class="${state.done[id] ? 'ok' : ''}" href="#/bagian/${id}">${t}</a></li>`).join('')}</ul></section>`).join('')}</div>
+    <div class="cm2-end">${[['latihan', 'Latihan soal', '#/latihan'], ['latihan', 'Aktivitas interaktif', '#/bagian/aktivitas-interaktif'], ['evaluasi', 'Evaluasi akhir', '#/bagian/awal-evaluasi'], ['progres', 'Penutup & sertifikat', '#/bagian/penutup']].map(([ic, t, h]) => `<a href="${h}"><span>${pxi(ic)}</span>${t}</a>`).join('')}</div>
   </div>`;
 }
 
@@ -4792,7 +4799,7 @@ function viewGlosarium() {
   const huruf = [...new Set(GLOSARIUM.map(g => g[0][0].toUpperCase()))];
   return `<div class="gl-tools"><label class="search">${icon('search')}<input id="gq" type="search" placeholder="Cari istilah, misalnya BCC" aria-label="Cari istilah"></label>
       <nav class="gl-az">${huruf.map(h => `<a href="#gl-${h}" data-az="${h}">${h}</a>`).join('')}</nav></div>
-    <div class="gl-list">${huruf.map(h => `<section class="gl-sec" id="gl-${h}"><span class="gl-l">${h}</span><div>${GLOSARIUM.filter(g => g[0][0].toUpperCase() === h).map(([t, d, id]) => `<article class="g-item" data-t="${(t + ' ' + d).toLowerCase()}"><b>${t}</b><p>${d}</p><a href="#/scene/${id}">${icon('book')} Scene ${kode(id)} · ${SCENES[id].title}</a></article>`).join('')}</div></section>`).join('')}</div>
+    <div class="gl-list">${huruf.map(h => `<section class="gl-sec" id="gl-${h}"><span class="gl-l">${h}</span><div>${GLOSARIUM.filter(g => g[0][0].toUpperCase() === h).map(([t, d, id]) => `<article class="g-item" data-t="${(t + ' ' + d).toLowerCase()}"><b>${t}</b><p>${d}</p><a href="#/bagian/${id}">${icon('book')} ${BAGIAN[id].title}</a></article>`).join('')}</div></section>`).join('')}</div>
     <p class="muted" id="gEmpty" hidden>Istilah tidak ditemukan. Coba kata lain.</p>`;
 }
 function mountGlosarium() {
@@ -4812,7 +4819,7 @@ function viewFaq() {
 }
 
 /* ---------- Kerangka halaman Panduan ---------- */
-const GUIDE_SUB = { petunjuk: 'Empat langkah memakai Smart Emailing dan arti kode interaksi.', tujuan: 'Apa yang kamu kuasai setelah pelatihan, sampai ke tiap scene.', alur: 'Urutan belajar dari pengantar sampai penutup.', peta: 'Seluruh isi pelatihan dalam satu peta. Klik topik untuk membukanya.', glosarium: 'Istilah penting di email lamaran, lengkap dengan scene asalnya.', faq: 'Pertanyaan yang paling sering muncul.' };
+const GUIDE_SUB = { petunjuk: 'Empat langkah memakai Smart Emailing dan arti kode interaksi.', tujuan: 'Apa yang kamu kuasai setelah pelatihan, sampai ke tiap bagian.', alur: 'Urutan belajar dari pengantar sampai penutup.', peta: 'Seluruh isi pelatihan dalam satu peta. Klik topik untuk membukanya.', glosarium: 'Istilah penting di email lamaran, lengkap dengan bagian asalnya.', faq: 'Pertanyaan yang paling sering muncul.' };
 const GUIDE_VIEW = { petunjuk: [viewPetunjuk, mountPetunjuk], tujuan: [viewTujuan], alur: [viewAlur], peta: [viewPeta], glosarium: [viewGlosarium, mountGlosarium], faq: [viewFaq] };
 function viewPanduan(tab) {
   const k = NAV_PANDUAN[tab] || 'petunjuk', i = GUIDE_LIST.findIndex(g => g[0] === k), [, t, ic, c] = GUIDE_LIST[i];
@@ -4841,7 +4848,7 @@ function viewPengaturan() {
       <label class="set2 col"><span class="set2-ic">${icon('users')}</span><span class="set2-t"><b>Nama</b><small>Dipakai untuk sapaan di Dashboard dan nama di sertifikat.</small></span><input type="text" id="setNama" maxlength="60" placeholder="Tulis nama lengkapmu" value="${esc((state.game && state.game.nama) || '')}"></label>
     </section>
     <section class="card"><h2 class="prg-k">Data belajar</h2>
-      <div class="set2"><span class="set2-ic">${icon('trash')}</span><span class="set2-t"><b>Hapus semua progres</b><small>Scene selesai, jawaban, nilai, dan riwayat aktivitas di browser ini akan hilang.</small></span><button type="button" class="btn btn-outline btn-sm danger" id="setReset">Hapus</button></div>
+      <div class="set2"><span class="set2-ic">${icon('trash')}</span><span class="set2-t"><b>Hapus semua progres</b><small>Bagian selesai, jawaban, nilai, dan riwayat aktivitas di browser ini akan hilang.</small></span><button type="button" class="btn btn-outline btn-sm danger" id="setReset">Hapus</button></div>
     </section>
   </div>`;
 }
@@ -4854,14 +4861,14 @@ function mountPengaturan() {
 }
 const applyCalm = () => document.body.classList.toggle('calm', !!UI().calm);
 function viewTentang() {
-  const isi = [[MATERI_SCENES.length, 'scene materi'], [LATIHAN.length, 'soal latihan'], [3, 'aktivitas'], [EVALUASI.length, 'soal evaluasi']];
+  const isi = [[MATERI_BAGIAN.length, 'bagian materi'], [LATIHAN.length, 'soal latihan'], [3, 'aktivitas'], [EVALUASI.length, 'soal evaluasi']];
   const interaksi = ['Seret & letakkan', 'Klik informasi', 'Temukan kesalahan', 'Simulasi email', 'Skenario bercabang', 'Kuis'];
   return `<div class="page wrap lms">
     ${pageHero('tentang', '#c2457e', 'Lainnya', 'Tentang & tim', 'Media pembelajaran interaktif buatan Kelompok 7.')}
     <section class="ab-hero"><span class="ab-m">${MASCOT}</span><div><small class="ph-k">Judul proyek</small><h2>Pengembangan Pelatihan Smart Emailing</h2><p>Membuat email profesional berbasis multimedia untuk fresh graduate.</p></div></section>
     <div class="ab-nums">${isi.map(([n, t]) => `<div><b data-count="${n}">${n}</b><small>${t}</small></div>`).join('')}</div>
     <div class="pg-grid">
-      <section class="card"><h2 class="prg-k">Tujuan umum</h2><p>Fresh graduate mampu merancang email lamaran kerja dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p><a class="card-link" href="#/tujuan">Lihat tujuan per scene ${icon('right')}</a></section>
+      <section class="card"><h2 class="prg-k">Tujuan umum</h2><p>Fresh graduate mampu merancang email lamaran kerja dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p><a class="card-link" href="#/tujuan">Lihat tujuan per bagian ${icon('right')}</a></section>
       <section class="card"><h2 class="prg-k">Format media</h2><p>Multimedia interaktif non-linear untuk belajar mandiri.</p><div class="ab-chips">${interaksi.map(t => `<span>${t}</span>`).join('')}</div></section>
       <section class="card"><h2 class="prg-k">Tim</h2><p><b>Kelompok 7</b>. Storyboard disusun dengan template non-linear (Imbar dkk., 2021).</p></section>
       <section class="card"><h2 class="prg-k">Teknologi</h2><p>HTML, CSS, dan JavaScript tanpa framework. Bisa dibuka tanpa internet, dan tersedia sebagai paket SCORM 1.2 untuk LMS.</p></section>
@@ -4897,8 +4904,8 @@ let routeToken = 0, firstRoute = true, lastKey = null;
 const GUIDE = ['panduan', 'tujuan', 'petunjuk', 'alur', 'peta', 'glosarium', 'faq'];
 function pickTransition(from, to) {
   if (from === to) return null;
-  if (to === 'S15') return 'curtain';
-  if (to === 'S16') return 'circle';
+  if (to === 'evaluasi-akhir') return 'curtain';
+  if (to === 'penutup') return 'circle';
   const fi = ORDER.indexOf(from), ti = ORDER.indexOf(to);
   if (ti >= 0 && fi >= 0) return ti > fi ? 'slideL' : 'slideR';
   if (ti >= 0) return 'wipe';
@@ -4944,19 +4951,21 @@ function pageEnter(t) {
     later(() => an.cancel(), T_DUR[t] + 300);
   } catch (e) { app.getAnimations && app.getAnimations().forEach(a => a.cancel()); }
 }
-const NAV_OF = id => (['S12', 'S13'].includes(id) ? 'latihan' : ['S14', 'S15', 'S16'].includes(id) ? 'evaluasi' : 'materi');
+const NAV_OF = id => (['latihan-soal', 'aktivitas-interaktif'].includes(id) ? 'latihan' : ['awal-evaluasi', 'evaluasi-akhir', 'penutup'].includes(id) ? 'evaluasi' : 'materi');
 async function route() {
   const token = ++routeToken;
   cleanups.forEach(fn => fn()); cleanups = [];
   closeMenu();
-  const [page = '', arg] = location.hash.replace(/^#\/?/, '').split('/');
-  const isScene = page === 'scene' && SCENES[arg];
+  let [page = '', arg] = location.hash.replace(/^#\/?/, '').split('/');
+  if (page === 'scene') page = 'bagian';
+  if (arg && ID_LAMA[arg]) arg = ID_LAMA[arg];
+  const isBagian = page === 'bagian' && BAGIAN[arg];
   const curtain = $('#curtain');
-  const key = isScene ? arg : (PAGES[page] ? page : '');
+  const key = isBagian ? arg : (PAGES[page] ? page : '');
   const tr = firstRoute || reduced ? null : pickTransition(lastKey, key);
   if (tr === 'curtain') {
-    $('.cur-code', curtain).textContent = kode(arg);
-    $('.cur-title', curtain).textContent = SCENES[arg].title;
+    $('.cur-code', curtain).innerHTML = icon('flag');
+    $('.cur-title', curtain).textContent = BAGIAN[arg].title;
     curtain.className = 'curtain cover';
     await wait(420); if (token !== routeToken) return;
   } else if (tr) {
@@ -4966,37 +4975,37 @@ async function route() {
   if (app.getAnimations) app.getAnimations().forEach(a => a.cancel());
   firstRoute = false;
   let navKey = '';
-  if (isScene && locked(arg)) {
-    const why = peekInfo(arg).why, back = arg === 'S15' ? '#/scene/S14' : resumeHref();
-    app.innerHTML = `<div class="lesson-wide wrap"><article class="sheet"><div class="lockbox">${icon('lock')}<h3>${kode(arg)} · ${SCENES[arg].title} masih terkunci</h3>
+  if (isBagian && locked(arg)) {
+    const why = peekInfo(arg).why, back = arg === 'evaluasi-akhir' ? '#/bagian/awal-evaluasi' : resumeHref();
+    app.innerHTML = `<div class="lesson-wide wrap"><article class="sheet"><div class="lockbox">${icon('lock')}<h3>${BAGIAN[arg].title} masih terkunci</h3>
       <p class="muted">${why}</p>
-      <a class="btn btn-primary" href="${back}">Lanjutkan ke scene ${kode((back.match(/S\d+/) || ['S01'])[0])} ${icon('right')}</a></div></article></div>`;
+      <a class="btn btn-primary" href="${back}">Lanjutkan belajar ${icon('right')}</a></div></article></div>`;
     navKey = NAV_OF(arg);
-    document.title = `${kode(arg)} terkunci — Smart Emailing`;
-  } else if (isScene) {
-    state.last = arg; setResume('#/scene/' + arg, 'scene', arg); logAct('open', arg);
-    app.innerHTML = viewScene(arg);
-    mountScene(arg);
+    document.title = `${BAGIAN[arg].title} terkunci — Smart Emailing`;
+  } else if (isBagian) {
+    state.last = arg; setResume('#/bagian/' + arg, 'bagian', arg); logAct('open', arg);
+    app.innerHTML = viewBagian(arg);
+    mountBagian(arg);
     navKey = NAV_OF(arg);
-    document.title = `${kode(arg)} · ${SCENES[arg].title} — Smart Emailing`;
+    document.title = `${BAGIAN[arg].title} — Smart Emailing`;
   } else {
     const p = PAGES[page] || PAGES[''];
     app.innerHTML = p.v(); p.m && p.m();
     navKey = p.nav || '';
     document.title = p.title ? `${p.title} — Smart Emailing` : 'Smart Emailing — Pelatihan Menulis Email Profesional';
   }
-  if (!isScene && !page) navKey = 'home';
-  $('#pgTitle').textContent = isScene ? `${kode(arg)} · ${SCENES[arg].title}` : (PAGES[page] && PAGES[page].title) || '';
+  if (!isBagian && !page) navKey = 'home';
+  $('#pgTitle').textContent = isBagian ? BAGIAN[arg].title : (PAGES[page] && PAGES[page].title) || '';
   /* layar kuis memakai seluruh layar: menu samping disembunyikan */
-  document.body.classList.toggle('focus-mode', !!((page === 'latihan' && arg && setOf(arg) && !location.hash.split('/')[3] && !locked('S12')) || (isScene && arg === 'S15' && !locked('S15') && state.ev && state.ev.started && !state.ev.done)));
+  document.body.classList.toggle('focus-mode', !!((page === 'latihan' && arg && setOf(arg) && !location.hash.split('/')[3] && !locked('latihan-soal')) || (isBagian && arg === 'evaluasi-akhir' && !locked('evaluasi-akhir') && state.ev && state.ev.started && !state.ev.done)));
   setNavActive(navKey); drawer(false);
   document.body.dataset.page = navKey;
   requestAnimationFrame(() => moveInd(activeTab()));
-  /* Rute belajar: geser otomatis supaya scene sekarang berada di tengah */
+  /* Rute belajar: geser otomatis supaya bagian sekarang berada di tengah */
   const trk = $('.r2-track'), curStop = trk && $('.r2-stop.cur', trk);
   if (curStop && trk.scrollWidth > trk.clientWidth) trk.scrollLeft = curStop.getBoundingClientRect().left - trk.getBoundingClientRect().left + trk.scrollLeft - trk.clientWidth / 2 + curStop.offsetWidth / 2;
   $('#readLine').style.width = '0%';
-  document.body.classList.toggle('is-home', !isScene && !page);
+  document.body.classList.toggle('is-home', !isBagian && !page);
   window.scrollTo({ top: 0, behavior: 'instant' });
   app.focus({ preventScroll: true });
   updateBar();
@@ -5025,13 +5034,13 @@ function updateBar() {
 function renderPop() {
   const latOk = state.lat ? Object.values(state.lat.res || {}).filter(Boolean).length : 0;
   const ev = state.ev && state.ev.done ? state.ev.score : null;
-  $('#progPop').innerHTML = `<div class="pp-h"><b>Progres kamu</b><small>${doneCount()} dari ${ORDER.length} scene selesai</small></div>
+  $('#progPop').innerHTML = `<div class="pp-h"><b>Progres kamu</b><small>${doneCount()} dari ${ORDER.length} bagian selesai</small></div>
     <a class="pp-lv" href="#/progres">${levelCard('mini')}<span class="pp-bdg">${BADGES.map(b => `<i class="${b.ok() ? 'on' : ''}" title="${b.t}">${icon(b.ok() ? b.ic : 'lock')}</i>`).join('')}</span></a>
-    ${MATERI.map(m => { const d = m.scenes.filter(id => state.done[id]).length; return `<div class="pp-row"><span>${m.short}</span><span class="bar"><i style="width:${d / m.scenes.length * 100}%"></i></span><b>${d}/${m.scenes.length}</b></div>`; }).join('')}
+    ${MATERI.map(m => { const d = m.bagian.filter(id => state.done[id]).length; return `<div class="pp-row"><span>${m.short}</span><span class="bar"><i style="width:${d / m.bagian.length * 100}%"></i></span><b>${d}/${m.bagian.length}</b></div>`; }).join('')}
     <div class="pp-sub"><span>${icon('pen')} Latihan</span><b>${latOk}/${LATIHAN.length} benar</b></div>
     <div class="pp-sub"><span>${icon('grid')} Aktivitas interaktif</span><b>${AKT_KEYS.filter(k => state.akt && state.akt[k] && state.akt[k].done).length}/3 selesai</b></div>
     <div class="pp-sub"><span>${icon('flag')} Evaluasi</span><b>${ev !== null ? 'Nilai ' + ev : gateOk() ? 'Siap dikerjakan' : 'Terkunci'}</b></div>
-    <a class="btn btn-primary btn-sm" href="${doneCount() ? resumeHref() : '#/scene/S01'}">${doneCount() ? 'Lanjutkan belajar' : 'Mulai belajar'} ${icon('right')}</a>`;
+    <a class="btn btn-primary btn-sm" href="${doneCount() ? resumeHref() : '#/bagian/pengantar'}">${doneCount() ? 'Lanjutkan belajar' : 'Mulai belajar'} ${icon('right')}</a>`;
 }
 function togglePop(force) {
   const pop = $('#progPop'), open = force !== undefined ? force : pop.hidden;

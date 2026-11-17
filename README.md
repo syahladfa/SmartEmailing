@@ -23,26 +23,26 @@ Media pembelajaran berbasis web · Kelompok 7
 
 ## Sekilas
 
-Banyak lamaran kerja tidak dibalas bukan karena pelamarnya kurang mampu, tapi karena emailnya berantakan: subject tidak jelas, bahasa terlalu santai, lampiran lupa disebutkan, atau dikirim tengah malam. **Smart Emailing** mengajarkan cara menulis email lamaran yang benar lewat 13 scene singkat. Setiap scene punya penjelasan singkat dan aktivitas yang langsung bisa dicoba.
+Banyak lamaran kerja tidak dibalas bukan karena pelamarnya kurang mampu, tapi karena emailnya berantakan: subject tidak jelas, bahasa terlalu santai, lampiran lupa disebutkan, atau dikirim tengah malam. **Smart Emailing** mengajarkan cara menulis email lamaran yang benar lewat rangkaian bagian singkat. Setiap bagian punya penjelasan singkat dan aktivitas yang langsung bisa dicoba.
 
 | | |
 |---|---|
 | **Sasaran** | Fresh graduate yang sedang bersiap melamar kerja |
 | **Tujuan** | Peserta mampu merancang email lamaran kerja yang efektif, sesuai susunan dan etika komunikasi profesional |
-| **Isi** | 3 materi · 10 scene materi · 15 soal latihan · 3 aktivitas interaktif · 4 soal evaluasi akhir · rangkuman |
+| **Isi** | 3 materi · bagian materi · 15 soal latihan · 3 aktivitas interaktif · 4 soal evaluasi akhir · rangkuman |
 | **Akses** | Online, offline (satu file HTML), atau di LMS (SCORM 1.2) tanpa internet dan tanpa akun |
 
 ## Alur belajar
 
 ```
-Mulai → 1 Pengantar
-      → Materi 1: Dasar Komunikasi lewat Email      (2 · 3 · 4)
-      → Materi 2: Menulis Email Lamaran Kerja       (5 · 6 · 7 · 8)
-      → Materi 3: Etika Berkirim Email              (9 · 10 · 11)
-      → Latihan: 12 Latihan Soal (15 PG) · 13 Aktivitas Interaktif
-      → 14 Awal Evaluasi: materi selesai + latihan ≥ 70% + semua aktivitas selesai?
-      → 15 Evaluasi Akhir → Nilai ≥ 75? → Ya: 16 Penutup
-                                       → Tidak: Pelajari Ulang (scene 2) atau Coba Evaluasi Lagi
+Mulai → Pengantar
+      → Materi 1: Dasar Komunikasi lewat Email      
+      → Materi 2: Menulis Email Lamaran Kerja       
+      → Materi 3: Etika Berkirim Email              
+      → Latihan Soal (15 PG) · Aktivitas Interaktif
+      → Awal Evaluasi: materi selesai + latihan ≥ 70% + semua aktivitas selesai?
+      → Evaluasi Akhir → Nilai ≥ 75? → Ya: Penutup
+                                       → Tidak: Pelajari Ulang materi atau Coba Evaluasi Lagi
 ```
 
 ![Flowchart alur belajar](docs/screenshots/10-flowchart.png)
@@ -52,7 +52,7 @@ Mulai → 1 Pengantar
 ### Menu samping, Dashboard, dan halaman Lainnya
 Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Alur belajar, Peta konsep, Glosarium, FAQ) dan **Lainnya** (Dashboard, Progres belajar, Pengaturan, Tentang & tim) yang bisa dibuka-tutup. Di bawah menu ada kartu **Perjalanan belajar** (maskot Surti, level, dan persen progres). Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
 
-- **Dashboard** (`#/dashboard`): sapaan sesuai jam (dengan nama kalau sudah diisi di Pengaturan), progres keseluruhan, 5 kartu statistik dari data asli (total materi, materi selesai, soal latihan dikerjakan, status evaluasi, progres), **Lanjutkan belajar** yang membuka scene atau latihan terakhir tepat di posisinya, dan **Aktivitas terbaru**.
+- **Dashboard** (`#/dashboard`): sapaan sesuai jam (dengan nama kalau sudah diisi di Pengaturan), progres keseluruhan, 5 kartu statistik dari data asli (total materi, materi selesai, soal latihan dikerjakan, status evaluasi, progres), **Lanjutkan belajar** yang membuka bagian atau latihan terakhir tepat di posisinya, dan **Aktivitas terbaru**.
 - **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, cap pos harian dan streak mingguan, radar profil kemampuan (Dasar Email, Email Lamaran, Etika, Praktik), koleksi 11 segel lilin (klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
 - **Pengaturan** (`#/pengaturan`): efek suara, menu ringkas, kurangi animasi, nama, dan hapus progres.
 - **Tentang & tim** (`#/tentang`): judul proyek, tujuan umum, isi pelatihan, format interaksi, tim, dan teknologi.
@@ -62,43 +62,43 @@ Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan send
 ![Dashboard](docs/screenshots/18-dashboard.png)
 
 ### 1. Beranda dan katalog materi
-Beranda adalah hero marun layar penuh: judul besar **SMART EMAILING**, tombol **Lanjut belajar** yang langsung membuka scene terakhir, dan tumpukan kartu Materi 1–3 yang bisa digeser, lengkap dengan progres dan scene berikutnya. Halaman **Materi** menampilkan ketiga materi beserta scene-nya. Scene yang sudah selesai diberi tanda centang, dan scene yang masih terkunci diberi gembok.
+Beranda adalah hero marun layar penuh: judul besar **SMART EMAILING**, tombol **Lanjut belajar** yang langsung membuka bagian terakhir, dan tumpukan kartu Materi 1–3 yang bisa digeser, lengkap dengan progres dan bagian berikutnya. Halaman **Materi** menampilkan ketiga materi beserta bagiannya. Bagian yang sudah selesai diberi tanda centang, dan bagian yang masih terkunci diberi gembok.
 
 ![Katalog materi](docs/screenshots/02-materi.png)
 
-### 2. Halaman scene
-Setiap scene ditampilkan seperti email masuk, dengan progress bar posisi belajar di bagian atas. Isi setiap scene:
-- **Tujuan** scene dalam bentuk catatan tempel
+### 2. Halaman belajar
+Setiap bagian ditampilkan seperti email masuk, dengan progress bar posisi belajar di bagian atas. Isi setiap halaman belajar:
+- **Tujuan** bagian tersebut dalam bentuk catatan tempel
 - **Materi** yang dibaca per kartu (Bagian 1, 2, …)
 - **Aktivitas**. Tombol *Lanjut* baru aktif setelah aktivitasnya selesai.
 
-![Halaman scene 4](docs/screenshots/03-scene.png)
+![Halaman bagian 4](docs/screenshots/03-bagian.png)
 
 ### 3. Aktivitas interaktif
-Setiap scene memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan otomatis.
+Setiap bagian memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan otomatis.
 
-| Seret & letakkan (scene 3) | Temukan kesalahan (scene 7) |
+| Seret & letakkan | Temukan kesalahan |
 |---|---|
 | ![Aktivitas seret dan letakkan](docs/screenshots/04-aktivitas.png) | ![Aktivitas temukan kesalahan](docs/screenshots/05-temukan-kesalahan.png) |
 
-| Kode | Scene | Aktivitas |
-|---|---|---|
-| 1 | Selamat Datang | Pengantar: contoh email sebelum dan sesudah + peta materi |
-| 2 | Kegunaan Email di Dunia Kerja | Klik informasi |
-| 3 | Bagian-Bagian Email | Seret & letakkan |
-| 4 | Subject, Salam Pembuka, dan Penutup | Studi kasus + kuis |
-| 5 | Susunan Email Lamaran Kerja | Klik bagian email |
-| 6 | Memperkenalkan Diri dan Mengirim CV | Simulasi menulis email |
-| 7 | Kesalahan yang Sering Terjadi | Temukan 6 kesalahan |
-| 8 | Praktik Menulis Email Lamaran | Form + daftar periksa + contoh jawaban |
-| 9 | CC, BCC, dan Waktu Mengirim | Animasi + atur jam + kuis |
-| 10 | Follow-up ke HR | Pilih langkahmu |
-| 11 | Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
+| Bagian | Aktivitas |
+|---|---|
+| Selamat Datang | Pengantar: contoh email sebelum dan sesudah + peta materi |
+| Kegunaan Email di Dunia Kerja | Klik informasi |
+| Bagian-Bagian Email | Seret & letakkan |
+| Subject, Salam Pembuka, dan Penutup | Studi kasus + kuis |
+| Susunan Email Lamaran Kerja | Klik bagian email |
+| Memperkenalkan Diri dan Mengirim CV | Simulasi menulis email |
+| Kesalahan yang Sering Terjadi | Temukan 6 kesalahan |
+| Praktik Menulis Email Lamaran | Form + daftar periksa + contoh jawaban |
+| CC, BCC, dan Waktu Mengirim | Animasi + atur jam + kuis |
+| Follow-up ke HR | Pilih langkahmu |
+| Bahasa yang Formal dan Sopan | Pilih kalimat yang tepat |
 
-### 4. Latihan soal (scene 12 dan halaman Latihan)
+### 4. Latihan soal
 15 soal pilihan ganda dari storyboard dibagi jadi **Latihan Materi 1, 2, dan 3** (5 soal per materi). Halaman **Latihan** (`#/latihan`) menampilkan kartu setiap latihan dengan status *Belum mulai / Sedang dikerjakan / Selesai*, nilai terakhir, dan progres, ditambah kartu tiga aktivitas interaktif.
 
-- **Layar kuis** memakai seluruh layar: satu soal per tampilan, progress bar, navigator nomor soal (sudah dijawab, belum dijawab, sedang aktif), Sebelumnya/Berikutnya (juga tombol panah ← →), dan **Selesai**. Pembahasan langsung muncul setelah menekan **Jawab**, lengkap dengan tautan ke scene materi terkait.
+- **Layar kuis** memakai seluruh layar: satu soal per tampilan, progress bar, navigator nomor soal (sudah dijawab, belum dijawab, sedang aktif), Sebelumnya/Berikutnya (juga tombol panah ← →), dan **Selesai**. Pembahasan langsung muncul setelah menekan **Jawab**, lengkap dengan tautan ke bagian materi terkait.
 - **Layar hasil:** nilai, jumlah benar/salah, persentase, waktu pengerjaan, status *Capaian terpenuhi* (≥ 70%), dan tombol Review jawaban, Ulangi, Daftar latihan, Dashboard.
 - **Review jawaban:** jawabanmu, jawaban yang tepat, dan pembahasan setiap soal dari percobaan terakhir.
 - Jawaban, nilai, riwayat percobaan, dan posisi soal tersimpan, jadi aman walau halaman di-refresh. Syarat evaluasi tetap minimal 11 dari 15 benar.
@@ -107,7 +107,7 @@ Setiap scene memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan o
 |---|---|---|
 | ![Daftar latihan](docs/screenshots/19-daftar-latihan.png) | ![Kuis](docs/screenshots/20-kuis.png) | ![Hasil latihan](docs/screenshots/21-hasil-latihan.png) |
 
-### 5. Aktivitas interaktif (scene 13)
+### 5. Aktivitas interaktif
 Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar posisi Content Writer. Ketiganya harus dikerjakan.
 - **A. Cocokkan istilah:** seret 5 istilah (subject line, CC, BCC, follow-up, signature) ke definisinya. 1 poin per pasangan.
 - **B. Susun email follow-up:** urutkan 5 kalimat email follow-up Salsa. 1 poin kalau urutannya benar semua.
@@ -115,7 +115,7 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 
 ![Aktivitas interaktif](docs/screenshots/16-aktivitas-interaktif.png)
 
-### 6. Awal evaluasi (scene 14) dan evaluasi akhir (scene 15)
+### 6. Awal evaluasi dan evaluasi akhir
 - **Awal Evaluasi** adalah pos pemeriksaan: panel besar "SIAP EVALUASI?" dengan cincin x/3 syarat, lalu 3 kartu syarat bernomor (materi selesai, latihan minimal **11 dari 15 benar**, 3 aktivitas interaktif) dengan progress bar dan tombol **Kerjakan** ke bagian yang kurang. Tombol **Mulai evaluasi** baru menyala setelah ketiganya terpenuhi.
 - **Evaluasi Akhir** berjalan dalam mode ujian layar penuh (menu samping disembunyikan). Sebelum soal pertama ada layar **Aturan main** berisi 4 kartu.
 - Ada **4 soal** dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal. Setiap soal punya kotak **Cara menjawab**.
@@ -131,7 +131,7 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 ### Panduan
 Enam halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Berikutnya di bawah:
 - **Petunjuk:** 4 langkah memakai web, dan **kode interaksi** yang bisa dicoba langsung (Normal, Hover, Hit, Swipe, Seret & letakkan, Show).
-- **Tujuan belajar:** tujuan umum, 7 tujuan khusus, dan tujuan per scene yang dikelompokkan per materi.
+- **Tujuan belajar:** tujuan umum, 7 tujuan khusus, dan tujuan tiap bagian yang dikelompokkan per materi.
 - **Alur belajar:** garis waktu dari Mulai sampai Selesai, dengan titik keputusan dan posisimu sekarang.
 - **Peta konsep:** peta isi pelatihan dengan cabang per materi.
 - **Glosarium:** pencarian dan indeks A–Z.
@@ -139,7 +139,7 @@ Enam halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Beri
 
 ![Panduan](docs/screenshots/23-panduan.png)
 
-### 7. Penutup (scene 16)
+### 7. Penutup
 Terbuka setelah peserta lulus evaluasi. Isinya rangkuman satu halaman yang bisa disimpan sebagai PDF, ditambah formulir masukan (rating bintang dan saran).
 
 ![Rangkuman penutup](docs/screenshots/09-penutup.png)
@@ -150,18 +150,18 @@ Di HP, semua halaman tampil layar penuh dan menu dibuka lewat tombol ☰. Seret 
 <p align="center">
   <img src="docs/screenshots/11-hp-beranda.png" width="260" alt="Beranda di HP">
   &nbsp;&nbsp;
-  <img src="docs/screenshots/12-hp-scene.png" width="260" alt="Scene di HP">
+  <img src="docs/screenshots/12-hp-bagian.png" width="260" alt="Bagian di HP">
 </p>
 
 ### 9. Materi terbuka berurutan
-Setiap scene baru terbuka setelah scene sebelumnya selesai, termasuk latihan soal dan aktivitas interaktif. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Scene yang belum terbuka ditandai gembok di halaman Katalog.
+Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan soal dan aktivitas interaktif. Selesai artinya **semua kartu materinya sudah dibaca** dan **aktivitasnya sudah dikerjakan**. Kartu yang sudah dibaca diberi tanda centang, dan tombol *Lanjut* menjelaskan apa yang masih kurang. Bagian yang belum terbuka ditandai gembok di halaman Katalog.
 
-![Scene terkunci](docs/screenshots/15-scene-terkunci.png)
+![Bagian terkunci](docs/screenshots/15-bagian-terkunci.png)
 
 ### 10. Gamifikasi: skor, level, segel, dan reward
 | Unsur | Isinya |
 |---|---|
-| **Skor (XP)** | Pengantar 20 · setiap scene materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
+| **Skor (XP)** | Pengantar 20 · setiap bagian materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
 | **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300), ditampilkan sebagai rute pos dengan perangko |
 | **11 segel** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Tak Terbendung (combo 5×), Serba Bisa, Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
 | **Mingguan** | Tugas minggu ini, cap pos harian, minggu berturut-turut, dan rekor (dihitung dari riwayat aktivitas) |
@@ -169,16 +169,16 @@ Setiap scene baru terbuka setelah scene sebelumnya selesai, termasuk latihan soa
 
 ## Fitur lain
 - **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Dashboard, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
-- **Progres tersimpan otomatis** di browser: scene selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
+- **Progres tersimpan otomatis** di browser: bagian selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
 - **Cincin progres dan badge** di navbar: persentase belajar, jumlah soal latihan yang belum dikerjakan, dan status evaluasi.
-- **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per scene, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.
-- **Animasi**: transisi berbeda untuk setiap jenis halaman, ikon yang bergerak saat diklik, efek suara klik dan benar/salah (bisa dimatikan), serta konfeti saat scene selesai.
+- **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per bagian, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.
+- **Animasi**: transisi berbeda untuk setiap jenis halaman, ikon yang bergerak saat diklik, efek suara klik dan benar/salah (bisa dimatikan), serta konfeti saat bagian selesai.
 - **Tanpa tautan luar**: semua aset ada di dalam web, jadi bisa dipakai tanpa internet.
 - **Warna**: marun, krem, dan emas.
 
 ## Teknologi
 - **HTML, CSS, dan JavaScript murni** tanpa framework dan tanpa library luar, jadi ringan dan bisa berjalan offline.
-- **Single Page Application** dengan router berbasis hash (`#/scene/S04`, `#/latihan`, …).
+- **Single Page Application** dengan router berbasis hash (`#/bagian/S04`, `#/latihan`, …).
 - **localStorage** untuk menyimpan progres dan jawaban di perangkat peserta.
 - **SCORM 1.2 API** untuk mengirim status dan nilai ke LMS.
 - **Web Audio API** untuk efek suara dan **Web Animations API** untuk transisi halaman.
@@ -208,7 +208,7 @@ GitHub Pages memperbarui web sekitar 1–2 menit setelah unggahan.
 SmartEmailing_Tim7/
 ├── index.html          ← halaman utama (dipakai GitHub Pages)
 ├── css/styles.css      ← tampilan (marun · krem · emas)
-├── js/app.js           ← isi materi, scene, aktivitas, latihan, evaluasi
+├── js/app.js           ← isi materi, bagian belajar, aktivitas, latihan, evaluasi
 ├── assets/img/         ← logo dan favicon
 ├── docs/screenshots/   ← foto tampilan untuk README ini
 ├── tools/build.py      ← membuat paket offline, ZIP, dan SCORM di dist/

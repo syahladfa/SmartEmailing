@@ -213,9 +213,9 @@ body.settled .swoosh path { animation: none; stroke-dashoffset: 0; }
 .mat-card small { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
 .mat-card h3 { font-size: 1.3rem; color: var(--maroon-2); margin: .1rem 0 .4rem; }
 .mat-card p { color: var(--muted); font-size: .92rem; flex: 1; }
-.mat-scenes { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
-.mat-scenes span { font-size: .72rem; font-weight: 700; padding: .2em .6em; border-radius: 7px; background: var(--sand); color: var(--maroon); }
-.mat-scenes span.ok { background: var(--maroon); color: var(--gold-s); }
+.mat-bagians { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
+.mat-bagians span { font-size: .72rem; font-weight: 700; padding: .2em .6em; border-radius: 7px; background: var(--sand); color: var(--maroon); }
+.mat-bagians span.ok { background: var(--maroon); color: var(--gold-s); }
 .mat-foot { display: flex; align-items: center; gap: .7rem; }
 .mat-foot .bar { flex: 1; }
 .mat-foot b { font-size: .85rem; color: var(--maroon-2); }
@@ -350,8 +350,8 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .ip-card p { margin: 0; }
 .ip-ic, .hs-num { width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--maroon); color: var(--gold-s); display: grid; place-items: center; font-weight: 800; }
 
-/* S02 laptop */
-.s02 { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; align-items: center; }
+/* Bagian laptop */
+.laptop-info { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem; align-items: center; }
 .lscreen { background: var(--maroon-2); border: 8px solid #3a2a2d; border-bottom-width: 11px; border-radius: 13px 13px 5px 5px; padding: .6rem; aspect-ratio: 16 / 10; display: flex; flex-direction: column; }
 .lbar { display: flex; align-items: center; gap: 4px; color: rgba(251, 245, 236, .6); font-size: .66rem; margin-bottom: .5rem; }
 .lbar span { margin-left: 6px; }
@@ -368,7 +368,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .cmp-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
 .cmp-chips span { display: inline-flex; align-items: center; gap: .35rem; background: var(--card); border-radius: 999px; padding: .3em .75em; font-size: .8rem; font-weight: 600; color: var(--maroon-2); }
 
-/* S03 seret & letakkan */
+/* Bagian seret & letakkan */
 .dnd { display: grid; grid-template-columns: 11rem 1fr; gap: .9rem; align-items: start; }
 .dcards { display: grid; gap: .45rem; align-content: start; }
 .dcard { display: flex; align-items: center; gap: .5rem; padding: .55rem .7rem; border-radius: 10px; border: 2px solid var(--line); background: var(--gold-s); font-weight: 600; font-size: .86rem; cursor: grab; text-align: left; transition: transform .15s, box-shadow .15s, border-color .15s; }
@@ -396,7 +396,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .slot-txt { display: grid; font-size: .86rem; }
 .slot-txt small { color: var(--muted); font-size: .76rem; }
 
-/* S04 */
+/* Bagian */
 .ibx-compare, .salam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
 .salam-grid { margin-top: .7rem; }
 .ibx { border-radius: var(--r-sm); padding: .65rem; border: 2px solid; }
@@ -410,7 +410,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .salam h4 { color: var(--maroon-2); font-size: .86rem; margin-bottom: .2rem; }
 .salam .code { display: block; background: #fff; padding: .4rem .55rem; margin-top: .35rem; border-radius: 8px; }
 
-/* S05/S07/S10 email */
+/* Bagian email */
 .hs-wrap, .spot-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: .9rem; align-items: start; }
 .mail { background: #fff; border-radius: 13px; border: 1px solid var(--line); box-shadow: var(--shadow); padding: .5rem .8rem .8rem; }
 .mail-meta { display: flex; gap: .6rem; align-items: center; padding: .4rem 0; border-bottom: 1px solid var(--line); font-size: .84rem; flex-wrap: wrap; }
@@ -433,7 +433,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .hs-list li.on { color: var(--maroon-2); font-weight: 600; }
 .hs-list li.on .ic { color: var(--ok); width: 14px; height: 14px; }
 
-/* S06 */
+/* Bagian */
 .compose { background: #fff; border-radius: 13px; border: 1px solid var(--line); box-shadow: var(--shadow); overflow: hidden; }
 .compose-top { display: flex; align-items: center; gap: .45rem; background: var(--maroon-2); color: var(--cream); padding: .45rem .8rem; font-weight: 600; font-size: .82rem; }
 .cf { display: flex; gap: .6rem; padding: .4rem .8rem; border-bottom: 1px solid var(--line); font-size: .84rem; }
@@ -447,7 +447,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .choice-group { margin-top: .8rem; }
 .choice-group h4 { font-size: .9rem; color: var(--maroon-2); margin-bottom: .4rem; }
 
-/* S07 */
+/* Bagian */
 .sp { display: block; width: 100%; text-align: left; background: none; border: 2px solid transparent; border-radius: 8px; padding: .3rem .45rem; cursor: pointer; font-size: .86rem; line-height: 1.45; position: relative; transition: background .2s, border-color .2s; }
 .mail-meta .sp, .mail-attach .sp { width: auto; flex: 1; }
 .sp:hover { background: var(--gold-s); }
@@ -464,7 +464,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .found-list li small { color: var(--muted); }
 .found-list li.empty { border-left-color: var(--sand); color: var(--muted); box-shadow: none; background: transparent; }
 
-/* S08 */
+/* Bagian */
 .practice { display: grid; grid-template-columns: 12rem 1fr; gap: .9rem; align-items: start; }
 .vacancy { background: var(--maroon-2); color: var(--cream); border-radius: var(--r-sm); padding: .8rem; }
 .vacancy small { color: var(--gold-l); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
@@ -485,7 +485,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .pc-mail p { margin: 0 0 .5em; word-wrap: break-word; }
 .pc-note { grid-column: 1 / -1; display: flex; gap: .4rem; align-items: center; background: var(--info-bg); padding: .5rem .7rem; border-radius: var(--r-sm); margin: 0; font-size: .84rem; }
 
-/* S09 */
+/* Bagian */
 .cc-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: .9rem; align-items: center; }
 .cc-diagram { background: var(--card); border-radius: var(--r-sm); padding: .6rem; display: grid; justify-items: center; gap: .5rem; border: 1px solid var(--line); }
 .cc-diagram svg { width: 100%; }
@@ -532,7 +532,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .days span.off { background: var(--bad-bg); color: var(--bad); }
 .days small { color: var(--muted); margin-left: .3rem; font-size: .74rem; }
 
-/* S10 */
+/* Bagian */
 .sc-chat { display: flex; gap: .6rem; align-items: flex-start; }
 .sc-av { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--gold-s); color: var(--maroon); font-weight: 800; display: grid; place-items: center; flex: none; font-size: .8rem; }
 .bubble { background: var(--card); border: 1px solid var(--line); border-radius: 4px 14px 14px 14px; padding: .55rem .8rem; max-width: 34rem; }
@@ -552,7 +552,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .bcard.no { border-color: var(--bad); background: var(--bad-bg); }
 .followup { margin-top: .6rem; }
 
-/* S11 */
+/* Bagian */
 .steps { display: flex; gap: .3rem; margin-bottom: .6rem; }
 .step { flex: 1; height: 6px; border-radius: 6px; background: var(--sand); border: 0; padding: 0; cursor: pointer; }
 .step:disabled { cursor: default; }
@@ -631,7 +631,7 @@ code, .code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:
 .rec-link { display: inline-flex; align-items: center; gap: .35rem; background: var(--card); border: 1px solid var(--line); padding: .35em .8em; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .8rem; color: var(--maroon); }
 .rec-link:hover { border-color: var(--maroon); }
 
-/* S13 */
+/* Bagian */
 .infog { background: var(--maroon-2); color: var(--cream); border-radius: var(--r); padding: .9rem; }
 .ig-head { display: flex; gap: .6rem; align-items: center; margin-bottom: .7rem; }
 .ig-head b { display: block; letter-spacing: .08em; font-size: .9rem; }
@@ -804,7 +804,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
   .cat-card header { grid-template-columns: auto 1fr; }
   .cat-p { grid-column: 1 / -1; justify-self: start; }
   .big-card { flex-direction: column; }
-  .s02, .dnd, .hs-wrap, .spot-wrap, .practice, .cc-wrap, .time-wrap, .ibx-compare, .salam-grid, .pcompare, .branch, .ig-grid, .how, .gloss, .cm-cols, .ev-result, .ev-stats, .vs { grid-template-columns: 1fr; }
+  .laptop-info, .dnd, .hs-wrap, .spot-wrap, .practice, .cc-wrap, .time-wrap, .ibx-compare, .salam-grid, .pcompare, .branch, .ig-grid, .how, .gloss, .cm-cols, .ev-result, .ev-stats, .vs { grid-template-columns: 1fr; }
   .ev-nav { grid-template-columns: repeat(8, 1fr); }
   .mrow { grid-template-columns: 1fr; }
   .srow2 { flex-direction: column; align-items: flex-start; }
@@ -825,7 +825,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
   body.print-infog .infog { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
-/* Daftar scene: selalu terbuka di laptop, bisa dibuka-tutup di layar kecil */
+/* Daftar bagian: selalu terbuka di laptop, bisa dibuka-tutup di layar kecil */
 .side-list > summary { display: none; }
 @media (max-width: 1080px) {
   .side-list > summary { display: flex; align-items: center; gap: .5rem; list-style: none; cursor: pointer; font-weight: 700; font-size: .9rem; color: var(--maroon-2); padding: .55rem .7rem; border-radius: 10px; background: var(--paper); }
@@ -836,7 +836,7 @@ body.settled .sheet > *, body.settled .side, body.settled .hero-text > *, body.s
 }
 
 /* =========================================================================
-   HALAMAN SCENE GAYA APLIKASI EMAIL
+   HALAMAN Bagian GAYA APLIKASI EMAIL
    ========================================================================= */
 /* Sidebar: kotak masuk */
 .ib-head { display: flex; gap: .7rem; align-items: center; margin-bottom: .8rem; }
@@ -1136,7 +1136,7 @@ a.how-item { color: inherit; text-decoration: none; border-radius: 14px; transit
 a.how-item:hover { background: rgba(226, 176, 74, .12); transform: translateX(3px); }
 a.brand-mark { text-decoration: none; }
 
-/* S01 — pengantar */
+/* Bagian — pengantar */
 .intro1 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; align-items: start; }
 .i1-q { font-size: 1.25rem; font-weight: 700; color: var(--maroon-2); line-height: 1.4; margin: 0 0 1rem; }
 .i1-mails { display: grid; gap: .6rem; margin-bottom: 1rem; }
@@ -1302,7 +1302,7 @@ a.brand-mark { text-decoration: none; }
   .home-fit .sc-ic { margin-bottom: .45rem; }
 }
 
-/* ---------- Mini preview scene ---------- */
+/* ---------- Mini preview bagian ---------- */
 .peek { position: fixed; z-index: 90; left: 0; top: 0; width: min(300px, calc(100vw - 16px)); padding: .85rem .95rem .9rem; border-radius: 14px; background: var(--card); color: var(--ink); border: 1px solid rgba(92, 21, 34, .18); box-shadow: 0 18px 40px -14px rgba(36, 10, 16, .45), 0 2px 6px rgba(36, 10, 16, .08); pointer-events: none; visibility: hidden; transform: translateY(-4px) scale(.98); }
 .peek.up { transform: translateY(4px) scale(.98); }
 .peek.show { visibility: visible; transform: none; transition: transform .18s var(--ease); }
@@ -1436,7 +1436,7 @@ body.settled .r2-stop { animation: none; }
 .dz.lock .dz-card { cursor: default; }
 @media (max-width: 640px) { .dz-slot { grid-template-columns: 1fr; gap: .4rem; } }
 
-/* ---------- S12 hasil latihan ---------- */
+/* ---------- Bagian hasil latihan ---------- */
 .lat-done { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.1rem; padding: 1rem 1.2rem; margin-bottom: 1rem; border-radius: 16px; background: var(--ok-bg); border: 1px solid rgba(47, 111, 78, .3); animation: popIn .4s var(--ease); }
 .lat-done.no { background: var(--bad-bg); border-color: rgba(179, 65, 47, .3); }
 .ld-score { display: grid; place-items: center; width: 4.6rem; height: 4.6rem; border-radius: 50%; background: #fff; text-align: center; line-height: 1.1; }
@@ -1446,7 +1446,7 @@ body.settled .r2-stop { animation: none; }
 .ld-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
 @media (max-width: 640px) { .lat-done { grid-template-columns: auto 1fr; } .ld-btns { grid-column: 1 / -1; } }
 
-/* ---------- S13 aktivitas interaktif ---------- */
+/* ---------- Bagian aktivitas interaktif ---------- */
 .akt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .9rem; margin: .8rem 0; }
 .akt-card { position: relative; display: grid; gap: .3rem; justify-items: start; text-align: left; padding: 1.1rem 1.1rem 1rem; border-radius: 18px; background: var(--card); border: 1.5px solid var(--line); color: var(--ink); font: inherit; cursor: pointer; box-shadow: var(--shadow); transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
 .akt-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
@@ -1474,7 +1474,7 @@ body.settled .r2-stop { animation: none; }
 .fix-seg.fixed { background: var(--ok-bg); border: 1.5px solid var(--ok); color: var(--ok); font-weight: 600; }
 .opt.no { border-color: var(--bad); background: var(--bad-bg); }
 
-/* ---------- S14 gerbang evaluasi ---------- */
+/* ---------- Bagian gerbang evaluasi ---------- */
 .gate { display: grid; gap: .7rem; }
 .gate-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .9rem; padding: .9rem 1rem; border-radius: 14px; background: var(--paper); border: 1.5px solid var(--line); animation: popIn .45s var(--ease) both; animation-delay: calc(var(--i) * 180ms); }
 .gate-row b { display: block; color: var(--maroon-2); font-size: .95rem; line-height: 1.35; }
@@ -1916,12 +1916,12 @@ body.is-home .nav-in > .brand .brand-text small { color: rgba(251, 245, 236, .65
 .gh-h.gh-brand { line-height: 1; letter-spacing: .015em; }
 .gh-h.gh-brand > span { display: block; }
 .gh-h.gh-brand > span + span { margin-top: .04em; }
-/* posisi belajar di halaman scene: progress bar, tanpa angka dan panah */
+/* posisi belajar di halaman bagian: progress bar, tanpa angka dan panah */
 .mv-prog { flex: 1; max-width: 320px; margin-left: auto; height: 8px; border-radius: 99px; background: var(--sand); overflow: hidden; }
 .mv-prog i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--maroon), var(--gold-l)); transition: width .8s var(--ease); }
 
 /* =========================================================================
-   EVALUASI: pos pemeriksaan (scene 14) dan mode ujian (scene 15)
+   EVALUASI: pos pemeriksaan syarat dan mode ujian
    ========================================================================= */
 .evx { padding-top: 1.4rem; }
 .evx-act { display: block; }
