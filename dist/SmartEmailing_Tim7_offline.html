@@ -2504,6 +2504,39 @@ ol.steps { gap: 0; }
 @media (max-width: 600px) { .peta { padding: .5rem .4rem .8rem; } .pt-pan { flex-direction: column; align-items: flex-start; gap: .6rem; } .pt-pan .btn { margin-left: 0; } }
 @media (prefers-reduced-motion: reduce) { .pt-n, .pt-e, .pt-lab { transition: none; } .pt-n:hover, .pt-n:focus-visible, .pt-n.pin { transform: none; } }
 
+/* =========================================================================
+   DIALOG KONFIRMASI (tanya)
+   ========================================================================= */
+.dlg { z-index: 200; }
+.btn-danger { background: var(--bad); color: #fff; box-shadow: var(--sh-1); }
+.btn-danger:hover { background: #962f20; transform: translateY(-1px); }
+.exm-cbox.danger .exm-cic { background: var(--bad-bg); color: var(--bad); }
+.exm-cbox .row-btns { justify-content: center; flex-wrap: wrap; margin-top: .4rem; }
+.btn[aria-busy="true"] { cursor: progress; opacity: .7; }
+
+/* =========================================================================
+   TENTANG: TIM PENGEMBANG
+   ========================================================================= */
+.tm { display: grid; gap: .8rem; }
+.tm-head { display: flex; align-items: baseline; gap: .6rem; }
+.tm-head h2 { margin: 0; font: 800 1.15rem/1.2 var(--f-head); color: var(--maroon-2); }
+.tm-head small { font-size: .8rem; font-weight: 600; color: var(--gold-ink); }
+.tm-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
+.tm-card { display: grid; justify-items: center; gap: .15rem; padding: .9rem .9rem 1.1rem; text-align: center; border-radius: var(--r); background: var(--card); border: 1px solid var(--line); transition: transform var(--t) var(--ease), border-color var(--t); }
+.tm-card:hover { transform: translateY(-2px); border-color: rgba(201, 149, 46, .6); }
+.tm-ph { position: relative; width: 100%; aspect-ratio: 4 / 5; margin: 0 0 .7rem; border-radius: var(--r-sm); overflow: hidden; background: var(--paper); outline: 2px solid var(--gold); outline-offset: 4px; display: grid; place-items: end center; transition: outline-offset var(--t) var(--ease); }
+.tm-card:hover .tm-ph { outline-offset: 2px; }
+.tm-ph::before { content: ''; position: absolute; inset: 0; border: 2px dashed rgba(122, 31, 46, .22); border-radius: inherit; }
+.tm-sil { width: 62%; fill: rgba(122, 31, 46, .16); }
+.tm-ph figcaption { position: absolute; top: .55rem; left: 50%; transform: translateX(-50%); padding: .15rem .6rem; border-radius: var(--r-pill); background: var(--card); color: var(--gold-ink); font-size: .75rem; font-weight: 600; }
+.tm-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tm-ph.has::before, .tm-ph.has .tm-sil, .tm-ph.has figcaption { display: none; }
+.tm-nm { color: var(--maroon-2); font: 700 .95rem/1.3 var(--f-head); }
+.tm-nim { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+@media (max-width: 900px) { .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .tm-card { padding: .7rem .6rem .9rem; } .tm-nm { font-size: .85rem; } }
+@media (prefers-reduced-motion: reduce) { .tm-card, .tm-ph { transition: none; } .tm-card:hover { transform: none; } }
+
 </style>
 </head>
 <body>
@@ -3924,11 +3957,6 @@ ACT['evaluasi-akhir'] = (el, done) => {
         <details class="exm-help" ${i === 0 ? 'open' : ''}><summary>${icon('help')} Cara menjawab</summary><p>${EV_CARA[q.type] || 'Jawab sesuai perintah soal.'}</p></details>
       </div>
       <footer class="exm-foot"><small>${i} dari ${N} jawaban tersimpan</small><button type="button" class="gbtn y" data-save ${qAnswered(q, cur) ? '' : 'disabled'}>${icon('check')} Simpan jawaban</button></footer>
-      <div class="exm-confirm" id="exmConfirm" hidden><div class="exm-cbox" role="dialog" aria-modal="true" aria-labelledby="exmCt">
-        <span class="exm-cic">${icon('lock')}</span><b id="exmCt">Simpan jawaban soal ${i + 1}?</b>
-        <p>Setelah disimpan, jawaban ini tidak bisa diubah lagi.${i === N - 1 ? ' Ini soal terakhir, jadi nilaimu langsung dihitung.' : ''}</p>
-        <div class="row-btns"><button type="button" class="btn btn-outline" data-cancel>Cek lagi</button><button type="button" class="btn btn-primary" data-confirm>${icon('check')} Ya, simpan</button></div>
-      </div></div>
     </section>`;
     qRender($('#qbox', el), q, cur === null ? a : cur, { mode: 'ujian', onChange: (v, soft) => { E.ans[i] = v; save(); if (!soft) render(); else { const b = $('[data-save]', el); if (b) b.disabled = !qAnswered(q, v); } } });
     anim('.exm-card', [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], 380);
@@ -3965,10 +3993,15 @@ ACT['evaluasi-akhir'] = (el, done) => {
   el.onclick = e => {
     if (e.target.closest('[data-start]')) { E.started = true; save(); sfx(); render(); scrollTo({ top: 0 }); return; }
     if (e.target.closest('[data-retry]')) { EVALUASI.forEach(q => { q._ord = null; }); state.ev = { v: 3, i: 0, ans: {}, done: false, started: true }; save(); updateBar(); ACT['evaluasi-akhir'](el, done); return; }
-    const box = $('#exmConfirm', el);
-    if (e.target.closest('[data-save]')) { sfx(); if (box) { box.hidden = false; $('[data-confirm]', box).focus(); } return; }
-    if (e.target.closest('[data-cancel]') || (box && e.target === box)) { box.hidden = true; return; }
-    if (e.target.closest('[data-confirm]')) { sfx('ok'); E.i++; save(); if (E.i >= N) submit(); else { render(); scrollTo({ top: 0 }); } }
+    const sv = e.target.closest('[data-save]');
+    if (sv && !sv.disabled) {
+      sfx();
+      const k = E.i;
+      tanya({ back: sv, ic: 'lock', title: `Simpan jawaban soal ${k + 1}?`, body: 'Setelah disimpan, jawaban ini tidak bisa diubah lagi.' + (k === N - 1 ? ' Ini soal terakhir, jadi nilaimu langsung dihitung.' : ''), ok: 'Ya, simpan', cancel: 'Cek lagi' }).then(ya => {
+        if (!ya || E.i !== k) return;
+        sfx('ok'); E.i++; save(); if (E.i >= N) submit(); else { render(); scrollTo({ top: 0 }); }
+      });
+    }
   };
 };
 
@@ -4228,8 +4261,14 @@ function retrySet(id) {
 document.addEventListener('click', e => {
   const r = e.target.closest('[data-retry-set]');
   if (r) {
-    if (!confirm('Ulangi latihan ini? Jawaban dan skor latihan ini akan dihapus' + (gateOk() && !evalPassed() ? ', dan syarat evaluasi bisa belum terpenuhi lagi.' : '.'))) { e.preventDefault(); return; }
-    retrySet(r.dataset.retrySet); return;
+    e.preventDefault();
+    tanya({ back: r, ic: 'refresh', title: 'Ulangi latihan ini?', body: 'Jawaban dan skor latihan ini akan dihapus' + (gateOk() && !evalPassed() ? ', dan syarat evaluasi bisa belum terpenuhi lagi.' : '.'), ok: 'Ya, ulangi' }).then(ya => {
+      if (!ya) return;
+      retrySet(r.dataset.retrySet);
+      const h = r.getAttribute('href');
+      if (h && location.hash !== h) location.hash = h; else route();
+    });
+    return;
   }
   const a = e.target.closest('[data-akt-open]'); if (a) { state.aktOpen = a.dataset.aktOpen; save(); }
 });
@@ -4288,9 +4327,9 @@ function mountQuiz(S) {
     if (dir && !reduced) { const c = $('.qz-card', box); try { c.animate([{ opacity: 0, transform: `translateX(${dir * 40}px)` }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' }); } catch (e) { /* tanpa animasi */ } }
   };
   const go = j => { if (j < 0 || j >= n || j === inf.i) return; dir = j > inf.i ? 1 : -1; inf.i = j; save(); sfx(); render(); };
-  const finish = () => {
+  const finish = async () => {
     const sisa = S.ix.filter(x => L.res[x] === undefined).length;
-    if (sisa && !confirm(`Masih ada ${sisa} soal yang belum dijawab dan akan dihitung salah. Tetap selesai?`)) return;
+    if (sisa && !(await tanya({ ic: 'flag', title: 'Selesaikan latihan?', body: `Masih ada ${sisa} soal yang belum dijawab dan akan dihitung salah.`, ok: 'Tetap selesai', cancel: 'Kembali menjawab' }))) return;
     const benar = S.ix.filter(x => L.res[x] === true).length, now = Date.now();
     const hasil = { benar, n, at: now, dur: inf.startedAt ? now - inf.startedAt : null, ok: S.ix.map(x => L.res[x] === true), ans: S.ix.map(x => (L.res[x] === undefined || L.ans[x] === undefined ? null : L.ans[x])) };
     inf.tries = inf.tries || []; inf.tries.push(hasil); if (inf.tries.length > 20) inf.tries.shift();
@@ -4509,11 +4548,72 @@ function mountProgres() {
 /* =========================================================================
    PENGATURAN
    ========================================================================= */
-function resetAll() {
-  if (!confirm('Reset progres? Nama, bagian selesai, jawaban, nilai, dan riwayat aktivitas di browser ini akan dihapus. Tindakan ini tidak bisa dibatalkan.')) return;
-  const keep = { sound: state.sound, ui: state.ui };
-  state = fresh(); Object.assign(state, keep); save(); updateBar(); toast('Progres sudah direset. Isi namamu untuk mulai lagi.');
-  /* kembali ke kondisi awal: Beranda dengan kolom nama */
+/* ---------- Dialog konfirmasi (pengganti confirm() bawaan browser) ----------
+   tanya({ ic, title, body, ok, cancel, danger, back }) -> Promise<boolean>. back = elemen tujuan fokus setelah ditutup.
+   Esc, klik latar, dan tombol batal = false. Fokus dikunci di dalam dialog lalu dikembalikan. */
+function tanya({ ic = 'help', title, body = '', ok = 'Ya', cancel = 'Batal', danger = false, back = null }) {
+  return new Promise(resolve => {
+    const prev = back || document.activeElement;
+    const wrap = document.createElement('div');
+    wrap.className = 'exm-confirm dlg';
+    wrap.innerHTML = `<div class="exm-cbox${danger ? ' danger' : ''}" role="${danger ? 'alertdialog' : 'dialog'}" aria-modal="true" aria-labelledby="dlgT" aria-describedby="dlgB">
+      <span class="exm-cic">${icon(ic)}</span><b id="dlgT">${title}</b><p id="dlgB">${body}</p>
+      <div class="row-btns"><button type="button" class="btn btn-outline" data-no>${cancel}</button><button type="button" class="btn ${danger ? 'btn-danger' : 'btn-primary'}" data-yes>${ok}</button></div></div>`;
+    let selesai = false;
+    const tutup = hasil => {
+      if (selesai) return;
+      selesai = true;
+      document.removeEventListener('keydown', onKey, true);
+      wrap.parentNode.removeChild(wrap);
+      if (prev && prev.isConnected) prev.focus();
+      resolve(hasil);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') { e.preventDefault(); tutup(false); return; }
+      if (e.key !== 'Tab') return;
+      const f = $$('button', wrap), k = f.indexOf(document.activeElement);
+      e.preventDefault(); f[(k + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    };
+    wrap.addEventListener('click', e => {
+      if (e.target === wrap || e.target.closest('[data-no]')) tutup(false);
+      else if (e.target.closest('[data-yes]')) tutup(true);
+    });
+    document.addEventListener('keydown', onKey, true);
+    document.body.appendChild(wrap);
+    /* tindakan yang menghapus data: fokus awal di "Batal" supaya Enter tidak langsung menghapus */
+    $(danger ? '[data-no]' : '[data-yes]', wrap).focus();
+  });
+}
+
+let resetJalan = false;
+async function resetAll(e) {
+  const btn = e && e.currentTarget;
+  if (resetJalan) return;
+  const ya = await tanya({ ic: 'trash', danger: true, title: 'Reset progres belajar?',
+    body: 'Bagian yang sudah selesai, jawaban latihan, aktivitas, nilai evaluasi, XP, lencana, dan riwayat belajar di browser ini akan dikembalikan ke awal. Nama dan pengaturan tampilanmu tetap disimpan. Tindakan ini tidak bisa dibatalkan.',
+    ok: 'Ya, reset progres', back: btn });
+  if (!ya || resetJalan) return;
+  resetJalan = true;
+  const label = btn && btn.innerHTML;
+  if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); btn.textContent = 'Mereset…'; }
+  const lama = state, nama = namaUser();
+  /* yang dipertahankan: nama peserta, suara, dan setelan tampilan. Sisanya kembali ke kondisi awal. */
+  state = Object.assign(fresh(), { sound: lama.sound, ui: lama.ui || {} }, nama ? { game: { nama } } : {});
+  let tersimpan = false;
+  try {
+    localStorage.setItem(KEY, JSON.stringify(state));
+    tersimpan = localStorage.getItem(KEY) === JSON.stringify(state);
+  } catch (err) { tersimpan = false; }
+  if (btn && btn.isConnected) { btn.disabled = false; btn.removeAttribute('aria-busy'); btn.innerHTML = label; }
+  resetJalan = false;
+  if (!tersimpan) {
+    state = lama;
+    toast('Progres gagal direset karena browser tidak mengizinkan penyimpanan. Coba lagi, atau keluar dari mode privat.');
+    return;
+  }
+  editNama = false;
+  save(); updateBar();
+  toast('Progres sudah direset. Kamu bisa mulai belajar lagi dari awal.');
   if (location.hash === '#/' || !location.hash) route(); else location.hash = '#/';
 }
 
@@ -5077,7 +5177,7 @@ function viewPengaturan() {
       ${sw('setCalm', !!UI().calm, 'eyeoff', 'Kurangi animasi', 'Matikan efek gerak seperti konfeti dan transisi antarhalaman.')}
     </section>
     <section class="card"><h2 class="prg-k">Data belajar</h2>
-      <div class="set2"><span class="set2-ic">${icon('trash')}</span><span class="set2-t"><b>Reset progres</b><small>Nama, bagian selesai, jawaban, nilai, dan riwayat aktivitas di browser ini akan dihapus. Ada konfirmasi dulu.</small></span><button type="button" class="btn btn-outline btn-sm danger" id="setReset">Reset progres</button></div>
+      <div class="set2"><span class="set2-ic">${icon('trash')}</span><span class="set2-t"><b>Reset progres</b><small>Kembalikan bagian selesai, jawaban, nilai, XP, dan riwayat belajar ke awal. Nama dan pengaturan tetap tersimpan. Ada konfirmasi dulu.</small></span><button type="button" class="btn btn-outline btn-sm danger" id="setReset">Reset progres</button></div>
     </section>
   </div>`;
 }
@@ -5088,6 +5188,19 @@ function mountPengaturan() {
   $('#setReset').onclick = resetAll;
 }
 const applyCalm = () => document.body.classList.toggle('calm', !!UI().calm);
+/* Anggota tim. Foto: simpan di assets/tim/ (potret 4:5, misalnya 800x1000 px) lalu isi foto: 'assets/tim/nama.jpg'.
+   Selama foto belum ada, bingkai menampilkan siluet. */
+const TIM = [
+  { nama: 'Joice Aurel Syalom', nim: '1101624061', foto: '' },
+  { nama: 'Khairun Nisa', nim: '1101624018', foto: '' },
+  { nama: 'Nadya Theresia Silalahi', nim: '1101624083', foto: '' },
+  { nama: 'Syahla Adfa Adinda', nim: '1101624042', foto: '' },
+];
+const SILUET = '<svg class="tm-sil" viewBox="0 0 80 100" aria-hidden="true"><circle cx="40" cy="36" r="17"/><path d="M8 100c0-21 14-35 32-35s32 14 32 35z"/></svg>';
+const kartuTim = a => `<li class="tm-card">
+  <figure class="tm-ph${a.foto ? ' has' : ''}">${SILUET}${a.foto ? `<img src="${a.foto}" alt="Foto ${a.nama}" loading="lazy" onerror="this.parentNode.classList.remove('has'); this.parentNode.removeChild(this)">` : ''}<figcaption>Foto</figcaption></figure>
+  <b class="tm-nm">${a.nama}</b><small class="tm-nim">NIM ${a.nim}</small></li>`;
+
 function viewTentang() {
   const isi = [[MATERI_BAGIAN.length, 'bagian materi'], [LATIHAN.length, 'soal latihan'], [3, 'aktivitas'], [EVALUASI.length, 'soal evaluasi']];
   const interaksi = ['Seret & letakkan', 'Klik informasi', 'Temukan kesalahan', 'Simulasi email', 'Skenario bercabang', 'Kuis'];
@@ -5095,10 +5208,12 @@ function viewTentang() {
     ${pageHero('tentang', '#c2457e', 'Lainnya', 'Tentang & tim', 'Media pembelajaran interaktif buatan Kelompok 7.')}
     <section class="ab-hero"><span class="ab-m">${MASCOT}</span><div><small class="ph-k">Judul proyek</small><h2>Pengembangan Pelatihan Smart Emailing</h2><p>Membuat email profesional berbasis multimedia untuk fresh graduate.</p></div></section>
     <div class="ab-nums">${isi.map(([n, t]) => `<div><b data-count="${n}">${n}</b><small>${t}</small></div>`).join('')}</div>
+    <section class="tm" aria-labelledby="tmH"><div class="tm-head"><h2 id="tmH">Tim pengembang</h2><small>Kelompok 7</small></div>
+      <ul class="tm-grid">${TIM.map(kartuTim).join('')}</ul></section>
     <div class="pg-grid">
       <section class="card"><h2 class="prg-k">Tujuan umum</h2><p>Fresh graduate mampu merancang email lamaran kerja dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p><a class="card-link" href="#/tujuan">Lihat tujuan per bagian ${icon('right')}</a></section>
       <section class="card"><h2 class="prg-k">Format media</h2><p>Multimedia interaktif non-linear untuk belajar mandiri.</p><div class="ab-chips">${interaksi.map(t => `<span>${t}</span>`).join('')}</div></section>
-      <section class="card"><h2 class="prg-k">Tim</h2><p><b>Kelompok 7</b>. Storyboard disusun dengan template non-linear (Imbar dkk., 2021).</p></section>
+      <section class="card"><h2 class="prg-k">Metode</h2><p>Storyboard disusun dengan template non-linear (Imbar dkk., 2021).</p></section>
       <section class="card"><h2 class="prg-k">Teknologi</h2><p>HTML, CSS, dan JavaScript tanpa framework. Bisa dibuka tanpa internet, dan tersedia sebagai paket SCORM 1.2 untuk LMS.</p></section>
     </div>
   </div>`;

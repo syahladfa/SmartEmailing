@@ -2493,3 +2493,36 @@ ol.steps { gap: 0; }
 .pt-lg-k { color: var(--gold-ink); font-style: italic; }
 @media (max-width: 600px) { .peta { padding: .5rem .4rem .8rem; } .pt-pan { flex-direction: column; align-items: flex-start; gap: .6rem; } .pt-pan .btn { margin-left: 0; } }
 @media (prefers-reduced-motion: reduce) { .pt-n, .pt-e, .pt-lab { transition: none; } .pt-n:hover, .pt-n:focus-visible, .pt-n.pin { transform: none; } }
+
+/* =========================================================================
+   DIALOG KONFIRMASI (tanya)
+   ========================================================================= */
+.dlg { z-index: 200; }
+.btn-danger { background: var(--bad); color: #fff; box-shadow: var(--sh-1); }
+.btn-danger:hover { background: #962f20; transform: translateY(-1px); }
+.exm-cbox.danger .exm-cic { background: var(--bad-bg); color: var(--bad); }
+.exm-cbox .row-btns { justify-content: center; flex-wrap: wrap; margin-top: .4rem; }
+.btn[aria-busy="true"] { cursor: progress; opacity: .7; }
+
+/* =========================================================================
+   TENTANG: TIM PENGEMBANG
+   ========================================================================= */
+.tm { display: grid; gap: .8rem; }
+.tm-head { display: flex; align-items: baseline; gap: .6rem; }
+.tm-head h2 { margin: 0; font: 800 1.15rem/1.2 var(--f-head); color: var(--maroon-2); }
+.tm-head small { font-size: .8rem; font-weight: 600; color: var(--gold-ink); }
+.tm-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
+.tm-card { display: grid; justify-items: center; gap: .15rem; padding: .9rem .9rem 1.1rem; text-align: center; border-radius: var(--r); background: var(--card); border: 1px solid var(--line); transition: transform var(--t) var(--ease), border-color var(--t); }
+.tm-card:hover { transform: translateY(-2px); border-color: rgba(201, 149, 46, .6); }
+.tm-ph { position: relative; width: 100%; aspect-ratio: 4 / 5; margin: 0 0 .7rem; border-radius: var(--r-sm); overflow: hidden; background: var(--paper); outline: 2px solid var(--gold); outline-offset: 4px; display: grid; place-items: end center; transition: outline-offset var(--t) var(--ease); }
+.tm-card:hover .tm-ph { outline-offset: 2px; }
+.tm-ph::before { content: ''; position: absolute; inset: 0; border: 2px dashed rgba(122, 31, 46, .22); border-radius: inherit; }
+.tm-sil { width: 62%; fill: rgba(122, 31, 46, .16); }
+.tm-ph figcaption { position: absolute; top: .55rem; left: 50%; transform: translateX(-50%); padding: .15rem .6rem; border-radius: var(--r-pill); background: var(--card); color: var(--gold-ink); font-size: .75rem; font-weight: 600; }
+.tm-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tm-ph.has::before, .tm-ph.has .tm-sil, .tm-ph.has figcaption { display: none; }
+.tm-nm { color: var(--maroon-2); font: 700 .95rem/1.3 var(--f-head); }
+.tm-nim { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+@media (max-width: 900px) { .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .tm-card { padding: .7rem .6rem .9rem; } .tm-nm { font-size: .85rem; } }
+@media (prefers-reduced-motion: reduce) { .tm-card, .tm-ph { transition: none; } .tm-card:hover { transform: none; } }
