@@ -2252,16 +2252,205 @@ function viewTujuan() {
 }
 
 /* ---------- Peta konsep ---------- */
+const PETA_TOPIK = {
+  m1: [[['Kegunaan email', 'di dunia kerja'], 'kegunaan-email', 'Peran email sebagai saluran resmi di dunia kerja.'],
+    [['Bagian-bagian email'], 'bagian-email', 'Subject, salam, isi, penutup, dan tanda tangan.'],
+    [['Subject yang efektif'], 'subject-dan-salam', 'Subject singkat yang langsung menyebut posisi dan namamu.'],
+    [['Salam pembuka', 'dan penutup'], 'subject-dan-salam', 'Sapaan dan penutup yang sopan untuk HR.']],
+  m2: [[['Fungsi dan susunan', 'email lamaran'], 'susunan-email', 'Urutan isi email lamaran yang enak dibaca HR.'],
+    [['Memperkenalkan diri'], 'perkenalan-dan-cv', 'Kalimat perkenalan singkat yang relevan dengan posisi.'],
+    [['Melampirkan CV', 'dan portofolio'], 'perkenalan-dan-cv', 'Cara menyebut dan menamai lampiran CV dan portofolio.'],
+    [['Kesalahan yang', 'sering terjadi'], 'kesalahan-email', 'Kesalahan kecil yang membuat lamaran dilewati HR.'],
+    [['Praktik menulis', 'email lamaran'], 'praktik-email', 'Tulis email lamaranmu sendiri sampai siap dikirim.']],
+  m3: [[['CC dan BCC'], 'cc-bcc-waktu', 'Kapan memakai CC dan kapan BCC.'],
+    [['Waktu mengirim email'], 'cc-bcc-waktu', 'Kirim di jam kerja, antara 08.00 dan 17.00.'],
+    [['Follow-up ke HR'], 'follow-up', 'Menanyakan kabar lamaran setelah 5–7 hari kerja tanpa balasan.'],
+    [['Bahasa formal', 'dan sopan'], 'bahasa-formal', 'Pilihan kata yang formal tanpa terdengar kaku.']],
+};
+const PETA_UJI = [['Latihan soal', 'latihan-soal', 'Soal latihan dari ketiga materi, target minimal 70% benar.'],
+  ['Aktivitas interaktif', 'aktivitas-interaktif', 'Tiga aktivitas interaktif, syarat sebelum evaluasi.'],
+  ['Evaluasi akhir', 'evaluasi-akhir', `Empat soal akhir dengan nilai minimal ${KKM}.`],
+  ['Sertifikat', 'penutup', 'Sertifikat dan rangkuman terbuka setelah kamu lulus evaluasi.']];
+const PETA_ST = { done: 'Selesai', next: 'Berikutnya', open: 'Terbuka', lock: 'Terkunci' };
+
+/* Susun posisi simpul dan garis. Lebar: tiga kolom. Sempit: satu kolom vertikal. */
+function petaLayout(sempit) {
+  const N = [], E = [], L = [];
+  const node = (id, x, y, w, h, lines, o = {}) => N.push({ id, x, y, w, h, lines, ...o });
+  const edge = (a, b, d, k = '') => (E.push({ a, b, d, k }), E.length - 1);
+  const lab = (x, y, t, es, o = {}) => L.push({ x, y, t, es, ...o });
+  const M = MATERI.filter(m => PETA_TOPIK[m.id]);
+  const kid = (i, j) => `m${i}k${j}`;
+  let W, H;
+  if (!sempit) {
+    W = 680;
+    node('r', 230, 20, 220, 52, ['Smart Emailing'], { kind: 'root' });
+    const rm = [];
+    M.forEach((m, i) => {
+      const c = 113 + 227 * i, id = 'm' + i;
+      node(id, c - 106, 138, 212, 54, [m.title], { kind: 'materi', m });
+      rm.push(edge('r', id, c === 340 ? 'M340 72V138' : `M340 72V108Q340 118 ${c < 340 ? 330 : 350} 118H${c < 340 ? c + 10 : c - 10}Q${c} 118 ${c} 128V138`));
+      const ke = PETA_TOPIK[m.id].map(([ls, b, d], j) => {
+        const y = 236 + 48 * j, mid = y + 20;
+        node(kid(i, j), c - 78, y, 176, 40, ls, { b, d, m });
+        return edge(id, kid(i, j), `M${c} 192V218Q${c} 228 ${c - 10} 228H${c - 80}Q${c - 90} 228 ${c - 90} 238V${mid - 10}Q${c - 90} ${mid} ${c - 80} ${mid}H${c - 78}`);
+      });
+      lab(c + 6, 214, 'membahas', ke, { a: 'start' });
+    });
+    lab(340, 99, 'terdiri atas', rm, { bg: 1 });
+    lab(62, 490, 'diterapkan di', [edge(kid(0, 3), kid(1, 4), 'M123 420C123 476 200 460 258 460', 'x')], { a: 'start' });
+    lab(618, 490, 'diterapkan di', [edge(kid(2, 3), kid(1, 4), 'M557 420C557 476 480 460 442 460', 'x')], { a: 'end' });
+    PETA_UJI.forEach(([t, b, d], i) => node('u' + i, [18, 188, 358, 528][i], 530, i < 3 ? 124 : 134, 40, [t], { b, d, rx: 20 }));
+    lab(346, 494, 'diuji melalui', [edge(kid(1, 4), 'u0', 'M340 468V502Q340 512 330 512H90Q80 512 80 522V526', 'a')], { a: 'start' });
+    [['lalu', 164, 'M142 550H184'], ['syarat', 334, 'M312 550H354'], [`≥ ${KKM}`, 504, 'M482 550H524']].forEach(([t, x, d], i) => lab(x, 542, t, [edge('u' + i, 'u' + (i + 1), d, 'a')]));
+    H = 590;
+  } else {
+    W = 372;
+    node('r', 16, 16, 324, 52, ['Smart Emailing'], { kind: 'root' });
+    lab(38, 86, 'terdiri atas', [], { a: 'start' });
+    let y = 96;
+    const rm = [], pos = {};
+    M.forEach((m, i) => {
+      const id = 'm' + i, mid = y + 25;
+      node(id, 48, y, 292, 50, [m.title], { kind: 'materi', m });
+      rm.push(edge('r', id, `M30 68V${mid - 10}Q30 ${mid} 40 ${mid}H48`));
+      const ke = PETA_TOPIK[m.id].map(([ls, b, d], j) => {
+        const t = y + 72 + 46 * j, km = t + 19;
+        pos[kid(i, j)] = km;
+        node(kid(i, j), 80, t, 250, 38, ls, { b, d, m });
+        return edge(id, kid(i, j), `M66 ${y + 50}V${km - 10}Q66 ${km} 76 ${km}H80`);
+      });
+      lab(74, y + 64, 'membahas', ke, { a: 'start' });
+      y += 72 + 46 * PETA_TOPIK[m.id].length + 14;
+    });
+    L[0].es = rm;
+    const p = pos[kid(1, 4)], a = pos[kid(0, 3)], b = pos[kid(2, 3)];
+    lab(362, (a + p) / 2, 'diterapkan di', [edge(kid(0, 3), kid(1, 4), `M330 ${a}H340Q350 ${a} 350 ${a + 10}V${p - 15}Q350 ${p - 5} 340 ${p - 5}H333`, 'x')], { rot: 1 });
+    lab(362, (b + p) / 2, 'diterapkan di', [edge(kid(2, 3), kid(1, 4), `M330 ${b}H340Q350 ${b} 350 ${b - 10}V${p + 15}Q350 ${p + 5} 340 ${p + 5}H333`, 'x')], { rot: 1 });
+    y += 6;
+    lab(38, y + 4, 'diuji melalui', [edge('r', 'u0', `M30 68V${y + 30}Q30 ${y + 40} 40 ${y + 40}H46`, 'a')], { a: 'start' });
+    PETA_UJI.forEach(([t, b, d], i) => {
+      const top = y + 20 + 64 * i;
+      node('u' + i, 48, top, 292, 40, [t], { b, d, rx: 20 });
+      if (i) lab(202, top - 10, ['lalu', 'syarat', `≥ ${KKM}`][i - 1], [edge('u' + (i - 1), 'u' + i, `M194 ${top - 24}V${top - 2}`, 'a')], { a: 'start' });
+    });
+    H = y + 20 + 64 * 3 + 40 + 16;
+  }
+  const par = {};
+  E.forEach(e => { if (e.k !== 'x') par[e.b] = e.a; });
+  return { W, H, N, E, L, par };
+}
+
+function petaStatus() {
+  const st = b => state.done[b] ? 'done' : locked(b) ? 'lock' : 'open';
+  const next = ORDER.find(b => st(b) === 'open');
+  return b => b === next ? 'next' : st(b);
+}
+
 function viewPeta() {
-  const topics = { m1: [['Kegunaan email di dunia kerja', 'kegunaan-email'], ['Bagian-bagian email', 'bagian-email'], ['Subject yang efektif', 'subject-dan-salam'], ['Salam pembuka dan penutup', 'subject-dan-salam']], m2: [['Fungsi dan susunan email lamaran', 'susunan-email'], ['Memperkenalkan diri', 'perkenalan-dan-cv'], ['Melampirkan CV dan portofolio', 'perkenalan-dan-cv'], ['Kesalahan yang sering terjadi', 'kesalahan-email'], ['Praktik menulis email lamaran', 'praktik-email']], m3: [['CC dan BCC', 'cc-bcc-waktu'], ['Waktu mengirim email', 'cc-bcc-waktu'], ['Follow-up ke HR', 'follow-up'], ['Bahasa formal dan sopan', 'bahasa-formal']] };
-  const warna = { m1: '#3e7bd6', m2: '#c2453b', m3: '#2f9e6e' };
-  return `<div class="cmap2">
-    <a class="cm2-root" href="#/bagian/pengantar"><span>${MASCOT}</span><b>Smart Emailing</b><small>Menulis email lamaran yang profesional</small></a>
-    <div class="cm2-cols">${MATERI.filter(m => topics[m.id]).map((m, k) => `<section class="cm2-col" style="--tc:${warna[m.id]};--i:${k}">
-      <a class="cm2-m" href="#/bagian/${m.bagian[0]}"><span>${m.no}</span><b>${m.title}</b></a>
-      <ul>${topics[m.id].map(([t, id]) => `<li><a class="${state.done[id] ? 'ok' : ''}" href="#/bagian/${id}">${t}</a></li>`).join('')}</ul></section>`).join('')}</div>
-    <div class="cm2-end">${[['latihan', 'Latihan soal', '#/latihan'], ['latihan', 'Aktivitas interaktif', '#/bagian/aktivitas-interaktif'], ['evaluasi', 'Evaluasi akhir', '#/bagian/awal-evaluasi'], ['progres', 'Penutup & sertifikat', '#/bagian/penutup']].map(([ic, t, h]) => `<a href="${h}"><span>${pxi(ic)}</span>${t}</a>`).join('')}</div>
+  return `<div class="peta" id="peta">
+    <svg class="pt-svg" id="ptSvg" role="group" aria-label="Peta konsep Smart Emailing"></svg>
+    <div class="pt-pan" id="ptPan" aria-live="polite"></div>
+    <div class="pt-lg" aria-hidden="true"><span><i class="done"></i>Selesai</span><span><i class="next"></i>Berikutnya</span><span><i></i>Belum</span><span><i class="x"></i>Hubungan silang</span><span class="pt-lg-k">miring = kata penghubung</span></div>
   </div>`;
+}
+
+function mountPeta() {
+  const box = $('#peta'), svg = $('#ptSvg'), pan = $('#ptPan');
+  const stOf = petaStatus();
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  const total = MATERI_BAGIAN.length, selesai = MATERI_BAGIAN.filter(b => state.done[b]).length;
+  let lay, pin = null, mode = null, info = {};
+
+  const panel = id => {
+    pan.classList.toggle('on', !!id);
+    if (!id) {
+      const nx = ORDER.find(b => stOf(b) === 'next');
+      pan.innerHTML = `<div><small>${selesai}/${total} bagian materi selesai</small><b>${nx ? 'Lanjut: ' + BAGIAN[nx].title : 'Semua bagian sudah selesai'}</b><p>Sorot atau klik sebuah konsep untuk melihat hubungannya.</p></div>${nx ? `<a class="btn btn-primary" href="#/bagian/${nx}">Lanjutkan ${icon('right')}</a>` : ''}`;
+      return;
+    }
+    const n = info[id], s = n.st;
+    const btn = id === 'r' ? `<a class="btn btn-primary" href="#/bagian/pengantar">Mulai dari pengantar ${icon('right')}</a>`
+      : s === 'lock' ? '' : `<a class="btn btn-primary" href="#/bagian/${n.b}">${s === 'done' ? 'Buka lagi' : 'Buka bagian'} ${icon('right')}</a>`;
+    pan.innerHTML = `<div><small>${n.kick}</small><b>${n.title}</b><p>${n.d}${s === 'lock' ? ` <em>${peekInfo(n.b).why}</em>` : ''}</p></div>${btn}`;
+  };
+
+  const sorot = id => {
+    svg.classList.toggle('f', !!id);
+    $$('.hi', svg).forEach(e => e.classList.remove('hi'));
+    panel(id);
+    if (!id) return;
+    const chain = [id];
+    for (let p = lay.par[id]; p; p = lay.par[p]) chain.push(p);
+    const on = new Set(chain), lit = new Set();
+    lay.E.forEach((e, i) => {
+      if (e.a === id || e.b === id || (chain.includes(e.a) && chain.includes(e.b))) { lit.add(i); on.add(e.a); on.add(e.b); svg.querySelector(`[data-e="${i}"]`).classList.add('hi'); }
+    });
+    $$('.pt-lab', svg).forEach(l => { if (l.dataset.es.split(',').some(i => lit.has(+i))) l.classList.add('hi'); });
+    $$('.pt-n', svg).forEach(n => { if (on.has(n.dataset.id)) n.classList.add('hi'); });
+  };
+
+  const gambar = () => {
+    const sempit = box.clientWidth < 600;
+    if (sempit === mode) return;
+    mode = sempit; lay = petaLayout(sempit);
+    svg.setAttribute('viewBox', `0 0 ${lay.W} ${lay.H}`);
+    svg.innerHTML = '<defs><marker id="ptA" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" class="pt-ah"/></marker><marker id="ptX" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" class="pt-ah x"/></marker></defs>';
+    const gE = mk('g', {}, svg), gL = mk('g', {}, svg), gN = mk('g', {}, svg);
+    lay.E.forEach((e, i) => mk('path', { d: e.d, class: 'pt-e' + (e.k === 'x' ? ' x' : ''), 'data-e': i, ...(e.k ? { 'marker-end': `url(#${e.k === 'x' ? 'ptX' : 'ptA'})` } : {}) }, gE));
+    lay.L.forEach(l => {
+      const g = mk('g', { class: 'pt-lab', 'data-es': l.es.join(',') }, gL);
+      if (l.bg) mk('rect', { x: l.x - 40, y: l.y - 13, width: 80, height: 18 }, g);
+      mk('text', { x: l.x, y: l.y, 'text-anchor': l.rot ? 'middle' : l.a || 'middle', ...(l.rot ? { transform: `rotate(-90 ${l.x} ${l.y})` } : {}) }, g).textContent = l.t;
+    });
+    lay.N.forEach(n => {
+      const kind = n.kind || 'topik';
+      const st = kind === 'root' ? 'root' : kind === 'materi' ? (n.m.bagian.every(b => state.done[b]) ? 'done' : 'open') : stOf(n.b);
+      const kunci = n.b === 'praktik-email' || n.b === 'evaluasi-akhir';
+      const grp = kind === 'materi' ? `Materi ${n.m.no}` : n.m ? `Materi ${n.m.no}` : 'Penilaian';
+      info[n.id] = kind === 'root' ? { title: 'Smart Emailing', d: 'Pelatihan menulis email lamaran kerja, dari dasar sampai siap dikirim.', kick: 'Konsep utama', st }
+        : kind === 'materi' ? { title: n.m.title, d: n.m.desc, kick: `${grp} · ${n.m.bagian.filter(b => state.done[b]).length}/${n.m.bagian.length} bagian selesai`, b: n.m.bagian.find(b => !state.done[b]) || n.m.bagian[0], st: locked(n.m.bagian[0]) ? 'lock' : st }
+        : { title: n.lines.join(' '), d: n.d, kick: `${grp} · ${PETA_ST[st]}`, b: n.b, st };
+      const g = mk('g', { class: `pt-n ${kind} ${st}${kunci ? ' key' : ''}`, tabindex: 0, role: 'button', 'aria-label': `${info[n.id].title}, ${info[n.id].kick}`, 'data-id': n.id }, gN);
+      mk('rect', { x: n.x, y: n.y, width: n.w, height: n.h, rx: n.rx || (kind === 'topik' ? 7 : 9) }, g);
+      const cx = n.x + n.w / 2, cy = n.y + n.h / 2;
+      if (kind === 'root') {
+        mk('text', { x: cx, y: cy - 3, class: 'pt-t1' }, g).textContent = 'Smart Emailing';
+        mk('text', { x: cx, y: cy + 15, class: 'pt-t2' }, g).textContent = 'Menulis email lamaran yang profesional';
+      } else if (kind === 'materi') {
+        mk('text', { x: cx, y: cy - 6, class: 'pt-t2' }, g).textContent = `Materi ${n.m.no}${st === 'done' ? ' · selesai' : ''}`;
+        mk('text', { x: cx, y: cy + 12, class: 'pt-t1' }, g).textContent = n.m.title;
+      } else {
+        const ls = n.lines.join(' ').length * 6.4 < n.w - 20 ? [n.lines.join(' ')] : n.lines;
+        ls.forEach((l, i) => { mk('text', { x: cx, y: cy + 4 + (i - (ls.length - 1) / 2) * 14 }, g).textContent = l + (st === 'done' && i === ls.length - 1 ? '  ✓' : ''); });
+      }
+    });
+    $$('.pt-n', svg).forEach(g => {
+      const id = g.dataset.id;
+      const pilih = () => { pin = pin === id ? null : id; $$('.pt-n.pin', svg).forEach(p => p.classList.remove('pin')); if (pin) g.classList.add('pin'); sorot(pin); };
+      g.addEventListener('mouseenter', () => sorot(id));
+      g.addEventListener('mouseleave', () => sorot(pin));
+      g.addEventListener('focus', () => sorot(id));
+      g.addEventListener('blur', () => sorot(pin));
+      g.addEventListener('click', e => { e.stopPropagation(); pilih(); });
+      g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pilih(); } });
+    });
+    pin = null; sorot(null);
+    if (!reduced) {
+      $$('.pt-e', svg).forEach((p, i) => {
+        if (p.classList.contains('x')) { p.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 800, fill: 'backwards' }); return; }
+        const len = p.getTotalLength();
+        p.animate([{ strokeDasharray: len, strokeDashoffset: len }, { strokeDasharray: len, strokeDashoffset: 0 }], { duration: 600, delay: 100 + i * 30, easing: 'cubic-bezier(.3,.7,.2,1)', fill: 'backwards' });
+      });
+      $$('.pt-n', svg).forEach((n, i) => n.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 400, delay: i * 25, easing: 'ease-out', fill: 'backwards' }));
+      $$('.pt-lab', svg).forEach(l => l.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 650, fill: 'backwards' }));
+    }
+  };
+  svg.addEventListener('click', () => { pin = null; $$('.pt-n.pin', svg).forEach(p => p.classList.remove('pin')); sorot(null); });
+  gambar();
+  const onResize = () => { if (!document.body.contains(box)) return removeEventListener('resize', onResize); gambar(); };
+  addEventListener('resize', onResize);
 }
 
 /* ---------- Glosarium ---------- */
@@ -2289,8 +2478,8 @@ function viewFaq() {
 }
 
 /* ---------- Kerangka halaman Panduan ---------- */
-const GUIDE_SUB = { petunjuk: 'Empat langkah memakai Smart Emailing dan arti kode interaksi.', tujuan: 'Apa yang kamu kuasai setelah pelatihan, sampai ke tiap bagian.', peta: 'Seluruh isi pelatihan dalam satu peta. Klik topik untuk membukanya.', glosarium: 'Istilah penting di email lamaran, lengkap dengan bagian asalnya.', faq: 'Pertanyaan yang paling sering muncul.' };
-const GUIDE_VIEW = { petunjuk: [viewPetunjuk, mountPetunjuk], tujuan: [viewTujuan], peta: [viewPeta], glosarium: [viewGlosarium, mountGlosarium], faq: [viewFaq] };
+const GUIDE_SUB = { petunjuk: 'Empat langkah memakai Smart Emailing dan arti kode interaksi.', tujuan: 'Apa yang kamu kuasai setelah pelatihan, sampai ke tiap bagian.', peta: 'Seluruh isi pelatihan dalam satu peta. Sorot atau klik konsep untuk melihat hubungannya.', glosarium: 'Istilah penting di email lamaran, lengkap dengan bagian asalnya.', faq: 'Pertanyaan yang paling sering muncul.' };
+const GUIDE_VIEW = { petunjuk: [viewPetunjuk, mountPetunjuk], tujuan: [viewTujuan], peta: [viewPeta, mountPeta], glosarium: [viewGlosarium, mountGlosarium], faq: [viewFaq] };
 function viewPanduan(tab) {
   const k = NAV_PANDUAN[tab] || 'petunjuk', i = GUIDE_LIST.findIndex(g => g[0] === k), [, t, ic, c] = i >= 0 ? GUIDE_LIST[i] : GUIDE_FAQ;
   const prev = i >= 0 && GUIDE_LIST[i - 1], next = i >= 0 && GUIDE_LIST[i + 1];
