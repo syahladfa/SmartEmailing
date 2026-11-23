@@ -560,7 +560,6 @@ function mountBagian(id) {
     const freshDone = true;
     state.done[id] = true; save(); updateBar(); logAct('done', id);
     if (btn) { btn.classList.remove('is-locked'); if (freshDone && !silent) btn.classList.add('glow'); }
-    if (freshDone && !silent) celebrate();
     const rail = $('.rail'); if (rail) rail.outerHTML = routeRail(id);
     const nx = ORDER[ORDER.indexOf(id) + 1];
     if (freshDone && !silent && nx && MATERI_BAGIAN.includes(nx)) toast(`${BAGIAN[nx].title} sudah kebuka.`);
@@ -1523,7 +1522,7 @@ function unlockPop(art, kicker, title, href) {
     const el = document.createElement('a');
     el.className = 'unlock'; el.href = href; el.setAttribute('role', 'status');
     el.innerHTML = `<span class="ul-art">${art}</span><span><small>${kicker}</small><b>${title}</b></span>`;
-    document.body.appendChild(el); sfx('ok'); celebrate();
+    document.body.appendChild(el); sfx('ok');
     setTimeout(() => el.classList.add('show'), 30);
     setTimeout(() => { el.classList.remove('show'); setTimeout(() => { el.remove(); res(); }, 400); }, 2800);
   }));
@@ -2365,14 +2364,9 @@ const GUIDE = ['panduan', 'tujuan', 'petunjuk', 'peta', 'glosarium', 'faq'];
 function pickTransition(from, to) {
   if (from === to) return null;
   if (to === 'evaluasi-akhir') return 'curtain';
-  if (to === 'penutup') return 'circle';
   const fi = ORDER.indexOf(from), ti = ORDER.indexOf(to);
   if (ti >= 0 && fi >= 0) return ti > fi ? 'slideL' : 'slideR';
-  if (ti >= 0) return 'wipe';
-  if (to === '') return 'zoom';
-  if (to === 'materi' || to === 'menu') return 'rise';
-  if (GUIDE.includes(to)) return 'blur';
-  return 'zoom';
+  return 'rise';
 }
 const EASE = 'cubic-bezier(.2, .8, .2, 1)';
 const T_EXIT = {

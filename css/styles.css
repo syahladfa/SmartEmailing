@@ -2415,3 +2415,20 @@ body.focus-mode .faq-fab, body.sb-open .faq-fab { display: none; }
 .exm-hero .ph-k { color: var(--gold-ink); }
 /* Peta konsep: nomor materi satu warna, huruf UI */
 .cm2-m span { background: var(--maroon); font: 800 .95rem/1 var(--f-head); }
+/* Glosarium: kolom mengalir sehingga tidak ada ruang kosong di kanan */
+.gl-list { display: block; columns: 3 280px; column-gap: 1rem; }
+.gl-sec { display: block; break-inside: avoid; margin: 0 0 1.1rem; }
+.gl-l { display: block; padding: 0 0 .4rem .2rem; font-size: 1rem; }
+.gl-sec > div { grid-template-columns: 1fr; }
+/* Tentang: angka dalam satu strip bersekat */
+.ab-nums { gap: 0; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); overflow: hidden; }
+.ab-nums div { border: 0; border-radius: 0; border-right: 1px solid var(--line); }
+.ab-nums div:last-child { border-right: 0; }
+@media (max-width: 640px) { .ab-nums div:nth-child(2n) { border-right: 0; } .ab-nums div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+/* Awal evaluasi: status cukup centang + bilah; ikon dekoratif dibuang */
+.cp-ic { display: none; }
+@media (min-width: 701px) { .cp-step { grid-template-columns: auto minmax(0, 1fr) auto; } }
+/* label pill di HP tidak perlu setinggi tombol utama */
+@media (max-width: 860px), (pointer: coarse) { .mv-labels .lbl { min-height: 2.25rem; } }
+/* konfeti tidak tampil untuk pengguna yang mengurangi gerak */
+@media (prefers-reduced-motion: reduce) { .confetti { display: none; } }
