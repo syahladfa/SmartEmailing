@@ -49,20 +49,25 @@ Mulai → Pengantar
 
 ## Isi di dalam web
 
-### Menu samping, Dashboard, dan halaman Lainnya
-Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Alur belajar, Peta konsep, Glosarium, FAQ) dan **Lainnya** (Dashboard, Progres belajar, Pengaturan, Tentang & tim) yang bisa dibuka-tutup. Di bawah menu ada kartu **Perjalanan belajar** (maskot Surti, level, dan persen progres). Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
+### Menu samping, tombol kanan atas, dan halaman Lainnya
+Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Peta konsep, Glosarium) dan **Lainnya** (Progres belajar, Tentang & tim) yang bisa dibuka-tutup. Di bawah menu ada kartu **Perjalanan belajar** (maskot Surti, level, dan persen progres). Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
 
-- **Dashboard** (`#/dashboard`): sapaan sesuai jam (dengan nama kalau sudah diisi di Pengaturan), progres keseluruhan, 5 kartu statistik dari data asli (total materi, materi selesai, soal latihan dikerjakan, status evaluasi, progres), **Lanjutkan belajar** yang membuka bagian atau latihan terakhir tepat di posisinya, dan **Aktivitas terbaru**.
-- **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, cap pos harian dan streak mingguan, radar profil kemampuan (Dasar Email, Email Lamaran, Etika, Praktik), koleksi 11 segel lilin (klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
-- **Pengaturan** (`#/pengaturan`): efek suara, menu ringkas, kurangi animasi, nama, dan hapus progres.
+Di kanan atas ada tombol efek suara, lingkaran **progres** (klik untuk ringkasan), dan tepat di sampingnya ikon gerigi **Pengaturan**. Ikon **?** kecil di pojok kanan bawah membuka halaman **FAQ**.
+
+- **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, koleksi 11 segel lilin (klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
+- **Pengaturan** (`#/pengaturan`, ikon gerigi di kanan atas): efek suara, menu ringkas, kurangi animasi, dan satu-satunya tombol **Reset progres**. Sebelum dihapus ada konfirmasi, lalu semua data (termasuk nama) kembali ke kondisi awal.
+- **FAQ** (`#/faq`, ikon ? di kanan bawah): tanya-jawab per kategori.
 - **Tentang & tim** (`#/tentang`): judul proyek, tujuan umum, isi pelatihan, format interaksi, tim, dan teknologi.
 
 ![Progres belajar](docs/screenshots/22-progres.png)
 
-![Dashboard](docs/screenshots/18-dashboard.png)
-
 ### 1. Beranda dan katalog materi
-Beranda adalah hero marun layar penuh: judul besar **SMART EMAILING**, tombol **Lanjut belajar** yang langsung membuka bagian terakhir, dan tumpukan kartu Materi 1–3 yang bisa digeser, lengkap dengan progres dan bagian berikutnya. Halaman **Materi** menampilkan ketiga materi beserta bagiannya. Bagian yang sudah selesai diberi tanda centang, dan bagian yang masih terkunci diberi gembok.
+
+![Isi nama sebelum mulai belajar](docs/screenshots/24-isi-nama.png)
+
+Saat pertama dibuka, Beranda meminta **nama** peserta. Materi, latihan, dan evaluasi baru bisa dibuka setelah nama diisi. Nama ini dipakai untuk sapaan dan sertifikat, dan bisa diganti lewat ikon pensil di samping sapaan.
+
+Setelah itu Beranda menampilkan sapaan sesuai jam perangkat (**Selamat pagi/siang/sore/malam, [Nama]**), judul besar **SMART EMAILING**, tombol **Lanjut belajar** yang langsung membuka bagian terakhir, dan tumpukan kartu Materi 1–3 yang bisa digeser, lengkap dengan progres dan bagian berikutnya. Halaman **Materi** menampilkan ketiga materi beserta bagiannya. Bagian yang sudah selesai diberi tanda centang, dan bagian yang masih terkunci diberi gembok.
 
 ![Katalog materi](docs/screenshots/02-materi.png)
 
@@ -99,7 +104,7 @@ Setiap bagian memakai jenis aktivitas yang berbeda, dan semua jawaban tersimpan 
 15 soal pilihan ganda dari storyboard dibagi jadi **Latihan Materi 1, 2, dan 3** (5 soal per materi). Halaman **Latihan** (`#/latihan`) menampilkan kartu setiap latihan dengan status *Belum mulai / Sedang dikerjakan / Selesai*, nilai terakhir, dan progres, ditambah kartu tiga aktivitas interaktif.
 
 - **Layar kuis** memakai seluruh layar: satu soal per tampilan, progress bar, navigator nomor soal (sudah dijawab, belum dijawab, sedang aktif), Sebelumnya/Berikutnya (juga tombol panah ← →), dan **Selesai**. Pembahasan langsung muncul setelah menekan **Jawab**, lengkap dengan tautan ke bagian materi terkait.
-- **Layar hasil:** nilai, jumlah benar/salah, persentase, waktu pengerjaan, status *Capaian terpenuhi* (≥ 70%), dan tombol Review jawaban, Ulangi, Daftar latihan, Dashboard.
+- **Layar hasil:** nilai, jumlah benar/salah, persentase, waktu pengerjaan, status *Capaian terpenuhi* (≥ 70%), dan tombol Review jawaban, Ulangi, dan Daftar latihan.
 - **Review jawaban:** jawabanmu, jawaban yang tepat, dan pembahasan setiap soal dari percobaan terakhir.
 - Jawaban, nilai, riwayat percobaan, dan posisi soal tersimpan, jadi aman walau halaman di-refresh. Syarat evaluasi tetap minimal 11 dari 15 benar.
 
@@ -129,13 +134,11 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 | ![Soal evaluasi](docs/screenshots/07-evaluasi.png) | ![Hasil evaluasi](docs/screenshots/08-hasil-evaluasi.png) |
 
 ### Panduan
-Enam halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Berikutnya di bawah:
+Empat halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Berikutnya di bawah:
 - **Petunjuk:** 4 langkah memakai web, dan **kode interaksi** yang bisa dicoba langsung (Normal, Hover, Hit, Swipe, Seret & letakkan, Show).
 - **Tujuan belajar:** tujuan umum, 7 tujuan khusus, dan tujuan tiap bagian yang dikelompokkan per materi.
-- **Alur belajar:** garis waktu dari Mulai sampai Selesai, dengan titik keputusan dan posisimu sekarang.
 - **Peta konsep:** peta isi pelatihan dengan cabang per materi.
 - **Glosarium:** pencarian dan indeks A–Z.
-- **FAQ:** tanya-jawab per kategori.
 
 ![Panduan](docs/screenshots/23-panduan.png)
 
@@ -164,11 +167,11 @@ Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan s
 | **Skor (XP)** | Pengantar 20 · setiap bagian materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
 | **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300), ditampilkan sebagai rute pos dengan perangko |
 | **11 segel** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Tak Terbendung (combo 5×), Serba Bisa, Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
-| **Mingguan** | Tugas minggu ini, cap pos harian, minggu berturut-turut, dan rekor (dihitung dari riwayat aktivitas) |
+| **Mingguan** | Tugas minggu ini: 2 bagian, 1 latihan, dan belajar di 3 hari berbeda (dihitung dari riwayat aktivitas) |
 | **Reward** | Kartu "Lencana baru!" dan "Naik level!", konfeti, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
 
 ## Fitur lain
-- **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Dashboard, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
+- **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Beranda, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
 - **Progres tersimpan otomatis** di browser: bagian selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
 - **Cincin progres dan badge** di navbar: persentase belajar, jumlah soal latihan yang belum dikerjakan, dan status evaluasi.
 - **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per bagian, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.
