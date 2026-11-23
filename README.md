@@ -170,7 +170,7 @@ Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan s
 | **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300), ditampilkan sebagai rute pos dengan perangko |
 | **11 segel** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Tak Terbendung (combo 5×), Serba Bisa, Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
 | **Mingguan** | Tugas minggu ini: 2 bagian, 1 latihan, dan belajar di 3 hari berbeda (dihitung dari riwayat aktivitas) |
-| **Reward** | Kartu "Lencana baru!" dan "Naik level!", konfeti saat lulus evaluasi, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
+| **Reward** | Kartu "Lencana baru" dan "Naik level", konfeti saat lulus evaluasi, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
 
 ## Fitur lain
 - **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Beranda, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.

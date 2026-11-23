@@ -2749,102 +2749,102 @@ const materiOf = id => MATERI.find(m => m.bagian.includes(id));
 
 const BAGIAN = {
   'pengantar': { title: 'Selamat Datang', type: 'Pengantar', wide: true,
-    tujuan: 'Mengenal pelatihan ini: tujuannya apa dan materinya apa saja.',
-    narasi: 'Halo, selamat datang di pelatihan Smart Emailing. Pernah kirim lamaran kerja, tapi tak kunjung dibalas? Bisa jadi masalahnya ada di email yang kamu kirim. Di sini kamu belajar bikin email lamaran yang rapi, plus cara berkomunikasi dengan HR lewat email tanpa canggung. Materinya ada tiga: dasar komunikasi lewat email, menulis email lamaran, dan etika berkirim email. Setelah itu, kamu bisa berlatih soal, lalu mengerjakan evaluasi. Yuk, kita mulai!' },
+    tujuan: 'Kenalan dulu dengan pelatihan ini: buat apa, dan apa saja isinya.',
+    narasi: 'Halo, selamat datang di Smart Emailing. Pernah kirim lamaran kerja tapi nggak ada balasan sama sekali? Kadang masalahnya bukan di CV, tapi di email pengantarnya. Di sini kamu akan belajar menulis email lamaran yang rapi, dan cara membalas email HR tanpa canggung. Ada tiga materi: dasar komunikasi lewat email, menulis email lamaran, dan etika berkirim email. Setelah itu ada latihan soal, lalu evaluasi. Kita mulai dari yang paling dasar.' },
   'kegunaan-email': { title: 'Kegunaan Email di Dunia Kerja', type: 'Klik informasi',
-    tujuan: 'Kamu bisa menjelaskan kegunaan email di dunia kerja dan alasan komunikasi lewat email perlu dijaga tetap profesional.',
+    tujuan: 'Kamu bisa menjelaskan untuk apa email dipakai di dunia kerja, dan kenapa nadanya perlu tetap profesional.',
     uraian: [{ h: 'Kenapa Email Masih Penting?', p: [
-      'Di dunia kerja, email masih jadi salah satu jalur komunikasi resmi. Lewat email, orang menyampaikan informasi, mengirim dokumen, melamar pekerjaan, berkoordinasi dengan rekan kerja, sampai berhubungan dengan klien.',
-      'Dibanding aplikasi chat, email terasa lebih formal, tersimpan rapi, dan bisa dijadikan bukti komunikasi. Karena itu, kemampuan menulis email yang baik jadi bekal penting untuk fresh graduate dan pencari kerja.'] }],
-    narasi: 'Email masih jadi jalur komunikasi resmi di dunia kerja. Klik keempat ikon di layar laptop untuk melihat kegunaannya. Dibanding chat, email lebih formal, tersimpan rapi, dan bisa jadi bukti komunikasi. Itu sebabnya menulis email dengan baik adalah keterampilan penting buat fresh graduate.' },
+      'Di kantor, email masih jadi jalur komunikasi resmi. Orang memakainya untuk menyampaikan informasi, mengirim dokumen, melamar kerja, berkoordinasi dengan rekan, sampai menghubungi klien.',
+      'Beda dengan chat, email lebih formal, tersimpan rapi, dan bisa jadi bukti kalau suatu saat dibutuhkan. Makanya, bisa menulis email dengan baik itu bekal penting, apalagi buat fresh graduate yang sedang cari kerja.'] }],
+    narasi: 'Di dunia kerja, email masih jadi jalur komunikasi resmi. Klik keempat ikon di layar laptop untuk melihat apa saja kegunaannya. Dibanding chat, email lebih formal, tersimpan rapi, dan bisa jadi bukti. Itu sebabnya kemampuan menulis email cukup menentukan, terutama waktu kamu baru mulai cari kerja.' },
   'bagian-email': { title: 'Bagian-Bagian Email', type: 'Seret & letakkan',
     tujuan: 'Kamu bisa mengenali bagian-bagian email profesional.',
     uraian: [{ h: 'Lima Bagian Email Profesional', p: [
       'Email profesional punya lima bagian: <b>subject</b> (judul email), <b>salam pembuka</b>, <b>isi email</b>, <b>salam penutup</b>, dan <b>tanda tangan</b>.',
-      'Tiap bagian punya tugasnya sendiri. Subject menjelaskan isi email secara singkat, sedangkan isi email memuat pesan utama yang ditulis jelas dan ringkas.'] }],
-    narasi: 'Email profesional terdiri atas lima bagian. Subject menjelaskan isi email secara singkat. Salam pembuka menunjukkan rasa hormat. Isi email memuat pesan utama dengan jelas dan ringkas. Salam penutup mengakhiri email dengan sopan, lalu ditutup dengan tanda tangan. Sekarang, coba pasang kartu-kartu ini di tempat yang benar.' },
+      'Masing-masing punya fungsi. Subject memberi gambaran singkat soal isi email. Isi email memuat pesan utamamu, ditulis jelas dan tidak bertele-tele.'] }],
+    narasi: 'Email profesional punya lima bagian. Subject memberi gambaran singkat soal isi email. Salam pembuka menunjukkan rasa hormat. Isi email memuat pesan utama. Salam penutup mengakhiri email dengan sopan, lalu ada tanda tangan di paling bawah. Coba pasang kartu-kartu ini ke tempatnya masing-masing.' },
   'subject-dan-salam': { title: 'Subject, Salam Pembuka, dan Penutup', type: 'Studi kasus + kuis',
-    tujuan: 'Kamu bisa menulis subject yang efektif serta memakai salam pembuka dan penutup yang sesuai.',
+    tujuan: 'Kamu bisa menulis subject yang jelas, dan memilih salam pembuka serta penutup yang pas.',
     uraian: [
       { h: 'Menulis Subject yang Efektif', p: [
-        'Subject adalah hal pertama yang dilihat penerima. Subject yang baik itu singkat, jelas, spesifik, dan langsung menggambarkan tujuan email.',
+        'Subject adalah hal pertama yang dibaca penerima. Buat singkat dan spesifik, supaya dari judulnya saja orang sudah tahu email ini soal apa.',
         `Contoh yang tepat: <q>Application for Graphic Designer Position – ${NAMA}</q>. Contoh yang kurang tepat: <q>Lamaran</q>, <q>Halo Kak</q>, atau <q>Penting</q>.`,
-        'Subject yang jelas membuat emailmu lebih mungkin dibuka oleh HR atau perekrut.'] },
+        'Subject yang jelas bikin emailmu lebih mungkin dibuka HR, bukan cuma lewat di kotak masuk.'] },
       { h: 'Membuka dan Menutup Email dengan Sopan', p: [
-        'Salam pembuka menunjukkan rasa hormat kepada penerima, misalnya <q>Yth. Tim Rekrutmen PT ABC,</q> atau <q>Dear Hiring Manager,</q>.',
-        'Salam penutup mengakhiri email dengan sopan, misalnya <q>Hormat saya,</q> atau <q>Best regards,</q> lalu diikuti nama pengirim. Salam yang tepat menunjukkan bahwa kamu paham etika berkomunikasi.'] }],
-    narasi: 'Subject adalah hal pertama yang dilihat HR. Subject yang baik itu singkat, jelas, spesifik, dan sesuai tujuan email. Coba bandingkan dua kotak masuk ini. Untuk salam pembuka, kamu bisa memakai "Yth. Tim Rekrutmen PT ABC," atau "Dear Hiring Manager,". Untuk penutup, pakai "Hormat saya," atau "Best regards," lalu tulis namamu.' },
+        'Salam pembuka menunjukkan rasa hormat ke penerima, misalnya <q>Yth. Tim Rekrutmen PT ABC,</q> atau <q>Dear Hiring Manager,</q>.',
+        'Salam penutup mengakhiri email dengan sopan, misalnya <q>Hormat saya,</q> atau <q>Best regards,</q>, lalu tulis namamu di bawahnya. Hal kecil seperti ini menunjukkan kamu paham etika berkomunikasi.'] }],
+    narasi: 'Subject adalah hal pertama yang dilihat HR. Buat singkat, spesifik, dan sesuai tujuan email. Coba bandingkan dua kotak masuk ini, mana yang lebih ingin kamu buka? Untuk pembuka, kamu bisa pakai "Yth. Tim Rekrutmen PT ABC," atau "Dear Hiring Manager,". Untuk penutup, pakai "Hormat saya," atau "Best regards," lalu tulis namamu.' },
   'susunan-email': { title: 'Susunan Email Lamaran Kerja', type: 'Klik bagian email',
-    tujuan: 'Kamu bisa menjelaskan fungsi email lamaran dan menyusunnya sesuai format yang profesional.',
+    tujuan: 'Kamu bisa menjelaskan fungsi email lamaran dan menyusunnya dengan urutan yang benar.',
     uraian: [
       { h: 'Apa Itu Email Lamaran Kerja?', p: [
-        'Email lamaran adalah email yang kamu kirim ke perusahaan untuk memperkenalkan diri, menyampaikan minat pada posisi tertentu, sekaligus mengirim dokumen pendukung seperti CV dan portofolio.',
-        'Email ini adalah kesan pertama. Dari sinilah perekrut mulai menilai kamu sebagai kandidat.'] },
+        'Email lamaran adalah email yang kamu kirim ke perusahaan untuk memperkenalkan diri, menyampaikan minat pada posisi tertentu, sekaligus mengirim CV dan portofolio.',
+        'Email ini jadi kesan pertama. Dari sini perekrut mulai menilai apakah kamu layak dipanggil.'] },
       { h: 'Urutan Email Lamaran', p: [
         'Susun email lamaran dengan urutan berikut:',
         '<ol class="ol"><li>subject yang jelas</li><li>salam pembuka</li><li>perkenalan diri singkat</li><li>tujuan mengirim email</li><li>keterangan lampiran CV dan portofolio</li><li>salam penutup</li></ol>',
-        'Tulis isinya singkat, padat, dan relevan supaya mudah dibaca perekrut.'] }],
-    narasi: 'Email lamaran adalah caramu memperkenalkan diri, menunjukkan minat pada posisi tertentu, dan mengirim CV serta portofolio. Email inilah kesan pertamamu di mata perekrut. Urutannya: subject yang jelas, salam pembuka, perkenalan singkat, tujuan email, keterangan lampiran, lalu salam penutup. Klik tiap bagian untuk melihat fungsinya.' },
+        'Tulis seperlunya saja. Perekrut membaca banyak email setiap hari, jadi yang singkat dan relevan lebih mudah diingat.'] }],
+    narasi: 'Email lamaran adalah caramu memperkenalkan diri, menunjukkan minat pada posisi tertentu, dan mengirim CV serta portofolio. Ini kesan pertamamu di mata perekrut. Urutannya: subject, salam pembuka, perkenalan singkat, tujuan email, keterangan lampiran, lalu salam penutup. Klik tiap bagian untuk melihat fungsinya.' },
   'perkenalan-dan-cv': { title: 'Memperkenalkan Diri dan Mengirim CV', type: 'Simulasi',
-    tujuan: 'Kamu bisa memperkenalkan diri secara profesional dan mengirim CV serta portofolio dengan benar.',
+    tujuan: 'Kamu bisa memperkenalkan diri secara profesional, dan melampirkan CV serta portofolio dengan benar.',
     uraian: [
       { h: 'Memperkenalkan Diri ke HR', p: [
-        'Saat memperkenalkan diri, cukup sebutkan nama, latar belakang pendidikan, dan posisi yang kamu lamar. Sampaikan dengan singkat dan relevan.',
-        'Tidak perlu bercerita soal hal pribadi yang tidak ada hubungannya dengan pekerjaan. Fokuslah pada kemampuan atau pengalaman yang mendukung posisi tersebut.'] },
+        'Waktu memperkenalkan diri, cukup sebutkan nama, latar belakang pendidikan, dan posisi yang kamu lamar. Singkat saja.',
+        'Cerita pribadi yang tidak berhubungan dengan pekerjaan tidak perlu dimasukkan. Lebih baik sebutkan kemampuan atau pengalaman yang mendukung posisi itu.'] },
       { h: 'Melampirkan Dokumen Pendukung', p: [
-        `Lampirkan CV dan portofolio dalam format yang sesuai, misalnya PDF. Beri nama file yang rapi dan mudah dikenali, seperti <code>CV_${NAMAF}.pdf</code> atau <code>Portfolio_${NAMAF}.pdf</code>.`,
-        'Sebelum menekan tombol kirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.'] }],
-    narasi: `Saat memperkenalkan diri, cukup sebutkan nama, latar belakang pendidikan, dan posisi yang dilamar. Fokus pada kemampuan yang mendukung posisi itu, dan tinggalkan cerita pribadi yang tidak berkaitan. Untuk lampiran, pakai format PDF dengan nama file yang rapi, misalnya CV_${NAMAF}.pdf dan Portfolio_${NAMAF}.pdf. Sebelum mengirim, pastikan semua lampiran sudah terunggah dan bisa dibuka.` },
+        `Lampirkan CV dan portofolio dalam format yang umum dipakai, misalnya PDF. Beri nama file yang rapi dan mudah dikenali, seperti <code>CV_${NAMAF}.pdf</code> atau <code>Portfolio_${NAMAF}.pdf</code>.`,
+        'Sebelum menekan kirim, cek lagi apakah semua lampiran sudah terunggah dan bisa dibuka.'] }],
+    narasi: `Waktu memperkenalkan diri, cukup sebutkan nama, latar belakang pendidikan, dan posisi yang kamu lamar. Fokus ke kemampuan yang mendukung posisi itu, cerita pribadi bisa disimpan untuk wawancara nanti. Untuk lampiran, pakai PDF dengan nama file yang rapi, misalnya CV_${NAMAF}.pdf dan Portfolio_${NAMAF}.pdf. Sebelum mengirim, cek lagi semua lampiran sudah terunggah dan bisa dibuka.` },
   'kesalahan-email': { title: 'Kesalahan yang Sering Terjadi', type: 'Temukan kesalahan', uraianAfter: true,
     tujuan: 'Kamu bisa menemukan kesalahan yang sering muncul di email lamaran.',
     uraian: [{ h: 'Hindari Kesalahan Ini', p: [
-      'Kesalahan yang sering dilakukan fresh graduate antara lain: alamat email yang tidak profesional, subject yang tidak jelas, salah menulis nama perusahaan, bahasa yang tidak formal, isi email yang terlalu panjang, dan lupa melampirkan CV atau portofolio.',
-      'Kesalahan-kesalahan kecil seperti ini bisa membuat lamaranmu tidak diproses lebih lanjut.'] }],
-    narasi: 'Sekarang, anggap dirimu seorang perekrut. Ada beberapa kesalahan di email ini. Klik bagian yang menurutmu salah.' },
+      'Beberapa kesalahan yang sering dilakukan fresh graduate: alamat email yang tidak profesional, subject yang tidak jelas, salah menulis nama perusahaan, bahasa yang terlalu santai, isi email yang kepanjangan, dan lupa melampirkan CV atau portofolio.',
+      'Kelihatannya sepele, tapi kesalahan seperti ini bisa membuat lamaranmu langsung dilewati.'] }],
+    narasi: 'Sekarang coba posisikan dirimu sebagai perekrut. Email di layar ini punya beberapa kesalahan. Klik bagian yang menurutmu salah.' },
   'praktik-email': { title: 'Praktik Menulis Email Lamaran', type: 'Praktik',
-    tujuan: 'Kamu bisa membuat email lamaran untuk keperluan mencari kerja.',
+    tujuan: 'Kamu bisa menulis email lamaran sendiri untuk keperluan mencari kerja.',
     uraian: [{ h: 'Cara Mengerjakan', p: [
-      'Isi setiap bagian email, lalu cek lagi tulisanmu dengan daftar periksa di samping.',
+      'Isi setiap bagian email, lalu cocokkan tulisanmu dengan daftar periksa di samping.',
       'Praktik ini tidak dinilai otomatis. Setelah emailmu dikirim, bandingkan dengan contoh jawaban yang muncul.'] }],
-    narasi: 'Saatnya praktik. Tulis email lamaran untuk lowongan di samping, dan terapkan susunan serta format yang sudah kamu pelajari.' },
+    narasi: 'Sekarang giliran kamu yang menulis. Buat email lamaran untuk lowongan di samping, pakai susunan dan format yang sudah dipelajari tadi.' },
   'cc-bcc-waktu': { title: 'CC, BCC, dan Waktu Mengirim', type: 'Penjelasan visual + kuis',
-    tujuan: 'Kamu bisa menjelaskan kegunaan CC dan BCC serta memilih waktu yang tepat untuk mengirim email.',
+    tujuan: 'Kamu bisa menjelaskan kapan memakai CC dan BCC, dan memilih waktu yang tepat untuk mengirim email.',
     uraian: [
       { h: 'Memakai CC dan BCC dengan Tepat', p: [
-        '<b>CC</b> (<i>Carbon Copy</i>) dipakai untuk mengirim salinan email kepada orang lain yang perlu tahu isinya.',
-        '<b>BCC</b> (<i>Blind Carbon Copy</i>) juga mengirim salinan, tetapi alamat penerimanya tidak terlihat oleh penerima lain.',
-        'Pilih CC atau BCC sesuai kebutuhan, dan jaga privasi para penerima.'] },
+        '<b>CC</b> (<i>Carbon Copy</i>) dipakai untuk mengirim salinan email ke orang lain yang perlu tahu isinya.',
+        '<b>BCC</b> (<i>Blind Carbon Copy</i>) juga mengirim salinan, tapi alamat penerimanya tidak terlihat oleh penerima lain.',
+        'Pakai sesuai kebutuhan. Kalau penerimanya tidak saling kenal, BCC membantu menjaga privasi mereka.'] },
       { h: 'Kapan Sebaiknya Mengirim Email?', p: [
-        'Waktu kirim ikut menentukan apakah emailmu cepat dibaca. Kirim email profesional di jam kerja, sekitar pukul 08.00–17.00.',
-        'Hindari mengirim larut malam, saat hari libur, atau di waktu yang kurang pas, kecuali memang ada keperluan yang mendesak.'] }],
-    narasi: 'CC atau Carbon Copy dipakai untuk mengirim salinan ke orang lain yang perlu tahu isi email. BCC atau Blind Carbon Copy juga mengirim salinan, tetapi alamat penerimanya disembunyikan, jadi privasi tetap terjaga. Untuk waktu, kirimlah email di jam kerja, sekitar pukul delapan pagi sampai lima sore. Hindari larut malam atau hari libur, kecuali memang mendesak.' },
+        'Waktu kirim ikut menentukan seberapa cepat emailmu dibaca. Kirim email profesional di jam kerja, sekitar pukul 08.00–17.00.',
+        'Hindari mengirim larut malam atau saat hari libur, kecuali memang ada keperluan yang mendesak.'] }],
+    narasi: 'CC atau Carbon Copy dipakai untuk mengirim salinan ke orang lain yang perlu tahu isi email. BCC atau Blind Carbon Copy juga mengirim salinan, tapi alamat penerimanya disembunyikan, jadi privasi mereka tetap terjaga. Soal waktu, kirim email di jam kerja, kira-kira jam delapan pagi sampai jam lima sore. Larut malam atau hari libur sebaiknya dihindari, kecuali memang mendesak.' },
   'follow-up': { title: 'Follow-up ke HR', type: 'Pilih langkahmu',
-    tujuan: 'Kamu bisa menulis email follow-up ke HR dengan sopan dan profesional.',
+    tujuan: 'Kamu bisa menulis email follow-up ke HR dengan sopan.',
     uraian: [{ h: 'Menanyakan Kabar Lamaran', p: [
-      'Follow-up adalah email untuk menanyakan perkembangan proses rekrutmen setelah beberapa waktu. Tulislah dengan sopan, singkat, dan tidak terkesan memaksa.',
+      'Follow-up adalah email untuk menanyakan perkembangan proses rekrutmen setelah lamaranmu terkirim. Tulis dengan sopan dan singkat, jangan sampai terkesan mendesak.',
       'Biasanya follow-up dikirim sekitar <b>5–7 hari kerja</b> setelah lamaran terkirim, kalau belum ada kabar dari perusahaan.'] }],
-    narasi: 'Follow-up dipakai untuk menanyakan perkembangan proses rekrutmen. Sampaikan dengan sopan, singkat, dan jangan terkesan memaksa. Biasanya follow-up dikirim sekitar lima sampai tujuh hari kerja setelah lamaran terkirim, kalau belum ada kabar. Sekarang, bantu Syarif memilih langkah yang tepat.' },
+    narasi: 'Follow-up dipakai untuk menanyakan perkembangan lamaranmu. Tulis dengan sopan dan singkat, jangan sampai terkesan mendesak. Biasanya dikirim sekitar lima sampai tujuh hari kerja setelah lamaran terkirim, kalau belum ada kabar. Sekarang bantu Syarif memilih langkah yang tepat.' },
   'bahasa-formal': { title: 'Bahasa yang Formal dan Sopan', type: 'Pilih kalimat',
-    tujuan: 'Kamu bisa memakai bahasa yang formal dan profesional di email.',
+    tujuan: 'Kamu bisa memakai bahasa yang formal dan sopan di email.',
     uraian: [{ h: 'Menulis dengan Bahasa yang Profesional', p: [
-      'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital yang berlebihan.',
-      'Gunakan kalimat efektif dan perhatikan ejaan serta tata bahasanya, supaya pesanmu tersampaikan dengan baik dan kamu terlihat profesional.'] }],
-    narasi: 'Bahasa di email profesional harus jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan tidak resmi, emoji, dan huruf kapital berlebihan. Perhatikan juga ejaan dan tata bahasanya. Pilih kalimat yang paling pas di setiap kasus.' },
+      'Bahasa di email kerja sebaiknya jelas, sopan, dan mudah dipahami. Hindari bahasa gaul, singkatan yang tidak umum, emoji, dan huruf kapital yang berlebihan.',
+      'Pakai kalimat yang efektif, dan cek lagi ejaan serta tata bahasanya. Pesanmu jadi lebih mudah ditangkap, dan kamu terlihat lebih serius.'] }],
+    narasi: 'Bahasa di email kerja sebaiknya jelas, sopan, dan mudah dipahami. Bahasa gaul, singkatan yang tidak umum, emoji, dan huruf kapital berlebihan sebaiknya dihindari. Cek juga ejaan dan tata bahasanya. Di setiap kasus, pilih kalimat yang menurutmu paling pas.' },
   'latihan-soal': { title: 'Latihan Soal', type: 'Pilihan ganda', wide: true,
-    tujuan: 'Menguji pemahaman ketiga materi lewat 15 soal pilihan ganda, lengkap dengan pembahasan.',
-    narasi: 'Sekarang waktunya kita latihan! Ada lima belas soal pilihan ganda, setiap kali menjawab, kamu langsung bisa lihat pembahasan soalnya. Skor latihan ini juga menentukan apakah kamu sudah siap ke tahap evaluasi.' },
+    tujuan: 'Mengecek pemahamanmu tentang ketiga materi lewat 15 soal pilihan ganda, lengkap dengan pembahasan.',
+    narasi: 'Masuk ke latihan. Ada lima belas soal pilihan ganda, dan setiap kali menjawab, pembahasannya langsung muncul. Skor latihan ini juga jadi salah satu syarat untuk ikut evaluasi.' },
   'aktivitas-interaktif': { title: 'Aktivitas Interaktif', type: 'Cocokkan, susun, perbaiki', wide: true,
-    tujuan: 'Berlatih lewat tiga aktivitas interaktif: mencocokkan istilah, menyusun email follow-up, dan memperbaiki kalimat.',
-    narasi: 'Sekarang kita akan latihan yang lebih interaktif. Pilih salah satu aktivitas, lalu kerjakan sampai selesai! Semua aktivitas harus dikerjakan sebelum kamu bisa lanjut ke tahap berikutnya.' },
+    tujuan: 'Berlatih lewat tiga aktivitas: mencocokkan istilah, menyusun email follow-up, dan memperbaiki kalimat.',
+    narasi: 'Ada tiga aktivitas di sini. Pilih salah satu, kerjakan sampai selesai, lalu lanjut ke yang berikutnya. Ketiganya perlu diselesaikan sebelum kamu bisa ke tahap evaluasi.' },
   'awal-evaluasi': { title: 'Awal Evaluasi', type: 'Cek syarat', wide: true,
     tujuan: 'Memastikan semua syarat evaluasi sudah terpenuhi.',
-    narasi: 'Sebelum masuk ke evaluasi, pastikan terlebih dahulu syarat untuk melakukan evaluasi terpenuhi. Selesaikan semua materi, capai skor minimal di latihan pilihan ganda, dan kerjakan semua aktivitas interaktif. Kalau semua sudah dikerjakan, kamu bisa memulai evaluasi.' },
+    narasi: 'Sebelum mulai evaluasi, cek dulu syaratnya. Semua materi sudah selesai, skor latihan pilihan ganda sudah mencapai batas minimal, dan ketiga aktivitas interaktif sudah dikerjakan. Kalau semuanya sudah terpenuhi, evaluasi bisa dimulai.' },
   'evaluasi-akhir': { title: 'Evaluasi Akhir', type: 'Evaluasi akhir', wide: true,
-    tujuan: 'Menerapkan seluruh materi untuk menyusun email lamaran yang efektif dan sopan.',
-    narasi: 'Ini adalah evaluasi akhir. Bentuk soalnya mirip dengan yang sudah kamu pelajari. Kali ini tidak ada keterangan benar atau salah dan tidak ada pembahasan. Kamu baru akan melihat nilai akhirnya di akhir. Kerjakan dengan teliti, ya!' },
+    tujuan: 'Memakai semua yang sudah dipelajari untuk menyusun email lamaran yang efektif dan sopan.',
+    narasi: 'Ini evaluasi akhir. Bentuk soalnya mirip dengan yang sudah kamu kerjakan di materi. Bedanya, kali ini tidak ada keterangan benar atau salah, dan tidak ada pembahasan. Nilaimu baru muncul setelah soal terakhir disimpan, jadi kerjakan pelan-pelan saja.' },
   'penutup': { title: 'Penutup', type: 'Rangkuman + masukan', wide: true,
-    tujuan: 'Mengingat kembali seluruh materi dan memberi masukan untuk pelatihan ini.',
-    narasi: 'Selamat! Kamu sudah menyelesaikan pelatihan Smart Emailing. Dari yang sudah dipelajari, selalu ingat saat menyusun email, kamu harus memperhatikan: subject yang jelas, struktur yang rapi, bahasa yang sopan, lampiran yang lengkap, dan waktu mengirim email yang tepat. Simpan infografis ini sebagai panduan. Jangan lupa mengisi feedback agar pelatihan ini bisa menjadi lebih baik. Semoga sukses meraih pekerjaan impianmu!' },
+    tujuan: 'Mengingat lagi isi pelatihan, dan memberi masukan untuk pelatihan ini.',
+    narasi: 'Kamu sudah menyelesaikan pelatihan Smart Emailing. Setiap kali menulis email, ingat lima hal ini: subject yang jelas, susunan yang rapi, bahasa yang sopan, lampiran yang lengkap, dan waktu kirim yang tepat. Simpan infografis ini sebagai pegangan. Kalau sempat, isi juga masukan di bawah supaya pelatihan ini bisa lebih baik. Semoga lamaranmu cepat dapat balasan.' },
 };
 
 /* ---------- Status kunci ---------- */
@@ -2947,18 +2947,18 @@ function routeRail(cur) {
 const PEEK_TEKS = {
   'pengantar': 'Kenalan dulu dengan pelatihannya: mau belajar apa saja dan urutannya seperti apa.',
   'kegunaan-email': 'Kenapa email masih jadi andalan di kantor, dan kenapa nadanya harus tetap profesional.',
-  'bagian-email': 'Bongkar satu per satu bagian email, mulai dari subject sampai tanda tangan.',
+  'bagian-email': 'Kenali bagian email satu per satu, dari subject sampai tanda tangan.',
   'subject-dan-salam': 'Cara menulis subject yang bikin email dibuka, plus salam pembuka dan penutup yang pas.',
   'susunan-email': 'Lihat kerangka email lamaran yang rapi, lalu pahami fungsi tiap bagiannya.',
   'perkenalan-dan-cv': 'Latihan memperkenalkan diri dengan singkat dan melampirkan CV serta portofolio tanpa salah.',
-  'kesalahan-email': 'Berburu kesalahan kecil yang sering bikin lamaran dilewati HR.',
-  'praktik-email': 'Saatnya praktik: susun email lamaranmu sendiri sampai siap dikirim.',
+  'kesalahan-email': 'Cari kesalahan kecil yang sering membuat lamaran dilewati HR.',
+  'praktik-email': 'Tulis email lamaranmu sendiri sampai siap dikirim.',
   'cc-bcc-waktu': 'Kapan pakai CC, kapan BCC, dan jam berapa email sebaiknya dikirim.',
   'follow-up': 'Belum ada kabar dari HR? Di sini dibahas cara menanyakannya dengan sopan.',
   'bahasa-formal': 'Ubah kalimat santai jadi formal dan sopan, tanpa terdengar kaku.',
   'latihan-soal': '15 soal pilihan ganda dari ketiga materi. Pembahasannya langsung muncul setiap kali menjawab.',
   'aktivitas-interaktif': 'Tiga aktivitas bareng Salsa Rahma: cocokkan istilah, susun email follow-up, dan perbaiki kalimat.',
-  'awal-evaluasi': 'Cek tiga syarat sebelum evaluasi: materi beres, latihan minimal 70%, dan aktivitas interaktif selesai.',
+  'awal-evaluasi': 'Cek tiga syarat sebelum evaluasi: materi selesai, latihan minimal 70% benar, dan ketiga aktivitas interaktif sudah dikerjakan.',
   'evaluasi-akhir': 'Empat soal akhir tanpa tanda benar atau salah. Nilainya baru keluar di akhir.',
   'penutup': 'Rangkuman satu halaman yang bisa disimpan, ditambah tempat untuk memberi masukan.',
 };
@@ -3005,7 +3005,7 @@ const peekInfo = id => {
 function viewMateri() {
   const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/bagian/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : icon('book')}</span><span class="srow-t"><b>${BAGIAN[id].title}</b><small>${BAGIAN[id].type}</small></span>${icon('right')}</a>`; };
   return `<div class="page wrap">
-    <header class="page-head"><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Bagian berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
+    <header class="page-head"><h1 class="display">Materi</h1><p class="lead-s">Kerjakan berurutan dari atas. Bagian berikutnya terbuka setelah kartu materinya dibaca dan aktivitasnya selesai.</p>
       <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 bagian selesai</small></div></header>
     <div class="cat">${MATERI.map(m => `<article class="cat-card">
       <header><span class="cat-no" aria-hidden="true">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span></header>
@@ -3021,7 +3021,7 @@ const uraianSections = s => s.uraian.map((u, i) => `<section class="u-sec" id="u
 const uraianHTML = uraianSections;
 
 const ACT_HEAD = {
-  _: ['pointer', 'Aktivitas', 'Sekarang giliranmu'],
+  _: ['pointer', 'Aktivitas', 'Coba sendiri'],
   'pengantar': ['inbox', 'Pengantar', 'Sebelum mulai'],
   'latihan-soal': ['pen', 'Latihan soal', 'Jawab dan baca pembahasannya'],
   'aktivitas-interaktif': ['grid', 'Aktivitas interaktif', 'Pilih aktivitasnya'],
@@ -3061,7 +3061,7 @@ function renderSteps(id) {
   const box = $('#uraian'); if (!box) return;
   const s = BAGIAN[id], st = A(id);
   if (s.uraianAfter && !state.done[id] && !st.actOk) {
-    box.innerHTML = `<div class="step-card locked">${icon('eyeoff')}<div><b>Nanti dulu, ya</b><p>Bagian ini sengaja ditutup dulu biar jawabannya nggak bocor. Temukan semua kesalahannya di aktivitas bawah, nanti kebuka sendiri.</p><button type="button" class="btn btn-primary btn-sm" data-go-act>Ke aktivitas ${icon('down')}</button></div></div>`;
+    box.innerHTML = `<div class="step-card locked">${icon('eyeoff')}<div><b>Nanti dulu, ya</b><p>Penjelasan ini sengaja disembunyikan supaya jawabannya tidak bocor. Temukan semua kesalahan di aktivitas bawah, nanti penjelasannya terbuka sendiri.</p><button type="button" class="btn btn-primary btn-sm" data-go-act>Ke aktivitas ${icon('down')}</button></div></div>`;
     return;
   }
   const n = s.uraian.length, k = Math.min(st.step || 0, n - 1);
@@ -3092,7 +3092,7 @@ function mountBagian(id) {
     const tahap = { 'latihan-soal': 'Jawab semua 15 soal latihan dulu, ya.', 'aktivitas-interaktif': 'Kerjakan ketiga aktivitas interaktif dulu, ya.', 'awal-evaluasi': 'Syarat evaluasi belum terpenuhi semua.', 'evaluasi-akhir': `Nilai evaluasi minimal ${KKM} untuk membuka penutup.` }[id];
     if (tahap) { toast(tahap); $('#aktivitas').scrollIntoView({ behavior: 'smooth' }); return; }
     const st = A(id), baca = !readAll(id);
-    if (baca && st.actOk) { toast('Aktivitasnya sudah beres, tinggal baca kartu materi yang belum dibuka.'); $('#uraian').scrollIntoView({ behavior: 'smooth' }); }
+    if (baca && st.actOk) { toast('Aktivitasnya sudah selesai. Tinggal baca kartu materi yang belum dibuka.'); $('#uraian').scrollIntoView({ behavior: 'smooth' }); }
     else { toast(baca ? 'Baca semua bagian materi dan selesaikan aktivitasnya dulu, ya.' : 'Selesaikan aktivitas di halaman ini dulu, ya.'); $(baca ? '#uraian' : '#aktivitas').scrollIntoView({ behavior: 'smooth' }); }
   });
   renderSteps(id);
@@ -3110,7 +3110,7 @@ function mountBagian(id) {
     if (btn) { btn.classList.remove('is-locked'); if (freshDone && !silent) btn.classList.add('glow'); }
     const rail = $('.rail'); if (rail) rail.outerHTML = routeRail(id);
     const nx = ORDER[ORDER.indexOf(id) + 1];
-    if (freshDone && !silent && nx && MATERI_BAGIAN.includes(nx)) toast(`${BAGIAN[nx].title} sudah kebuka.`);
+    if (freshDone && !silent && nx && MATERI_BAGIAN.includes(nx)) toast(`${BAGIAN[nx].title} sekarang sudah terbuka.`);
   };
   const done = silent => {
     const st = A(id), first = !st.actOk;
@@ -3118,7 +3118,7 @@ function mountBagian(id) {
     if (BAGIAN[id].uraianAfter) renderSteps(id);
     if (state.done[id]) { if (btn) btn.classList.remove('is-locked'); return; }
     if (readAll(id)) finish(silent);
-    else if (first && !silent) { sfx('ok'); toast('Aktivitas beres. Bagian berikutnya kebuka setelah semua kartu materi dibaca.'); }
+    else if (first && !silent) { sfx('ok'); toast('Aktivitas selesai. Bagian berikutnya terbuka setelah semua kartu materi dibaca.'); }
   };
   ACT[id]($('#activity'), done, A(id));
   if (MATERI_BAGIAN.includes(id)) hintCoach(id);
@@ -3144,7 +3144,7 @@ function hintFor(id) {
   const s = BAGIAN[id], st = A(id), nx = ORDER[ORDER.indexOf(id) + 1];
   const sisa = s.uraian ? s.uraian.length - s.uraian.filter((_, j) => (st.read || []).includes(j)).length : 0;
   if (state.done[id]) return { t: `Bagian ini sudah selesai. Klik <b>Lanjut</b> untuk membuka ${nx === 'latihan-soal' ? 'langkah berikutnya' : 'bagian ' + BAGIAN[nx].title}.`, to: '#nextBtn' };
-  if (!st.actOk && (readAll(id) || s.uraianAfter)) return { t: `${readAll(id) ? 'Materinya sudah kebaca semua. ' : ''}Sekarang giliran aktivitas di bawah: ${HINT_AKT[id] || 'selesaikan aktivitasnya.'}`, to: '#activity' };
+  if (!st.actOk && (readAll(id) || s.uraianAfter)) return { t: `${readAll(id) ? 'Semua kartu materi sudah kamu baca. ' : ''}Tinggal aktivitas di bawah: ${HINT_AKT[id] || 'selesaikan aktivitasnya.'}`, to: '#activity' };
   if (!st.actOk) return { t: `Masih ada <b>${sisa} kartu materi</b> yang belum dibaca. Klik <b>Berikutnya</b> di kartu materi, setelah itu kerjakan aktivitasnya.`, to: '#uraian .st-tab:not(.read)' };
   return { t: `Tinggal satu langkah lagi: buka <b>${sisa} kartu materi</b> yang belum dibaca supaya bagian berikutnya terbuka.`, to: '#uraian .st-tab:not(.read)' };
 }
@@ -3194,17 +3194,17 @@ const ACT = {};
 ACT['pengantar'] = (el, done, st) => {
   el.innerHTML = `<div class="intro1">
     <div class="i1-case">
-      <p class="i1-q">Pernah kirim lamaran kerja, tapi tak kunjung dibalas? Bisa jadi masalahnya ada di email yang kamu kirim.</p>
+      <p class="i1-q">Pernah kirim lamaran kerja tapi nggak ada balasan? Kadang masalahnya bukan di CV, tapi di email pengantarnya.</p>
       <div class="i1-mails">
         <div class="i1-mail bad"><span class="i1-tag">${icon('x')} Sebelum</span><b>syarif.keren99</b><span>lamaran!!! <em>halo kak aku mau ngelamar nih…</em></span></div>
         <div class="i1-mail good"><span class="i1-tag">${icon('check')} Sesudah</span><b>${NAMA}</b><span>Application for Graphic Designer Position – ${NAMA}</span></div>
       </div>
-      <p class="muted">Di sini kamu belajar bikin email lamaran yang rapi, plus cara berkomunikasi dengan HR lewat email tanpa canggung.</p>
+      <p class="muted">Di sini kamu belajar menulis email lamaran yang rapi, dan cara membalas email HR tanpa canggung.</p>
     </div>
     <div class="i1-map">
       <h3>Isinya ada tiga</h3>
       <ol>${MATERI.filter(m => /^m\d$/.test(m.id)).map(m => `<li><a href="#/bagian/${m.bagian[0]}"><span>${m.no}</span>${m.title}</a></li>`).join('')}</ol>
-      <div class="i1-post">${icon('pen')} Habis itu latihan soal dan aktivitas interaktif, terakhir evaluasi.</div>
+      <div class="i1-post">${icon('pen')} Setelah itu ada latihan soal dan aktivitas interaktif, lalu evaluasi.</div>
       <button type="button" class="btn btn-primary" data-ready>${icon('check')} Oke, aku siap</button>
     </div>
   </div>`;
@@ -3260,7 +3260,7 @@ ACT['bagian-email'] = (el, done, st) => {
     </div>
     <div class="fb" hidden></div>
     ${st.placed.length ? `<button type="button" class="btn btn-outline btn-sm" data-reset>${icon('refresh')} Ulangi dari awal</button>` : ''}`;
-    if (st.placed.length === 5) { showFb($('.fb', el), true, 'Pas! Urutan emailmu sudah rapi dan profesional.'); }
+    if (st.placed.length === 5) { showFb($('.fb', el), true, 'Urutannya sudah benar. Email dengan susunan seperti ini enak dibaca HR.'); }
   };
   const tryPlace = (k, slot) => {
     if (!slot || slot.classList.contains('filled')) return;
@@ -3307,13 +3307,13 @@ ACT['subject-dan-salam'] = (el, done, st) => {
   mcq($('.mcq', el), { store: st, key: 'q', onDone: done, q: 'Kamu mau melamar posisi Marketing Staff. Subject mana yang paling pas?', opts: [
     { t: 'Lamaran', fb: 'Kurang pas. Subject ini terlalu umum, HR tidak tahu posisi apa yang kamu lamar.' },
     { t: 'Penting!!', fb: 'Kurang pas. Tidak spesifik, dan tanda serunya terkesan tidak formal.' },
-    { t: 'Application for Marketing Staff – Nama Kamu', ok: true, fb: 'Tepat! Singkat, jelas, spesifik, dan langsung menunjukkan tujuan email.' },
+    { t: 'Application for Marketing Staff – Nama Kamu', ok: true, fb: 'Tepat. Dari subject ini saja HR langsung tahu posisi yang kamu lamar.' },
     { t: 'Halo Kak', fb: 'Kurang pas. Ini sapaan santai, bukan subject, dan tidak menjelaskan isi email.' }] });
 };
 
 /* susunan-email — hotspot email lamaran */
 ACT['susunan-email'] = (el, done, st) => {
-  const hs = [['Subject yang jelas', 'Bagian pertama yang dilihat perekrut. Buat singkat, jelas, spesifik, dan sesuai tujuan email.'], ['Salam pembuka', 'Menunjukkan rasa hormat kepada penerima.'], ['Perkenalan diri singkat', 'Sebutkan nama dan latar belakang pendidikan secara singkat.'], ['Tujuan mengirim email', 'Sampaikan posisi yang kamu lamar.'], ['Keterangan lampiran', 'Sebutkan CV dan portofolio yang dilampirkan dalam format PDF.'], ['Salam penutup', 'Akhiri email dengan sopan, lalu tulis namamu.']];
+  const hs = [['Subject yang jelas', 'Bagian pertama yang dilihat perekrut. Tulis posisi yang dilamar, lalu namamu.'], ['Salam pembuka', 'Menunjukkan rasa hormat kepada penerima.'], ['Perkenalan diri singkat', 'Sebutkan nama dan latar belakang pendidikan secara singkat.'], ['Tujuan mengirim email', 'Sampaikan posisi yang kamu lamar.'], ['Keterangan lampiran', 'Sebutkan CV dan portofolio yang dilampirkan dalam format PDF.'], ['Salam penutup', 'Akhiri email dengan sopan, lalu tulis namamu.']];
   st.seen = st.seen || [];
   el.innerHTML = `${actHead('pointer', 'Klik bagian email', 'Dibuka <b>0</b> dari 6')}
   <div class="hs-wrap">
@@ -3408,7 +3408,7 @@ ACT['kesalahan-email'] = (el, done, st) => {
     list.insertAdjacentHTML('beforeend', `<li><b>${segs[k][0]}</b><small>${segs[k][1]}</small></li>`);
     $('.counter b', el).textContent = st.found.length;
     if (!silent) { sfx('ok'); showFb(fb, true, `<b>${segs[k][0]}.</b> ${segs[k][1]}`); }
-    if (st.found.length === 6) { showFb(fb, true, 'Semua kesalahan sudah ketemu! Kesalahan seperti ini bisa membuat lamaran tidak diproses lebih lanjut.'); done(silent); }
+    if (st.found.length === 6) { showFb(fb, true, 'Semua kesalahan sudah ketemu. Kesalahan kecil seperti ini sering membuat lamaran tidak diproses.'); done(silent); }
   };
   st.found.slice().forEach(k => mark(k, true));
   el.onclick = e => {
@@ -3520,7 +3520,7 @@ ACT['cc-bcc-waktu'] = (el, done, st) => {
     { t: 'BCC', ok: true, fb: 'Tepat! Dengan BCC, alamat penerima lain tidak terlihat, jadi privasi tetap aman.' },
     { t: 'Forward', fb: 'Kurang pas. Forward itu meneruskan email, bukan menyembunyikan daftar penerima.' }] });
   mcq($('#q2', el), { store: st, key: 'q2', onDone: hit, q: 'Kapan waktu terbaik mengirim email lamaran?', opts: [
-    { t: 'Jam kerja (08.00–17.00)', ok: true, fb: 'Tepat! Email profesional sebaiknya dikirim di jam kerja.' },
+    { t: 'Jam kerja (08.00–17.00)', ok: true, fb: 'Tepat. Di jam kerja, HR biasanya sedang memeriksa email.' },
     { t: 'Tengah malam', fb: 'Kurang pas. Hindari mengirim email larut malam.' },
     { t: 'Hari libur', fb: 'Kurang pas. Hindari hari libur, kecuali memang mendesak.' }] });
 };
@@ -3579,7 +3579,7 @@ ACT['bahasa-formal'] = (el, done, st) => {
     const c = cases[idx];
     showFb($('.fb', el), good, good ? c.wg : `${c.wb} Yang lebih pas: “${c.good}”`);
     const score = st.picks.filter(p => p === 'good').length;
-    $('.vs-next', el).innerHTML = idx < 2 ? `<button type="button" class="btn btn-primary btn-sm" data-next>Kasus berikutnya ${icon('right')}</button>` : `<div class="fb fb-info">${icon('award')}<span>Selesai! Kamu memilih <b>${score} dari 3</b> kalimat dengan tepat.</span></div>`;
+    $('.vs-next', el).innerHTML = idx < 2 ? `<button type="button" class="btn btn-primary btn-sm" data-next>Kasus berikutnya ${icon('right')}</button>` : `<div class="fb fb-info">${icon('award')}<span>Selesai. Kamu memilih <b>${score} dari 3</b> kalimat dengan tepat.</span></div>`;
     if (st.picks.length === 3) done(silent);
   };
   render();
@@ -3775,9 +3775,9 @@ ACT['aktivitas-interaktif'] = (el, done) => {
     el.querySelector('[data-redo]') && (el.querySelector('[data-redo]').onclick = () => { s.checked = false; s.ans = null; q._ord = null; save(); slotAct(k, q, scoreOf, msg); });
   };
   const actA = () => slotAct('a', AKT_A, a => a.filter((v, i) => v === i).length,
-    sc => sc === 5 ? 'Tepat! Semua istilah sudah cocok dengan definisinya.' : `Skormu ${sc}/5. Pasangan yang benar: Subject line = ringkasan isi email, CC = salinan untuk pihak yang perlu tahu, BCC = salinan tanpa memperlihatkan penerima lain, Follow-up = menanyakan perkembangan rekrutmen, Signature = nama dan kontak.`);
+    sc => sc === 5 ? 'Semua istilah sudah cocok dengan definisinya.' : `Skormu ${sc}/5. Pasangan yang benar: Subject line = ringkasan isi email, CC = salinan untuk pihak yang perlu tahu, BCC = salinan tanpa memperlihatkan penerima lain, Follow-up = menanyakan perkembangan rekrutmen, Signature = nama dan kontak.`);
   const actB = () => slotAct('b', AKT_B, a => (a.every((v, i) => v === i) ? 1 : 0),
-    sc => sc === 1 ? 'Tepat! Urutan email follow-up Salsa sudah benar.' : 'Belum tepat. Urutan yang benar: salam pembuka → perkenalan → tujuan → ucapan terima kasih → penutup.');
+    sc => sc === 1 ? 'Urutan email follow-up Salsa sudah benar.' : 'Belum tepat. Urutan yang benar: salam pembuka → perkenalan → tujuan → ucapan terima kasih → penutup.');
   /* C: ketuk bagian yang tidak pantas, lalu pilih penggantinya */
   const actC = () => {
     const s = st('c'); s.i = s.i || 0; s.pts = s.pts || {};
@@ -3838,7 +3838,7 @@ ACT['awal-evaluasi'] = (el, done) => {
     <div class="cp-hero">
       <div class="cp-ring" style="--p:${n / 3 * 100}"><b>${n}<small>/3</small></b><span>syarat</span></div>
       <div class="cp-t"><small class="ph-k">Awal evaluasi</small>
-        <h1>${ok ? 'Siap evaluasi!' : 'Siap evaluasi?'}</h1>
+        <h1>${ok ? 'Syarat evaluasi terpenuhi' : 'Cek syarat evaluasi'}</h1>
         <p>${ok ? `Ketiga syarat sudah terpenuhi. Evaluasi berisi ${EVALUASI.length} soal, dan nilai minimal ${KKM} untuk lulus.` : `Penuhi ${3 - n} syarat lagi untuk membuka evaluasi akhir. Klik <b>Kerjakan</b> untuk langsung ke bagian yang kurang.`}</p></div>
     </div>
     <ol class="cp-steps">${syarat.map(([y, ic, t, d, cur, max, h], i) => `<li class="cp-step ${y ? 'ok' : ''}" style="--i:${i}">
@@ -3914,7 +3914,7 @@ ACT['evaluasi-akhir'] = (el, done) => {
     el.innerHTML = `<section class="exm-res ${pass ? 'pass' : 'fail'}">
       <div class="ring big" style="--p:${animated ? 0 : E.score}"><b>${animated ? 0 : E.score}</b><small>nilai akhir</small></div>
       <div class="exm-rb"><span class="exm-badge">${pass ? icon('check') + ' Lulus' : icon('refresh') + ' Belum lulus'}</span>
-        <h1>${pass ? 'Selamat, kamu lulus!' : 'Belum lulus kali ini'}</h1>
+        <h1>${pass ? 'Kamu lulus' : 'Belum lulus kali ini'}</h1>
         <p>${pass ? `Nilaimu ${E.score}, di atas batas lulus ${KKM}. Lanjut ke penutup untuk rangkuman, lalu cetak sertifikatmu.` : `Nilaimu ${E.score}, batas lulusnya ${KKM}. Pelajari ulang materinya mulai dari Materi 1, atau langsung coba evaluasi lagi.`}</p>
         <div class="row-btns">${pass ? `<a class="gbtn y" href="#/bagian/penutup">Ke penutup ${icon('right')}</a><a class="gbtn w" href="#/sertifikat">${icon('award')} Sertifikat</a>` : `<a class="gbtn y" href="#/bagian/kegunaan-email">${icon('book')} Pelajari ulang</a><button type="button" class="gbtn w" data-retry>${icon('refresh')} Coba evaluasi lagi</button>`}</div>
       </div></section>`;
@@ -3949,7 +3949,7 @@ ACT['evaluasi-akhir'] = (el, done) => {
 
 /* penutup — rangkuman + masukan */
 ACT['penutup'] = (el, done) => {
-  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/bagian/evaluasi-akhir" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum kebuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/bagian/evaluasi-akhir">Ke evaluasi ${icon('right')}</a></div>`; return; }
+  if (!evalPassed()) { el.innerHTML = `<div class="lockbox"><a href="#/bagian/evaluasi-akhir" title="Ke evaluasi">${icon('lock')}</a><h3>Penutup belum terbuka</h3><p class="muted">Lulus evaluasi dulu, baru halaman ini bisa dibuka.</p><a class="btn btn-primary" href="#/bagian/evaluasi-akhir">Ke evaluasi ${icon('right')}</a></div>`; return; }
   const fb = state.feedback;
   const thanks = f => `<div class="thanks"><a href="#/" title="Beranda">${icon('check')}</a><h3>Makasih, masukanmu sudah masuk.</h3><p class="muted">Nilai ${f.rate}/5${f.saran ? ` · “${esc(f.saran)}”` : ''}</p></div>`;
   el.innerHTML = `<div class="infog" id="infog">
@@ -4049,9 +4049,9 @@ function gameCheck() {
   const baru = got.filter(k => !g.got.includes(k)), naik = levelOf(xp).n > levelOf(g.xp).n, gain = xp - g.xp;
   g.xp = xp; g.got = got;
   if (gain > 0) xpFloat(gain);
-  if (baru.length > 2) unlockPop(icon('award'), `${baru.length} lencana baru!`, BADGES.filter(x => baru.includes(x.k)).map(x => x.t).join(' · '), '#/progres');
-  else baru.forEach(k => { const b = BADGES.find(x => x.k === k); unlockPop(icon(b.ic), 'Lencana baru!', b.t, '#/progres'); });
-  if (naik) { const L = levelOf(xp); unlockPop(`<b class="lv-n">${L.n}</b>`, 'Naik level!', `Level ${L.n} · ${L.name}`, '#/progres'); }
+  if (baru.length > 2) unlockPop(icon('award'), `${baru.length} lencana baru`, BADGES.filter(x => baru.includes(x.k)).map(x => x.t).join(' · '), '#/progres');
+  else baru.forEach(k => { const b = BADGES.find(x => x.k === k); unlockPop(icon(b.ic), 'Lencana baru', b.t, '#/progres'); });
+  if (naik) { const L = levelOf(xp); unlockPop(`<b class="lv-n">${L.n}</b>`, 'Naik level', `Level ${L.n} · ${L.name}`, '#/progres'); }
 }
 function comboPop(n) {
   const el = document.createElement('div'); el.className = 'combo'; el.innerHTML = `<b>Combo ${n}×</b><small>${n} jawaban benar berturut-turut</small>`;
@@ -4080,12 +4080,12 @@ const levelCard = (cls = '') => { const xp = xpTotal(), L = levelOf(xp); return 
   <span class="lv-badge"><small>Level</small><b>${L.n}</b></span>
   <div class="lv-body"><small>${xp} XP dari ${xpMax()}</small><b>${L.name}</b>
     <span class="bar"><i style="width:${L.pct}%"></i></span>
-    <small>${L.next !== null ? `${L.next - xp} XP lagi menuju <b>${L.nextName}</b>` : 'Level tertinggi tercapai!'}</small></div></div>`; };
+    <small>${L.next !== null ? `${L.next - xp} XP lagi menuju <b>${L.nextName}</b>` : 'Kamu sudah di level tertinggi'}</small></div></div>`; };
 
 function pencapaianBody() {
   const got = badgesGot().length;
   return `<h2 class="h2">Pencapaian</h2>
-    <p class="muted">XP didapat dari bagian yang beres, jawaban latihan yang benar, dan nilai evaluasi. Makin banyak XP, makin naik levelmu.</p>
+    <p class="muted">XP didapat dari bagian yang selesai, jawaban latihan yang benar, dan nilai evaluasi. Makin banyak XP, makin tinggi levelmu.</p>
     ${levelCard('big')}
     <h2 class="h2">Asal XP</h2>
     <div class="xp-list">${xpParts().map(([ic, t, v, m]) => `<div class="xp-row ${v >= m ? 'full' : ''}"><span class="xp-ic">${icon(ic)}</span><span>${t}</span><span class="bar"><i style="width:${m ? v / m * 100 : 0}%"></i></span><b>${v}/${m}</b></div>`).join('')}</div>
@@ -4256,7 +4256,7 @@ function mountQuiz(S) {
       </footer>`;
     qRender($('#qbox', box), q, a, { mode: 'latihan', checked, onChange: v => { L.ans[g] = v; save(); dir = 0; render(); } });
     if (checked) {
-      showFb($('#qfb', box), L.res[g], `${L.res[g] ? 'Benar!' : `Belum tepat. Jawaban yang tepat: <b>${q.opts[q.a]}</b>.`} ${q.why}`);
+      showFb($('#qfb', box), L.res[g], `${L.res[g] ? 'Benar.' : `Belum tepat. Jawaban yang tepat: <b>${q.opts[q.a]}</b>.`} ${q.why}`);
       const r = LAT_REL[g];
       $('#qrel', box).innerHTML = `<a class="qz-rel" href="#/bagian/${r}">${icon('book')} Materi terkait: ${BAGIAN[r].title}</a>`;
     }
@@ -4430,13 +4430,13 @@ function viewProgres() {
   return `<div class="page wrap lms prg">
     <section class="prg-hero">
       <div class="prg-lv"><div class="lvring" style="--p:${L.pct}"><small>Level</small><b data-count="${L.n}">${L.n}</b></div></div>
-      <div class="prg-t"><small class="ph-k">Perjalanan belajarmu</small><h1>${L.name}</h1>
+      <div class="prg-t"><small class="ph-k">Level kamu sekarang</small><h1>${L.name}</h1>
         <p><b data-count="${xp}">${xp}</b> XP${L.next !== null ? ` · ${L.next - xp} XP lagi ke Level ${L.n + 1} (${L.nextName})` : ' · level tertinggi sudah tercapai'}</p></div>
       ${ruteLevel()}
     </section>
 
     <div class="prg-grid">
-      <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Tugas minggu ini</h2><span class="ex-st ${T.every(t => t[2] >= t[3]) ? 'done' : 'go'}">${T.filter(t => t[2] >= t[3]).length}/${T.length} beres</span></div>
+      <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Tugas minggu ini</h2><span class="ex-st ${T.every(t => t[2] >= t[3]) ? 'done' : 'go'}">${T.filter(t => t[2] >= t[3]).length}/${T.length} selesai</span></div>
         <ul class="tugas">${T.map(([ic, t, v, m]) => `<li class="${v >= m ? 'ok' : ''}"><span class="tg-ring" style="--p:${Math.min(1, v / m) * 100}"><b>${v >= m ? icon('check') : `${Math.min(v, m)}/${m}`}</b></span><span class="tg-t"><b>${t}</b><small>${v >= m ? 'Selesai minggu ini' : `${m - Math.min(v, m)} lagi`}</small></span><span class="tg-ic">${icon(ic)}</span></li>`).join('')}</ul>
         <p class="muted small">Tugas berganti setiap Senin. Dihitung dari riwayat aktivitasmu.</p></section>
 
@@ -4622,7 +4622,7 @@ function homeCards() {
   return MATERI.filter(m => /^m\d$/.test(m.id)).map(m => {
     const d = m.bagian.filter(id => state.done[id]).length, n = m.bagian.length;
     const nx = m.bagian.find(id => !state.done[id]), lk = nx ? locked(nx) : false;
-    const label = d === n ? `Materi ${+m.no} · semua bagian beres` : `Materi ${+m.no} · ${d}/${n} bagian beres`;
+    const label = d === n ? `Materi ${+m.no} · semua bagian selesai` : `Materi ${+m.no} · ${d}/${n} bagian selesai`;
     const cta = d === n ? `<a class="gbtn y sm" href="#/bagian/${m.bagian[0]}">Ulas lagi ${icon('right')}</a>`
       : lk ? `<span class="gc-lock">${icon('lock')} Selesaikan bagian sebelumnya dulu</span>`
       : `<a class="gbtn y sm" href="#/bagian/${nx}">${d ? 'Lanjut belajar' : 'Mulai materi'} ${icon('right')}</a>`;
@@ -4781,7 +4781,7 @@ function mountPetunjuk() {
   app2.onclick = e => {
     const d = e.target.closest('[data-demo]'); if (!d) return;
     sfx();
-    if (d.dataset.demo === 'hit') { d.textContent = 'Berhasil!'; d.classList.remove('pop'); void d.offsetWidth; d.classList.add('pop'); setTimeout(() => { d.textContent = 'Klik aku'; }, 1200); }
+    if (d.dataset.demo === 'hit') { d.textContent = 'Berhasil'; d.classList.remove('pop'); void d.offsetWidth; d.classList.add('pop'); setTimeout(() => { d.textContent = 'Klik aku'; }, 1200); }
     if (d.dataset.demo === 'drag') d.classList.toggle('picked');
     if (d.dataset.demo === 'slot') { const c = $('.dm-chip', d.parentElement); if (c.classList.contains('picked') || c.parentElement === d) { const back = c.parentElement === d; (back ? d.parentElement : d).appendChild(c); c.classList.remove('picked'); d.classList.toggle('full', !back); } }
     if (d.dataset.demo === 'show') { const s = d.nextElementSibling; s.hidden = !s.hidden; d.textContent = s.hidden ? 'Tampilkan' : 'Sembunyikan'; }
@@ -4860,7 +4860,7 @@ function viewPengaturan() {
     <section class="card"><h2 class="prg-k">Tampilan dan suara</h2>
       ${sw('setSound', state.sound, 'vol', 'Efek suara', 'Bunyi klik dan nada benar/salah.')}
       ${sw('setMini', !!UI().mini, 'panel', 'Menu samping ringkas', 'Menu kiri hanya menampilkan ikon, konten jadi lebih lebar.')}
-      ${sw('setCalm', !!UI().calm, 'eyeoff', 'Kurangi animasi', 'Matikan gerakan dekoratif seperti kartu melayang dan konfeti.')}
+      ${sw('setCalm', !!UI().calm, 'eyeoff', 'Kurangi animasi', 'Matikan efek gerak seperti konfeti dan transisi antarhalaman.')}
     </section>
     <section class="card"><h2 class="prg-k">Data belajar</h2>
       <div class="set2"><span class="set2-ic">${icon('trash')}</span><span class="set2-t"><b>Reset progres</b><small>Nama, bagian selesai, jawaban, nilai, dan riwayat aktivitas di browser ini akan dihapus. Ada konfirmasi dulu.</small></span><button type="button" class="btn btn-outline btn-sm danger" id="setReset">Reset progres</button></div>
