@@ -50,11 +50,11 @@ Mulai → Pengantar
 ## Isi di dalam web
 
 ### Menu samping, tombol kanan atas, dan halaman Lainnya
-Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Peta konsep, Glosarium) dan **Lainnya** (Progres belajar, Tentang & tim) yang bisa dibuka-tutup. Di bawah menu ada kartu **Perjalanan belajar** (maskot Surti, level, dan persen progres). Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
+Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Peta konsep, Glosarium) dan **Lainnya** (Progres belajar, Tentang & tim) yang bisa dibuka-tutup. Di kanan atas ada tombol efek suara, lingkaran **progres**, dan ikon **Pengaturan**. Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
 
 Di kanan atas ada tombol efek suara, lingkaran **progres** (klik untuk ringkasan), dan tepat di sampingnya ikon gerigi **Pengaturan**. Ikon **?** kecil di pojok kanan bawah membuka halaman **FAQ**.
 
-- **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, koleksi 11 segel lilin (klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
+- **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, koleksi 11 segel lilin (segel yang sudah didapat dan 3 target berikutnya tampil, sisanya dilipat; klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
 - **Pengaturan** (`#/pengaturan`, ikon gerigi di kanan atas): efek suara, menu ringkas, kurangi animasi, dan satu-satunya tombol **Reset progres**. Sebelum dihapus ada konfirmasi, lalu semua data (termasuk nama) kembali ke kondisi awal.
 - **FAQ** (`#/faq`, ikon ? di kanan bawah): tanya-jawab per kategori.
 - **Tentang & tim** (`#/tentang`): judul proyek, tujuan umum, isi pelatihan, format interaksi, tim, dan teknologi.
@@ -162,20 +162,23 @@ Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan s
 ![Bagian terkunci](docs/screenshots/15-bagian-terkunci.png)
 
 ### 10. Gamifikasi: skor, level, segel, dan reward
+
+![Sertifikat](docs/screenshots/14-sertifikat.png)
 | Unsur | Isinya |
 |---|---|
 | **Skor (XP)** | Pengantar 20 · setiap bagian materi 50 · setiap soal latihan benar 20 · bonus combo latihan 10 × combo terbaik · setiap aktivitas interaktif 30 · nilai evaluasi × 3 · bonus lulus 100 · penutup 30 (maksimal 1.490 XP) |
 | **Level** | 1 Pemula → 2 Pengirim Rapi (200) → 3 Penulis Lamaran (500) → 4 Komunikator Sopan (900) → 5 Email Profesional (1.300), ditampilkan sebagai rute pos dengan perangko |
 | **11 segel** | Langkah Pertama, Paham Dasar Email, Siap Melamar, Beretika, Capaian Terpenuhi, Latihan Sempurna, Tak Terbendung (combo 5×), Serba Bisa, Lulus Evaluasi, Nilai Sempurna, Memberi Masukan |
 | **Mingguan** | Tugas minggu ini: 2 bagian, 1 latihan, dan belajar di 3 hari berbeda (dihitung dari riwayat aktivitas) |
-| **Reward** | Kartu "Lencana baru!" dan "Naik level!", konfeti, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
+| **Reward** | Kartu "Lencana baru!" dan "Naik level!", konfeti saat lulus evaluasi, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
 
 ## Fitur lain
 - **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Beranda, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
 - **Progres tersimpan otomatis** di browser: bagian selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
 - **Cincin progres dan badge** di navbar: persentase belajar, jumlah soal latihan yang belum dikerjakan, dan status evaluasi.
 - **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per bagian, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.
-- **Animasi**: transisi berbeda untuk setiap jenis halaman, ikon yang bergerak saat diklik, efek suara klik dan benar/salah (bisa dimatikan), serta konfeti saat bagian selesai.
+- **Animasi**: geser antar-bagian, tirai saat masuk evaluasi akhir, dan naik halus untuk halaman lain. Ikon bergerak saat diklik, efek suara klik dan benar/salah (bisa dimatikan), dan konfeti hanya saat lulus evaluasi. Tidak ada animasi yang berulang terus, dan semua gerak mengikuti pengaturan "kurangi gerak" di perangkat.
+- **Sistem desain**: Bricolage Grotesque untuk judul dan UI, DM Sans untuk isi, dan Anton hanya untuk logo, judul Beranda, serta angka nilai/level. Palet marun, krem, dan emas; radius 8/12/16/20 px; bayangan 3 tingkat; ikon garis dalam 5 ukuran (14–32 px) dan ikon piksel untuk navigasi.
 - **Tanpa tautan luar**: semua aset ada di dalam web, jadi bisa dipakai tanpa internet.
 - **Warna**: marun, krem, dan emas.
 
