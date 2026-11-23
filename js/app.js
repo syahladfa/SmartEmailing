@@ -457,7 +457,7 @@ const peekInfo = id => {
 function viewMateri() {
   const row = id => { const lk = locked(id), d = state.done[id]; return `<a class="srow ${d ? 'done' : ''} ${lk ? 'locked' : ''}" href="#/bagian/${id}" data-peek="${id}"><span class="srow-st">${d ? icon('check') : lk ? icon('lock') : icon('book')}</span><span class="srow-t"><b>${BAGIAN[id].title}</b><small>${BAGIAN[id].type}</small></span>${icon('right')}</a>`; };
   return `<div class="page wrap">
-    <header class="page-head"><div class="eyebrow">Materi</div><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Bagian berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
+    <header class="page-head"><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Bagian berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
       <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 bagian selesai</small></div></header>
     <div class="cat">${MATERI.map(m => `<article class="cat-card">
       <header><span class="cat-no" aria-hidden="true">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span></header>
@@ -495,9 +495,9 @@ function viewBagian(id) {
       <header class="mv-head">
         <span class="mv-av" data-to="#/" title="Beranda">${LOGO}</span>
         <div class="mv-meta">
-          <div class="mv-from"><b>Smart Emailing</b><small>kepada: kamu · ± ${mins} menit</small></div>
+          
           <h1 class="display">${s.title}</h1>
-          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl" data-to="#/peta" title="Lihat di peta konsep">Bagian</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span></div>
+          <div class="mv-labels"><span class="lbl" data-to="#/materi" title="Semua materi">${m.short}</span><span class="lbl soft" data-to="aktivitas" title="Ke aktivitas">${icon('pointer')} ${s.type}</span><small class="mv-dur">± ${mins} menit</small></div>
         </div>
       </header>
       <div class="pin-note"><span class="pin" data-to="#/tujuan" title="Semua tujuan belajar"></span><b>Tujuan</b><p>${s.tujuan}</p></div>
@@ -521,7 +521,7 @@ function renderSteps(id) {
   st.read = st.read || []; if (!st.read.includes(k)) { st.read.push(k); save(); }
   const nRead = s.uraian.filter((_, j) => st.read.includes(j)).length;
   box.innerHTML = `<div class="step-tabs" role="tablist">${s.uraian.map((x, j) => `<button type="button" role="tab" class="st-tab ${j === k ? 'cur' : ''} ${j < k ? 'past' : ''} ${st.read.includes(j) ? 'read' : ''}" data-step="${j}" aria-selected="${j === k}"><span>${st.read.includes(j) && j !== k ? icon('check') : j + 1}</span>${x.h}</button>`).join('')}</div>
-    <div class="step-card" key="${k}"><small class="sc-k">Bagian ${k + 1} dari ${n} · ${nRead === n ? 'semua bagian sudah dibaca' : `dibaca ${nRead}/${n}`}</small><h2 class="sec-title">${u.h}</h2>${u.p.map(p => p.startsWith('<ol') ? p : `<p>${p}</p>`).join('')}</div>
+    <div class="step-card" key="${k}">${n > 1 ? `<small class="sc-k">Bagian ${k + 1} dari ${n} · ${nRead === n ? 'semua bagian sudah dibaca' : `dibaca ${nRead}/${n}`}</small>` : ''}<h2 class="sec-title">${u.h}</h2>${u.p.map(p => p.startsWith('<ol') ? p : `<p>${p}</p>`).join('')}</div>
     <div class="step-nav">
       <button type="button" class="btn btn-outline btn-sm" data-step="${k - 1}" ${k === 0 ? 'disabled' : ''}>${icon('left')} Sebelumnya</button>
       <span class="st-dots">${s.uraian.map((_, j) => `<i class="${j === k ? 'cur' : j < k ? 'past' : ''}"></i>`).join('')}</span>
@@ -1666,7 +1666,7 @@ document.addEventListener('click', e => {
 function viewLatihanList() {
   const benar = latSkor(), lk = locked('latihan-soal');
   return `<div class="page wrap lms">
-    <header class="ph"><div><small class="ph-k">Latihan</small><h1>Latihan</h1><p>Latihan soal per materi dan aktivitas interaktif. Hasilnya dipakai untuk syarat evaluasi.</p></div>
+    <header class="ph"><div><h1>Latihan</h1><p>Latihan soal per materi dan aktivitas interaktif. Hasilnya dipakai untuk syarat evaluasi.</p></div>
       <div class="ph-sum"><div><b>${benar}/${LATIHAN.length}</b><small>soal benar</small></div><div><b>${AKT_KEYS.filter(k => aktStat(k).status === 'done').length}/3</b><small>aktivitas selesai</small></div><div class="${benar >= LAT_MIN ? 'ok' : ''}"><b>${benar >= LAT_MIN ? icon('check') : `${LAT_MIN}`}</b><small>${benar >= LAT_MIN ? 'syarat latihan terpenuhi' : 'benar minimal untuk evaluasi'}</small></div></div></header>
     ${lk ? `<div class="note-lock">${icon('lock')}<div><b>Latihan masih terkunci</b><p>Selesaikan semua bagian materi dulu. ${MATERI_BAGIAN.filter(id => state.done[id]).length} dari ${MATERI_BAGIAN.length} bagian materi sudah selesai.</p></div><a class="btn btn-primary btn-sm" href="${resumeHref()}">Lanjutkan materi ${icon('right')}</a></div>` : ''}
     <h2 class="sec-h">Latihan soal <small>pilihan ganda · pembahasan langsung muncul</small></h2>
@@ -1910,8 +1910,8 @@ function viewProgres() {
         ${row('Aktivitas interaktif', AKT_KEYS.filter(k => aktStat(k).status === 'done').length, 3, '#/bagian/aktivitas-interaktif')}
         <p class="pg-ev"><span class="ex-st ${evalPassed() ? 'done' : evScore() !== null ? 'go' : 'new'}">${ev[0]}</span> ${ev[1]}</p>
         <div class="cert-cta mini">${icon(evalPassed() ? 'award' : 'lock')}<div><b>Sertifikat</b><p class="muted">${evalPassed() ? 'Siap dicetak.' : `Terbuka setelah lulus evaluasi (nilai ≥ ${KKM}).`}</p></div>${evalPassed() ? `<a class="btn btn-gold btn-sm" href="#/sertifikat">Lihat ${icon('right')}</a>` : ''}</div></section>
-      <section class="card"><div class="card-h"><h2>Asal XP</h2></div>
-        <div class="xp-list">${xpParts().map(([ic, t, v, m]) => `<div class="xp-row ${v >= m ? 'full' : ''}"><span class="xp-ic">${icon(ic)}</span><span>${t}</span><span class="bar"><i style="width:${m ? v / m * 100 : 0}%"></i></span><b>${v}/${m}</b></div>`).join('')}</div></section>
+      <details class="card xp-fold"><summary class="card-h"><h2>Asal XP</h2><small class="muted">rincian poin</small></summary>
+        <div class="xp-list">${xpParts().map(([ic, t, v, m]) => `<div class="xp-row ${v >= m ? 'full' : ''}"><span class="xp-ic">${icon(ic)}</span><span>${t}</span><span class="bar"><i style="width:${m ? v / m * 100 : 0}%"></i></span><b>${v}/${m}</b></div>`).join('')}</div></details>
     </div>
     <section class="card"><div class="card-h"><h2>Aktivitas terbaru</h2></div>${activityList(8)}</section>
   </div>`;
@@ -2101,7 +2101,7 @@ function viewHome() {
   return `<section class="gh">
     <div class="gh-in">
       <div class="gh-txt">
-        <span class="gh-tag">${icon('mail')} SmartEmailing — Professional Email Learning</span>
+        <span class="gh-tag">${icon('mail')} Pelatihan menulis email lamaran kerja</span>
         ${nama && !editNama ? `<p class="gh-hi">${sapaan()}, <b>${esc(nama.split(/\s+/)[0])}</b><button type="button" class="gh-edit" id="ghEdit" aria-label="Ganti nama" title="Ganti nama">${icon('pen')}</button></p>` : ''}
         <h1 class="gh-h gh-brand"><span>Smart</span><span>Emailing</span></h1>
         ${cta}
@@ -2221,7 +2221,7 @@ function viewPetunjuk() {
     show: '<button type="button" class="dm-btn" data-demo="show">Tampilkan</button><span class="dm-show" hidden>Ini penjelasannya.</span>',
   };
   return `<ol class="steps">${langkah.map(([ic, t, d, h], k) => `<li style="--i:${k}"><a href="${h}"><span class="st-no">${k + 1}</span><span class="st-ic">${pxi(ic)}</span><b>${t}</b><small>${d}</small></a></li>`).join('')}</ol>
-    <h2 class="gd-h">Kode interaksi <small>coba langsung di kartunya</small></h2>
+    <h2 class="gd-h">Cara berinteraksi <small>kode interaksi dari storyboard · coba langsung di kartunya</small></h2>
     <div class="kode-grid">${kode.map(([k, t, d]) => `<div class="kode"><div class="kode-demo">${demo[k]}</div><b>${t}</b><small>${d}</small></div>`).join('')}</div>`;
 }
 function mountPetunjuk() {
@@ -2348,7 +2348,7 @@ const PAGES = {
   peta: { v: () => viewPanduan('peta'), m: () => mountPanduan('peta'), title: 'Panduan', nav: 'peta' },
   glosarium: { v: () => viewPanduan('glosarium'), m: () => mountPanduan('glosarium'), title: 'Panduan', nav: 'glosarium' },
   faq: { v: () => viewPanduan('faq'), m: () => mountPanduan('faq'), title: 'FAQ', nav: '' },
-  tentang: { v: viewTentang, m: countUp, title: 'Tentang & tim', nav: 'tentang' },
+  tentang: { v: viewTentang, title: 'Tentang & tim', nav: 'tentang' },
   latihan: { v: viewLatihanPage, m: mountLatihanPage, title: 'Latihan', nav: 'latihan' },
   progres: { v: viewProgres, m: mountProgres, title: 'Progres belajar', nav: 'progres' },
   pencapaian: { v: viewProgres, m: mountProgres, title: 'Progres belajar', nav: 'progres' },
