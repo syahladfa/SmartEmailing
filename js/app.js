@@ -1767,7 +1767,7 @@ function viewQuizResult(S) {
         <div class="res-stats"><div><b>${r.n}</b><small>soal</small></div><div class="ok"><b>${r.benar}</b><small>benar</small></div><div class="no"><b>${r.n - r.benar}</b><small>salah</small></div><div><b>${p}%</b><small>berhasil</small></div>${r.dur ? `<div><b>${durasi(r.dur)}</b><small>waktu</small></div>` : ''}</div>
         <div class="res-dots">${S.ix.map((g, j) => { const ok = r.ok ? r.ok[j] : L.res[g] === true; return `<span class="${ok ? 'ok' : 'no'}" title="Soal ${j + 1}: ${ok ? 'benar' : 'salah'}">${j + 1}</span>`; }).join('')}</div>
         <p class="muted small">Total latihan pilihan ganda: ${latSkor()}/${LATIHAN.length} benar (syarat evaluasi minimal ${LAT_MIN}).${st.tries > 1 ? ` Ini percobaan ke-${st.tries}.` : ''}</p>
-        <div class="row-btns"><a class="btn btn-primary" href="#/latihan/${S.id}/review">${icon('eye')} Review jawaban</a><a class="btn btn-outline" href="#/latihan/${S.id}" data-retry-set="${S.id}">${icon('refresh')} Ulangi latihan</a><a class="btn btn-outline" href="#/latihan">${icon('list')} Daftar latihan</a><a class="btn btn-outline" href="#/dashboard">${icon('grid')} Dashboard</a></div>
+        <div class="row-btns"><a class="btn btn-primary" href="#/latihan/${S.id}/review">${icon('eye')} Review jawaban</a><a class="btn btn-outline" href="#/latihan/${S.id}" data-retry-set="${S.id}">${icon('refresh')} Ulangi latihan</a><a class="btn btn-outline" href="#/latihan">${icon('list')} Daftar latihan</a></div>
       </div>
     </section>
   </div>`;
@@ -1809,13 +1809,20 @@ function countUp() {
 }
 
 /* =========================================================================
-   DASHBOARD
+   RINGKASAN BELAJAR (status evaluasi, lanjut belajar, aktivitas terbaru)
    ========================================================================= */
 function evalTxt() {
   const ev = evScore();
   if (ev !== null) return [ev >= KKM ? 'Lulus' : 'Belum lulus', `Nilai ${ev}`];
   return gateOk() ? ['Siap', 'Syarat sudah terpenuhi'] : ['Terkunci', 'Penuhi 3 syarat dulu'];
 }
+const ACT_TXT = {
+  open: e => [icon('book'), `Membuka ${BAGIAN[e.id] ? BAGIAN[e.id].title : ''}`, '#/bagian/' + e.id],
+  done: e => [icon('check'), `Menyelesaikan ${BAGIAN[e.id] ? BAGIAN[e.id].title : ''}`, '#/bagian/' + e.id],
+  lat: e => [icon('pen'), `Menyelesaikan ${setOf(e.id) ? setOf(e.id).title : 'latihan'} · ${e.b}/${e.n} benar`, `#/latihan/${e.id}/hasil`],
+  akt: e => [icon('grid'), `Menyelesaikan Aktivitas ${AKT_INFO[e.id] ? AKT_INFO[e.id][0] + ' · ' + AKT_INFO[e.id][2] : ''} · skor ${e.s}`, '#/bagian/aktivitas-interaktif'],
+  ev: e => [icon('flag'), `Mengerjakan evaluasi akhir · nilai ${e.s} (${e.s >= KKM ? 'lulus' : 'belum lulus'})`, '#/bagian/evaluasi-akhir'],
+};
 function activityList(max = 6) {
   const L = (state.log || []).filter(e => ACT_TXT[e.k]).slice(-max).reverse();
   if (!L.length) return `<div class="empty sm">${icon('clock')}<h3>Belum ada aktivitas tercatat</h3><p>Setiap bagian yang dibuka, latihan, dan evaluasi akan tercatat di sini.</p></div>`;
