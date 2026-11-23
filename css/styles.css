@@ -2456,3 +2456,15 @@ ol.steps { gap: 0; }
 .goal-grid li span { background: none; color: var(--maroon); width: 1.4rem; height: auto; justify-content: start; font: 800 .95rem/1.45 var(--f-head); }
 /* Penutup: rangkuman tidak dibungkus kartu putih lagi */
 .act-card:has(> .infog) { background: none; border: 0; padding: 0; box-shadow: none; }
+/* Progres: gamifikasi diringkas — tugas mingguan jadi baris padat, segel yang belum dekat dilipat */
+.tugas { gap: .35rem; }
+.tugas li { padding: .45rem .6rem; gap: .7rem; }
+.tugas li:hover { transform: none; }
+.tugas .tg-ring { width: 2.3rem; height: 2.3rem; }
+.tugas .tg-ring b { font-size: .75rem; }
+.tugas .tg-t small { font-size: .78rem; }
+.tugas .tg-ic { display: none; }
+.tugas li { grid-template-columns: auto minmax(0, 1fr); }
+.seg-more { margin-top: .5rem; }
+.seg-more > summary { cursor: pointer; font: 700 .85rem/1.4 var(--f-head); color: var(--maroon); padding: .3rem 0; }
+.seg-more[open] > summary { margin-bottom: .4rem; }

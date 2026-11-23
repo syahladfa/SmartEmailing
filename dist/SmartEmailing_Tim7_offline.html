@@ -2466,6 +2466,18 @@ ol.steps { gap: 0; }
 .goal-grid li span { background: none; color: var(--maroon); width: 1.4rem; height: auto; justify-content: start; font: 800 .95rem/1.45 var(--f-head); }
 /* Penutup: rangkuman tidak dibungkus kartu putih lagi */
 .act-card:has(> .infog) { background: none; border: 0; padding: 0; box-shadow: none; }
+/* Progres: gamifikasi diringkas — tugas mingguan jadi baris padat, segel yang belum dekat dilipat */
+.tugas { gap: .35rem; }
+.tugas li { padding: .45rem .6rem; gap: .7rem; }
+.tugas li:hover { transform: none; }
+.tugas .tg-ring { width: 2.3rem; height: 2.3rem; }
+.tugas .tg-ring b { font-size: .75rem; }
+.tugas .tg-t small { font-size: .78rem; }
+.tugas .tg-ic { display: none; }
+.tugas li { grid-template-columns: auto minmax(0, 1fr); }
+.seg-more { margin-top: .5rem; }
+.seg-more > summary { cursor: pointer; font: 700 .85rem/1.4 var(--f-head); color: var(--maroon); padding: .3rem 0; }
+.seg-more[open] > summary { margin-bottom: .4rem; }
 
 </style>
 </head>
@@ -4429,7 +4441,12 @@ function viewProgres() {
         <p class="muted small">Tugas berganti setiap Senin. Dihitung dari riwayat aktivitasmu.</p></section>
 
       <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Koleksi segel</h2><span class="ex-st ${got === BADGES.length ? 'done' : 'go'}">${got}/${BADGES.length}</span></div>
-        <div class="segel-grid">${BADGES.map(b => { const on = b.ok(); return `<button type="button" class="segel ${on ? 'on' : ''}" data-seal="${b.k}" aria-label="${b.t}${on ? ' (didapat)' : ' (belum)'}"><span class="seal">${icon(on ? b.ic : 'lock')}</span><small>${b.t}</small></button>`; }).join('')}</div>
+        ${(() => {
+          /* segel yang sudah didapat + 3 target berikutnya tampil; sisanya dilipat */
+          const seg = b => { const on = b.ok(); return `<button type="button" class="segel ${on ? 'on' : ''}" data-seal="${b.k}" aria-label="${b.t}${on ? ' (didapat)' : ' (belum)'}"><span class="seal">${icon(on ? b.ic : 'lock')}</span><small>${b.t}</small></button>`; };
+          const on = BADGES.filter(b => b.ok()), off = BADGES.filter(b => !b.ok()), tampil = [...on, ...off.slice(0, 3)], sisa = off.slice(3);
+          return `<div class="segel-grid">${tampil.map(seg).join('')}</div>${sisa.length ? `<details class="seg-more"><summary>Lihat ${sisa.length} segel lainnya</summary><div class="segel-grid">${sisa.map(seg).join('')}</div></details>` : ''}`;
+        })()}
         <div class="segel-info" id="sealInfo"><p class="muted small">Klik segel untuk melihat syarat dan progresnya.</p></div></section>
     </div>
 

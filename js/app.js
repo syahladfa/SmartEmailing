@@ -1893,7 +1893,12 @@ function viewProgres() {
         <p class="muted small">Tugas berganti setiap Senin. Dihitung dari riwayat aktivitasmu.</p></section>
 
       <section class="card prg-card"><div class="card-h"><h2 class="prg-k">Koleksi segel</h2><span class="ex-st ${got === BADGES.length ? 'done' : 'go'}">${got}/${BADGES.length}</span></div>
-        <div class="segel-grid">${BADGES.map(b => { const on = b.ok(); return `<button type="button" class="segel ${on ? 'on' : ''}" data-seal="${b.k}" aria-label="${b.t}${on ? ' (didapat)' : ' (belum)'}"><span class="seal">${icon(on ? b.ic : 'lock')}</span><small>${b.t}</small></button>`; }).join('')}</div>
+        ${(() => {
+          /* segel yang sudah didapat + 3 target berikutnya tampil; sisanya dilipat */
+          const seg = b => { const on = b.ok(); return `<button type="button" class="segel ${on ? 'on' : ''}" data-seal="${b.k}" aria-label="${b.t}${on ? ' (didapat)' : ' (belum)'}"><span class="seal">${icon(on ? b.ic : 'lock')}</span><small>${b.t}</small></button>`; };
+          const on = BADGES.filter(b => b.ok()), off = BADGES.filter(b => !b.ok()), tampil = [...on, ...off.slice(0, 3)], sisa = off.slice(3);
+          return `<div class="segel-grid">${tampil.map(seg).join('')}</div>${sisa.length ? `<details class="seg-more"><summary>Lihat ${sisa.length} segel lainnya</summary><div class="segel-grid">${sisa.map(seg).join('')}</div></details>` : ''}`;
+        })()}
         <div class="segel-info" id="sealInfo"><p class="muted small">Klik segel untuk melihat syarat dan progresnya.</p></div></section>
     </div>
 
