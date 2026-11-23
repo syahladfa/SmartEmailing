@@ -2372,24 +2372,14 @@ const EASE = 'cubic-bezier(.2, .8, .2, 1)';
 const T_EXIT = {
   slideL: [{ opacity: 1, transform: 'translateX(0)' }, { opacity: 0, transform: 'translateX(-90px)' }],
   slideR: [{ opacity: 1, transform: 'translateX(0)' }, { opacity: 0, transform: 'translateX(90px)' }],
-  wipe: [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-18px)' }],
-  flip: [{ opacity: 1, transform: 'perspective(1400px) rotateY(0)' }, { opacity: 0, transform: 'perspective(1400px) rotateY(16deg)' }],
-  zoom: [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.94)' }],
   rise: [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-14px)' }],
-  blur: [{ opacity: 1, filter: 'blur(0)' }, { opacity: 0, filter: 'blur(6px)' }],
-  circle: [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.98)' }],
 };
 const T_ENTER = {
   slideL: [{ opacity: 0, transform: 'translateX(140px)' }, { opacity: 1, transform: 'translateX(0)' }],
   slideR: [{ opacity: 0, transform: 'translateX(-140px)' }, { opacity: 1, transform: 'translateX(0)' }],
-  wipe: [{ opacity: .4, clipPath: 'inset(0 0 100% 0 round 24px)' }, { opacity: 1, clipPath: 'inset(0 0 0% 0 round 0px)' }],
-  flip: [{ opacity: 0, transform: 'perspective(1400px) rotateY(-22deg) translateX(-40px)' }, { opacity: 1, transform: 'perspective(1400px) rotateY(0) translateX(0)' }],
-  zoom: [{ opacity: 0, transform: 'scale(1.08)' }, { opacity: 1, transform: 'scale(1)' }],
   rise: [{ opacity: 0, transform: 'translateY(80px)' }, { opacity: 1, transform: 'translateY(0)' }],
-  blur: [{ opacity: 0, filter: 'blur(18px)', transform: 'translateY(20px) scale(.98)' }, { opacity: 1, filter: 'blur(0)', transform: 'translateY(0)' }],
-  circle: [{ clipPath: 'circle(0% at 50% 35%)' }, { clipPath: 'circle(150% at 50% 35%)' }],
 };
-const T_DUR = { slideL: 700, slideR: 700, wipe: 850, flip: 800, zoom: 700, rise: 750, blur: 750, circle: 1000 };
+const T_DUR = { slideL: 700, slideR: 700, rise: 750 };
 async function pageExit(t) {
   try {
     const an = app.animate(T_EXIT[t], { duration: 260, easing: 'ease-in', fill: 'forwards' });
