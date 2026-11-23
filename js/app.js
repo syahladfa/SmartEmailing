@@ -460,7 +460,7 @@ function viewMateri() {
     <header class="page-head"><div class="eyebrow">Materi</div><h1 class="display">Materi</h1><p class="lead-s">Kerjakan dari atas ke bawah. Bagian berikutnya kebuka setelah kartu materinya dibaca dan aktivitasnya beres.</p>
       <div class="page-prog"><span class="bar"><i style="width:${pct()}%"></i></span><b>${pct()}%</b><small>${doneCount()}/13 bagian selesai</small></div></header>
     <div class="cat">${MATERI.map(m => `<article class="cat-card">
-      <header><span class="cat-no">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span></header>
+      <header><span class="cat-no" aria-hidden="true">${m.no}</span><div><small>${m.short}</small><h2>${m.title}</h2>${m.desc ? `<p>${m.desc}</p>` : ''}</div><span class="cat-p">${m.bagian.filter(id => state.done[id]).length}/${m.bagian.length}</span></header>
       <div class="cat-list">${m.bagian.map(row).join('')}</div>
     </article>`).join('')}</div>
   </div>`;
@@ -1097,7 +1097,7 @@ function qRender(box, q, a, { mode, checked, onChange }) {
     body = `<div class="dz ${lock ? 'lock' : ''} ${q.slots.every(l => l.length <= 10) ? 'dz-num' : ''}">
       <div class="dz-pool" data-pool>${q._ord.filter(c => !used.has(c)).map(c => `<button type="button" class="dz-card ${pick === c ? 'on' : ''}" draggable="true" data-card="${c}">${q.cards[c]}</button>`).join('') || '<small class="muted">Semua kartu sudah ditempatkan.</small>'}</div>
       <ol class="dz-slots">${q.slots.map((lb, i) => `<li class="dz-slot ${a[i] >= 0 ? 'full' : ''} ${lock ? (a[i] === i ? 'ok' : 'no') : ''}" data-slot="${i}" ${lock ? '' : `tabindex="0" role="button" aria-label="Tempat ${lb}"`}><span class="dz-lb">${lb}</span><span class="dz-in">${a[i] >= 0 ? `<span class="dz-card in" ${lock ? '' : 'draggable="true" tabindex="0" role="button"'} data-card="${a[i]}" data-from="${i}">${q.cards[a[i]]}</span>` : '<i>Taruh kartu di sini</i>'}</span></li>`).join('')}</ol></div>
-      ${lock ? '' : '<p class="muted small">Seret kartu ke tempatnya. Di HP: ketuk kartu, lalu ketuk tempatnya. Ketuk kartu yang sudah terpasang untuk mengembalikannya.</p>'}`;
+      ${lock || mode === 'ujian' ? '' : '<p class="muted small">Seret kartu ke tempatnya. Di HP: ketuk kartu, lalu ketuk tempatnya. Ketuk kartu yang sudah terpasang untuk mengembalikannya.</p>'}`;
   }
   box.innerHTML = `<p class="q">${q.q}</p>${body}`;
   if (q.type === 'slots' && !lock) {
@@ -2520,6 +2520,21 @@ function moveInd(el) {
 }
 const activeTab = () => $('#navLinks a.active');
 function closeMenu() { togglePop(false); }
+
+/* ---------- Tombol FAQ: menyingkir saat menggulir ke bawah supaya tidak menutupi konten ---------- */
+(() => {
+  let lastY = scrollY, ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY, fab = $('#faqFab'), bottom = innerHeight + y >= document.documentElement.scrollHeight - 8;
+      if (fab) fab.classList.toggle('away', y > lastY + 4 && y > 120 && !bottom);
+      if (Math.abs(y - lastY) > 4 || bottom) lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
+  addEventListener('hashchange', () => { const fab = $('#faqFab'); if (fab) fab.classList.remove('away'); });
+})();
 
 /* ---------- Mulai ---------- */
 $('#brandMark').innerHTML = LOGO; $('#brandMark2').innerHTML = LOGO;
