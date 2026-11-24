@@ -2526,3 +2526,35 @@ ol.steps { gap: 0; }
 @media (max-width: 900px) { .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 400px) { .tm-card { padding: .7rem .6rem .9rem; } .tm-nm { font-size: .85rem; } }
 @media (prefers-reduced-motion: reduce) { .tm-card, .tm-ph { transition: none; } .tm-card:hover { transform: none; } }
+
+/* =========================================================================
+   VERSI PRODUK
+   ========================================================================= */
+.vr { display: grid; gap: .8rem; }
+.vr-list { list-style: none; margin: 0; padding: 0; display: grid; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); overflow: hidden; }
+.vr-row { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.1rem; border-top: 1px solid var(--line); }
+.vr-row:first-child { border-top: 0; }
+.vr-row.on { background: var(--gold-s); }
+.vr-t { flex: 1; min-width: 0; }
+.vr-t b { color: var(--maroon-2); font: 700 .98rem/1.3 var(--f-head); margin-right: .5rem; }
+.vr-t small { color: var(--gold-ink); font-size: .78rem; font-weight: 600; }
+.vr-t p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.45; }
+.vr-on { flex: none; padding: .35rem .8rem; border-radius: var(--r-pill); background: var(--maroon); color: var(--cream); font-size: .78rem; font-weight: 700; }
+.vr-row .btn { flex: none; }
+@media (max-width: 560px) { .vr-row { flex-wrap: wrap; } .vr-row .btn, .vr-on { margin-left: auto; } }
+
+/* Label salinan beku: pita tipis di bawah layar, konten dan tombol mengambang digeser ke atas */
+:root { --ver-h: 0px; }
+body.beku { --ver-h: 34px; padding-bottom: var(--ver-h); }
+.ver-strip { position: fixed; z-index: 45; left: 0; right: 0; bottom: 0; height: var(--ver-h); display: flex; align-items: center; justify-content: center; gap: .9rem; padding: 0 1rem; background: var(--maroon-3); color: var(--cream); font-size: .8rem; text-decoration: none; white-space: nowrap; border-top: 1px solid rgba(201, 149, 46, .5); }
+.ver-strip b { color: var(--gold-l); font-weight: 700; }
+.ver-strip .vs-go { display: inline-flex; align-items: center; gap: .3rem; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+.ver-strip .ic { width: var(--ic-xs); height: var(--ic-xs); }
+.ver-strip:hover .vs-go, .ver-strip:focus-visible .vs-go { color: var(--gold-l); }
+@media (min-width: 861px) { .ver-strip { left: var(--sbw, 0px); transition: left .3s var(--ease); } }
+@media (max-width: 420px) { .ver-strip { gap: .6rem; font-size: .75rem; justify-content: space-between; } }
+body.beku .faq-fab, body.beku .ask { bottom: calc(18px + var(--ver-h)); }
+body.beku .toast { bottom: calc(24px + var(--ver-h)); }
+body.beku .unlock { bottom: calc(24px + var(--ver-h)); }
+body.beku .hint { bottom: calc(20px + var(--ver-h)); }
+@media print { .ver-strip { display: none; } }

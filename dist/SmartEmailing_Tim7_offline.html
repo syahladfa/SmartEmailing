@@ -2537,6 +2537,38 @@ ol.steps { gap: 0; }
 @media (max-width: 400px) { .tm-card { padding: .7rem .6rem .9rem; } .tm-nm { font-size: .85rem; } }
 @media (prefers-reduced-motion: reduce) { .tm-card, .tm-ph { transition: none; } .tm-card:hover { transform: none; } }
 
+/* =========================================================================
+   VERSI PRODUK
+   ========================================================================= */
+.vr { display: grid; gap: .8rem; }
+.vr-list { list-style: none; margin: 0; padding: 0; display: grid; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); overflow: hidden; }
+.vr-row { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.1rem; border-top: 1px solid var(--line); }
+.vr-row:first-child { border-top: 0; }
+.vr-row.on { background: var(--gold-s); }
+.vr-t { flex: 1; min-width: 0; }
+.vr-t b { color: var(--maroon-2); font: 700 .98rem/1.3 var(--f-head); margin-right: .5rem; }
+.vr-t small { color: var(--gold-ink); font-size: .78rem; font-weight: 600; }
+.vr-t p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; line-height: 1.45; }
+.vr-on { flex: none; padding: .35rem .8rem; border-radius: var(--r-pill); background: var(--maroon); color: var(--cream); font-size: .78rem; font-weight: 700; }
+.vr-row .btn { flex: none; }
+@media (max-width: 560px) { .vr-row { flex-wrap: wrap; } .vr-row .btn, .vr-on { margin-left: auto; } }
+
+/* Label salinan beku: pita tipis di bawah layar, konten dan tombol mengambang digeser ke atas */
+:root { --ver-h: 0px; }
+body.beku { --ver-h: 34px; padding-bottom: var(--ver-h); }
+.ver-strip { position: fixed; z-index: 45; left: 0; right: 0; bottom: 0; height: var(--ver-h); display: flex; align-items: center; justify-content: center; gap: .9rem; padding: 0 1rem; background: var(--maroon-3); color: var(--cream); font-size: .8rem; text-decoration: none; white-space: nowrap; border-top: 1px solid rgba(201, 149, 46, .5); }
+.ver-strip b { color: var(--gold-l); font-weight: 700; }
+.ver-strip .vs-go { display: inline-flex; align-items: center; gap: .3rem; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+.ver-strip .ic { width: var(--ic-xs); height: var(--ic-xs); }
+.ver-strip:hover .vs-go, .ver-strip:focus-visible .vs-go { color: var(--gold-l); }
+@media (min-width: 861px) { .ver-strip { left: var(--sbw, 0px); transition: left .3s var(--ease); } }
+@media (max-width: 420px) { .ver-strip { gap: .6rem; font-size: .75rem; justify-content: space-between; } }
+body.beku .faq-fab, body.beku .ask { bottom: calc(18px + var(--ver-h)); }
+body.beku .toast { bottom: calc(24px + var(--ver-h)); }
+body.beku .unlock { bottom: calc(24px + var(--ver-h)); }
+body.beku .hint { bottom: calc(20px + var(--ver-h)); }
+@media print { .ver-strip { display: none; } }
+
 </style>
 </head>
 <body>
@@ -2704,8 +2736,26 @@ const icon = (n, cls = '') => `<svg class="ic i-${n} ${F[n] ? 'duo' : ''} ${cls}
 /* Logo: amplop yang tutupnya membentuk centang + kilau */
 const LOGO = `<svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#7a1f2e"/><rect x="8" y="14" width="31" height="22" rx="4.5" fill="#fbf5ec"/><path class="logo-ck" d="M12 18.5 21.5 26 35.5 15.5" fill="none" stroke="#3b1119" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path class="logo-sp" d="M38 3.5 39.8 8.2 44.5 10 39.8 11.8 38 16.5 36.2 11.8 31.5 10 36.2 8.2Z" fill="#e2b04a" stroke="#7a1f2e" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
 
+/* ---------- Versi produk ----------
+   Setiap tahap pengumpulan dibekukan ke folder versi/<slug>/ dengan tools/bekukan-versi.sh <slug>.
+   Salinan beku menyetel window.SE_VERSI = '<slug>' di index.html-nya; versi terbaru tidak. */
+const VERSI = [
+  { slug: 'pertemuan-12', nama: 'Pertemuan 12', tanggal: '2026-11-24', ket: 'Produk yang dikumpulkan di kolom SPS Pertemuan 12' },
+];
+const SITUS = 'https://syahladfa.github.io/SmartEmailing/';
+const VERSI_INI = VERSI.find(v => v.slug === window.SE_VERSI) || null;
+const tglID = d => new Date(d + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+/* Alamat sebuah versi (slug kosong = versi terbaru). Relatif supaya jalan di subfolder dan di server lokal;
+   absolut ke situs bila dibuka sebagai file offline atau di dalam LMS (iframe). */
+function urlVersi(slug) {
+  const path = slug ? 'versi/' + slug + '/' : '';
+  if (location.protocol === 'file:' || window.top !== window.self) return SITUS + path;
+  return (VERSI_INI ? '../../' : './') + path;
+}
+
 /* ---------- Penyimpanan progres ---------- */
-const KEY = 'smart-emailing:v2';
+/* Tiap versi beku punya kunci sendiri supaya progresnya tidak tercampur dengan versi terbaru */
+const KEY = 'smart-emailing:v2' + (VERSI_INI ? '@' + VERSI_INI.slug : '');
 const fresh = () => ({ done: {}, act: {}, lat: null, akt: null, ev: null, feedback: null, sound: true, last: null, v2: true, log: [], resume: null, ui: {} });
 let state = (() => { try { return Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { return fresh(); } })();
 /* Migrasi ID lama (S01–S16) ke ID bernama, supaya progres peserta lama tetap terbaca */
@@ -5201,6 +5251,16 @@ const kartuTim = a => `<li class="tm-card">
   <figure class="tm-ph${a.foto ? ' has' : ''}">${SILUET}${a.foto ? `<img src="${a.foto}" alt="Foto ${a.nama}" loading="lazy" onerror="this.parentNode.classList.remove('has'); this.parentNode.removeChild(this)">` : ''}<figcaption>Foto</figcaption></figure>
   <b class="tm-nm">${a.nama}</b><small class="tm-nim">NIM ${a.nim}</small></li>`;
 
+function bagianVersi() {
+  const baris = [{ slug: '', nama: 'Versi terbaru', tanggal: '', ket: 'Terus dikembangkan sampai versi final (9 Desember 2026).' }, ...VERSI.slice().reverse()];
+  return `<section class="vr" aria-labelledby="vrH"><div class="tm-head"><h2 id="vrH">Versi produk</h2><small>${VERSI.length} versi dibekukan</small></div>
+    <ul class="vr-list">${baris.map(v => {
+      const ini = VERSI_INI ? VERSI_INI.slug === v.slug : !v.slug;
+      return `<li class="vr-row${ini ? ' on' : ''}"><div class="vr-t"><b>${v.nama}</b>${v.tanggal ? `<small>${tglID(v.tanggal)}</small>` : ''}<p>${v.ket}</p></div>
+        ${ini ? '<span class="vr-on">Sedang dibuka</span>' : `<a class="btn btn-outline btn-sm" href="${urlVersi(v.slug)}" data-versi="${v.slug || 'terbaru'}">Buka versi ini ${icon('right')}</a>`}</li>`;
+    }).join('')}</ul></section>`;
+}
+
 function viewTentang() {
   const isi = [[MATERI_BAGIAN.length, 'bagian materi'], [LATIHAN.length, 'soal latihan'], [3, 'aktivitas'], [EVALUASI.length, 'soal evaluasi']];
   const interaksi = ['Seret & letakkan', 'Klik informasi', 'Temukan kesalahan', 'Simulasi email', 'Skenario bercabang', 'Kuis'];
@@ -5210,6 +5270,7 @@ function viewTentang() {
     <div class="ab-nums">${isi.map(([n, t]) => `<div><b data-count="${n}">${n}</b><small>${t}</small></div>`).join('')}</div>
     <section class="tm" aria-labelledby="tmH"><div class="tm-head"><h2 id="tmH">Tim pengembang</h2><small>Kelompok 7</small></div>
       <ul class="tm-grid">${TIM.map(kartuTim).join('')}</ul></section>
+    ${bagianVersi()}
     <div class="pg-grid">
       <section class="card"><h2 class="prg-k">Tujuan umum</h2><p>Fresh graduate mampu merancang email lamaran kerja dengan memperhatikan struktur dan etika komunikasi profesional dalam dunia kerja.</p><a class="card-link" href="#/tujuan">Lihat tujuan per bagian ${icon('right')}</a></section>
       <section class="card"><h2 class="prg-k">Format media</h2><p>Multimedia interaktif non-linear untuk belajar mandiri.</p><div class="ab-chips">${interaksi.map(t => `<span>${t}</span>`).join('')}</div></section>
@@ -5407,6 +5468,11 @@ $('#brandMark').innerHTML = LOGO; $('#brandMark2').innerHTML = LOGO;
 $('#sideMini').onclick = () => { UI().mini = !UI().mini; save(); applyMini(); sfx(); };
 applyMini();
 applyCalm();
+if (VERSI_INI) {
+  document.body.classList.add('beku');
+  document.title += ` (Versi ${VERSI_INI.nama})`;
+  document.body.insertAdjacentHTML('beforeend', `<a class="ver-strip" id="verStrip" href="${urlVersi('')}"><span><b>Versi ${VERSI_INI.nama}</b> · ${tglID(VERSI_INI.tanggal)}</span><span class="vs-go">Lihat versi terbaru ${icon('right')}</span></a>`);
+}
 sideInit();
 $$('.t-ic:not([data-px])').forEach(e => { e.innerHTML = icon(e.dataset.ic); });
 $$('#navLinks a').forEach(a => { a.addEventListener('mouseenter', () => moveInd(a)); a.addEventListener('focus', () => moveInd(a)); });
