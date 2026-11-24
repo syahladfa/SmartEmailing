@@ -199,6 +199,16 @@ Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan s
 | **LMS (Moodle, dll.)** | Unggah `dist/SmartEmailing_Tim7_SCORM.zip` sebagai aktivitas SCORM (*Add an activity → SCORM package*). Status belajar dan nilai evaluasi otomatis tercatat di LMS, dan peserta dinyatakan lulus bila nilainya ≥ 75. |
 | **Folder web** | `dist/SmartEmailing_Tim7.zip` untuk aktivitas *Folder* / *IMS content*. |
 
+## Versi produk
+Setiap tahap pengumpulan punya alamat sendiri yang dibekukan. Alamat utama terus dikembangkan sampai versi final.
+
+| Versi | Alamat |
+|---|---|
+| **Versi terbaru** (dikembangkan sampai final, 9 Desember 2026) | https://syahladfa.github.io/SmartEmailing/ |
+| **Pertemuan 12** (beku, 24 November 2026) | https://syahladfa.github.io/SmartEmailing/versi/pertemuan-12/ |
+
+Salinan beku menampilkan pita "Versi … · Lihat versi terbaru" dan menyimpan progres terpisah. Daftar semua versi ada di halaman **Tentang & tim → Versi produk**. Cara membekukan versi berikutnya: [docs/VERSI.md](docs/VERSI.md).
+
 ## Untuk tim: cara update web
 Setelah mengedit file, pilih salah satu cara:
 1. Klik dua kali **`Update ke GitHub.command`** di Finder. Paket offline, ZIP, dan SCORM dibuat ulang, lalu diunggah.
@@ -220,6 +230,9 @@ SmartEmailing_Tim7/
 ├── tools/build.py      ← membuat paket offline, ZIP, dan SCORM di dist/
 ├── tools/publish.sh    ← build + commit + unggah ke GitHub
 ├── tools/autosync.py   ← unggah otomatis setiap file disimpan
+├── tools/bekukan-versi.sh ← bekukan versi ke versi/<slug>/ (lihat docs/VERSI.md)
+├── tools/tes-versi.mjs ← tes fitur versi produk
+├── versi/<slug>/       ← salinan beku tiap tahap pengumpulan (jangan diedit)
 ├── Update ke GitHub.command / Sinkron Otomatis.command ← klik dua kali di Finder
 ├── CHECKLIST_AUDIT_INTERNAL.md
 └── dist/               ← paket siap kirim (offline .html, .zip, SCORM .zip)
