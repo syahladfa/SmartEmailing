@@ -15,7 +15,7 @@ Media pembelajaran berbasis web · Kelompok 7
 ![Bahasa](https://img.shields.io/badge/bahasa-Indonesia-c9952e?style=flat-square)
 ![Tanpa framework](https://img.shields.io/badge/HTML%20%C2%B7%20CSS%20%C2%B7%20JS-tanpa%20framework-5c1522?style=flat-square)
 
-**[Buka web](https://syahladfa.github.io/SmartEmailing/)** · **[Unduh rilis terbaru](https://github.com/syahladfa/SmartEmailing/releases/latest)** · [Versi offline](dist/SmartEmailing_Tim7_offline.html) · [Paket SCORM](dist/SmartEmailing_Tim7_SCORM.zip)
+**[Buka web](https://syahladfa.github.io/SmartEmailing/)** · **[Versi Pertemuan 12](https://syahladfa.github.io/SmartEmailing/versi/pertemuan-12/)** · **[Unduh rilis terbaru](https://github.com/syahladfa/SmartEmailing/releases/latest)** · [Versi offline](dist/SmartEmailing_Tim7_offline.html) · [Paket SCORM](dist/SmartEmailing_Tim7_SCORM.zip)
 
 ![Beranda Smart Emailing](docs/screenshots/01-beranda.png)
 
@@ -29,7 +29,7 @@ Banyak lamaran kerja tidak dibalas bukan karena pelamarnya kurang mampu, tapi ka
 |---|---|
 | **Sasaran** | Fresh graduate yang sedang bersiap melamar kerja |
 | **Tujuan** | Peserta mampu merancang email lamaran kerja yang efektif, sesuai susunan dan etika komunikasi profesional |
-| **Isi** | 3 materi · bagian materi · 15 soal latihan · 3 aktivitas interaktif · 4 soal evaluasi akhir · rangkuman |
+| **Isi** | 3 materi · 10 bagian materi · 15 soal latihan · 3 aktivitas interaktif · 4 soal evaluasi akhir · rangkuman dan sertifikat |
 | **Akses** | Online, offline (satu file HTML), atau di LMS (SCORM 1.2) tanpa internet dan tanpa akun |
 
 ## Alur belajar
@@ -45,21 +45,22 @@ Mulai → Pengantar
                                        → Tidak: Pelajari Ulang materi atau Coba Evaluasi Lagi
 ```
 
-![Flowchart alur belajar](docs/screenshots/10-flowchart.png)
 
 ## Isi di dalam web
 
 ### Menu samping, tombol kanan atas, dan halaman Lainnya
-Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Peta konsep, Glosarium) dan **Lainnya** (Progres belajar, Tentang & tim) yang bisa dibuka-tutup. Di kanan atas ada tombol efek suara, lingkaran **progres**, dan ikon **Pengaturan**. Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
+Semua halaman punya menu samping berwarna marun dengan **ikon piksel buatan sendiri**: Beranda, Katalog, Materi, Latihan, Evaluasi, lalu grup **Panduan** (Petunjuk, Tujuan belajar, Peta konsep, Glosarium) dan **Lainnya** (Progres belajar, Tentang & tim) yang bisa dibuka-tutup. Menu bisa diciutkan jadi ikon saja, dan di HP jadi laci yang dibuka dengan tombol ☰.
 
-Di kanan atas ada tombol efek suara, lingkaran **progres** (klik untuk ringkasan), dan tepat di sampingnya ikon gerigi **Pengaturan**. Ikon **?** kecil di pojok kanan bawah membuka halaman **FAQ**.
+Di kanan atas ada tombol efek suara, lingkaran **progres** (klik untuk ringkasan), dan ikon gerigi **Pengaturan**. Ikon **?** kecil di pojok kanan bawah membuka halaman **FAQ**.
 
 - **Progres belajar** (`#/progres`): rute pos berisi 5 perangko level dengan pesawat kertas di posisimu, tugas minggu ini, koleksi 11 segel lilin (segel yang sudah didapat dan 3 target berikutnya tampil, sisanya dilipat; klik untuk melihat syarat dan progresnya), asal XP, dan sertifikat. Semua dihitung dari data asli.
-- **Pengaturan** (`#/pengaturan`, ikon gerigi di kanan atas): efek suara, menu ringkas, kurangi animasi, dan satu-satunya tombol **Reset progres**. Sebelum dihapus ada konfirmasi, lalu semua data (termasuk nama) kembali ke kondisi awal.
+- **Pengaturan** (`#/pengaturan`, ikon gerigi di kanan atas): efek suara, menu ringkas, kurangi animasi, dan satu-satunya tombol **Reset progres**. Sebelum direset muncul dialog konfirmasi (bisa dibatalkan dengan *Batal*, *Esc*, atau klik di luar dialog). Bagian selesai, jawaban, nilai, XP, lencana, dan riwayat belajar kembali ke awal; nama dan pengaturan tampilan tetap disimpan. Kalau browser menolak menyimpan (misalnya mode privat), progres tidak diubah dan muncul pesan gagal.
 - **FAQ** (`#/faq`, ikon ? di kanan bawah): tanya-jawab per kategori.
-- **Tentang & tim** (`#/tentang`): judul proyek, tujuan umum, isi pelatihan, format interaksi, tim, dan teknologi.
+- **Tentang & tim** (`#/tentang`): judul proyek, angka isi pelatihan, **tim pengembang** (4 anggota dengan bingkai foto), **versi produk**, tujuan umum, format interaksi, metode, dan teknologi.
 
 ![Progres belajar](docs/screenshots/22-progres.png)
+
+![Dialog konfirmasi reset progres](docs/screenshots/28-reset-dialog.png)
 
 ### 1. Beranda dan katalog materi
 
@@ -121,10 +122,10 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 ![Aktivitas interaktif](docs/screenshots/16-aktivitas-interaktif.png)
 
 ### 6. Awal evaluasi dan evaluasi akhir
-- **Awal Evaluasi** adalah pos pemeriksaan: panel besar "SIAP EVALUASI?" dengan cincin x/3 syarat, lalu 3 kartu syarat bernomor (materi selesai, latihan minimal **11 dari 15 benar**, 3 aktivitas interaktif) dengan progress bar dan tombol **Kerjakan** ke bagian yang kurang. Tombol **Mulai evaluasi** baru menyala setelah ketiganya terpenuhi.
+- **Awal Evaluasi** adalah pos pemeriksaan: panel besar "Cek syarat evaluasi" (berubah jadi "Syarat evaluasi terpenuhi") dengan cincin x/3 syarat, lalu 3 kartu syarat bernomor (materi selesai, latihan minimal **11 dari 15 benar**, 3 aktivitas interaktif) dengan progress bar dan tombol **Kerjakan** ke bagian yang kurang. Tombol **Mulai evaluasi** baru menyala setelah ketiganya terpenuhi.
 - **Evaluasi Akhir** berjalan dalam mode ujian layar penuh (menu samping disembunyikan). Sebelum soal pertama ada layar **Aturan main** berisi 4 kartu.
 - Ada **4 soal** dari interaksi di materi: seret & letakkan bagian email, pilih subject, tandai kesalahan, dan pilih kalimat formal. Setiap soal punya kotak **Cara menjawab**.
-- Tidak ada tanda benar/salah. Tombol **Simpan jawaban** memunculkan konfirmasi dulu, karena jawaban yang sudah disimpan tidak bisa diubah.
+- Tidak ada tanda benar/salah. Tombol **Simpan jawaban** memunculkan dialog konfirmasi dulu (bisa dibatalkan dengan *Cek lagi* atau *Esc*), karena jawaban yang sudah disimpan tidak bisa diubah.
 - Layar hasil hanya menampilkan nilai dan status **Lulus** atau **Belum lulus** (batas **75**), dengan langkah berikutnya: Penutup dan Sertifikat, atau Pelajari ulang dan Coba lagi.
 
 ![Awal evaluasi](docs/screenshots/17-awal-evaluasi.png)
@@ -135,12 +136,14 @@ Tiga aktivitas dalam satu layar kartu, dengan tokoh **Salsa Rahma** yang melamar
 
 ### Panduan
 Empat halaman Panduan memakai kepala halaman yang sama dan tombol Sebelumnya/Berikutnya di bawah:
-- **Petunjuk:** 4 langkah memakai web, dan **kode interaksi** yang bisa dicoba langsung (Normal, Hover, Hit, Swipe, Seret & letakkan, Show).
+- **Petunjuk:** 4 langkah memakai web, dan **cara berinteraksi** yang bisa dicoba langsung (Normal, Hover, Hit, Swipe, Seret & letakkan, Show).
 - **Tujuan belajar:** tujuan umum, 7 tujuan khusus, dan tujuan tiap bagian yang dikelompokkan per materi.
-- **Peta konsep:** peta isi pelatihan dengan cabang per materi.
+- **Peta konsep:** peta konsep hierarkis dengan kata penghubung (*terdiri atas, membahas, diterapkan di, diuji melalui*) dan hubungan silang antarmateri. Arahkan kursor atau klik sebuah konsep untuk menyorot jalurnya; panel di bawahnya menampilkan status, penjelasan, dan tombol **Buka bagian**. Status mengikuti progres peserta (selesai, berikutnya, terkunci). Di HP peta berubah jadi susunan vertikal.
 - **Glosarium:** pencarian dan indeks A–Z.
 
 ![Panduan](docs/screenshots/23-panduan.png)
+
+![Peta konsep](docs/screenshots/10-peta-konsep.png)
 
 ### 7. Penutup
 Terbuka setelah peserta lulus evaluasi. Isinya rangkuman satu halaman yang bisa disimpan sebagai PDF, ditambah formulir masukan (rating bintang dan saran).
@@ -173,18 +176,17 @@ Setiap bagian baru terbuka setelah bagian sebelumnya selesai, termasuk latihan s
 | **Reward** | Kartu "Lencana baru" dan "Naik level", konfeti saat lulus evaluasi, combo saat latihan, dan **sertifikat** bernama peserta setelah lulus evaluasi |
 
 ## Fitur lain
-- **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Beranda, Latihan, Progres, dan Evaluasi; data lama tetap terbaca.
+- **Satu sumber data** di localStorage (`smart-emailing:v2`) untuk Beranda, Latihan, Progres, dan Evaluasi; data lama tetap terbaca. Setiap versi beku memakai kuncinya sendiri (`smart-emailing:v2@<slug>`).
 - **Progres tersimpan otomatis** di browser: bagian selesai, kartu yang sudah dibaca, jawaban setiap aktivitas, latihan, evaluasi, skor, dan lencana. Pindah halaman tidak menghapus apa pun.
 - **Cincin progres dan badge** di navbar: persentase belajar, jumlah soal latihan yang belum dikerjakan, dan status evaluasi.
-- **Panduan** dalam satu halaman bertab: Cara pakai dan arti kode interaksi (*Normal, Hover, Hit, Swipe, Seret & letakkan, Show*), Tujuan belajar per bagian, Flowchart, Peta Konsep, dan Glosarium yang bisa dicari.
+- **Dialog konfirmasi** di dalam web (bukan pop-up browser) untuk tindakan yang tidak bisa dibatalkan: reset progres, ulangi latihan, selesaikan latihan, dan simpan jawaban evaluasi. Bisa dipakai dengan keyboard (Tab, Enter, Esc).
 - **Animasi**: geser antar-bagian, tirai saat masuk evaluasi akhir, dan naik halus untuk halaman lain. Ikon bergerak saat diklik, efek suara klik dan benar/salah (bisa dimatikan), dan konfeti hanya saat lulus evaluasi. Tidak ada animasi yang berulang terus, dan semua gerak mengikuti pengaturan "kurangi gerak" di perangkat.
 - **Sistem desain**: Bricolage Grotesque untuk judul dan UI, DM Sans untuk isi, dan Anton hanya untuk logo, judul Beranda, serta angka nilai/level. Palet marun, krem, dan emas; radius 8/12/16/20 px; bayangan 3 tingkat; ikon garis dalam 5 ukuran (14–32 px) dan ikon piksel untuk navigasi.
 - **Tanpa tautan luar**: semua aset ada di dalam web, jadi bisa dipakai tanpa internet.
-- **Warna**: marun, krem, dan emas.
 
 ## Teknologi
 - **HTML, CSS, dan JavaScript murni** tanpa framework dan tanpa library luar, jadi ringan dan bisa berjalan offline.
-- **Single Page Application** dengan router berbasis hash (`#/bagian/S04`, `#/latihan`, …).
+- **Single Page Application** dengan router berbasis hash (`#/bagian/susunan-email`, `#/latihan`, `#/peta`, …).
 - **localStorage** untuk menyimpan progres dan jawaban di perangkat peserta.
 - **SCORM 1.2 API** untuk mengirim status dan nilai ke LMS.
 - **Web Audio API** untuk efek suara dan **Web Animations API** untuk transisi halaman.
@@ -207,7 +209,23 @@ Setiap tahap pengumpulan punya alamat sendiri yang dibekukan. Alamat utama terus
 | **Versi terbaru** (dikembangkan sampai final, 9 Desember 2026) | https://syahladfa.github.io/SmartEmailing/ |
 | **Pertemuan 12** (beku, 24 November 2026) | https://syahladfa.github.io/SmartEmailing/versi/pertemuan-12/ |
 
-Salinan beku menampilkan pita "Versi … · Lihat versi terbaru" dan menyimpan progres terpisah. Daftar semua versi ada di halaman **Tentang & tim → Versi produk**. Cara membekukan versi berikutnya: [docs/VERSI.md](docs/VERSI.md).
+Salinan beku menampilkan pita "Versi … · Lihat versi terbaru" di bawah layar dan menyimpan progres terpisah. Daftar semua versi ada di halaman **Tentang & tim → Versi produk**. Cara membekukan versi berikutnya: [docs/VERSI.md](docs/VERSI.md).
+
+| Versi produk di halaman Tentang | Salinan beku Pertemuan 12 |
+|---|---|
+| ![Daftar versi produk](docs/screenshots/26-versi-produk.png) | ![Versi beku dengan pita label](docs/screenshots/27-versi-beku.png) |
+
+## Tim pengembang
+Kelompok 7
+
+| Nama | NIM |
+|---|---|
+| Joice Aurel Syalom | 1101624061 |
+| Khairun Nisa | 1101624018 |
+| Nadya Theresia Silalahi | 1101624083 |
+| Syahla Adfa Adinda | 1101624042 |
+
+![Tim pengembang di halaman Tentang](docs/screenshots/25-tentang-tim.png)
 
 ## Untuk tim: cara update web
 Setelah mengedit file, pilih salah satu cara:
@@ -226,7 +244,10 @@ SmartEmailing_Tim7/
 ├── css/styles.css      ← tampilan (marun · krem · emas)
 ├── js/app.js           ← isi materi, bagian belajar, aktivitas, latihan, evaluasi
 ├── assets/img/         ← logo dan favicon
+├── assets/tim/         ← foto anggota tim (potret 4:5)
 ├── docs/screenshots/   ← foto tampilan untuk README ini
+├── docs/VERSI.md       ← cara kerja dan langkah membekukan versi produk
+├── docs/social-preview.png ← gambar pratinjau repo (1280×640)
 ├── tools/build.py      ← membuat paket offline, ZIP, dan SCORM di dist/
 ├── tools/publish.sh    ← build + commit + unggah ke GitHub
 ├── tools/autosync.py   ← unggah otomatis setiap file disimpan
